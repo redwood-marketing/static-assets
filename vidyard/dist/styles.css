@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+:root {
+    --gray-dark: #343a40;
+    --primary: #e24650;
+    --secondary: #fbb03b;
+    --light: #f7f7f7;
+    --dark: #1e272d;
+    --blue: #7cbfe0;
+    --light-blue: #e5f3f9;
+    --red: #e24650;
+    --yellow: #fbb03b;
+    --light-yellow: #fff7eb;
+    --teal: #66c9ba;
+    --light-teal: #ebf5f3;
+    --white: #fff;
+    --gray: #becbd3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    margin: inherit;
+    padding: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: inherit;
+    color: var(--dark);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+    text-align: unset;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a { font-weight: 600 }
+
+a:not([class]) { color: var(--white) }
+
+a:not([class]):hover { color: var(--secondary) }
+
+/**
+ * Sharing Page
+ * @see https://knowledge.vidyard.com/hc/en-us/articles/360024134714-Design-your-branded-sharing-page
+ */
+
+#main-content header { display: none }
+
+#main-content { 
+    padding: clamp(6rem, 10vw, 10rem) calc( ( 100vw - var(--mw) ) / 2) clamp(2rem, 10vw, 6rem);
+    display: grid;
+    grid-template-columns: 1fr 35ch;
+    gap: clamp(2rem, 5vw, 7rem);
+}
+
+#main-content *:not([class*="rw"]) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+}
+
+#stage, .description-container {
+    overflow: hidden;
+    max-width: initial !important;
+    min-width: initial !important;
+    width: 100% !important;
+}
+
+#stage {
+    border-radius: .3rem;
+    border: 1px solid var(--dark);
+}
+
+#sharing-stage {
+    margin: 0;
+}
+
+#sharing-stage #name-header h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    border-bottom: 2px solid var(--dark);
+    padding-bottom: .6em;
+    margin-bottom: .9em;
+    margin-top: 0;
+}
+
+.replies-form-button, 
+.replies-form-button:hover:enabled {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--dark);
+    border-radius: 10rem;
+}
+
+.replies-form-textbox:hover:enabled { border-color: var(--secondary) }
+
+.replies-form-textbox:focus { box-shadow: none }
+
+.rw-header {
+    background-color: #27353e;
+    padding: 0 calc( ( 100vw - var(--mw) ) / 2);
+    display: flex;
+    font-size: .8rem;
+    position: fixed;
+    top: 0;
+    justify-content: start;
+    align-items: start;
+}
+
+.rw-header__logo {
+    margin-bottom: -2.5rem;
+}
+
+.rw-sidebar__box {
+    padding: 2em;
+    border-radius: .5em;
+    background-color: var(--dark);
+    color: var(--white);
+    position: sticky;
+    top: 6rem;
+}
+
+.rw-sidebar__box * {
+    margin: 0;
+}
+
+.rw-sidebar__box *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.rw-btn {
+    --theme: var(--teal);
+    background-color: var(--theme);
+    padding: .8em 2em;
+    color: var(--dark);
+    border-radius: .3rem;
+    margin-left: auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .6ch;
+    font-size: .9rem;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+.rw-btn svg {
+    transition: transform .3s ease;
+}
+
+.rw-btn:is(:hover, :focus, :active) {
+    outline: none;
+    color: unset;
+    text-decoration: unset;
+}
+
+.rw-btn:is(:hover, :focus, :active) svg {
+    transform: translateX(.5ch);
+}
+
+.rw-logos {
+    padding: clamp(1rem, 5vw, 2rem) calc( ( 100vw - var(--mw) ) / 2);
+    background-color: var(--white);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(2cm, 1fr));
+    border-top: 1px solid var(--dark);
+}
+
+.rw-logos li {
+    flex: 1 1 2rem;
+}
+
+.rw-footer {
+    padding: clamp(2rem, 10vw, 4rem) calc( ( 100vw - var(--mw) ) / 2);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    background-color: var(--dark);
+}
+
+.rw-footer__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    white-space: nowrap;
+    gap: .5em;
+    margin-right: auto;
+}
+
+.rw-footer__nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rw-footer__nav li::before {
+    content: "|";
+    padding: 0 1ch;
+}
+
+/**
+ * Team Action
+ */
+
+.action {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.3em;
+    height: 100%;
+    width: 100%;
+    color: var(--white);
+    position: relative;
+}
+
+.action__name {
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.action__role {
+    font-size: 1.5rem;
+}
+
+.action__cta {
+    font-weight: 600;
+    font-size: .8em;
+    background-color: var(--teal);
+    padding: .8em 1.5em;
+    border-radius: .2em;
+    color: var(--dark);
+    text-decoration: none;
+    margin-top: .8em;
+    position: relative;
+    gap: 1ex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action__cta::after {
+    content: "➔";
+    font-size: .65em;
+}
+
+.action__cta::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    transition: opacity .3s ease;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.action__cta:hover::before { opacity: .2 }
+
+.action__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
