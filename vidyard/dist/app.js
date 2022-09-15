@@ -12,7 +12,7 @@ window.onVidyardAPI = (vidyardEmbed) => {
                     <div class="rw-sidebar__box">
                         <h3>Schedule a meeting</h3>
                         <p>Ready to See How Redwood Can Orchestrate Your Entire Tech Stack?</p>
-                        <a class="rw-btn" href="https://${window.user.calendar_link}" target="_blank">Put Time On My Calendar →</a>
+                        <a class="rw-btn" href="${window.user.calendar_link}" target="_blank">Put Time On My Calendar →</a>
                     </div>
                 `;
 
