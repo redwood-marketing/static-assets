@@ -2,7 +2,7 @@
 "use strict";
 
 (()=>{
-    const topWindow = [...this.location.ancestorOrigins].at(-1);
+    const topWindow = [...window.location.ancestorOrigins].at(-1);
 
     function appendAction(payload) {
 
@@ -40,13 +40,13 @@
     };
 
     if (topWindow === "https://videos.redwood.com") {
-        this.top.postMessage({
+        window.top.postMessage({
             type: "actionCallback",
             name: "onActionDisplayed",
             signature: "s"
         }, "https://videos.redwood.com");
 
-        this.addEventListener("message", event => {
+        window.addEventListener("message", event => {
             if (event.origin !== "https://videos.redwood.com")
                 return;
 
@@ -54,7 +54,7 @@
 
         });
     } else if (topWindow === "https://secure.vidyard.com") {
-        const videoUUID = this.location.pathname.match(/\/?(\w+)\/cta\/(\d+)/)[1]
+        const videoUUID = window.location.pathname.match(/\/?(\w+)\/cta\/(\d+)/)[1]
         fetch(`https://www.redwood.com/wp-json/utilities/vidyard/v1/users/${videoUUID}`)
             .then( response => response.json() )
             .then( result => {
