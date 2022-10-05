@@ -1,7 +1,7 @@
 {
     "name": "static-assets",
     "scripts": {
-        "instapage": "",
+        "instapage": "babel instapage/src -d instapage/dist --out-file-extension .min.js",
         "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js"
     },
     "devDependencies": {
