@@ -1,18 +1,17 @@
 "use strict";
-
 window.onVidyardAPI = (vidyardEmbed) => {
     vidyardEmbed.api.addReadyListener((_, player) => {
         fetch(`https://www.redwood.com/wp-json/utilities/vidyard/v1/users/${player.uuid}`)
             .then( response => response.json() )
             .then( result => {
-                window.user = result.data;
+                const user = result.data;
                 const sidebar = document.createElement("sidebar");
                 sidebar.classList.add("rw-sidebar");
                 sidebar.innerHTML = `
                     <div class="rw-sidebar__box">
                         <h3>Schedule a meeting</h3>
                         <p>Ready to See How Redwood Can Orchestrate Your Entire Tech Stack?</p>
-                        <a class="rw-btn" href="${window.user.calendar_link}" target="_blank">Put Time On My Calendar →</a>
+                        <a class="rw-btn" href="${user.calendar_link}" target="_blank">Put Time On My Calendar →</a>
                     </div>
                 `;
 
@@ -20,7 +19,7 @@ window.onVidyardAPI = (vidyardEmbed) => {
                     if (event.origin !== "https://play.vidyard.com")
                         return;
                 
-                    event.source.postMessage(result.data, event.origin);
+                    event.source.postMessage(user, event.origin);
                 });
 
                 document.getElementById("year").innerHTML = new Date().getFullYear();
@@ -30,3 +29,4 @@ window.onVidyardAPI = (vidyardEmbed) => {
             .catch( error => console.warn(error) );
     });
 }
+
