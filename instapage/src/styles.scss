@@ -6,13 +6,8 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
 }
 
 [data-sticky="true"] {
-
-    @at-root :not([style*="--scroll-top"]) & {
-        display: none;
-    }
-
     --threshold: 1000;
-    --position: clamp(-100%, ( var(--scroll-top, 0) - var(--threshold, 1000) ) * 100%, 0%);
+    --position: clamp( -100%, ( var(--scroll-top, 0) - var(--threshold, 1000) ) * 100%, 0% );
     position: fixed;
     top: 0;
     z-index: 99999;
@@ -20,4 +15,5 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
     width: 100%;
     transform: translateY(var(--position));
     transition: transform .2s ease;
+    @at-root :root:not([style*="--scroll-top"]) & { display: none }
 }
