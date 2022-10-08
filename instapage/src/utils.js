@@ -277,7 +277,6 @@ if (!window.__utils__) {
             const context        = document.querySelector("[src*='-sticky'], [data-src*='-sticky'], [alt*='sticky' i]");
             const block          = context.closest("[id^='page-block-']");
             block.dataset.sticky = true;
-            window.dispatchEvent( new Event("scroll") )
         })();
 
     });
