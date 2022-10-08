@@ -1,0 +1,1 @@
+::placeholder{opacity:.7 !important}input:not(:placeholder-shown):not([aria-invalid=true]){border-color:#6accba !important}[data-sticky=true]{--threshold: 1000;--position: clamp(-100%, ( var(--scroll-top, 0) - var(--threshold, 1000) ) * 100%, 0%);position:fixed;top:0;z-index:99999;left:0;width:100%;transform:translateY(var(--position));transition:all .2s ease}
