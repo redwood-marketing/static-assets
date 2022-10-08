@@ -274,12 +274,12 @@ if (!window.__utils__) {
         })();
 
         (function setNavStickiness () {
-            const context        = document.querySelector("[src*='-sticky'], [alt*='Sticky Nav']");
+            const context        = document.querySelector("[src*='-sticky'], [data-src='-sticky'], [alt*='Sticky Nav']");
             const block          = context.closest("[id^='page-block-']");
             block.dataset.sticky = true;
             window.dispatchEvent( new Event("scroll") )
         })();
-        
+
     });
 
     (function onFormSubmit () {
