@@ -274,7 +274,7 @@ if (!window.__utils__) {
         })();
 
         (function setNavStickiness () {
-            const context        = document.querySelector("[src*='-sticky'], [data-src*='-sticky'], [alt*='sticky' i]");
+            const context        = document.querySelector("[src*='sticky' i], [data-src*='sticky' i], [alt*='sticky' i]");
             const block          = context.closest("[id^='page-block-']");
             block.dataset.sticky = true;
         })();
