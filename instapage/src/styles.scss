@@ -17,3 +17,8 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
     transition: transform .2s ease;
     @at-root :root:not([style*="--scroll-top"]) & { display: none }
 }
+
+/* @see https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
+.grecaptcha-badge {
+    visibility: hidden;
+}
