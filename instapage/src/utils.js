@@ -129,8 +129,12 @@ if (!window.__utils__) {
                     
             }
 
+            /**
+             * @todo Acronym Standardization
+             * @returns Product Acronym :: Google Analytics Client ID
+             */
             async function getClientId() {
-                const product = location.host.includes("finance.redwood") ? "FA" : "RMJ";
+                const product = location.host.includes("tidalsoftware.com") ? "TS" : ( location.host.includes("finance.redwood" ) ? "FA" : "RMJ");
                 const cid     = await new Promise((resolve, reject) => {
                     try {
                         resolve(ga.getAll()[0].get("clientId"))
