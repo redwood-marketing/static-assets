@@ -1,0 +1,254 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Redwood Email Signature Creator</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,600i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+      .inputSection { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.618; color: #4e4e4e; }
+      input, select { margin: 2px 0; padding: 2px; }
+      label { width: 70px; display: inline-block; }
+      .headline { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #b6a87f; }
+      .stepTitle { font-size: 16px; font-weight: 400; margin: 15px 0; color: #b6a87f; }
+      hr { margin: 20px 0; }
+      .hideStart { display: none; }
+      .showCopySuccess { margin-top: 10px; }
+      a { color: #4e4e4e; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <!-- START Input Section -->
+    <div class="inputSection">
+      <div class="headline">Redwood Email Signature Creator</div>
+      <div class="stepTitle">1. Enter you details (please check you spelling carefully)</div>
+      <div>
+        <label>Full name:</label>
+        <input type="text" ng-model="yourName">
+      </div>
+      <div>
+        <label>Job title:</label>
+        <input type="text" ng-model="yourJobTitle">
+      </div>
+      <div>
+        <label>Landline:</label>
+        <input type="text" ng-model="yourLandline">
+        Please include the country code and format the number (eg +44 1628 604 547).
+      </div>
+      <div>
+        <label>Mobile:</label>
+        <input type="text" ng-model="yourMobile" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Mobile 2:</label>
+        <input type="text" ng-model="yourMobile2" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Mobile 3:</label>
+        <input type="text" ng-model="yourMobile3" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Address:</label>
+        <select name="singleSelect" ng-model="yourAddress">
+          <option value="">---Please select---</option>
+          <option value="Redwood Software Inc. 3201 Dallas Parkway, Suite 810 Frisco TX 75034 USA">Frisco, USA</option>
+          <option value="Redwood Software Inc. 3005 Carrington Mill Blvd Suite 510 Morrisville NC 27560 USA">Morrisville, USA</option>
+          <option value="Redwood Software Inc. 1180 Headquarters Plaza, West Tower, Morristown, NJ 07960">Morristown, USA</option>
+	  <option value="Redwood Software Inc. 8000 Towers Crescent Drive, 13th Floor, Vienna, VA 22182">Vienna, USA</option>
+          <option value="Redwood Software UK Ltd. Redwood Court 80b The High Street Burnham Buckinghamshire SL1 7JT">Burnham, UK</option>
+          <option value="Redwood Software Nederland B.V. Waterveste 3 3992 DB Houten The Netherlands">Houten, The Netherlands</option>
+          <option value="Redwood Systems B.V., Niederlassung Deutschland Airport Businesscenter Franz Rennefeldweg 4 D - 40472 D&uuml;sseldorf Germany; Amtsgericht D&uuml;sseldorf HRB35496 - Gesch&auml;ftsf&uuml;hrer: Devin Gharibian-Saki">D&uuml;sseldorf, Germany (B.V.)</option>
+          <option value="Redwood Software Deutschland GmbH, Niederlassung Deutschland Airport Businesscenter Franz Rennefeldweg 4 D - 40472 D&uuml;sseldorf Germany; Amtsgericht D&uuml;sseldorf HRB69225 - Gesch&auml;ftsf&uuml;hrer: Devin Gharibian-Saki">D&uuml;sseldorf, Germany (GmbH)</option>
+          <option value="Redwood Systems B.V. Wilhelmstrasse 78 68799 Reilingen Germany">Reilingen, Germany</option>
+          <option value="Redwood Software Switzerland GmbH Gotthardstrasse 28 P.O. Box 4029 CH 6304 Zug Switzerland">Zug, Switzerland</option>
+        </select>
+      </div>
+      <div>
+        <label>LinkedIn:</label>
+        <input type="text" ng-model="yourLinkedIn" placeholder="(optional)">
+        Please include https:// before our public profile URL (<a href="https://www.topechelon.com/blog/marketing/how-add-linkedin-email-signature-button/" target="_blank" style="color:#b6a87f; text-decoration:underline;">how to</a>)
+      </div>    
+      <div class="stepTitle">2. Click below button to <span class="hideStart showSelect">select</span><span class="hideStart showCopy">copy</span> your signature</div>
+      <div>
+        <button name="selectAll" id="selectAll" class="hideStart showSelect">Select your signature</button>
+        <button class="hideStart copyAll showCopy" data-clipboard-action="copy" data-clipboard-target=".signature">Copy your signature</button>
+        <span class="hideStart showSelectCopy">Now press 'Ctrl/Cmd + C' to copy your signature.</span>
+        <div class="hideStart showCopySuccess">The signature has now been copied to your clipboard and can be pasted with 'Ctrl/Cmd + V' into your signature as per below guidelines.</div>
+      </div>
+      <div class="stepTitle">3. Go to your email client and add signature</div>
+      Use below guides if you need help.
+      <ul>
+        <li><a href="https://support.office.com/en-gb/article/Create-and-add-a-signature-to-messages-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2" target="_blank">Outlook &raquo;</a></li>
+      </ul>
+
+      <hr />
+      <div class="headline">Signature Preview</div>
+    </div>
+    <!-- END Input Section -->
+
+
+    <!-- START Signature -->
+    <table width="640" border="0" cellspacing="0" cellpadding="0" style="margin-top: 50px;" class="signature">
+    <!-- Details section -->
+      <tr>
+          <td>
+              <table  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td colspan="3">
+                    <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px; line-height: 1.618;margin-top: 30px; margin-bottom: 20px;" align="left">
+                      <tr>
+                        <td style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.618; height: 20px;" align="left">
+                          <span style="color: #1e272d;">{{yourName}}</span>
+                        </td>
+                      </tr>
+                      <tr ng-if="yourJobTitle">
+                        <td style="font-size: 14px; line-height: 1; color: #b6a87f;" align="left">
+                          {{yourJobTitle}}
+                        </td>
+                      </tr>
+                      <tr ng-if="yourLinkedIn">
+                        <td style="font-size: 12px; line-height: 1; padding-top:15px;" align="left">
+                          <img src="https://cdn.redwood.com/files/2019-signature/signature-2019-linkedin.png" alt="Linkedin" border="0" valign="middle" /> <a href="{{yourLinkedIn}}" style="color: #4e4e4e; text-decoration: underline;">Connect with me on LinkedIn</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                  <tr>
+                      <td width="115" align="center" valign="center"><img src="data:image/png;base64,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" width="130" alt="" /></td>
+                      <td width="15" align="center" valign="center">
+                          &nbsp;
+                      </td>
+                      <td align="center" valign="center">
+                          <table cellpadding="0" align="left" cellspacing="0" border="0" width="100%">
+                              <tr>
+                                  <td style="padding: 0 15px;">
+                                    <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px;" align="left">
+                                      <tr ng-if="yourLandline">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">T</span> {{yourLandline}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile2">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile2}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile3">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile3}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="font-family: Arial, sans-serif; font-weight: bold; height: 16px;" align="left">
+                                          <nobr><a href="https://www.cerberusftp.com" style="color: #4e4e4e; text-decoration: none !important;">www.cerberusftp.com</a></nobr>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+    <!-- END Details section -->
+
+    <!-- Sign off section -->
+      <tr>
+          <td>
+              <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px; margin-top: 20px;" align="left">
+                <tr ng-if="yourAddress">
+                  <td style="padding: 0 10px 20px 0;">{{yourAddress}}</td>
+                </tr>
+                <tr>
+                  <td style="font-size: 10px; padding: 0 10px 10px 0; color: #a7a9ab;" align="left">This message may contain confidential or legally privileged information. In the event of any error in transmission, unauthorized recipients are requested to contact the sender immediately and do not disclose or make use of this information. No warranties or assurances are made or given as to the accuracy of the information given or in relation to the safety of this e-mail and any attachments. No liability whatsoever is accepted for any consequences arising from this e-mail.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px 10px 0;" valign="middle">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td valign="center" ng-if="winner" width="300px"><a href="http://go.redwood.com/ema-radar-email-signature"><img src="https://cdn.redwood.com/files/2019-signature/best-saas-winner.jpg" alt="" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.linkedin.com/company/redwood-software"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-linkedin.png" alt="Linkedin" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.youtube.com/channel/UCO49op3IHyKNtkRx6L0w7Jw"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-youtube.png" alt="YouTube" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://twitter.com/RedwoodSoftware"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-twitter.png" alt="Twitter" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.facebook.com/redwoodsoftware/"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-facebook.png" alt="Facebook" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+          </td>
+      </tr>
+    <!-- END Sign off section -->
+    </table>
+    <!-- END Signature -->
+
+
+
+    <script type="text/javascript">
+    if (Clipboard.isSupported()) {
+      $('.showSelect').hide();
+      $('.showCopy').show();
+    } else {
+      $('.showSelect').show();
+      $('.showCopy').hide();
+    }
+
+      jQuery.fn.selectText = function(){
+          var doc = document
+              , element = this[0]
+              , range, selection
+          ;
+          if (doc.body.createTextRange) {
+              range = document.body.createTextRange();
+              range.moveToElementText(element);
+              range.select();
+          } else if (window.getSelection) {
+              selection = window.getSelection();
+              range = document.createRange();
+              range.selectNodeContents(element);
+              selection.removeAllRanges();
+              selection.addRange(range);
+          }
+          $('.showSelectCopy').show();
+      };
+
+      $(function() {
+          $('#selectAll').click(function() {
+              $('.signature').selectText();
+          });
+      });
+
+      var clipboard = new Clipboard('.copyAll');
+
+      clipboard.on('success', function(e) {
+          // console.log(e);
+          // console.log('success');
+          $('.showCopySuccess').show();
+      });
+
+      clipboard.on('error', function(e) {
+          // console.log(e);
+          console.log('error');
+      });
+
+      $('.signature').bind('copy', function (event) {
+        $('.showCopySuccess').show();
+      });
+
+    </script>
+  </body>
+</html>

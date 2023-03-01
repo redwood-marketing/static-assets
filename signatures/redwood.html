@@ -1,0 +1,255 @@
+
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Redwood Email Signature Creator</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,600i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+      .inputSection { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.618; color: #4e4e4e; }
+      input, select { margin: 2px 0; padding: 2px; }
+      label { width: 70px; display: inline-block; }
+      .headline { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #de4552; }
+      .stepTitle { font-size: 16px; font-weight: 400; margin: 15px 0; color: #de4552; }
+      hr { margin: 20px 0; }
+      .hideStart { display: none; }
+      .showCopySuccess { margin-top: 10px; }
+      a { color: #4e4e4e; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <!-- START Input Section -->
+    <div class="inputSection">
+      <div class="headline">Redwood Email Signature Creator</div>
+      <div class="stepTitle">1. Enter you details (please check you spelling carefully)</div>
+      <div>
+        <label>Full name:</label>
+        <input type="text" ng-model="yourName">
+      </div>
+      <div>
+        <label>Job title:</label>
+        <input type="text" ng-model="yourJobTitle">
+      </div>
+      <div>
+        <label>Landline:</label>
+        <input type="text" ng-model="yourLandline">
+        Please include the country code and format the number (eg +44 1628 604 547).
+      </div>
+      <div>
+        <label>Mobile:</label>
+        <input type="text" ng-model="yourMobile" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Mobile 2:</label>
+        <input type="text" ng-model="yourMobile2" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Mobile 3:</label>
+        <input type="text" ng-model="yourMobile3" placeholder="(optional)">
+      </div>
+      <div>
+        <label>Address:</label>
+        <select name="singleSelect" ng-model="yourAddress">
+          <option value="">---Please select---</option>
+          <option value="Redwood Software Inc. 3201 Dallas Parkway, Suite 810 Frisco TX 75034 USA">Frisco, USA</option>
+          <option value="Redwood Software Inc. 3005 Carrington Mill Blvd Suite 510 Morrisville NC 27560 USA">Morrisville, USA</option>
+          <option value="Redwood Software Inc. 1180 Headquarters Plaza, West Tower, Morristown, NJ 07960">Morristown, USA</option>
+	  <option value="Redwood Software Inc. 8000 Towers Crescent Drive, 13th Floor, Vienna, VA 22182">Vienna, USA</option>
+          <option value="Redwood Software UK Ltd. Redwood Court 80b The High Street Burnham Buckinghamshire SL1 7JT">Burnham, UK</option>
+          <option value="Redwood Software Nederland B.V. Waterveste 3 3992 DB Houten The Netherlands">Houten, The Netherlands</option>
+          <option value="Redwood Systems B.V., Niederlassung Deutschland Airport Businesscenter Franz Rennefeldweg 4 D - 40472 D&uuml;sseldorf Germany; Amtsgericht D&uuml;sseldorf HRB35496 - Gesch&auml;ftsf&uuml;hrer: Devin Gharibian-Saki">D&uuml;sseldorf, Germany (B.V.)</option>
+          <option value="Redwood Software Deutschland GmbH, Niederlassung Deutschland Airport Businesscenter Franz Rennefeldweg 4 D - 40472 D&uuml;sseldorf Germany; Amtsgericht D&uuml;sseldorf HRB69225 - Gesch&auml;ftsf&uuml;hrer: Devin Gharibian-Saki">D&uuml;sseldorf, Germany (GmbH)</option>
+          <option value="Redwood Systems B.V. Wilhelmstrasse 78 68799 Reilingen Germany">Reilingen, Germany</option>
+          <option value="Redwood Software Switzerland GmbH Gotthardstrasse 28 P.O. Box 4029 CH 6304 Zug Switzerland">Zug, Switzerland</option>
+        </select>
+      </div>
+      <div>
+        <label>LinkedIn:</label>
+        <input type="text" ng-model="yourLinkedIn" placeholder="(optional)">
+        Please include https:// before our public profile URL (<a href="https://www.topechelon.com/blog/marketing/how-add-linkedin-email-signature-button/" target="_blank" style="color:#de4552; text-decoration:underline;">how to</a>)
+      </div>    
+      <div class="stepTitle">2. Click below button to <span class="hideStart showSelect">select</span><span class="hideStart showCopy">copy</span> your signature</div>
+      <div>
+        <button name="selectAll" id="selectAll" class="hideStart showSelect">Select your signature</button>
+        <button class="hideStart copyAll showCopy" data-clipboard-action="copy" data-clipboard-target=".signature">Copy your signature</button>
+        <span class="hideStart showSelectCopy">Now press 'Ctrl/Cmd + C' to copy your signature.</span>
+        <div class="hideStart showCopySuccess">The signature has now been copied to your clipboard and can be pasted with 'Ctrl/Cmd + V' into your signature as per below guidelines.</div>
+      </div>
+      <div class="stepTitle">3. Go to your email client and add signature</div>
+      Use below guides if you need help.
+      <ul>
+        <li><a href="https://support.office.com/en-gb/article/Create-and-add-a-signature-to-messages-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2" target="_blank">Outlook &raquo;</a></li>
+      </ul>
+
+      <hr />
+      <div class="headline">Signature Preview</div>
+    </div>
+    <!-- END Input Section -->
+
+
+    <!-- START Signature -->
+    <table width="640" border="0" cellspacing="0" cellpadding="0" style="margin-top: 50px;" class="signature">
+    <!-- Details section -->
+      <tr>
+          <td>
+              <table  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td colspan="3">
+                    <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px; line-height: 1.618;margin-top: 30px; margin-bottom: 20px;" align="left">
+                      <tr>
+                        <td style="font-family: Arial Black, sans-serif; font-size: 13px; line-height: 1.618; height: 20px;" align="left">
+                          <span style="color: #de4552; text-transform: uppercase;">{{yourName}}</span>
+                        </td>
+                      </tr>
+                      <tr ng-if="yourJobTitle">
+                        <td style="font-size: 12px; line-height: 1;" align="left">
+                          {{yourJobTitle}}
+                        </td>
+                      </tr>
+                      <tr ng-if="yourLinkedIn">
+                        <td style="font-size: 12px; line-height: 1; padding-top:15px;" align="left">
+                          <img src="https://cdn.redwood.com/files/2019-signature/signature-2019-linkedin.png" alt="Linkedin" border="0" valign="middle" /> <a href="{{yourLinkedIn}}" style="color: #4e4e4e; text-decoration: underline;">Connect with me on LinkedIn</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                  <tr>
+                      <td width="115" align="center" valign="center"><img src="data:image/jpeg;base64,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" width="115" alt="" /></td>
+                      <td width="15" align="center" valign="center">
+                          &nbsp;
+                      </td>
+                      <td align="center" valign="center">
+                          <table cellpadding="0" align="left" cellspacing="0" border="0" width="100%">
+                              <tr>
+                                  <td style="padding: 0 15px;">
+                                    <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px;" align="left">
+                                      <tr ng-if="yourLandline">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">T</span> {{yourLandline}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile2">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile2}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr ng-if="yourMobile3">
+                                        <td style="height: 16px;" align="left">
+                                          <nobr><span style="font-family: Arial Black, sans-serif;">M</span> {{yourMobile3}}</nobr>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="font-family: Arial Black, sans-serif;height: 16px;" align="left">
+                                          <nobr><a href="https://www.redwood.com" style="color: #4e4e4e; text-decoration: none !important;">www.redwood.com</a></nobr>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+    <!-- END Details section -->
+
+    <!-- Sign off section -->
+      <tr>
+          <td>
+              <table border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; color: #4e4e4e; font-size: 12px; margin-top: 20px;" align="left">
+                <tr ng-if="yourAddress">
+                  <td style="padding: 0 10px 20px 0;">{{yourAddress}}</td>
+                </tr>
+                <tr>
+                  <td style="font-size: 10px; padding: 0 10px 10px 0; color: #a7a9ab;" align="left">This message may contain confidential or legally privileged information. In the event of any error in transmission, unauthorized recipients are requested to contact the sender immediately and do not disclose or make use of this information. No warranties or assurances are made or given as to the accuracy of the information given or in relation to the safety of this e-mail and any attachments. No liability whatsoever is accepted for any consequences arising from this e-mail.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px 10px 0;" valign="middle">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td valign="center" ng-if="winner" width="300px"><a href="http://go.redwood.com/ema-radar-email-signature"><img src="https://cdn.redwood.com/files/2019-signature/best-saas-winner.jpg" alt="" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.linkedin.com/company/redwood-software"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-linkedin.png" alt="Linkedin" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.youtube.com/channel/UCO49op3IHyKNtkRx6L0w7Jw"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-youtube.png" alt="YouTube" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://twitter.com/RedwoodSoftware"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-twitter.png" alt="Twitter" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30"><a href="https://www.facebook.com/redwoodsoftware/"><img src="https://cdn.redwood.com/files/2019-signature/signature-2019-facebook.png" alt="Facebook" border="0" /></a>&nbsp;&nbsp;</td>
+                        <td valign="center" width="30">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+          </td>
+      </tr>
+    <!-- END Sign off section -->
+    </table>
+    <!-- END Signature -->
+
+
+
+    <script type="text/javascript">
+    if (Clipboard.isSupported()) {
+      $('.showSelect').hide();
+      $('.showCopy').show();
+    } else {
+      $('.showSelect').show();
+      $('.showCopy').hide();
+    }
+
+      jQuery.fn.selectText = function(){
+          var doc = document
+              , element = this[0]
+              , range, selection
+          ;
+          if (doc.body.createTextRange) {
+              range = document.body.createTextRange();
+              range.moveToElementText(element);
+              range.select();
+          } else if (window.getSelection) {
+              selection = window.getSelection();
+              range = document.createRange();
+              range.selectNodeContents(element);
+              selection.removeAllRanges();
+              selection.addRange(range);
+          }
+          $('.showSelectCopy').show();
+      };
+
+      $(function() {
+          $('#selectAll').click(function() {
+              $('.signature').selectText();
+          });
+      });
+
+      var clipboard = new Clipboard('.copyAll');
+
+      clipboard.on('success', function(e) {
+          // console.log(e);
+          // console.log('success');
+          $('.showCopySuccess').show();
+      });
+
+      clipboard.on('error', function(e) {
+          // console.log(e);
+          console.log('error');
+      });
+
+      $('.signature').bind('copy', function (event) {
+        $('.showCopySuccess').show();
+      });
+
+    </script>
+  </body>
+</html>
