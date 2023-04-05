@@ -110,7 +110,8 @@ if (!window.__utils__) {
                 timezone   : [...document.getElementsByName("timezone")],
                 salutation : [...document.querySelectorAll("[value='Frau'], [value='Herr'], [value='Divers']")],
                 clientId   : [...document.getElementsByName("ga_client_id")],
-                usertoken  : [...document.getElementsByName("usertoken")]
+                usertoken  : [...document.getElementsByName("usertoken")],
+                checkboxes : [...document.querySelectorAll("[name*='::INSTAPAGE_BOX::'][name*='a demo' i]")]
             }
 
             async function getHsUserToken() {
@@ -181,6 +182,25 @@ if (!window.__utils__) {
                 return {region, timezone}
             }
 
+            if ( !!fields.checkboxes.length ) {
+                
+                /**
+                 * Instapage Checkbox Management
+                 * As of April 2023, instapage requires two fields for its checkboxes to work:
+                 * - One text field with the following name structure: "{ Checkbox Group }::INSTAPAGE_BOX::{ Checkbox Value }" 
+                 * - One actual checkbox that represents the value
+                 * This is only relevant because if only the value of the input is modified, nothing is gonna get submitted: it's required to update { Checkbox Value } too.
+                 */
+
+                fields.checkboxes.forEach(checkbox => {
+                    const fragment  = checkbox.name.split("::").at(-1);
+                    const target    = checkbox.nextElementSibling;
+
+                    checkbox.name = checkbox.name.replace(`::${fragment}`, "::true")
+                    target.value  = true;  
+                })
+            }
+
             if ( !!fields.usertoken.length ) {
                 getHsUserToken().then(usertoken => {
                     console.log(usertoken)
@@ -230,7 +250,7 @@ if (!window.__utils__) {
                     option.value = replacements.get(option.value) ?? replacements.get("Divers")
                 })
             }
-    
+
         })();
     
         (function modifyFormValidationCriteria () {
