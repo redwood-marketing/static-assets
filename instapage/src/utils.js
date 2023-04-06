@@ -105,13 +105,12 @@ if (!window.__utils__) {
                 /**
                  * @see https://help.instapage.com/hc/en-us/articles/115005969527-Passing-UTM-parameters-from-the-URL-to-a-hidden-field
                  */
-                dynamic    : [...document.querySelectorAll("[value^='['][value$=']']")],
-                region     : [...document.getElementsByName("region")],
-                timezone   : [...document.getElementsByName("timezone")],
-                salutation : [...document.querySelectorAll("[value='Frau'], [value='Herr'], [value='Divers']")],
-                clientId   : [...document.getElementsByName("ga_client_id")],
-                usertoken  : [...document.getElementsByName("usertoken")],
-                checkboxes : [...document.querySelectorAll("[name*='::INSTAPAGE_BOX::'][name*='a demo' i]")]
+                dynamic           : [...document.querySelectorAll("[value^='['][value$=']']")],
+                region            : [...document.getElementsByName("region")],
+                timezone          : [...document.getElementsByName("timezone")],
+                salutation        : [...document.querySelectorAll("[value='Frau'], [value='Herr'], [value='Divers']")],
+                clientId          : [...document.getElementsByName("ga_client_id")],
+                usertoken         : [...document.getElementsByName("usertoken")]
             }
 
             async function getHsUserToken() {
@@ -182,24 +181,24 @@ if (!window.__utils__) {
                 return {region, timezone}
             }
 
-            if ( !!fields.checkboxes.length ) {
-                
+            (function manageDynamicCheckboxes () {
                 /**
-                 * Instapage Checkbox Management
-                 * As of April 2023, instapage requires two fields for its checkboxes to work:
-                 * - One text field with the following name structure: "{ Checkbox Group }::INSTAPAGE_BOX::{ Checkbox Value }" 
-                 * - One actual checkbox that represents the value
-                 * This is only relevant because if only the value of the input is modified, nothing is gonna get submitted: it's required to update { Checkbox Value } too.
+                 * Allows for checkbox groups to drive values from a different input.
+                 * Syntax: 
+                 * - Field Label must be the name of the input you want to drive, surrounded with parentheses (i.e.: [Lead Funnel])
+                 * - Checkbox Option must be the value you want to pass to the target field
                  */
+                window.addEventListener("change", ({target}) => {
+                    const dispatcher = target;
+                    const lookup     = dispatcher.name.match(/^\[(.*)\]$/).at(1);
+                    const targets    = lookup && [...document.querySelectorAll(`[name="${lookup}"]`)];
 
-                fields.checkboxes.forEach(checkbox => {
-                    const fragment  = checkbox.name.split("::").at(-1);
-                    const target    = checkbox.nextElementSibling;
-
-                    checkbox.name = checkbox.name.replace(`::${fragment}`, "::true")
-                    target.value  = true;  
+                    targets && targets.forEach(target => {
+                        target.originalValue = target.originalValue || target.value;
+                        target.value         = dispatcher.checked ? dispatcher.value : target.originalValue;
+                    })
                 })
-            }
+            })();
 
             if ( !!fields.usertoken.length ) {
                 getHsUserToken().then(usertoken => {
@@ -338,9 +337,7 @@ if (!window.__utils__) {
 
         };
 
-    })();
-
-    
+    })();    
 
     window.__utils__ = true;
 
