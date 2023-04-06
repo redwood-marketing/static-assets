@@ -190,7 +190,7 @@ if (!window.__utils__) {
                  */
                 window.addEventListener("change", ({target}) => {
                     const dispatcher = target;
-                    const lookup     = dispatcher.name.match(/^\[(.*)\]$/).at(1);
+                    const lookup     = dispatcher?.name.match(/^\[(.*)\]$/)?.at(1);
                     const targets    = lookup && [...document.querySelectorAll(`[name="${lookup}"]`)];
 
                     targets && targets.forEach(target => {
