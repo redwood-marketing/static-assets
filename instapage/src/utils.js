@@ -342,20 +342,3 @@ if (!window.__utils__) {
 	window.__utils__ = true;
 
 }
-
-// Youtube facade
-document.querySelectorAll('.video__embeded').forEach((e) => {
-	e.addEventListener('click', () => {
-		var t = e.dataset.src,
-			r = document.createElement('iframe');
-		r.setAttribute('src', t),
-			r.setAttribute('frameborder', '0'),
-			r.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'),
-			r.setAttribute('allowfullscreen', 'true'),
-			(e.textContent = ''),
-			e.appendChild(r),
-			setTimeout(() => {
-				e.setAttribute('style', '');
-			}, 1e3);
-	});
-});
