@@ -1,24 +1,26 @@
 ::placeholder {
-    opacity: 0.7 !important;
+	opacity: 0.7 !important;
 }
-input:not(:placeholder-shown):not([aria-invalid="true"]) {
-    border-color: #6ACCBA !important;
+input:not(:placeholder-shown):not([aria-invalid='true']) {
+	border-color: #6accba !important;
 }
 
-[data-sticky="true"] {
-    --threshold: 1000;
-    --position: clamp( -100%, ( var(--scroll-top, 0) - var(--threshold, 1000) ) * 100%, 0% );
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    left: 0;
-    width: 100%;
-    transform: translateY(var(--position));
-    transition: transform .2s ease;
-    @at-root :root:not([style*="--scroll-top"]) & { display: none }
+[data-sticky='true'] {
+	--threshold: 1000;
+	--position: clamp(-100%, (var(--scroll-top, 0) - var(--threshold, 1000)) * 100%, 0%);
+	position: fixed;
+	top: 0;
+	z-index: 99999;
+	left: 0;
+	width: 100%;
+	transform: translateY(var(--position));
+	transition: transform 0.2s ease;
+	@at-root :root:not([style*='--scroll-top']) & {
+		display: none;
+	}
 }
 
 /* @see https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
 .grecaptcha-badge {
-    visibility: hidden;
+	visibility: hidden;
 }
