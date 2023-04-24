@@ -3,15 +3,13 @@
     "scripts": {
         "instapage": "sass --no-source-map -s compressed -c instapage/src/styles.scss:instapage/dist/styles.min.css && babel instapage/src -d instapage/dist --out-file-extension .min.js",
         "custom-elements": "babel custom-elements/src -d custom-elements/dist --out-file-extension .min.js",
-        "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js",
-        "dashboard": "cd dashboard && npx @11ty/eleventy --serve"
+        "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js"
     },
     "devDependencies": {
         "@babel/cli": "^7.18.9",
         "@babel/core": "^7.18.9",
         "@babel/preset-env": "^7.18.9",
         "babel-preset-minify": "^0.5.1",
-        "sass": "^1.55.0",
-        "@11ty/eleventy": "^0.12.1"
+        "sass": "^1.55.0"
     }
 }
