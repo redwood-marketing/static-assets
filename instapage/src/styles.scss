@@ -1,63 +1,24 @@
 ::placeholder {
-	opacity: 0.7 !important;
+    opacity: 0.7 !important;
 }
-input:not(:placeholder-shown):not([aria-invalid='true']) {
-	border-color: #6accba !important;
+input:not(:placeholder-shown):not([aria-invalid="true"]) {
+    border-color: #6ACCBA !important;
 }
 
-[data-sticky='true'] {
-	--threshold: 1000;
-	--position: clamp(-100%, (var(--scroll-top, 0) - var(--threshold, 1000)) * 100%, 0%);
-	position: fixed;
-	top: 0;
-	z-index: 99999;
-	left: 0;
-	width: 100%;
-	transform: translateY(var(--position));
-	transition: transform 0.2s ease;
-	@at-root :root:not([style*='--scroll-top']) & {
-		display: none;
-	}
+[data-sticky="true"] {
+    --threshold: 1000;
+    --position: clamp( -100%, ( var(--scroll-top, 0) - var(--threshold, 1000) ) * 100%, 0% );
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    left: 0;
+    width: 100%;
+    transform: translateY(var(--position));
+    transition: transform .2s ease;
+    @at-root :root:not([style*="--scroll-top"]) & { display: none }
 }
 
 /* @see https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
 .grecaptcha-badge {
-	visibility: hidden;
-}
-
-.video__embeded {
-	position: relative;
-	display: block;
-	height: 0;
-	width: 100%;
-	padding-bottom: 56.25%;
-	cursor: pointer;
-	color: #212121;
-	&.yt-embed {
-		svg {
-			position: absolute;
-			max-width: 85px;
-			max-height: 60px;
-			top: calc(50% - 30px);
-			left: calc(50% - 42.5px);
-			display: block !important;
-			fill-opacity: 0.8;
-		}
-		&:hover svg {
-			color: #e62117;
-			fill-opacity: 1;
-		}
-	}
-	iframe {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		display: block;
-	}
+    visibility: hidden;
 }
