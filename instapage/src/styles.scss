@@ -36,10 +36,10 @@ input:not(:placeholder-shown):not([aria-invalid='true']) {
 	&.yt-embed {
 		svg {
 			position: absolute;
-			max-width: 69px;
-			max-height: 49px;
-			top: calc(50% - 24.5px);
-			left: calc(50% - 34.5px);
+			max-width: 85px;
+			max-height: 60px;
+			top: calc(50% - 30px);
+			left: calc(50% - 42.5px);
 			display: block !important;
 			fill-opacity: 0.8;
 		}
