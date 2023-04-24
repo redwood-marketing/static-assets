@@ -1,0 +1,123 @@
+---
+title: Dashboard
+header: 
+    title: Welcome to the <br> ActiveBatch Dashboard
+    btn:
+        text: <svg viewBox="0 0 512 512"><use xlink:href="#icon-play-circle" /></svg> Start Here
+        href: https://vchmfvp0cvj.typeform.com/to/NDvELNcb
+    nav:
+        text: <svg viewBox="0 0 576 512"><use xlink:href="#icon-books" /></svg> Documentation
+        href: /documentation
+table:
+    cols: [ "Use Case", "Video Guide", "Resource Document" ]
+    rows: [
+        [
+            "Job Scheduling",
+            "https://vchmfvp0cvj.typeform.com/to/IjxaIDJl",
+            ""
+        ],
+        [
+            "Job Dependencies",
+            "https://vchmfvp0cvj.typeform.com/to/EFRyayfR",
+            ""
+        ],
+        [
+            "ETL - Write CSV to Database",
+            "https://vchmfvp0cvj.typeform.com/to/CwKqXZWI",
+            "./assets/files/ETL - Load Flat File to Database.pdf"
+        ],
+        [
+            "ETL - Write Database Output to CSV",
+            "https://vchmfvp0cvj.typeform.com/to/RVNImi6m",
+            "./assets/files/ETL - Write DB Output to CSV.pdf"
+        ],
+        [
+            "MFT - Download and Process Files",
+            "https://vchmfvp0cvj.typeform.com/to/CjvMxpL6",
+            "./assets/files/MFT - Download and Decrypt.pdf"
+        ],
+        [
+            "Existing Processes - Batch Processes and Scripts",
+            "https://vchmfvp0cvj.typeform.com/to/TJyvEuC0",
+            "./assets/files/Existing Processess - Batch and Imported Scripts.pdf"
+        ],
+        [
+            "Existing Processes - SQL Agent Jobs",
+            "https://vchmfvp0cvj.typeform.com/to/IhkwrFoR",
+            "./assets/files/Existing Processess - SQL Agent Job.pdf"
+        ],
+        [
+            "Existing Processes - SSIS",
+            "https://vchmfvp0cvj.typeform.com/to/XA0EOi4J",
+            "./assets/files/Existing Processess - SSIS.pdf"
+        ],
+        [
+            "Business Intelligence - Generate and Email Report",
+            "https://vchmfvp0cvj.typeform.com/to/tk19GhYZ",
+            "./assets/files/Business Intelligence - Generate and Mail Report.pdf"
+        ],
+        [
+            "IT - Archive and Clean Up Directory",
+            "https://vchmfvp0cvj.typeform.com/to/ZCN7IxcJ",
+            "./assets/files/IT - Clean Up  Archive Directory.pdf"
+        ],
+        [
+            "List of all Job Steps",
+            "",
+            "./assets/files/List of All Job Steps.pdf"
+        ]
+    ]
+---
+
+{% extends "base.html" %}
+
+{% block content %}
+<table id="table">
+    <thead>
+        <tr>
+            {% for cell in table.cols %}
+                <th>
+                    {{ cell }}
+                </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in table.rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>
+                    {% if row[1] %}
+                        <a 
+                            href="{{ row[1] }}" 
+                            target="_blank" 
+                            class="btn" 
+                            style="--scale: 0.8"
+                        >
+                            <svg viewBox="0 0 576 512"><use xlink:href="#icon-video" /></svg>
+                            Watch Video
+                        </a>
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+                <td>
+                    {% if row[2] %}
+                        <a 
+                            href="{{ row[2] | url }}" 
+                            target="_blank" 
+                            class="btn" 
+                            style="--scale: 0.8"
+                        >
+                            <svg viewBox="0 0 448 512"><use xlink:href="#icon-paperclip" /></svg>
+                            View Resources
+                        </a>
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

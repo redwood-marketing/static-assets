@@ -1,0 +1,31 @@
+<!-- #header -->
+<header id="header">
+
+    <a href="{{ '/' | url }}" title="Return to Dashboard">
+        <svg width="200" height="35.47" viewBox="0 0 1073.73 190.51">
+            <use xlink:href="#activebatch-logo" />
+        </svg>
+    </a>
+
+    {% if header.nav %}
+        <a 
+            href="{{ header.nav.href | url }}" 
+            class="btn btn--primary btn--outline"
+            style="--scale: 0.8"
+        >
+            {{ header.nav.text | safe }}
+        </a>
+    {% endif %}
+    
+    <h1>{{ header.title | safe }}</h1>
+    {% if header.btn %}
+        <a 
+            href="{{ header.btn.href | url }}"
+            {% if "./" not in header.btn.href %} target="_blank" {% endif %}
+            class="btn" 
+            style="--scale: 1.2"
+        >
+            {{ header.btn.text | safe }}
+        </a>
+    {% endif %}
+</header><!-- #header -->
