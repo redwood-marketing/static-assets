@@ -8,6 +8,37 @@ window.__utils__ = window.__utils__ || false;
 
 if (!window.__utils__) {
 
+    /**
+     * Cookie Management
+     * Biscuit = Cookie
+     */
+    const biscuit = {
+
+        set(name, value, days = 6000) {
+            let expires = "";
+    
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+    
+            document.cookie = name + "=" + (value || "")  + expires + ";";
+        },
+    
+        get(name) {
+            const cookies = document.cookie.split(";");
+    
+            for (const cookie of cookies) {
+                if (cookie.indexOf(name + "=") > -1) {
+                    return cookie.split("=")[1];
+                }
+            }
+    
+            return null;
+        }
+    }
+
     function DOMReady(callback) {
         let { readyState } = document; 
 
@@ -96,7 +127,7 @@ if (!window.__utils__) {
             const fields = {
                 get cached() {
                     try {
-                        let cachedData = sessionStorage.getItem("rwd-info");
+                        let cachedData = biscuit.get("rwd-info");
                             cachedData = JSON.parse(atob(cachedData));
 
                         return [...cachedData]
@@ -326,7 +357,7 @@ if (!window.__utils__) {
                 formData = JSON.stringify(formData);
                 formData = btoa(formData);
 
-            sessionStorage.setItem("rwd-info", formData);
+            biscuit.set("rwd-info", formData);
 
             /* Marked for deletion */
             window.dataLayer = window.dataLayer || [];
