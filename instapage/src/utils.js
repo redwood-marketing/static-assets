@@ -127,7 +127,7 @@ if (!window.__utils__) {
             const fields = {
                 get cached() {
                     try {
-                        let cachedData = biscuit.get("rwd-info");
+                        let cachedData = sessionStorage.getItem("rwd-info");
                             cachedData = JSON.parse(atob(cachedData));
 
                         return [...cachedData]
@@ -357,7 +357,7 @@ if (!window.__utils__) {
                 formData = JSON.stringify(formData);
                 formData = btoa(formData);
 
-            biscuit.set("rwd-info", formData);
+            sessionStorage.setItem("rwd-info", formData);
 
             /* Marked for deletion */
             window.dataLayer = window.dataLayer || [];
