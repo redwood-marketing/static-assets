@@ -333,6 +333,27 @@ if (!window.__utils__) {
             block.dataset.sticky = true;
         })();
 
+        /**
+         * Appends URL params to links pointing to external websites
+         * @todo Replace patch with consolidated cross-domain tracking method
+         */
+        (function crossDomainTrackingPatch() {
+            const URLParams   = location.search ? new URLSearchParams(location.search) : false;
+            const rootDomain  = location.hostname.split(".").slice(-2).join(".");
+            const targetLinks = document.querySelectorAll(`[href^='https://'][href*='${rootDomain}'][target='_blank']`);
+            if ( URLParams ) {
+                targetLinks.forEach( link => {
+                    link.search = (() => {
+                        const linkParams = new URLSearchParams(link.search);
+                        for ( const [key, value] of URLParams ) {
+                            linkParams.append(key, value)
+                        }
+                        return linkParams;
+                    })()
+                })
+            }
+        })();
+        
     });
 
     (function onFormSubmit () {
@@ -348,7 +369,8 @@ if (!window.__utils__) {
                 "lpsSubmissionConfig", 
                 "thank-you-message", 
                 "thank-you-message-timeout",
-                "redirect"
+                "redirect",
+                "hubspot-integration"
             ];
 
             let formData = new FormData(form);
