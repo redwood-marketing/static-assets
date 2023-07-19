@@ -84,13 +84,10 @@
             position: relative;
         }
 
-        #logo::after {
-            content: "(Beta)";
-            position: absolute;
-            left: 100%;
-            padding-left: .5em;
+        sup {
             font-size: 60%;
-            font-weight: 700;
+            font-weight: 400;
+            color: var(--color-red);
         }
         
         #user-input {
@@ -219,7 +216,7 @@
                 <path fill="#E24650" d="M0 0v20.3h7.6v-1.8H1.8V1.8h17.4v16.7h-7.8v-7l2.1 1.9c.3.28.68.44 1.12.41.42-.01.8-.2 1.09-.51l.15-.17-4.46-4.08V7.23l1.7 1.55c.63.58 1.63.54 2.2-.1l.17-.18L10.54 4l-.5.47-4.34 4 .17.17a1.56 1.56 0 0 0 2.21.12l1.52-1.5V9.13L5.3 13.08l.16.18c.3.33.72.52 1.16.52.4 0 .76-.14 1.05-.39l1.92-1.83v8.73H21V0H0z"/>
             </svg>
         </a>
-        <h1>Email Signature Generator</h1>
+        <h1>Email Signature Generator <sup>(Beta)</sup></h1>
         <h2>1. Enter you details</h2>
         <form id="user-input">
             
