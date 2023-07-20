@@ -4,7 +4,7 @@
         "instapage": "sass --no-source-map -s compressed -c instapage/src/styles.scss:instapage/dist/styles.min.css && babel instapage/src -d instapage/dist --out-file-extension .min.js",
         "custom-elements": "babel custom-elements/src -d custom-elements/dist --out-file-extension .min.js",
         "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js",
-        "signatures": "sass --no-source-map -s compressed -c signatures/src/styles.scss:signatures/dist/styles.min.css && babel signatures/src -d signatures/dist --out-file-extension .min.js"
+        "signature": "sass --no-source-map -s compressed -c signature/src/styles.scss:signature/dist/styles.min.css && babel signature/src -d signature/dist --out-file-extension .min.js"
     },
     "devDependencies": {
         "@babel/cli": "^7.18.9",
