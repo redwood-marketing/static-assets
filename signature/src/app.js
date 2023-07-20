@@ -47,24 +47,18 @@ PetiteVue.createApp({
         })
     },
     copySignature() {
-        navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-            if (result.state === "granted" || result.state === "prompt") {
+        let content = document.querySelector("#rendered-signature").innerHTML;
+            content = new Blob( [content], { type: "text/html" } );
+            content = new ClipboardItem({ "text/html" : content });
 
-                let content = document.querySelector("#rendered-signature").innerHTML;
-                    content = new Blob( [content], { type: "text/html" } );
-                    content = new ClipboardItem({ "text/html" : content });
-
-                navigator.clipboard.write([content]).then(
-                    () => {
-                        this.notify("Your signature has been copied")
-                    },
-                    () => {
-                        this.notify("Your signature couln't be copied. If the issue persistes, please contact your administrator")
-                    },
-                );
-
-            }
-        });
+        navigator.clipboard.write([content]).then(
+            () => {
+                this.notify("Your signature has been copied")
+            },
+            () => {
+                this.notify("Your signature couln't be copied. If the issue persistes, please contact your administrator")
+            },
+        );
         
     }
 }).mount()
