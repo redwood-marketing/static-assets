@@ -64,9 +64,17 @@ section {
     grid-area: body;
 }
 
-a:any-link {
-    color: var(--color-red);
-    text-decoration: none;
+a:not([style]) {
+    &:any-link {
+        color: var(--color-red);
+        text-decoration: none;
+    }
+
+    &[target="_blank"]::after {
+        content: "↗";
+        font-size: .8em;
+        margin-left: .5ch;
+    }
 }
 
 ul {
@@ -106,7 +114,8 @@ sup {
 
 input, 
 button, 
-select {
+select,
+textarea {
     border-radius: var(--border-radius);
     font: unset;
     display: block;
@@ -115,6 +124,7 @@ select {
     width: 100%;
     outline: none;
     font-weight: 400;
+    resize: none;
 }
 
 label {
@@ -158,7 +168,6 @@ footer {
     display: grid;
     gap: 1rem;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
 }
 
 #brands {
@@ -192,6 +201,8 @@ footer {
     
 }
 
+
+
 #rendered-signature {
     width: 100%;
     padding: 2em;
@@ -223,7 +234,7 @@ footer {
 
 .panel {
     background-color: var(--color-white);
-    padding: clamp(1rem, 2.5vw, 3rem);
+    padding: clamp(2rem, 2.5vw, 3rem);
     display: grid;
     gap: 2rem;
     border: 1px solid currentColor;

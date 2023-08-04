@@ -32,7 +32,7 @@
     </header>
     <section class="panel">
         <h1>Email Signature Generator <sup>(Beta)</sup></h1>
-        <h2>1. Enter you details</h2>
+        <h2>Personal Details</h2>
         <div id="user-input">
             
             <label for="name">
@@ -41,7 +41,8 @@
                     type="text"
                     name="name" 
                     id="name"
-                    v-model="fields.name"
+                    v-model="fields.name.value"
+                    :placeholder="fields.name.placeholder"
                     required
                 >
             </label>
@@ -52,7 +53,8 @@
                     type="text" 
                     name="title"
                     id="title"
-                    v-model="fields.title"
+                    v-model="fields.title.value"
+                    :placeholder="fields.title.placeholder"
                     required
                 >
             </label>
@@ -63,24 +65,50 @@
                     type="tel" 
                     name="phone"
                     id="phone"
-                    v-model="fields.phone"
+                    v-model="fields.phone.value"
+                    :placeholder="fields.phone.placeholder"
                     required
                 >
             </label>
             
             <label for="linkedin">
-                LinkedIn Profile URL
+                LinkedIn Public Profile URL
                 <input 
                     type="url" 
                     name="linkedin"
                     id="linkedin"
-                    v-model="fields.linkedIn"
+                    v-model="fields.linkedIn.value"
+                    :placeholder="fields.linkedIn.placeholder"
                     required
                 >
             </label>
+
+            <label for="calendly">
+                <span>Calendly Scheduling Link</span>
+                <input 
+                    type="url" 
+                    name="calendly"
+                    id="calendly"
+                    v-model="fields.calendly.value"
+                    :placeholder="fields.calendly.placeholder"
+                    required
+                >
+            </label>
+
+            <label for="extra">
+                Notes
+                <textarea 
+                    name="extra"
+                    id="extra"
+                    v-model="fields.extra.value"
+                    :placeholder="fields.extra.placeholder"
+                    rows="7"
+                    required
+                ></textarea>
+            </label>
         </div>
 
-        <h2>2. Select brand</h2>
+        <h2>Brand Selection</h2>
         <div id="brands">
             <label :for="`brand-${brand.name}`" v-for="brand in static.brands">
                 <input 
@@ -91,11 +119,14 @@
                 ><img :src="brand.logo" :alt="brand.name" width="400" height="300">
             </label>
         </div>
-
-        <h2>3. Use below guides if you need help</h2>
+        
+        <h2>Help Guides</h2>
         
         <ul>
             <li><a href="https://support.office.com/en-gb/article/Create-and-add-a-signature-to-messages-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2" target="_blank">Microsoft Outlook</a></li>
+            <li><a href="https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">Gmail</a></li>
+            <li><a href="https://www.linkedin.com/help/linkedin/answer/a522735/find-your-linkedin-public-profile-url?lang=en" target="_blank">LinkedIn</a></li>
+            <li><a href="https://help.calendly.com/hc/en-us/articles/223193448-Sharing-your-scheduling-link" target="_blank">Calendly</a></li>
         </ul>
     </section>
 
@@ -138,21 +169,41 @@
                                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align: top; font-family: 'Arial', sans-serif;" width="100%" valign="top">
                                             <tbody style="font-family: 'Arial', sans-serif;">
                                                 <tr style="font-family: 'Arial', sans-serif;">
-                                                    <td align="left" style="font-size: 0px; padding: 0 35px 10px; padding-bottom: 0; word-break: break-word; font-family: 'Arial', sans-serif;">
-                                                        <div style="font-size: 16px; line-height: 1; text-align: left; color: #006170; font-family: 'Arial', sans-serif; font-weight:bold">{{ fields.name }}</div>
+                                                    <td align="left" style="font-size: 0px; padding: 0 35px 5px; word-break: break-word; font-family: 'Arial', sans-serif;">
+                                                        <div style="font-size: 11pt; line-height: 1; text-align: left; color: #006170; font-family: 'Arial', sans-serif; font-weight:bold">{{ fields.name.value || fields.name.placeholder }}</div>
                                                     </td>
                                                 </tr>
                                                 <tr style="font-family: 'Arial', sans-serif;">
-                                                    <td align="left" style="font-size: 0px; padding: 4px 35px; padding-bottom: 0; word-break: break-word; font-family: 'Arial', sans-serif; vertical-align: middle">
-                                                        <div style="font-size: 15px; line-height: 1; text-align: left; color: #082029; font-family: 'Arial', sans-serif;">{{ fields.title }}</div>
+                                                    <td align="left" style="font-size: 0px; padding: 0 35px 10px; word-break: break-word; font-family: 'Arial', sans-serif; vertical-align: middle">
+                                                        <div style="font-size: 9pt; line-height: 1; text-align: left; color: #082029; font-family: 'Arial', sans-serif;">{{ fields.title.value || fields.title.placeholder }}</div>
                                                     </td>
                                                 </tr>
-                                                <tr style="font-family: 'Arial', sans-serif;">
-                                                    <td align="left" style="font-size: 0px; padding: 13px 35px 10px; word-break: break-word; font-family: 'Arial', sans-serif;">
-                                                        <div style="font-size: 12px;line-height: 1;text-align: left;color: #082029;font-family: 'Arial', sans-serif;display: table-cell;vertical-align: middle"><img style="margin-bottom: -3px" width="13" height="13" src="data:image/png;base64,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"
-                                                            alt="Phone Icon">&nbsp;&nbsp;<a :href="`tel:${fields.phone}`" style="color: #082029; text-decoration: none; font-family: 'Arial', sans-serif;">{{ fields.phone }}</a> &nbsp;&nbsp;&nbsp; <img width="14" height="14"
-                                                            style="margin-bottom: -3px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAACZCAYAAAFLW6gsAAAACXBIWXMAABYlAAAWJQFJUiTwAAAP3ElEQVR4nO2dPUwcSRbH/8xdZgeQwIWDkTbbNWSnS3ZG1hCNP3Bkr4QY5FvpSI5BshNvwBAciZEYLiGwToxlaXejBeyOaFm0g7OcMbvOVgL3ZQuJJ7BjLqjpoac/q6qrurp76pcY8EzNo3hdr+rV+xhDHLX6LICT/ndVmIYV9fKxkEHGAXyK+ajAwf0D1uqXMQMNYxpDYwwPyDpYwKBXA/IO5hm05P15c+EOLo9e4/LoNduAtXrlakCXdO39V7wyHgPAn4P+Z2z+Nu+gwQM6v+7Y/O3IX933wbX6eAm1eotbHD8fSwC6tK8em789JFWA9N0STONAjHAATKPqU5ukSBrQ8zxy0R9D+KMncXHgHTRy+WIZONG81+oVZzWJI/5TavVjABUAFkyjyj4YzRwG/Lrevy6NUXKzDNPoON9cPR21eoNxIADYQ63umNWhR22PcSCHWeeLsb5UgzlyLz9Mq7RpjIUuAp2jN2zyARhL/Jy68EnmmMjW4ndD37u/DrMj1Gudd4CgAakHc+xE9cnT0Ncwr8LWrx/EDRZFSchSDkTrGQ9i7IJvO8b/6845XySzB1S2gHNxpEOYDQgenP2PxfGb0L1B4Eo1gELYKPveAL91YKEL05gL+o8g7WU1oqIYMsYA5d7Nu1wnObTE4vpzu3cLgYIdb236fsZ83mPBJYezYTiBaxcRhCPQ8laby/4zYxpjztEwUjCA7095729/xX7rBwCA9dsHVB+HG+LAz0StXgbwMepF3j/jxsuf0Hr5Y+D/0dD7/AUT9x/EvaxdAtBgHp0CZ9sSNOPj16+hMX8rbohmCabRkiFY1PcAsPe4GTfMhvCTrzBMo+UI11YqSAjOEX9NsRzDhOzkeqrk8cgBIMlmTjSxJ2cv6Qg5B9MI9MDR7uc+AigLFCjhfi4K9r1em+ehS356I17WJQzP7EbSxZ1dsFp9G0Ds0u7hAKaxwPIGesFq9U8AxhkF8kN5wKHxujUBbCeVxwOnB89B9tIRMXv8nlRRhAiXDUtAZQVUmCfAJ9zwfs3lV00dz4TEnklnZ27gZHdn8D3l3p6XCZhGD6A4j7qFAsi+XiIDD0L2tt7khOe/RM0AHwGKGRubv43u6dnQ92ngu4fICGulvnGWwvHW5uCmYXbmBstbt2PvR4LcBVEXzdUnT7G//kPo00urCsKfyu1//D1ySaH1iwgXjOZPRiOclHWs9/nLwPHS+/yFawwpgrlNFq/5Ei5Y1K0aC9kzSX1KACzVQgRRijsUKEJ8jIwQTMPKpmAQGbMjirAouawg4r5YHKEeRnKTe5yyOA5DboPMnitzdBJ3UOy7CH8qyRssSeIAQI/P2+NG/OwNTtxh0K1j5DcTYVM3YBpjcUIBacVwSIvfoOEqmqVLMyNxpL/aE5/uOkQ4mglc9whJkDdpJDblI8RNDiux6RK8iJ00GVdj4ohdQWkRcdsl5k4nXRJNIK8VuAdgn/dDMwTzDSHAOmm1+h4kReoopgfTmKB9Me0OzZ2PVmQ6MI3luBfRXPtmzf+eBpFrXtTpiVm7TnZ3fE7j1OIjxRO63oWdhZnWLhrPeXv/FdZ2n9MOmR0ob8yd3Ccqjrc2Ufnma6rXpnWvJ5yY2/xtMEwYABz+931imTJPaKQBRURyGN5oBC+SoxPSYmBZxeWPjgJDjnfiedDE0Y80cLIYEoXf0VhPd3IB63urT54Osgdbi99hffEhlVxhn5mAcSCkKkAW+fTLz8wBUuuLDwcTLMxy1+qNEm2OnkqOn20mjii7PHqN8tSkCHGWSmDcYuSZjy//I2KYSm4eT/v8AtOLj0L/nzbY6HhrkzlDzEtmYzbcdI7eRE4YQL9m0Z5eIrBKsvzoInlhZurAn+EktqziisPJYvRSFrGAqxghS6Eg+aEf+JKtMKFsM3BIetc0/ZgGc+AuLjY8aeQxjb1YGDFsr9vbbz1JuYnAuhgjSAemMe39YfCJgKTtUtd+sn4Lr1/kYJ+fc7+XNnCeZiwGEqQvU1TmKBwxRpElD3cUPLtUMR48WdVFnLzQRzEI/r1ZPqOFvHBFD4kItapAXXg6D4kjJ0UH9ZXBeQ0oGV/lriTIPTqRSTxB+o+x0Enyoua8SSZzHcli3SyQGHYruUBsqD+kkzXxLshesBLyKguADeAtyDlQWZWjdCeMaNc2gHuCRuyCaJq4Kt0xyJ8wMknHSCfaW+oaBsjNHWiBrFUq4Ao6pkH8hKmdKC+x1YhYEZlrlOWQeKpgYxrETFh+jk7TMA07yQDJJizbWhVGovUtyYE8z340pmQKN7wpPHl5BONg9mBoPxnjpLGFGhRvsgDgUz95hArtvr6CStPoNKz4kwVQVtuPnzCVZRLThkIxoieMFOTN69aBjxgFidOwNDpVZI3Z/oY8kPB4WcZ1qzF/y1fGvnt6hrmVVZZhssI+QgxiWMphCwweh7jY/LmV1aHqmDnBDoq/CHskqSdr73EzNi4/KkEsw5SdQq5u/BNG8jOpoWh1wfS6jOG7PgzSsIqMT17K54T5OmR5k1nz5qpJg6Enzqthom5zfOQ6S5jUNgLgb0TJDG2lggRdg7OAuGaby1vt2CjCnO7F3JSdL4Rkkkzcf4DlLX/Tou7pma9CeW7p7/6dyucNjOYxiAUbpjHtaJjo7iRFpAxcPZJF8M+nQm6SVb1sr3yP5sKdoZ/1Pn/Bzv4r0Un3V9TqjbGkIZi0pWuCEklpM3Ld72VJwp+4/4C7gH4IVgmkEVbmmZ25gcuj10wJ+J9++Vn0GbZSgsTdvSjKU5PcHo+9x02hk1ZCDhb8pNUFaFxQtIxMCvSnX34WMs7ITBggpqXVSE3Y8TN/j2pWcrUPW9t97vN6NBfuYHvle6r3M/Z/CiQ3Exa2p2rvv4J9fjHosy2bXDyS7f1XkRvQg3fpOSdzMWE0FUFpHZSVm8lK0uRiwmg4TEnLclH0iAanOp5sSiD5OxpKSgA6qoXIEZ1S0rj1EeNFYRb9VHCV0rJUypEnnAnTtXni6QBXdcdshYLkhTVgeONKXQBjJPG1Sde1xqIYXOu7q9opSzzPPK5CId5thZS035xjub/xVrNLLTs/N3hSoIM2rnotu8Ly/iCo9J/vRSNLQIJ92NGIK1u1YARWhAqrk9hDrX4Ailvx7il/YSfBdQ2F1lyEafgjBBGXLzkaaX9+ImokRnsrRrPicKTRo3HvjFLt14M4o/en2CHOfv8DM1+NofitNXowjVjliJ8wADj73cLMV2UUN9mUuo4F3YQBwNnvhwWdNKaiH/QTBhRx0pgrpLD79EmVpCJ4aC2ecjJJau+Mg7J0QQbhrmQnohBulpuzB6Gg37iXfFQPTlwxGBBfNTiLvcgDk915kXP0YezrK4keSEU6oa532SWWtwGk3UxUeKFIN+kcrolF3YO8JAobwAJLrXxeVNWjbgBYBf8GuAdgB6bREiUSLdly35DCZ/7MlAy5zbM1YbIhf5AKgJsg2p3mEa8HEl3wtv+vNSp3wcVTMqJISyA2pqxWGGYOABxCcRV80eRbyYjNXYL6rbJMeiARajt5DU7Lj5KRol6rIIfWzGfHSsaCouYoPGRbyUiZwVVopYrDArCWxjGRh2wpmfgmNaNID0ThOqoFcVCvZESx9lDsfZUqMqFw6pRMjYt2lLGRkufVS9o922ZBrun0HkstQq4iaUnrfqQBXX4xi3QBVGX75GTfWmbxnlzjx4ZEUyorlqAJXQs1j0hZ2URH+DSgzWIREKpsouLuylDTL10jl4zEKup9V9Hpgaxq3Pu1JDHq2h0xWnC3vebtqdtCCs3Sy1OTmJ254Ss/2j09Q/f0DPb5hWwRNMNwBWbz9CGW1uG6PDWJvSdNqpL+brqnZ1ho/UsrXXossJRFYWlFPA7SEk64eRy/fg0nu/9GeWoy0Tj2+QXmVv4pureDJpgN2th3OiUj+y8pXYnLU5OJOxN4kdBERBMM1T6NpuV1BZIUDAB1WXgWvH1+NdJo0DR/jWsTXoHkvFNRvVFkj6kJpRKnaOFKRhys0hObZZg1bSpTp9L3lwYStZJJM5FuaFo6ZGFMTSyN/p21j2AlI8tfKk5W+/xC2EbdGUu7MpSx3T8kDuFXMqKNlRQEGtD7/AUT9x9gbmWVq5ex9dsHTC8+wvTiI20q1ePbYg27MMg+jL8Ip2C0xz+3DLk2vEq2D50ppBHDnHOpfmUuiS3VCqYRxeBu+2ol06uYEsavX/NtB3qfv3DtTTPIHEyjS+qok72YMgWj7XNPw8bLn9B6+SPVay+PXgv5TACoPnka2ttw/Po1NBfuYnXhTiJHsX1+gRdHb9DeP8zLAWcJQNcp1t9QKEghKU9NYr/1g5Auye4x1xcfYn3xIQCidMtb7dQad3LQBLDmKNm3KiUpErMzN3D8bDOVq63y1OSgN3rn6A2WtwKbWKilVq84G/+KSjmKwsnuDk52d5TcnTbmb+Hy6HXiRtYSqJT6l+CahBw/2xRqGpPIISOyJQHf6ma8BaS5cCdT4U4laFNZSBrzt9BcuKNaDACoBLeC0wjDPr/Awbv3OHz3HvYf57DPL1CemkT5L1OofPM1luZvJQ47D2N75XscvHuv/PpNK5kE4hJb7PML2OcXsH79MPDpyTqVrt6/qzz0Se/JBDO3soq5lVXm1aN7eoaJ+w+EN/ps1G4JHY+HEgIa9mr4mF58lPg6qPr4qVDzFnRtlTJWCaRskCYha7vPhSnHBuW1GC2Kcx7sUr82fGEaE6iieyYuDK9z9EbYWBngV2dPZqmUQlNoDhwle6FUDE1RsWAaNlEyUtdAm0yNaA6BYRfGjiJBNEXFNNqAW8kUNI7UFJoN5wuvMza12u6aQtNzL1rDSkaWNztdeTQFZGixCrpWWkhJEE0x6Xh7OfmVjOTKabOp4aEXVK8s+IKcmM2OZIE0xWMu6IfhURhEIy1JwmiKRzWsfXV0qI9pVKEPApp4lqNaVcfHk5nGNEgbFI0miGpc01a6oEXTmIM2nRo/1agVzIE+MpaYzgxmj2oU4DSNsGhezBZ+TZo5aT/aaNOFaUyEbfKD4G17I61xhCbTUDeIcJOsS5xuVj8qcPVUchDRilCvasWGa/VyI65zr+7aWzSEde8V34NcN1nNO4mbqHqR0+ge0MqWP4Qrl4M8JXPQypZ1pCmXg3wlcyBNKLZT+zxNHF2Q5qi27A9KT8kcdO9y1bT7TvXUSF/J3KTUy1yDLkikhJJAB7VK5kB8bevQjl2R2IgJwUmLbCiZF7LCrUKbVFYsAGuqVqwwsqlkbkjh5HXosqNB9ECSstsinKayyL6SeSFKt4rRbNFjgyhVJ8tK5SV/ShYEudK6i2Ipng3gAMBOGm4GmRRDyYIgh4l7IN1WKgDKKsWJwALwFsBB1vZSoiiuktFAfHZlALMAboIcNMpIrpBW/98ugP/1/+3mycSJ5P+wtXSIqy3L0wAAAABJRU5ErkJggg=="
-                                                            alt="LinkedIn Logo"> &nbsp;<a :href="fields.linkedIn" target="_blank" style="color: #082029; text-decoration: underline; font-family: 'Arial', sans-serif;">Connect with me</a></div>
+                                                <tr v-if="fields.phone.value || fields.calendly.value || fields.linkedIn.value" style="font-family: 'Arial', sans-serif;">
+                                                    <td align="left" style="font-size: 0px; padding: 0 35px 10px; word-break: break-word; font-family: 'Arial', sans-serif;">
+                                                        <div style="font-size: 8pt;line-height: 1;text-align: left;color: #082029;font-family: 'Arial', sans-serif;display: table-cell;vertical-align: middle">
+                                                            <template v-if="fields.phone.value">
+                                                                <img style="margin-bottom: -3px" width="13" height="13" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABxCAYAAAGVeXxGAAAACXBIWXMAABYlAAAWJQFJUiTwAAAJG0lEQVR4nO2dTVLbSBTH/zjZD9zAFFWs4QRxFt65auAEMScYcoKEE0BOgHMCmCrttMA3iGebRXBOEN8gs3gSbsvd0uvu1x8i+m2oMpJet/r7fQlQmc6uMZ0dgsnb6qbfym+3AA44N48aN9Yl+MW7GbjR/M4q+ghl8ZlzoUnyPmXBrLMHIxtJPMm6FtCwK7F5k1oi9X/V7/vFZUpFWRzsF9ui/l5N1X2RqRpOLTSdfbaTouFAezGjOM7d0tSr5q4S791uZNSRLtD0T3uJzCbRj9fp7FvXjfrhVFM/sHOoWfWcJlZ13C+ebm7ukLgr/RnA2PBwC6azCaazs12J09kYwLPhliOUxcZOipm31YLWtS79AnPV5DACsGZdadFFutjvlF04rmQqdhOXgECg3vUAlwAeDNdsUBZHEsJq6snkseUa9r6Ni918IvR6dXPRA4CLlntWKItz7X9o8NdT7hJl8Z4ndPsATo/eThq869+jLJbuWwx3bvhtJCW8LA7edl+1vVigAFeA4HzKKkhn75/OfnMWf1vU13UPYK69SmhsAvwlTYwRS5jgUPE6pYUVSFNhRIHt824QgSIkEdi5661YSQjkbrjOURYiArsnccFZBti24VryoW3wlh7BWvJ66XQmMgZ3BbbXQmSW2RXYhdAEbn+UbXsTDH2BTuAh6EjXxv4501zQO5TFR7NAuvkJwKRDqKo++AbgjHO97+YYABYwbU00dCkHpDfFHb2UXtk6nkASegxAf6ix585uyvJ9xVrNbccNAI59ZLpPyrzxukvrsLATfg2ymrQKAyQPNPuFGIP0bRPVNsI5oF4A+IT2meTGx+ASGnXR502hZtbVsM2ON5jO5jg5/QadWtWOQ5ycHuDH96V/sWTR2z/8ENs9SxHiYCOulPBlBGAp/tQAGwcfbE6MdmRU0RHKYpm6EKGpx6SY2UghTA9xQEIv2+QjyuJO6FkiqDqODXyUnMK6EElUJYCrkeoq5woC++uky7bs3uyWkQc63cMcDDcKDdnuXU36js+gk4c9GXbdNh3LHG4tCgQwRPvQpdexP4bvYjYDc5nOJqAj4NJ148LrWv5rqF3L8l/ue07FbazIc7h3X5V2LYLfC12Djno7Ozj7SULWMrr1VpjObgFcCz235gplsfBRm2Vzyujg0n+6z7+y55L+DmZPgpSIKV2bRPZoMBJc0VtjcrAMz8uyFXcLRgv7UxRZyvaS7/gkI3iJfa+9bvuCPTtuiNltpnegF/ABHGPnlj3rrK0B7Qz01ifVL1nbQACesad7F5Lh0arGdFi+hd3Un9WRSqUOx1I9Xl1Ivw4aGAlUjhDyo5NmBDljjJjPkCSy1itGoFFspM1zEgdnUeTtjxYBpzF49QbWEBUcB3imM2F8fzMyBYRybnbTpgcgnPd2FQyYmpDu6dJnPSfCeHBkxAjA10DP/jfQc62wD+jkkskZMdQYzOZsKK98yqTlauoWlPCRWeVWOUDO52YnfiAnJLpodi6aKuoks3B6QsaVA3adia6cnpDhKV5FYpnI7hSv0qzgpdNTMtWoAT4ZiPYRzQ4iha6Luq6JPv43wTC5gLm2ojEPRCreaH89OT2AW0DKGCenP/HjezZLh0QMoY5jlMXa434x2pYJn672nIt+tMt5z9eDwn9mJUsvXH3KY6Rjcauk2VvjsiMl0A6cnYzb4r/ll3W0ersrykOVN4W1g+K6XvIin9t5RFl0vyx7T6oN6ESz1v0zSfKeFhkT+PnU7DlFxA1TbimIgDeyysuGw/Y0IRUA/qkaR2q3l9zqTerGcHGanUP+iOQXvWPm0U1JFKaSQdDvRbv48X2Fk9OfyNTxQMWtgkBvKinh7izjZxMGD6d1FdkpXpJjWU10Om9fPdbpQbofeAwgKw23vHWpLO6q7VhqBdRHILTXL50i0qgUqz1v2BRyZfFYCVoEldNCnBx5ZXEVuaIvSq+4SQC3FQ0ds//y/LQGS8oa9ATppUU5c+ZjkaXK3sMvQRDQUD7nU8EmdLr/ADv1xV4Ibr4VbIMqD1DXHoMqptW0SW/VxqAu9g50yuAcYjegXBoL0bL8QbhoLc5ADfU3/OeEJlZ63QHCZCU8A81jE/irfW3JLsNN7qguTxegFTcH+xcrLcIAYZdiNi7ZWIxzZ1T59OTWgEC+msnsGCFfXfVhlXF1oIPoHzOwZMI10P/J5N6IADB/8aEZ0NKHRgSAW0WDMdCgT7FpT5VGaKAB/yOHeTDsWDWMAPyXuhAWDDtWDX2aTmsmOYXz58CoijNbpy6IJe9SFyAn6t1pqLj0UKT2Z8mKuhH7Zv5xC/58pdSfa16hH2vjCpmGNqZEDU6/gbyRV4oFyM44NJ6GZjZU3098SbIBJeHu21QfnWaaiI9If6Begtw0hlHHRBeGnyrP+NXgLOWGyccmZv70YaPiicmKEXMLn3r67j36RqTNRKyPxo2r0KIBR7qSKjwgnvvGBuQcNUytlnASR8QOwBvcFS3hWPbPEVdX+VR9cmGACTcByCGAZ8R1LB6mVyY8Hxt6kceIOyIpYHwYlZ3YJnI5BB0JxiEK08IGtFZmkygtJ1xTnaTSsa5AjTlMsQo+H3gM8dVJLkNjKvgFmaZMpkCkaUxaVq4B/AP9Zm8DMp99iREUJJGWJ8XOtUmcNZPiNp/gVtc1yA3mTrrTSX5lNeX0qhImSDVM+N8KwBdQ/kXnhpWO2ffpqdKsQXZJv9EZ5rOhbSxB0zDbGB7qU8C5jMqaFcheyW/QvDrkAsBXkzoyXHoQWiufkF8A6xo05Zp7elzFvws7S0aM71Xn1KN1LEBZZNd9SvVZcY6yWMVL1NO/F9QXjuJnWxoaU5qbdCmzhsaU4ip93rP818yc2aAsjtKHe5fFqvrc/BGUzJYDLCIkqnUl/gG7j7ykk0w/EnVsUzIfoX8RW7HIJF2tDbR23iM/5UEKepKxtg259L19Zeczqf1sRJWtbS+br9YHZtH8wmr/G7EJjdJb5K379GEv++Tra8Qm1KifkCbSSxrtp7RffyPqIG1RnVm5Pxi+afdnNqKObcrsC+T03aAtxvCGoRE5kEPYO9DxZhJZeqcz2NCIUtBIHoMa+q/q7yHczrVrkI1zwbn4f4RAwbuKAw0RAAAAAElFTkSuQmCC"
+                                                                alt="Phone Icon">
+                                                                &nbsp;
+                                                                <a :href="`tel:${fields.phone.value}`" style="color: #082029; text-decoration: underline; font-family: 'Arial', sans-serif;">{{ fields.phone.value }}</a>
+                                                                &nbsp;&nbsp;&nbsp; 
+                                                            </template>
+                                                            
+                                                            <template v-if="fields.linkedIn.value">
+                                                                <img width="14" height="14" style="margin-bottom: -3px" src="data:image/png;base64,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"
+                                                            alt="LinkedIn Logo"> 
+                                                                &nbsp;
+                                                                <a :href="fields.linkedIn.value" target="_blank" style="color: #082029; text-decoration: underline; font-family: 'Arial', sans-serif;">Connect with me</a>
+                                                                &nbsp;&nbsp;&nbsp; 
+
+                                                            </template>
+                                                            <template v-if="fields.calendly.value">
+                                                                <img width="12.17" height="14" style="margin-bottom: -3px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABFCAYAAAFh1rXtAAAACXBIWXMAAD9FAAA/RQFJ4kEtAAAEKElEQVR4nO2bMW7bMBSGP8XZ6xvUhQED3ZKtW51Fk4A6W7cmJ0h6AjsnaHKCOCdICggooKXuCZK5QBH3BHVP0A4UI4qkREp2rVTyv1iUHt/jI/nIx8dnkAijP8rzTD72lBdjhqOA4WgMTBmOAn58XwS5mnXg5LCX/i5I4gBA/90Mh1tgUq3pYfQoa0+Ad8AJcJF+ngIX9TuotKZQqU6H1K8Z5EphNAa+5rhk3/7o7wPC6BrRQZWxV7eirFwbamUxfVRdHeW1jEOVvEq5ftyKZMEljM4Rc7oKjvPFMJoQRr+spJYW6kN1C/QtFWc2BkHuozA/yMxR4i0wzn1L4tnGhmq7ldfCc9C5eB4/FNH4SF4VfXiOOsORsYKK8qFbchIv0qeF9v6pA5vTWZrk14r1ViTxcVBKoqukd6BJfwDcK2+WJPErG2mxymLPqwrdqxgUEcruWs+hqo7T9b24mmhu8WsK3evq/YL36r58hrnRr4ArpTzFxCXwO33+gGZatq5ekMRHuTeuhUSsXmMHjeaJ2Mf4mGxnsrk2D2QuXj+l0XEKLNPnqd6w3eSCLY2xTeOBVmFgUISRPuYHFj6laGyMm9qdLl0b+yOi6y9I4pkXS3Ek6QPHJPFdEVmx4IyBxKHqcRXU8fZYysxJn0AVYxaUejGN2XHWFUr0KYW+8C+Abw5+ep058FMpP8hxDwijE+Daq5mbQhIHPYajezflhjEcDZoa45PGJlf3BHcP3XN9uifY5uwtgZv0+QVwbqFZ+6RhTi6Hd4jYYQ5LaTy80DpdXRj7qoIGHQHboS0bwwH2vVo9W33C9KtXZMFp69lqt4C0X7BtAck77rY5oNqpeuuV4SNJfKnQ6IcDi8au04IZz10YFKpQAYPnfzXG41zJPCvbztR6eWfHW8Ndj+GoD7zZqtgkfi1DEX3EZmBOlM3iszS18lBEEUR6gC2aBzAniU9rNkyXU3bDXhrqKEKvRiPGwJcSigOZPFKZd17ODLu7J/Ge4egbP74vq7Dt3JGtcwqrm/kE4S0OmmrMP8IS4ZQ8hbj0y88243CP7igLcN85G94p3HbsY2Zu7dAmBJarnlZjH3sSQ2vRuUVrp3DbUZTMpGIFvCKJ7YF4ewTRhuKUAn9//sgaOBQ8+sAjjuiJzwg/FCoL9siliUVpRFR8c/MpkyXa6Iq6dm9K+yg8sEZjJfzSYscOHn30CHBVWYLHwMWisQhxU9hN6bajcwr77MMg9uI5WZKwxEv8/1G2Au7I549JHhP8bx/mFh4v0nY4efgsWmbiqw43DzNtweRxjytv1f1vDDPhVsO2prRPusRGUipc6JwN++7Dc+Am59plzsIUvxTqO+DKcA+FM3GGXxatTM/Pu7vCFz/DYz3ZOR5txx5QvgK3C0fqZdo5wh7/9W38trFC/LfgEuAv70t0AFCRPkUAAAAASUVORK5CYII="
+                                                                alt="Calendar Logo">
+                                                                &nbsp;
+                                                                <a :href="fields.linkedIn.value" target="_blank" style="color: #082029; text-decoration: underline; font-family: 'Arial', sans-serif;">Book a meeting</a>
+                                                            </template>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                                 <tr style="font-family: 'Arial', sans-serif;">
@@ -161,19 +212,27 @@
                                                             <tbody style="font-family: 'Arial', sans-serif;">
                                                                 <tr style="font-family: 'Arial', sans-serif;">
                                                                     <td :style="{ 
-                                                                        'width': 25 / currentBrand.ratio + 'px', 
+                                                                        'width': 20 / currentBrand.ratio + 'px', 
                                                                         'font-family': '\'Arial\', sans-serif'
                                                                     }">
                                                                         <img 
-                                                                            :height="25" 
-                                                                            :width="25 / currentBrand.ratio" 
-                                                                            :src="currentBrand.logo" 
-                                                                            style="border: 0; display: block; outline: none; text-decoration: none; height: auto; width: 100%; font-size: 12px; font-family: 'Arial', sans-serif;"
+                                                                            :height="20" 
+                                                                            :width="20 / currentBrand.ratio" 
+                                                                            :src="currentBrand.logo"
+                                                                            :style="{ 
+                                                                                'width': 20 / currentBrand.ratio + 'px' 
+                                                                            }"
+                                                                            style="border: 0; display: block; outline: none; text-decoration: underline; height: 20px; font-size: 12px; font-family: 'Arial', sans-serif;"
                                                                         >
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                    </td>
+                                                </tr>
+                                                <tr v-if="fields.extra.value" style="font-family: 'Arial', sans-serif;">
+                                                    <td align="left" style="font-size: 0px; padding: 20px 35px; padding-bottom: 0; word-break: break-word; font-family: 'Arial', sans-serif; vertical-align: middle">
+                                                        <div style="font-size: 8pt; line-height: 1.3; text-align: left; color: #bfbfbf; font-family: 'Arial', sans-serif;">{{ fields.extra.value }}</div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -192,7 +251,8 @@
     </aside>
     <footer>
         Built with ❤️ by the <strong>Redwood Marketing Team</strong> <br>
-        © 2023 All Rights Reserved
+        Version 0.3.0 (August 2023) <br>
+        © 2023 All Rights Reserved. 
     </footer>
 </body>
 </html>
