@@ -373,7 +373,7 @@ if (!window.__utils__) {
                 "hubspot-integration"
             ];
 
-            const formData = new FormData(form);
+            let formData = new FormData(form);
                   formData = Array.from(formData, ([name, value]) => ({name, value}));
                   formData = formData.filter(({name, value}) => (!!value && !blacklist.includes(name)));
 
