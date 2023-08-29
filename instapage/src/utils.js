@@ -373,13 +373,13 @@ if (!window.__utils__) {
                 "hubspot-integration"
             ];
 
-            let formData = new FormData(form);
-                formData = Array.from(formData, ([name, value]) => ({name, value}));
-                formData = formData.filter(({name, value}) => (!!value && !blacklist.includes(name)));
-                formData = JSON.stringify(formData);
-                formData = btoa(formData);
+            const formData = new FormData(form);
+                  formData = Array.from(formData, ([name, value]) => ({name, value}));
+                  formData = formData.filter(({name, value}) => (!!value && !blacklist.includes(name)));
 
-            sessionStorage.setItem("rwd-info", formData);
+            const payload  = JSON.stringify(btoa(formData));
+
+            sessionStorage.setItem("rwd-info", payload);
 
             /* Marked for deletion */
             window.dataLayer = window.dataLayer || [];
@@ -387,6 +387,23 @@ if (!window.__utils__) {
                 'event': 'instapageFormSubmissionSuccess',
                 'instapageSubmittedForm': form
             }); /* Marked for deletion */
+
+            /** 
+             * Send Data to Mutiny
+             * @see https://support.mutinyhq.com/en/articles/3431667-mutiny-identify-sdk
+             */
+
+            window.mutiny && window.mutiny.client.identify(null, {
+                firstName: formData.get("First Name"),
+                lastName : formData.get("Last Name"),
+                email    : formData.get("Company Email"),
+                funnel   : formData.get("Lead Funnel"),
+                product  : formData.get("Product Source"),
+                company: {
+                    name  : formData.get("Company"),
+                }
+            })
+
 
         };
 
