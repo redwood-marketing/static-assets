@@ -373,11 +373,11 @@ if (!window.__utils__) {
                 "hubspot-integration"
             ];
 
-            let formData = new FormData(form);
-                  formData = Array.from(formData, ([name, value]) => ({name, value}));
-                  formData = formData.filter(({name, value}) => (!!value && !blacklist.includes(name)));
+            const formData = new FormData(form);
 
-            const payload  = JSON.stringify(btoa(formData));
+            let payload = Array.from(formData, ([name, value]) => ({name, value}));
+                payload = formData.filter(({name, value}) => (!!value && !blacklist.includes(name)));
+                payload = JSON.stringify(btoa(formData));
 
             sessionStorage.setItem("rwd-info", payload);
 
