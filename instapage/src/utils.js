@@ -364,6 +364,7 @@ if (!window.__utils__) {
 
         window.instapageFormSubmitSuccess = (form) => {
 
+            const formData = new FormData(form);
             const blacklist = [
                 "salesforce-integration", 
                 "lpsSubmissionConfig", 
@@ -373,30 +374,31 @@ if (!window.__utils__) {
                 "hubspot-integration"
             ];
 
-            const formData = new FormData(form);
+            let cacheable, 
+                personalizationPayload = {
+                    firstName: formData.get("First Name"),
+                    lastName : formData.get("Last Name"),
+                    email    : formData.get("Company Email"),
+                    funnel   : formData.get("Lead Funnel"),
+                    product  : formData.get("Product Source"),
+                    company: {
+                        name  : formData.get("Company"),
+                    }
+                };
 
-            let cachable = Array.from(formData, ([name, value]) => ({name, value}));
-                cachable = cachable.filter(({name, value}) => (!!value && !blacklist.includes(name)));
-                cachable = JSON.stringify(cachable);
-                cachable = btoa(cachable);
-
-            sessionStorage.setItem("rwd-info", cachable);
+            /* Set cached fields */
+            cacheable = Array.from(formData, ([name, value]) => ({name, value}));
+            cacheable = cacheable.filter(({name, value}) => (!!value && !blacklist.includes(name)));
+            cacheable = JSON.stringify(cacheable);
+            cacheable = btoa(cacheable);
+            sessionStorage.setItem("rwd-info", cacheable);
 
             /** 
              * Send Data to Mutiny
              * @see https://support.mutinyhq.com/en/articles/3431667-mutiny-identify-sdk
              */
 
-            window.mutiny && window.mutiny.client.identify(null, {
-                firstName: formData.get("First Name"),
-                lastName : formData.get("Last Name"),
-                email    : formData.get("Company Email"),
-                funnel   : formData.get("Lead Funnel"),
-                product  : formData.get("Product Source"),
-                company: {
-                    name  : formData.get("Company"),
-                }
-            })
+            window.mutiny && window.mutiny.client.identify(null, personalizationPayload).then(() => { console.log(personalizationPayload) })
 
             /* Marked for deletion */
             window.dataLayer = window.dataLayer || [];
