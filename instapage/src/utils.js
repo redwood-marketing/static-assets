@@ -164,18 +164,13 @@ if (!window.__utils__) {
              * @todo Acronym Standardization
              * @returns Product Acronym :: Google Analytics Client ID
              */
-            async function getClientId() {
-                const product = location.host.includes("tidalsoftware.com") ? "TS" : ( location.host.includes("finance.redwood" ) ? "FA" : "RMJ");
-                const cid     = await new Promise((resolve, reject) => {
-                    try {
-                        resolve(ga.getAll()[0].get("clientId"))
-                    } catch(e) {
-                        window.addEventListener("ga-ready", (e) => {
-                            resolve(ga.getAll()[0].get("clientId"))
-                        })
-                    }
-                });
-                return `${product}::${cid}`;
+            async function getClientId(measurementId) {
+                return await new Promise(resolve => {
+                    gtag("get", measurementId, "client_id", (clientId) => {
+                        const product = location.host.includes("tidalsoftware.com") ? "TS" : ( location.host.includes("finance.redwood" ) ? "FA" : "RMJ");
+                        resolve(`${product}::${clientId}`);
+                    })
+                })
             }
 
             async function geoLookup() {
