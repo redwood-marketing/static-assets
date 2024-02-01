@@ -8,6 +8,10 @@ window.__utils__ = window.__utils__ || false;
 
 if (!window.__utils__) {
 
+    window.measurementId = location.host.includes("tidalsoftware.com") ? "G-0EWJTRJTD7" : "G-88C86EKJ56";
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) }
+
     /**
      * Cookie Management
      * Biscuit = Cookie
