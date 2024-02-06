@@ -8,7 +8,7 @@ window.__utils__ = window.__utils__ || false;
 
 if (!window.__utils__) {
 
-    window.measurementId = location.host.includes("tidalsoftware.com") ? "G-0EWJTRJTD7" : "G-88C86EKJ56";
+    window.measurementId = location.host.includes("tidalsoftware.com") ? "G-0EWJTRJTD7" : "G-KML9GM6K4Z";
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments) }
 
