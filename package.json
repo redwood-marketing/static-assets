@@ -4,6 +4,7 @@
         "instapage": "sass --no-source-map -s compressed -c instapage/src/styles.scss:instapage/dist/styles.min.css && babel instapage/src -d instapage/dist --out-file-extension .min.js",
         "custom-elements": "babel custom-elements/src -d custom-elements/dist --out-file-extension .min.js",
         "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js",
+        "activebatch": "sass --watch --no-source-map -s compressed -c activebatch/src/nav.scss:activebatch/dist/nav.min.css && babel activebatch/src -d activebatch/dist --out-file-extension .min.js",
         "signature": "sass --no-source-map -s compressed -c signature/src/styles.scss:signature/dist/styles.min.css && babel signature/src -d signature/dist --out-file-extension .min.js"
     },
     "devDependencies": {
@@ -12,5 +13,8 @@
         "@babel/preset-env": "^7.18.9",
         "babel-preset-minify": "^0.5.1",
         "sass": "^1.55.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.3"
     }
 }
