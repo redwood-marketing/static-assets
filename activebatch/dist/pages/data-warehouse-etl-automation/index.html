@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="robots" content="noindex">
+<title>Data Warehouse ETL Automation</title>
+<meta name="description" content="ActiveBatch Workload Automation and Enterprise Job Scheduling makes it easy for IT to develop, optimize, and orchestrate automated processes across the organization. Find out how you can drive innovation with ActiveBatch." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<!-- Mutiny -->
+<script>
+(function(){var a=window.mutiny=window.mutiny||{};if(!window.mutiny.client){a.client={_queue:{}};var b=['identify','trackConversion'];var c=[].concat(b,['defaultOptOut','optOut','optIn']);var d=function factory(c){return function(){for(var d=arguments.length,e=new Array(d),f=0;f<d;f++){e[f]=arguments[f]}a.client._queue[c]=a.client._queue[c]||[];if(b.includes(c)){return new Promise(function(b,d){a.client._queue[c].push({args:e,resolve:b,reject:d});setTimeout(d,500)})}else{a.client._queue[c].push({args:e})}}};c.forEach(function(b){a.client[b]=d(b)})}})();
+</script>
+<link rel="apple-touch-icon" href="https://www.advsyscon.com/home/asci-browser-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="language" content="English" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8" />
+<meta name="google-site-verification" content="2188O6icR-yvkfICzvv6MYZwI8pFa-EIvvjKGsO-_pw" />
+<meta http-equiv="Cache-Control" content="Private, max-age=600" />
+<link href="https://www.advsyscon.com/en-us/ab-icon.ico" type="image/x-icon" rel="shortcut icon" />
+<link href="https://www.advsyscon.com/en-us/ab-icon.ico" type="image/x-icon" rel="icon" />
+<link rel="canonical" href="https://www.advsyscon.com" />
+<link href="https://www.advsyscon.com/styles/home.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/ydj8avx.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="p_lt_ctl00_UserControl_userControlElem_navcontainer" class="nav-container">
+    <div id="p_lt_ctl00_UserControl_userControlElem_myasci" class="myasci">
+        <div class="max-width"><a href="https://www.advsyscon.com/en-us/portal/login">My ASCI Login</a></div>
+    </div>
+    <div class="top-nav" id="reg-top-nav">
+        <div class="max-width" style="position:relative;">
+            <a id="p_lt_ctl00_UserControl_userControlElem_logohome" href="https://www.advsyscon.com"><img src="https://www.advsyscon.com/activebatch-logo.svg" alt="ActiveBatch Workload Automation" /></a>
+            <span id="p_lt_ctl00_UserControl2_userControlElem_navbartoggle">
+                <button type="button" class="navbar-toggle" id="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </span>
+            <nav class="fullnav" id="nav">
+                <div id="p_lt_ctl00_UserControl2_userControlElem_nav" class="fullnav">
+                    <button id="nav-btn-product" class="nav-button">Product</button>
+                    <div id="nav-menu-product" class="nav-menu nmproduct">
+                        <a href="https://www.advsyscon.com/en-us/activebatch" id="ab-link"><strong>ActiveBatch Workload Automation Overview</strong><br /><span id="overview-desc">Build and automate workflows in half the time without the need for scripting. Gain operational peace of mind with real-time insights, customizable alerting, and more.</span></a>
+                        <div class="nav-product">
+                            <div class="nav-product-item">
+                                <a href="https://www.advsyscon.com/en-us/activebatch/developers" id="nav-developers-link"><strong>Development</strong></a>
+                                <div id="nav-developers-menu">
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/build-and-automate">Low-Code Automation and Script Optimization</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management">Workflow Management</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/coordinate-and-consolidate">End-to-End Orchestration</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/extensions">Integrations</a>
+                                </div>
+                            </div>
+                            <div class="nav-product-item">
+                                <a href="https://www.advsyscon.com/en-us/activebatch/operators" id="nav-operators-link"><strong>Operations</strong></a>
+                                <div id="nav-operators-menu">
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/job-scheduler">Job Scheduling</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation">Event Automation</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/custom-alerts">Monitoring, Alerting, and Reporting</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces">Interfaces</a>
+                                </div>
+                            </div>
+                            <div class="nav-product-item">
+                                <a href="https://www.advsyscon.com/en-us/activebatch/administrators" id="nav-administrators-link"><strong>Administration</strong></a>
+                                <div id="nav-administrators-menu">
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture">Architecture and High Availability</a>
+                                    <a href="https://www.advsyscon.com/en-us/activebatch/security-driven-automation">Security and Governance</a>
+                                    <a href="https://www.advsyscon.com/en-us/services/migration-services">Migrating to ActiveBatch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="nav-btn-aa" class="nav-button">Automation Areas</button>
+                    <div id="nav-menu-aa" class="nav-menu nmaa">
+                        <a href="https://www.advsyscon.com/en-us/activebatch/workload-automation">Business Process Automation</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch/it-process-automation">IT Automation</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch/use-cases/managed-file-transfer">Managed File Transfer</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation">Data Warehouse and ETL</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch/script-management">Script Lifecycle Management</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization">Digital Infrastructure Automation</a>
+                    </div>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/pricing" class="nav-link-button" id="nav-btn-licensing">Pricing</a>
+                    <button id="nav-btn-resources" class="nav-button">Resources</button>
+                    <div id="nav-menu-resources" class="nav-menu nmresources">
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources">Resource Library</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=casestudy">Customer Case Studies</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=whitepaper">Whitepapers</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=datasheet">Datasheets</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=video">Videos</a>
+                        <a href="https://www.advsyscon.com/blog">Blog</a>
+                    </div>
+                    <button id="nav-btn-company" class="nav-button">Company</button>
+                    <div id="nav-menu-company" class="nav-menu nmcompany">
+                        <a href="https://www.advsyscon.com/en-us/about-us">About Us</a>
+                        <a href="https://www.advsyscon.com/en-us/services/support-options">Training and Support</a>
+                        <a href="https://www.advsyscon.com/en-us/news">News and Press Releases</a>
+                        <a href="https://www.advsyscon.com/en-us/about-us/partners">Partners</a>
+                        <a href="https://www.advsyscon.com/en-us/about-us/careers">Careers</a>
+                    </div>
+
+
+                    <a href="https://www.advsyscon.com/en-us/demo/quick" class="nav-demo-button" id="nav-btn-demo">Get a Demo</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $("#nav-menu-product").hide();
+    $("#nav-menu-aa").hide();
+    $("#nav-menu-company").hide();
+    $("#nav-menu-resources").hide();
+
+    // Product onClick
+    document.getElementById("nav-btn-product").onclick = function () {
+        if ($("#nav-menu-product").is(":visible")) {
+            $("#nav-menu-product").hide();
+            document.getElementById("nav-menu-product").classList.remove("mnav-menu");
+            document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+        } else {
+            if ($("#nav-btn-product").hasClass("mnav-button")) {
+                document.getElementById("nav-menu-product").classList.add("mnav-menu");
+                $("#nav-developers-menu").hide();
+                $("#nav-operators-menu").hide();
+                $("#nav-administrators-menu").hide();
+                document.getElementById("nav-developers-link").setAttribute("href", "");
+                document.getElementById("nav-developers-link").onclick = open_developers_menu;
+                document.getElementById("nav-administrators-link").setAttribute("href", "");
+                document.getElementById("nav-administrators-link").onclick = open_administrators_menu;
+                document.getElementById("nav-operators-link").setAttribute("href", "");
+                document.getElementById("nav-operators-link").onclick = open_operators_menu;
+                if ($('#backtomenu-product').length) {
+                } else {
+                    var backbutton = document.createElement("button");
+                    backbutton.id = "backtomenu-product";
+                    backbutton.innerHTML = "« Back";
+                    backbutton.onclick = closenavmenuproduct;
+                    backbutton.className = "mnav_backbutton";
+                    document.getElementById("nav-menu-product").appendChild(backbutton);
+                }
+            }
+            $("#nav-menu-product").show();
+            document.getElementById("nav-btn-product").classList.toggle("nav-hover-state");
+            document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+            $("#nav-menu-aa").hide();
+            $("#nav-menu-company").hide();
+            $("#nav-menu-resources").hide();
+        }
+        return false;
+    };
+
+     function open_developers_menu() {
+        if ($("#nav-developers-menu").is(":visible")) {
+            $("#nav-developers-menu").hide();
+        } else {
+            $("#nav-developers-menu").show();
+            $("#nav-operators-menu").hide();
+            $("#nav-administrators-menu").hide();
+            if ($('#nav-lm-developers').length) {
+            } else {
+                var learnmore = document.createElement("a");
+                learnmore.id = "nav-lm-developers";
+                learnmore.class = "mnav-learn-more";
+                learnmore.innerHTML = "Overview";
+                learnmore.href = "/en-us/activebatch/developers";
+                document.getElementById("nav-developers-menu").insertBefore(learnmore, document.getElementById("nav-developers-menu").firstChild);
+            }
+        }
+        return false;
+    }
+
+    function open_administrators_menu() {
+        if ($("#nav-administrators-menu").is(":visible")) {
+            $("#nav-administrators-menu").hide();
+        } else {
+            $("#nav-developers-menu").hide();
+            $("#nav-operators-menu").hide();
+            $("#nav-administrators-menu").show();
+            if ($('#nav-lm-administrators').length) {
+            } else {
+                var learnmore = document.createElement("a");
+                learnmore.id = "nav-lm-administrators";
+                learnmore.class = "mnav-learn-more";
+                learnmore.innerHTML = "Overview";
+                learnmore.href = "/en-us/activebatch/administrators";
+                document.getElementById("nav-administrators-menu").insertBefore(learnmore, document.getElementById("nav-administrators-menu").firstChild);
+            }
+        }
+        return false;
+    }
+
+    function open_operators_menu() {
+        if ($("#nav-operators-menu").is(":visible")) {
+            $("#nav-operators-menu").hide();
+        } else {
+            $("#nav-operators-menu").show();
+            $("#nav-developers-menu").hide();
+            $("#nav-administrators-menu").hide();
+            if ($('#nav-lm-operators').length) {
+            } else {
+                var learnmore = document.createElement("a");
+                learnmore.id = "nav-lm-operators";
+                learnmore.class = "mnav-learn-more";
+                learnmore.innerHTML = "Overview";
+                learnmore.href = "/en-us/activebatch/operators";
+                document.getElementById("nav-operators-menu").insertBefore(learnmore, document.getElementById("nav-operators-menu").firstChild);
+            }
+        }
+        return false;
+    }
+
+    // Automation Areas onClick
+    document.getElementById("nav-btn-aa").onclick = function () {
+        if ($("#nav-menu-aa").is(":visible")) {
+            $("#nav-menu-aa").hide();
+            document.getElementById("nav-menu-aa").classList.remove("mnav-menu");
+            document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+        } else {
+            if ($("#nav-btn-aa").hasClass("mnav-button")) {
+                document.getElementById("nav-menu-aa").classList.add("mnav-menu");
+                if ($('#backtomenu-aa').length) {
+                } else {
+                    var backbutton = document.createElement("button");
+                    backbutton.id = "backtomenu-aa";
+                    backbutton.innerHTML = "« Back";
+                    backbutton.onclick = closenavmenuaa;
+                    backbutton.className = "mnav_backbutton";
+                    document.getElementById("nav-menu-aa").appendChild(backbutton);
+                }
+            }
+            $("#nav-menu-aa").show();
+            document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-aa").classList.toggle("nav-hover-state");
+            $("#nav-menu-product").hide();
+            $("#nav-menu-company").hide();
+            $("#nav-menu-resources").hide();
+        }
+        return false;
+    };
+
+    // Resources onClick
+    document.getElementById("nav-btn-resources").onclick = function () {
+        if ($("#nav-menu-resources").is(":visible")) {
+            $("#nav-menu-resources").hide();
+            document.getElementById("nav-menu-resources").classList.remove("mnav-menu");
+            document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+        } else {
+            if ($("#nav-btn-resources").hasClass("mnav-button")) {
+                document.getElementById("nav-menu-resources").classList.add("mnav-menu");
+                if ($('#backtomenu-resources').length) {
+                } else {
+                    var backbutton = document.createElement("button");
+                    backbutton.id = "backtomenu-resources";
+                    backbutton.innerHTML = "« Back";
+                    backbutton.onclick = closenavmenuresources;
+                    backbutton.className = "mnav_backbutton";
+                    document.getElementById("nav-menu-resources").appendChild(backbutton);
+                }
+            }
+            $("#nav-menu-resources").show();
+            document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-resources").classList.toggle("nav-hover-state");
+            $("#nav-menu-product").hide();
+            $("#nav-menu-aa").hide();
+            $("#nav-menu-company").hide();
+        }
+        return false;
+    };
+
+    // Company onClick
+    document.getElementById("nav-btn-company").onclick = function () {
+        if ($("#nav-menu-company").is(":visible")) {
+            $("#nav-menu-company").hide();
+            document.getElementById("nav-menu-company").classList.remove("mnav-menu");
+            document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+        } else {
+            if ($("#nav-btn-company").hasClass("mnav-button")) {
+                document.getElementById("nav-menu-company").classList.add("mnav-menu");
+                if ($('#backtomenu-company').length) {
+                } else {
+                    var backbutton = document.createElement("button");
+                    backbutton.id = "backtomenu-company";
+                    backbutton.innerHTML = "« Back";
+                    backbutton.onclick = closenavmenucompany;
+                    backbutton.className = "mnav_backbutton";
+                    document.getElementById("nav-menu-company").appendChild(backbutton);
+                }
+            }
+            $("#nav-menu-company").show();
+            document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+            document.getElementById("nav-btn-company").classList.toggle("nav-hover-state");
+            $("#nav-menu-product").hide();
+            $("#nav-menu-aa").hide();
+            $("#nav-menu-resources").hide();
+
+        }
+        return false;
+    };
+
+    function closenavmenuproduct() {
+        document.getElementById("nav-menu-product").classList.remove("mnav-menu");
+        $("#nav-menu-product").hide();
+        document.getElementById("nav-menu-product").classList.remove("mnav-menu");
+        document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+        return false;
+    };
+     function closenavmenuaa() {
+        document.getElementById("nav-menu-aa").classList.remove("mnav-menu");
+        $("#nav-menu-aa").hide();
+        document.getElementById("nav-menu-aa").classList.remove("mnav-menu");
+        document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+        return false;
+    };
+
+    function closenavmenuresources() {
+        document.getElementById("nav-menu-resources").classList.remove("mnav-menu");
+        $("#nav-menu-resources").hide();
+        document.getElementById("nav-menu-resources").classList.remove("mnav-menu");
+        document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+        return false;
+    };
+
+    function closenavmenucompany() {
+        document.getElementById("nav-menu-company").classList.remove("mnav-menu");
+        $("#nav-menu-company").hide();
+        document.getElementById("nav-menu-company").classList.remove("mnav-menu");
+        document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+        return false;
+    };
+
+    document.getElementById("navbar-toggle").onclick = function () {
+        if ($("#p_lt_ctl00_UserControl2_userControlElem_nav").hasClass("fullnav")) {
+            document.getElementById("p_lt_ctl00_UserControl2_userControlElem_nav").classList.remove("fullnav");
+            document.getElementById("nav").classList.remove("fullnav");
+            document.getElementById("nav-btn-company").classList.add("mnav-button");
+            document.getElementById("nav-btn-aa").classList.add("mnav-button");
+            document.getElementById("nav-btn-product").classList.add("mnav-button");
+            document.getElementById("nav-btn-resources").classList.add("mnav-button");
+            document.getElementById("nav-btn-licensing").classList.add("mnav-button");
+            document.getElementById("nav-btn-product").innerHTML = "Product »";
+            document.getElementById("nav-btn-aa").innerHTML = "Automation Areas »";
+            document.getElementById("nav-btn-resources").innerHTML = "Resources »";
+            document.getElementById("nav-btn-company").innerHTML = "Company »";
+
+        } else {
+            document.getElementById("p_lt_ctl00_UserControl2_userControlElem_nav").classList.add("fullnav");
+            document.getElementById("nav").classList.add("fullnav");
+        }
+    };
+
+    $(document).click(function (event) {
+        if (!$(event.target).closest('.fullnav').length) {
+            if ($("#nav-menu-company").is(":visible")) {
+                $("#nav-menu-company").hide();
+                document.getElementById("nav-btn-company").classList.remove("nav-hover-state");
+            }
+
+            if ($("#nav-menu-aa").is(":visible")) {
+                $("#nav-menu-aa").hide();
+                document.getElementById("nav-btn-aa").classList.remove("nav-hover-state");
+            }
+            if ($("#nav-menu-resources").is(":visible")) {
+                $("#nav-menu-resources").hide();
+                document.getElementById("nav-btn-resources").classList.remove("nav-hover-state");
+            }
+
+            if ($("#nav-menu-product").is(":visible")) {
+                $("#nav-menu-product").hide();
+                document.getElementById("nav-btn-product").classList.remove("nav-hover-state");
+            }
+        }
+    });
+</script>
+        
+        
+
+
+        <div class="footer" id="reg-footer">
+    <div class="max-width">
+        <div id="p_lt_ctl02_UserControl1_userControlElem_footerShow">
+            
+            <div class="top-footer">
+                <div class="top-footer-item">
+                    <strong>Product</strong>
+                    <a href="https://www.advsyscon.com/en-us/demo/quick">Get an ActiveBatch Demo</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch"> ActiveBatch Overview</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library">No-Code Job Steps</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/service-library">Low-Code API Accessibility</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/extensions">Integrations</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/pricing">Pricing</a>
+                </div>
+                <div class="top-footer-item">
+                    <strong>Workload Automation</strong>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/business-process-automation">For Business Processes</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/service-level-management">For Service Level Management</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/orchestration">For Process Orchestration</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling/batch-scheduling">For Batch Scheduling</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/hybrid-cloud-management">For Hybrid or Multi-Cloud IT</a>
+                    <a href="https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation">For Data Warehousing</a>
+                </div>
+                <div class="top-footer-item">
+                    <strong>Learn More</strong>
+                    <a href="https://www.advsyscon.com/en-us/resource/workload-automation-overview">Workload Automation Overview</a>
+                    <a href="https://www.advsyscon.com/en-us/resource/universal-workload-automation-security">Security-Driven Automation</a>
+                    <a href="https://www.advsyscon.com/blog/gartner-it-automation">Gartner IT Automation Predictions</a>
+                    <a href="https://www.advsyscon.com/blog/workload-automation-robotic-process-automation">Workload Automation vs. RPA</a>
+                    <a href="https://www.advsyscon.com/blog/workload-automation-gartner">Gartner Workload Automation Trends</a>
+                    <a href="https://www.advsyscon.com/blog/gartner-devops">7 Steps to DevOps</a>
+                </div>
+            </div>
+            <div class="mid-footer">
+                <div class="mid-footer-links">
+                    <div class="mid-footer-item">
+                        <strong>Resources</strong>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=casestudy">Case Studies</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=whitepaper">White Papers</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=datasheet">Datasheets</a>
+                        <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=video">Videos</a>
+                        <a href="https://www.advsyscon.com/blog">Blog</a>
+                    </div>
+                    <div class="mid-footer-item">
+                        <strong>Company</strong>
+                        <a href="https://www.advsyscon.com/en-us/about-us">About Us</a>
+                        <a href="https://www.advsyscon.com/en-us/news">News and Press Releases</a>
+                        <!--<a href="https://www.advsyscon.com/en-us/news/events">Events</a>-->
+                        <a href="https://www.advsyscon.com/en-us/about-us/partners">Partners</a>
+                        <a href="https://www.advsyscon.com/en-us/about-us/careers">Careers</a>
+                    </div>
+                    <div class="mid-footer-item">
+                        <strong>Customer</strong>
+                        <a href="https://www.advsyscon.com/en-us/portal/login">My ASCI Login</a>
+                        <a href="https://www.redwood.com/redwood-university/">Training</a>
+                        <a href="https://support.advsyscon.com/" nofollow>Support</a>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    <strong>Connect with us</strong>
+                    <a href="https://www.linkedin.com/company/advanced-systems-concepts-inc-/" title="LinkedIn" target="_blank"><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/linkedin-icon.png" alt="LinkedIn" /></a>
+                    <a href="https://twitter.com/activebatch" title="Twitter" target="_blank"><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/twitter-icon.png" alt="Twitter" /></a>
+                    <a href="https://www.youtube.com/channel/UC7QZYvPkK93amZEn6VsOXYg" title="Youtube" target="_blank"><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/youtube-icon.png" alt="Youtube" /></a>
+                    <a href="https://www.facebook.com/AdvancedSystemsConceptsInc" title="Facebook" target="_blank"><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/facebook-icon.png" alt="Facebook" /></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-content">
+            <div class="footer-item copyright">
+                <a href="https://www.advsyscon.com/en-us/about-us/contact-us">Contact Us</a> | <a href="https://www.advsyscon.com/en-us/about-us/privacy">Privacy Policy</a> | <a href="https://www.advsyscon.com/en-us/site-map">Sitemap</a><br /><br />
+                <b>Corporate HQ</b><br />
+                Advanced Systems Concepts, Inc.<br />
+                3201 Dallas Parkway - Suite 810<br />
+                Frisco, TX &nbsp;75034<br /><br />
+                © <script>document.write(new Date().getFullYear())</script> - Advanced Systems Concepts, Inc. All Rights Reserved.
+            </div>
+            <div class="footer-item logo">
+                <a id="p_lt_ctl02_UserControl1_userControlElem_logohome" href="https://www.advsyscon.com"><img src="https://www.advsyscon.com/activebatch-logo.svg" alt="ActiveBatch Workload Automation" /></a>
+            </div>
+        </div>
+        
+    </div>
+</div> 
+    </body>
+</html> 
