@@ -1,0 +1,35 @@
+{% set args = args | merge({
+    'grid': 'd-flex flex-column',
+    'gap': 'gap-1 gap-lg-2',
+    'class': '',
+    'listClass': '[ p-2 ]',
+    'chevron': true,
+    'desc': false,
+    'icon': false,
+    'list': []
+}) %}
+
+{% if args.list.length == 0 %}
+  {% return %}
+{% endif %}
+
+{% set args.icon = args.list | map(attribute='icon') | contains(true) %}
+{% set args.desc = args.list | map(attribute='desc') | contains(true) %}
+
+<ul class="[ mega_submenu ] [ {{ args.grid }} {{ args.gap }} ] [ hover-chevron ] {{ args.class }}">
+  {% for cta in args.list %}
+    {% set ctaHtml = '<span>' + cta.text + '</span>' %}
+    {% set ctaHtml = ctaHtml + (args.chevron ? '<i class="fa-solid fa-chevron-right mr-3"></i>' : '') %}
+    {% set icon = args.icon ? '<figure><img src="' + cta.icon + '" alt="Icon" width="27" height="25" loading="lazy"></figure>' : '' %}
+    {% set descClass = args.desc ? '[ has-desc ]' : '[ d-flex w-100 align-items-center gap-3 ]' %}
+    {% set descTxt = (cta.desc is defined and cta.desc != '') ? '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' : '' %}
+    
+    <li class="[ bg-white @hover:bg-light-blue ][ rounded ]">
+      <a href="{{ cta.link }}" target="{{ cta.target | default('_self') }}" class="[ text-reset @hover:dark text-decoration-none ] {{ args.listClass }} {{ descClass }}">
+        {{ icon | safe }}
+        {{ ctaHtml | safe }}
+        {{ descTxt | safe }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
