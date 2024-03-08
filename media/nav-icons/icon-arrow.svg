@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.388" height="12.742" viewBox="0 0 17.388 12.742">
+    <style>
+        #arrow * {
+            stroke: var(--dark, #1E272D);
+            stroke-linecap: round;
+            stroke-width: 2;
+            fill: none;
+        }
+    </style>
+    <g id="arrow" transform="translate(1 1.414)">
+        <line x2="14" transform="translate(0 4.948)" />
+        <path d="M6820,2301.265l4.957,4.957-4.957,4.957" transform="translate(-6809.983 -2301.265)"/>
+    </g>
+</svg>
