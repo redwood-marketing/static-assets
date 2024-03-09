@@ -3,6 +3,8 @@
 
 // 2. Include any default variable overrides here
 
+$heading-font: 'prometo, sans-serif';
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";

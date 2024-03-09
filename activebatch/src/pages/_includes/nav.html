@@ -5,46 +5,40 @@
 				<span href="#" data-menu="company" class="[ mega_menu__item ]">Company <i class="[ fa-solid fa-chevron-down ][ ml-1 ]"></i></span>
 				<section data-menu-target="company" class="[ mega_menu__sub_container ]">
 					<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ p-3 ]">
-						{% set menuCompany = {
+						{% set args = {
 							'gap': 'gap-1 gap-lg-2',
 							'list': [
 								{
 									'text': 'The Redwood Story',
-									'link': /about-us/
+									'link': '/about-us/'
 								},
 								{
 									'text': 'Leadership',
-									'link': /about-us/#team
+									'link': '/about-us/#team'
 								},
-								{# Commented out item
-								{
-									'text': 'Customer Success',
-									'link': #
-								},
-								#}
 								{
 									'text': 'News & Press',
-									'link': /newsroom/
+									'link': '/newsroom/'
 								},
 								{
 									'text': 'Events',
-									'link': /events/
+									'link': '/events/'
 								},
 								{
 									'text': 'Careers',
-									'link': /careers/
+									'link': '/careers/'
 								},
 								{
 									'text': 'Partners',
-									'link': /partners/
+									'link': '/partners/'
 								},
 								{
 									'text': 'Contact Us',
-									'link': /contact-us/
+									'link': '/contact-us/'
 								}
 							]
 						} %}
-						{% include "nav-items.njk" with menuCompany %}
+						{% include "nav-items.njk" %}
 					</div>
 				</section>
 			</li>
@@ -52,7 +46,7 @@
 				<span data-menu="support" class="[ mega_menu__item ]">Support <i class="[ fa-solid fa-chevron-down ][ ml-1 ]"></i></span>
 				<section data-menu-target="support" class="[ mega_menu__sub_container ]">
 					<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ p-3 ]">
-						{% set menuSupport = {
+						{% set args = {
 							'gap': 'gap-1 gap-lg-2',
 							'list': [
 								{
@@ -67,7 +61,7 @@
 								},
 								{
 									'text': 'Training',
-									'link': /redwood-university/
+									'link': '/redwood-university/'
 								},
 								{
 									'text': 'Customer Log in',
@@ -76,7 +70,7 @@
 								}
 							]
 						} %}
-						{% include "nav-items.njk" with menuSupport %}
+						{% include "nav-items.njk" %}
 					</div>
 				</section>
 			</li>
@@ -112,73 +106,73 @@
 									<div class="[ p-3 p-lg-4 ]">
 										<p class="[ mb-1 ][ text-red ]">Enterprise Workload Automation</p>
 										<p class="[ h4 ][ mb-3 ]">RunMyJobs by Redwood</p>
-										{% set menuRunmyjobList = {
+										{% set args = {
 											'list': [
 												{
 													'icon': '/media/nav-icons/icon-eye.svg',
 													'text': 'Workload Automation Overview',
-													'link': /workload-automation/
+													'link': '/workload-automation/'
 												},
 												{
 													'icon': '/media/nav-icons/icon-cube-hand.svg',
 													'text': 'SaaS-based Workload Automation',
-													'link': /runmyjobs-automation-as-saas/
+													'link': '/runmyjobs-automation-as-saas/'
 												},
 												{
 													'icon': '/media/nav-icons/icon-cubes-line.svg',
 													'text': 'SAP Job Scheduling',
-													'link': /solutions/sap/
+													'link': '/solutions/sap/'
 												},
 												{
 													'icon': '/media/nav-icons/icon-arrow-circle.svg',
 													'text': 'Migrate to RunMyJobs',
-													'link': /migration/
+													'link': '/migration/'
 												}
 											]
 										} %}
-										{% include "nav-items.njk" with menuRunmyjobList %}
+										{% include "nav-items.njk" %}
 									</div>
 									<div class="[ p-3 p-lg-4 ][ border-left border-gray ]">
 										<p class="[ mb-2 ][ text-red ]"><a href="/products/file-transfer/">File Transfer</a></p>
-										{% set menuFile = {
+										{% set args = {
 											'list': [
 												{
 													'icon': '/media/nav-icons/marker-jscape.svg',
 													'text': 'JSCAPE – Secure Managed File Transfer',
-													'link': /products/file-transfer/jscape/
+													'link': '/products/file-transfer/jscape/'
 												},
 												{
 													'icon': '/media/nav-icons/marker-cerberus-ftp.svg',
 													'text': 'Cerberus – Secure File Transfer Server',
-													'link': /products/file-transfer/cerberus/
+													'link': '/products/file-transfer/cerberus/'
 												}
 											]
 										} %}
-										{% include "nav-items.njk" with menuFile %}
+										{% include "nav-items.njk" %}
 
                                         <p class="[ my-2 mt-lg-0 pt-3 ][ text-red ][ annoying-border ]">Finance Automation</p>
-										{% set menuFinance = {
+										{% set args = {
 											'list': [
 												{
 													'icon': '/media/nav-icons/icon-currency.svg',
 													'text': 'Record to Report Automation',
-													'link': /solutions/finance-automation/record-to-report/
+													'link': '/solutions/finance-automation/record-to-report/'
 												}
 											]
 										} %}
-										{% include "nav-items.njk" with menuFinance %}
+										{% include "nav-items.njk" %}
 
                                         <p class="[ my-2 pt-3 ][ text-red ][ annoying-border ]">Other Workload Automation</p>
-										{% set menuOtherWorkload = {
+										{% set args = {
 											'list': [
 												{
 													'icon': '/media/nav-icons/icon-cube-4-stack.svg',
 													'text': 'View all Workload Automation Products',
-													'link': /products/workload-automation/
+													'link': '/products/workload-automation/'
 												}
 											]
 										} %}
-										{% include "nav-items.njk" with menuOtherWorkload %}
+										{% include "nav-items.njk" %}
 
 									</div>
                                     
@@ -252,57 +246,57 @@
 						<div class="[ constrain ][ rounded ][ bg-white ][ grid-1-1-2 ]">
 							<div class="[ p-3 p-lg-4 ]">
 								<p class="[ mb-3 ][ text-red ]">SAP Solutions</p>
-								{% set menuSAP = {
+								{% set args = {
 									'gap': 'gap-1 gap-lg-4 py-0 py-lg-2',
 									'listClass': '[ p-2 p-lg-3 ]',
 									'list': [
 										{
 											'icon': '/media/nav-icons/icon-cubes-line.svg',
 											'text': 'SAP Job Scheduling',
-											'link': /solutions/sap/,
+											'link': '/solutions/sap/',
 											'desc': 'Full Stack Enterprise Automation Designed For SAP ERP Applications.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-network.svg',
 											'text': 'RISE with SAP',
-											'link': /solutions/sap/rise/,
+											'link': '/solutions/sap/rise/',
 											'desc': 'Enrich RISE with SAP Using SAP’s #1 Job Scheduler.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-cube-net.svg',
 											'text': 'SAP S/4HANA ERP Automation',
-											'link': /solutions/sap/s-4hana/,
+											'link': '/solutions/sap/s-4hana/',
 											'desc': 'Enhance SAP S/4HANA Cloud with RunMyJobs.'
 										}
 									]
 								} %}
-								{% include "nav-items.njk" with menuSAP %}
+								{% include "nav-items.njk" %}
 							</div>
 							<div class="[ border-left border-gray ][ p-3 p-lg-4 ]">
 								<p class="[ mb-3 ][ text-red ]">Workload Automation</p>
-								{% set menuWorldloadAuto = {
+								{% set args = {
 									'gap': 'gap-1 gap-lg-4 py-0 py-lg-2',
 									'listClass': '[ p-2 p-lg-3 ]',
 									'list': [
 										{
 											'icon': '/media/nav-icons/icon-cube-transfer.svg',
 											'text': 'Event-Driven WLA',
-											'link': /runmyjobs-event-driven-process-automation/,
+											'link': '/runmyjobs-event-driven-process-automation/',
 											'desc': 'Easily create and orchestrate business processes for real-time results with Redwood’s automation.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-cube-hand.svg',
 											'text': 'SaaS-Based WLA',
-											'link': /runmyjobs-automation-as-saas/,
+											'link': '/runmyjobs-automation-as-saas/',
 											'desc': 'Create a bright digital future on a modern, cloud-native process automation solution.'
 										}
 									]
 								} %}
-								{% include "nav-items.njk" with menuWorldloadAuto %}
+								{% include "nav-items.njk" %}
 							</div>
 							<div class="[ border-left border-gray ][ p-3 p-lg-4 ]">
 								<p class="[ mb-3 ][ text-red ]">Other Use Cases</p>
-								{% set menuOtherUse = {
+								{% set args = {
 									'grid': 'grid-1-1',
 									'gap': 'gap-1 gap-lg-4 py-0 py-lg-2',
 									'listClass': '[ p-2 p-lg-3 ]',
@@ -310,30 +304,30 @@
 										{
 											'icon': '/media/nav-icons/icon-currency.svg',
 											'text': 'Record to Report Automation',
-											'link': /solutions/finance-automation/record-to-report/,
+											'link': '/solutions/finance-automation/record-to-report/',
 											'desc': 'Eliminate manual tasks and orchestrate your finance and accounting processes.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-right-to-left.svg',
 											'text': 'File Transfer Automation',
-											'link': /managed-file-transfer/,
+											'link': '/managed-file-transfer/',
 											'desc': 'Manage critical data transfers inside and outside your enterprise securely and easily.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-binary.svg',
 											'text': 'Data Management Automation',
-											'link': /data-warehouse-management/,
+											'link': '/data-warehouse-management/',
 											'desc': 'Gain rapid and useful insight from Big Data, anywhere in your enterprise.'
 										},
 										{
 											'icon': '/media/nav-icons/icon-clock-database.svg',
 											'text': 'Meter-to-Cash Automation',
-											'link': /solutions/meter-to-cash/,
+											'link': '/solutions/meter-to-cash/',
 											'desc': 'Automate Meter-to-Cash Processing for Utilities.'
 										}
 									]
 								} %}
-								{% include "nav-items.njk" with menuOtherUse %}
+								{% include "nav-items.njk" %}
 							</div>
                             
 						</div>
@@ -348,41 +342,41 @@
 						<div class="[ constrain ][ rounded ][ bg-white ][ grid-2-2-3 ]">
 							<div class="[ d-flex flex-column ][ p-3 p-lg-4 ]">
 								<p class="[ mb-3 ][ text-red ]">Migrate to Redwood</p>
-								{% set menuMigrate = {
+								{% set args = {
 									'list': [
 										{
 											'icon': '/media/nav-icons/marker-control-m.svg',
 											'text': 'Migrate from BMC Contol-M',
-											'link': /replace-bmc-control-m/
+											'link': '/replace-bmc-control-m/'
 										},
 										{
 											'icon': '/media/nav-icons/marker-automic.svg',
 											'text': 'Migrate from Broadcom AutoSys',
-											'link': /replace-ca-autosys/
+											'link': '/replace-ca-autosys/'
 										},
 										{
 											'icon': '/media/nav-icons/marker-automic.svg',
 											'text': 'Migrate from Broadcom Automic',
-											'link': /replace-ca/
+											'link': '/replace-ca/'
 										},
 										{
 											'icon': '/media/nav-icons/marker-ibm.svg',
 											'text': 'Migrate from IBM Tivoli',
-											'link': /replace-ibm-tivoli-workload-scheduler-tws/
+											'link': '/replace-ibm-tivoli-workload-scheduler-tws/'
 										},
 										{
 											'icon': '/media/nav-icons/marker-stonebranch.svg',
 											'text': 'Migrate from Stonebranch',
-											'link': /replace-stonebranch/
+											'link': '/replace-stonebranch/'
 										},
 										{
 											'icon': '/media/nav-icons/marker-jams.svg',
 											'text': 'Migrate from Fortra JAMS',
-											'link': /replace-jams-scheduler/
+											'link': '/replace-jams-scheduler/'
 										}
 									]
 								} %}
-								{% include "nav-items.njk" with menuMigrate %}
+								{% include "nav-items.njk" %}
 								<div class="[ bg-light @hover:bg-light-blue ][ rounded ][ mt-3 mt-lg-auto ]">
 									<a href="/migration/" class="[ text-reset @hover:dark text-decoration-none ][ d-flex w-100 align-items-center justify-content-between ][ p-3 ]">
 										<span>Migration Overview</span>
@@ -392,37 +386,37 @@
 							</div>
 							<div class="[ d-flex flex-column ][ border-left border-gray ][ p-3 p-lg-4 ]">
 								<p class="[ mb-3 ][ text-red ]">Resources</p>
-								{% set menuResources = {
+								{% set args = {
 									'gap': 'gap-1 gap-lg-3',
 									'list': [
 										{
 											'icon': '/media/nav-icons/icon-suitcase.svg',
 											'text': 'Case Studies',
-											'link': /customers/
+											'link': '/customers/'
 										},
 										{
 											'icon': '/media/nav-icons/icon-paper-tray.svg',
 											'text': 'Solution Sheets',
-											'link': /resources/?type=solutions-sheet
+											'link': '/resources/?type=solutions-sheet'
 										},
 										{
 											'icon': '/media/nav-icons/icon-video-clapboard.svg',
 											'text': 'Videos',
-											'link': /resources/?type=video
+											'link': '/resources/?type=video'
 										},
 										{
 											'icon': '/media/nav-icons/icon-book-open.svg',
 											'text': 'Whitepapers',
-											'link': /resources/?type=whitepaper
+											'link': '/resources/?type=whitepaper'
 										},
 										{
 											'icon': '/media/nav-icons/icon-idea-direction.svg',
 											'text': 'Analyst Pieces',
-											'link': /resources/?type=analyst-piece
+											'link': '/resources/?type=analyst-piece'
 										}
 									]
 								} %}
-								{% include "nav-items.njk" with menuResources %}
+								{% include "nav-items.njk" %}
 								<div class="[ bg-light @hover:bg-light-blue ][ rounded ][ mt-3 mt-lg-auto ]">
 									<a href="/resources/" class="[ text-reset @hover:dark text-decoration-none ][ d-flex w-100 align-items-center justify-content-between ][ p-3 ]">
 										<span>Explore all Resources</span>
@@ -499,43 +493,43 @@
 									</a>
 								</div>
 								<div class="[ border-left border-gray ][ d-flex flex-column ]">
-									{% set menuRedwood = {
+									{% set args = {
 										'gap': 'gap-0',
 										'class': '[ p-3 mx-2 py-lg-3 ]',
 										'list': [
 											{
 												'icon': '/media/nav-icons/icon-full-stack.svg',
 												'text': 'Full Stack Automation',
-												'link': /runmyjobs-automate-anything-anywhere/
+												'link': '/runmyjobs-automate-anything-anywhere/'
 											},
 											{
 												'icon': '/media/nav-icons/icon-cube-hand.svg',
 												'text': 'Modern SaaS',
-												'link': /runmyjobs-automation-as-saas/
+												'link': '/runmyjobs-automation-as-saas/'
 											},
 											{
 												'icon': '/media/nav-icons/icon-cubes-line.svg',
 												'text': 'SAP Job Scheduling',
-												'link': /solutions/sap/
+												'link': '/solutions/sap/'
 											},
 											{
 												'icon': '/media/nav-icons/icon-hexagon-people.svg',
 												'text': 'Customer Commitment',
-												'link': /customers/
+												'link': '/customers/'
 											},
 											{
 												'icon': '/media/nav-icons/icon-eye-lock.svg',
 												'text': 'Security',
-												'link': /trust/
+												'link': '/trust/'
 											},
 											{
 												'icon': '/media/nav-icons/icon-edu.svg',
 												'text': 'Education',
-												'link': /redwood-university/
+												'link': '/redwood-university/'
 											}
 										]
 									} %}
-									{% include "nav-items.njk" with menuRedwood %}
+									{% include "nav-items.njk" %}
 									<aside class="[ bg-light bg-lg-white ][ border-top border-gray ][ px-4 py-3 mt-auto ]">
 										<a href="/demo/quick/" class="[ d-block ][ btn btn-sm btn-secondary ]">
 											Get a Demo <i class="[ fa-solid fa-arrow-right fa-sm ][ d-none d-sm-inline ml-2 ]"></i>
