@@ -1,3 +1,10 @@
+
+{% block external %}
+    <link id="navigation-css" rel="stylesheet" href="https://static.marketing.redwood.com/activebatch/en-us/corporatesite/nav.min.css">
+	<script id="navigation-js" href="https://static.marketing.redwood.com/activebatch/en-us/corporatesite/nav.min.js"></script>
+{% endblock %}
+
+{% block navigation %}
 <nav class="[ mega_navigation ]">
 	<div class="[ mega_navigation__extra-menu ]">
 		<ul class="[ extra_menu ]">
@@ -109,22 +116,22 @@
 										{% set args = {
 											'list': [
 												{
-													'icon': '/media/nav-icons/icon-eye.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-eye.svg',
 													'text': 'Workload Automation Overview',
 													'link': '/workload-automation/'
 												},
 												{
-													'icon': '/media/nav-icons/icon-cube-hand.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-hand.svg',
 													'text': 'SaaS-based Workload Automation',
 													'link': '/runmyjobs-automation-as-saas/'
 												},
 												{
-													'icon': '/media/nav-icons/icon-cubes-line.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cubes-line.svg',
 													'text': 'SAP Job Scheduling',
 													'link': '/solutions/sap/'
 												},
 												{
-													'icon': '/media/nav-icons/icon-arrow-circle.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-arrow-circle.svg',
 													'text': 'Migrate to RunMyJobs',
 													'link': '/migration/'
 												}
@@ -137,12 +144,12 @@
 										{% set args = {
 											'list': [
 												{
-													'icon': '/media/nav-icons/marker-jscape.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-jscape.svg',
 													'text': 'JSCAPE – Secure Managed File Transfer',
 													'link': '/products/file-transfer/jscape/'
 												},
 												{
-													'icon': '/media/nav-icons/marker-cerberus-ftp.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-cerberus-ftp.svg',
 													'text': 'Cerberus – Secure File Transfer Server',
 													'link': '/products/file-transfer/cerberus/'
 												}
@@ -154,7 +161,7 @@
 										{% set args = {
 											'list': [
 												{
-													'icon': '/media/nav-icons/icon-currency.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-currency.svg',
 													'text': 'Record to Report Automation',
 													'link': '/solutions/finance-automation/record-to-report/'
 												}
@@ -166,7 +173,7 @@
 										{% set args = {
 											'list': [
 												{
-													'icon': '/media/nav-icons/icon-cube-4-stack.svg',
+													'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-4-stack.svg',
 													'text': 'View all Workload Automation Products',
 													'link': '/products/workload-automation/'
 												}
@@ -251,19 +258,19 @@
 									'listClass': '[ p-2 p-lg-3 ]',
 									'list': [
 										{
-											'icon': '/media/nav-icons/icon-cubes-line.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cubes-line.svg',
 											'text': 'SAP Job Scheduling',
 											'link': '/solutions/sap/',
 											'desc': 'Full Stack Enterprise Automation Designed For SAP ERP Applications.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-network.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-network.svg',
 											'text': 'RISE with SAP',
 											'link': '/solutions/sap/rise/',
 											'desc': 'Enrich RISE with SAP Using SAP’s #1 Job Scheduler.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-cube-net.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-net.svg',
 											'text': 'SAP S/4HANA ERP Automation',
 											'link': '/solutions/sap/s-4hana/',
 											'desc': 'Enhance SAP S/4HANA Cloud with RunMyJobs.'
@@ -279,13 +286,13 @@
 									'listClass': '[ p-2 p-lg-3 ]',
 									'list': [
 										{
-											'icon': '/media/nav-icons/icon-cube-transfer.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-transfer.svg',
 											'text': 'Event-Driven WLA',
 											'link': '/runmyjobs-event-driven-process-automation/',
 											'desc': 'Easily create and orchestrate business processes for real-time results with Redwood’s automation.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-cube-hand.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-hand.svg',
 											'text': 'SaaS-Based WLA',
 											'link': '/runmyjobs-automation-as-saas/',
 											'desc': 'Create a bright digital future on a modern, cloud-native process automation solution.'
@@ -302,25 +309,25 @@
 									'listClass': '[ p-2 p-lg-3 ]',
 									'list': [
 										{
-											'icon': '/media/nav-icons/icon-currency.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-currency.svg',
 											'text': 'Record to Report Automation',
 											'link': '/solutions/finance-automation/record-to-report/',
 											'desc': 'Eliminate manual tasks and orchestrate your finance and accounting processes.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-right-to-left.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-right-to-left.svg',
 											'text': 'File Transfer Automation',
 											'link': '/managed-file-transfer/',
 											'desc': 'Manage critical data transfers inside and outside your enterprise securely and easily.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-binary.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-binary.svg',
 											'text': 'Data Management Automation',
 											'link': '/data-warehouse-management/',
 											'desc': 'Gain rapid and useful insight from Big Data, anywhere in your enterprise.'
 										},
 										{
-											'icon': '/media/nav-icons/icon-clock-database.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-clock-database.svg',
 											'text': 'Meter-to-Cash Automation',
 											'link': '/solutions/meter-to-cash/',
 											'desc': 'Automate Meter-to-Cash Processing for Utilities.'
@@ -345,32 +352,32 @@
 								{% set args = {
 									'list': [
 										{
-											'icon': '/media/nav-icons/marker-control-m.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-control-m.svg',
 											'text': 'Migrate from BMC Contol-M',
 											'link': '/replace-bmc-control-m/'
 										},
 										{
-											'icon': '/media/nav-icons/marker-automic.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-automic.svg',
 											'text': 'Migrate from Broadcom AutoSys',
 											'link': '/replace-ca-autosys/'
 										},
 										{
-											'icon': '/media/nav-icons/marker-automic.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-automic.svg',
 											'text': 'Migrate from Broadcom Automic',
 											'link': '/replace-ca/'
 										},
 										{
-											'icon': '/media/nav-icons/marker-ibm.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-ibm.svg',
 											'text': 'Migrate from IBM Tivoli',
 											'link': '/replace-ibm-tivoli-workload-scheduler-tws/'
 										},
 										{
-											'icon': '/media/nav-icons/marker-stonebranch.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-stonebranch.svg',
 											'text': 'Migrate from Stonebranch',
 											'link': '/replace-stonebranch/'
 										},
 										{
-											'icon': '/media/nav-icons/marker-jams.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/marker-jams.svg',
 											'text': 'Migrate from Fortra JAMS',
 											'link': '/replace-jams-scheduler/'
 										}
@@ -390,27 +397,27 @@
 									'gap': 'gap-1 gap-lg-3',
 									'list': [
 										{
-											'icon': '/media/nav-icons/icon-suitcase.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-suitcase.svg',
 											'text': 'Case Studies',
 											'link': '/customers/'
 										},
 										{
-											'icon': '/media/nav-icons/icon-paper-tray.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-paper-tray.svg',
 											'text': 'Solution Sheets',
 											'link': '/resources/?type=solutions-sheet'
 										},
 										{
-											'icon': '/media/nav-icons/icon-video-clapboard.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-video-clapboard.svg',
 											'text': 'Videos',
 											'link': '/resources/?type=video'
 										},
 										{
-											'icon': '/media/nav-icons/icon-book-open.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-book-open.svg',
 											'text': 'Whitepapers',
 											'link': '/resources/?type=whitepaper'
 										},
 										{
-											'icon': '/media/nav-icons/icon-idea-direction.svg',
+											'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-idea-direction.svg',
 											'text': 'Analyst Pieces',
 											'link': '/resources/?type=analyst-piece'
 										}
@@ -498,32 +505,32 @@
 										'class': '[ p-3 mx-2 py-lg-3 ]',
 										'list': [
 											{
-												'icon': '/media/nav-icons/icon-full-stack.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-full-stack.svg',
 												'text': 'Full Stack Automation',
 												'link': '/runmyjobs-automate-anything-anywhere/'
 											},
 											{
-												'icon': '/media/nav-icons/icon-cube-hand.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cube-hand.svg',
 												'text': 'Modern SaaS',
 												'link': '/runmyjobs-automation-as-saas/'
 											},
 											{
-												'icon': '/media/nav-icons/icon-cubes-line.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-cubes-line.svg',
 												'text': 'SAP Job Scheduling',
 												'link': '/solutions/sap/'
 											},
 											{
-												'icon': '/media/nav-icons/icon-hexagon-people.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-hexagon-people.svg',
 												'text': 'Customer Commitment',
 												'link': '/customers/'
 											},
 											{
-												'icon': '/media/nav-icons/icon-eye-lock.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-eye-lock.svg',
 												'text': 'Security',
 												'link': '/trust/'
 											},
 											{
-												'icon': '/media/nav-icons/icon-edu.svg',
+												'icon': 'https://static.marketing.redwood.com/activebatch/en-us/corporatesite/media/nav-icons/icon-edu.svg',
 												'text': 'Education',
 												'link': '/redwood-university/'
 											}
@@ -554,3 +561,4 @@
 		</div>
 	</div>
 </nav>
+{% endblock %}

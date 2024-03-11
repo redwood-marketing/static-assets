@@ -179,7 +179,7 @@ const megaMenu = {
 		}
 	},
 	init: function () {
-		// console.log('Lok’tar Ogar v0.31');
+		console.log('Lok’tar Ogar v0.31');
 		if (this.initialized) {
 			return;
 		}

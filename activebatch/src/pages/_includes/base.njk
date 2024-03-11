@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'meta.njk' %}
+        {% block external %} {% endblock %}
+    </head>
+    <body>
+        {% include "nav.njk" %}
+        {% block content %} {% endblock %}
+        {% include 'footer.njk' %}
+    </body>
+</html> 

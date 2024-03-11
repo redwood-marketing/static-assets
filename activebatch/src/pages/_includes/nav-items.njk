@@ -1,4 +1,4 @@
-{% set defaultArgs = {
+{%- set defaultArgs = {
     'grid': 'd-flex flex-column',
     'gap': 'gap-1 gap-lg-2',
     'class': '',
@@ -7,46 +7,46 @@
     'desc': false,
     'icon': false,
     'list': []
-} %}
+} -%}
 
-{% set args = args | default(defaultArgs) %}
-{% if args.list.length != 0 %}
-    {% set iconExists = false %}
-    {% set descExists = false %}
-    {% for item in args.list %}
-        {% if item.icon %}
-            {% set iconExists = true %}
-        {% endif %}
-        {% if item.desc %}
-            {% set descExists = true %}
-        {% endif %}
-    {% endfor %}
-    {% set args = args|setAttribute('icon', iconExists) %}
-    {% set args = args|setAttribute('desc', descExists) %}
-{% endif %}
+{%- set args = args | default(defaultArgs) -%}
+{%- if args.list.length != 0 -%}
+    {%- set iconExists = false -%}
+    {%- set descExists = false -%}
+    {%- for item in args.list -%}
+        {%- if item.icon -%}
+            {%- set iconExists = true -%}
+        {%- endif -%}
+        {%- if item.desc -%}
+            {%- set descExists = true -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- set args = args|setAttribute('icon', iconExists) -%}
+    {%- set args = args|setAttribute('desc', descExists) -%}
+{%- endif -%}
 
 <ul class="[ mega_submenu ] [ {{ args.grid }} {{ args.gap }} ] [ hover-chevron ] {{ args.class }}">
-  {% for cta in args.list %}
-    {% set ctaHtml = '<span>' + cta.text + '</span>' %}
+  {%- for cta in args.list -%}
+    {%- set ctaHtml = '<span>' + cta.text + '</span>' -%}
 
-    {% if args.chevron %}
-    {% set ctaHtml = ctaHtml + '<i class="fa-solid fa-chevron-right mr-3"></i>' %}
-    {% endif %}
+    {%- if args.chevron -%}
+    {%- set ctaHtml = ctaHtml + '<i class="fa-solid fa-chevron-right mr-3"></i>' -%}
+    {%- endif -%}
 
-    {% if args.icon %}
-    {% set icon = '<figure><img src="' + cta.icon + '" alt="Icon" width="27" height="25" loading="lazy"></figure>' %}
-    {% endif %}
+    {%- if args.icon -%}
+    {%- set icon = '<figure><img src="' + cta.icon + '" alt="Icon" width="27" height="25" loading="lazy"></figure>' -%}
+    {%- endif -%}
     
-    {% if args.desc %}
-    {% set descClass = '[ has-desc ]' %}
-    {% else %}
-    {% set descClass = '[ d-flex w-100 align-items-center gap-3 ]' %}
-    {% endif %}
+    {%- if args.desc -%}
+    {%- set descClass = '[ has-desc ]' -%}
+    {%- else -%}
+    {%- set descClass = '[ d-flex w-100 align-items-center gap-3 ]' -%}
+    {%- endif -%}
 
-    {% if cta.desc %}
-    {% set descTxt = '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' %}
-    {% endif %}
-    
+    {%- if cta.desc -%}
+    {%- set descTxt = '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' -%}
+    {%- endif -%}
+
     <li class="[ bg-white @hover:bg-light-blue ][ rounded ]">
       <a href="{{ cta.link }}" target="{{ cta.target | default('_self') }}" class="[ text-reset @hover:dark text-decoration-none ] {{ args.listClass }} {{ descClass }}">
         {{ icon | safe }}
@@ -54,5 +54,5 @@
         {{ descTxt | safe }}
       </a>
     </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
