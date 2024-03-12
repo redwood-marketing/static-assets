@@ -9,7 +9,7 @@
     'list': []
 } -%}
 
-{%- set args = args | default(defaultArgs) -%}
+{%- set args = defaultArgs|mergeAttributes( args ) -%}
 {%- if args.list.length != 0 -%}
     {%- set iconExists = false -%}
     {%- set descExists = false -%}
