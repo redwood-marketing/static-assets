@@ -1,16 +1,10 @@
-
-{% block external %}
-    <link id="navigation-css" rel="stylesheet" href="/nav.min.css">
-	<script id="navigation-js" src="/nav.min.js"></script>
-{% endblock %}
-
 {% block navigation %}
 {# because NAV has Style from HOME.CSS #}
 <div class="[ mega_navigation ]">
 	<div class="[ mega_navigation__extra-menu ]">
 		<ul class="[ extra_menu ]">
 			<li>
-				<span href="#" data-menu="company" class="[ mega_menu__item ]">Company <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+				<span href="#" data-menu="company" class="[ mega_menu__item ]">Company <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 				<section data-menu-target="company" class="[ mega_menu__sub_container ]">
 					<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ p-3 ]">
 						{% set args = {
@@ -51,7 +45,7 @@
 				</section>
 			</li>
 			<li>
-				<span data-menu="support" class="[ mega_menu__item ]">Support <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+				<span data-menu="support" class="[ mega_menu__item ]">Support <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 				<section data-menu-target="support" class="[ mega_menu__sub_container ]">
 					<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ p-3 ]">
 						{% set args = {
@@ -99,42 +93,42 @@
 			</a>
 			<div class="[ mega_navigation__back ][ d-lg-none ]">
 				<button class="[ text-primary ]">
-					<i class="[ fa-solid fa-chevron-left ][ mr-1 ]"></i> Back
+					<i class="[ fa-solid fa-chevron-left ][ me-1 ]"></i> Back
 				</button>
 			</div>
 		</div>
 		<div class="[ mega_menu ]">
 			<ul class="[ mega_menu__items ]">
 				<li>
-					<span class="[ mega_menu__item ]" data-menu="products">Products <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<span class="[ mega_menu__item ]" data-menu="products">Products <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="products" class="[ mega_menu__sub_container container-full ]">
 						<div class="[ constrain constrain--smaller ][ rounded ]">
 							<div class="[ bg-white ][ grid-3-1 ]">
 								<div class="[ grid-1-1 ]">
 									<div class="[ p-3 p-lg-4 ]">
-										<p class="[ mb-1 ][ text-primary ]">Enterprise Workload Automation</p>
-										<p class="[ h4 ][ mb-3 ]">RunMyJobs by Redwood</p>
+                                        <p class="[ mb-2 ][ text-primary ]"><a href="/products/file-transfer/">File Transfer</a></p>
+
 										{% set args = {
 											'list': [
 												{
 													'icon': 'https://static.marketing.redwood.com/media/nav-icons/icon-eye.svg',
-													'text': 'Workload Automation Overview',
-													'link': '/workload-automation/'
+													'text': 'ActiveBatch',
+													'link': 'https://www.advsyscon.com/en-us/activebatch'
 												},
 												{
 													'icon': 'https://static.marketing.redwood.com/media/nav-icons/icon-cube-hand.svg',
-													'text': 'SaaS-based Workload Automation',
-													'link': '/runmyjobs-automation-as-saas/'
+													'text': 'Job Scheduling',
+													'link': 'https://www.advsyscon.com/en-us/activebatch/job-scheduling'
 												},
 												{
 													'icon': 'https://static.marketing.redwood.com/media/nav-icons/icon-cubes-line.svg',
-													'text': 'SAP Job Scheduling',
-													'link': '/solutions/sap/'
+													'text': 'Integrations',
+													'link': 'https://www.advsyscon.com/en-us/activebatch/extensions'
 												},
 												{
 													'icon': 'https://static.marketing.redwood.com/media/nav-icons/icon-arrow-circle.svg',
-													'text': 'Migrate to RunMyJobs',
-													'link': '/migration/'
+													'text': 'Proactive Support',
+													'link': 'https://www.advsyscon.com/en-us/services/support-options'
 												}
 											]
 										} %}
@@ -231,7 +225,7 @@
 					</section>
 				</li>
 				<li>
-					<span class="[ mega_menu__item ]" data-menu="use-case">Use Cases <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<span class="[ mega_menu__item ]" data-menu="use-case">Use Cases <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="use-case" class="[ mega_menu__sub_container container-full ]">
 						<div class="[ constrain ][ rounded ][ bg-white ][ grid-1-1-2 ]">
 							<div class="[ p-3 p-lg-4 ]">
@@ -327,7 +321,7 @@
 					<a href="/connectors/" class="[ mega_menu__item ]">Integrations</a>
 				</li>
 				<li>
-					<span class="[ mega_menu__item ]" data-menu="resources">Resources <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<span class="[ mega_menu__item ]" data-menu="resources">Resources <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="resources" class="[ mega_menu__sub_container container-full ]">
 						<div class="[ constrain ][ rounded ][ bg-white ][ grid-2-2-3 ]">
 							<div class="[ d-flex flex-column ][ p-3 p-lg-4 ]">
@@ -444,7 +438,7 @@
 
 										$html .= '<li style="padding:1px;"><a href="' . $link . '" class="[ text-reset text-decoration-none ][ no-fa-animation ][ grid-article-side ]">';
 										$html .=  '<figure>' . $featureImg . '</figure>';
-										$html .= '<p class="[ leading-2 text-ellipsis ][ p-0 pt-lg-2 pb-lg-1 pr-lg-4 m-0 ]">' . $title . '</p>';
+										$html .= '<p class="[ leading-2 text-ellipsis ][ p-0 pt-lg-2 pb-lg-1 pe-lg-4 m-0 ]">' . $title . '</p>';
 										$html .= '<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></div>';
 										$html .= '</a></li>';
 
@@ -469,7 +463,7 @@
 					<a href="/pricing/" class="[ mega_menu__item ]">Pricing</a>
 				</li>
 				<li>
-					<span class="[ mega_menu__item ]" data-menu="redwood">Why Redwood <svg class="ml-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<span class="[ mega_menu__item ]" data-menu="redwood">Why Redwood <svg class="ms-1" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="redwood" class="[ mega_menu__sub_container container-follow ]">
 						<div class="[ constrain ][ rounded ][ bg-white ]">
 							<div class="[ grid-1-1 ]">

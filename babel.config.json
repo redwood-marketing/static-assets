@@ -7,7 +7,12 @@
                 "corejs": "3.22"
             }
         ],
-        "minify"
+        [
+            "minify", 
+            {
+                "builtIns": false
+            }
+        ]
     ],
     "comments": false
 }

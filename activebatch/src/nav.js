@@ -12,6 +12,7 @@ const megaMenu = {
 	mobileTarget: null,
 	bodyY: 0,
     overlay: null,
+    
 
 	backBtn: function () {
 		this.megaHeader.querySelector('.mega_navigation__back').addEventListener('click', (event) => {
@@ -179,7 +180,7 @@ const megaMenu = {
 		}
 	},
 	init: function () {
-		// console.log('Lok’tar Ogar v0.51');
+		console.log('Lok’tar Ogar v0.31');
 		if (this.initialized) {
 			return;
 		}
