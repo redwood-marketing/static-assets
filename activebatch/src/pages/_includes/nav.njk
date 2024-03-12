@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block navigation %}
-<nav class="[ mega_navigation ]">
+{# because NAV has Style from HOME.CSS #}
+<div class="[ mega_navigation ]">
 	<div class="[ mega_navigation__extra-menu ]">
 		<ul class="[ extra_menu ]">
 			<li>
@@ -82,7 +83,7 @@
 				</section>
 			</li>
 			<li>
-				<a href="https://portal.runmyjobs.cloud/" target="_blank" class="[ mega_menu__item ]">Log in <i class="[ fa-solid fa-chevron-right ][ ml-1 ][ d-none d-lg-inline-block ]"></i></a>
+				<a href="https://portal.runmyjobs.cloud/" target="_blank" class="[ mega_menu__item ]">Log in <svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i></a>
 			</li>
 			<li class="[ d-lg-none ]">
 				<a href="/demo/quick/" class="[ generic-cta ]">
@@ -193,7 +194,7 @@
                                         <?php if ( $resource->meta ) : ?>
                                             <span class="[ text-ellipsis ][ mb-3 ]" style="font-size: 0.7rem;">$resource->meta</span>
                                         <?php endif ?>
-										<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><i class="[ text-teal ][ fa-solid fa-chevron-right ]"></i></div>
+										<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></div>
 									</a>
 								</div>
 							</div>
@@ -369,7 +370,7 @@
 								<div class="[ bg-light @hover:bg-light-blue ][ rounded ][ mt-3 mt-lg-auto ]">
 									<a href="/migration/" class="[ text-reset @hover:dark text-decoration-none ][ d-flex w-100 align-items-center justify-content-between ][ p-3 ]">
 										<span>Migration Overview</span>
-										<i class="[ fa-solid fa-chevron-right ]"></i>
+										<svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
 									</a>
 								</div>
 							</div>
@@ -409,7 +410,7 @@
 								<div class="[ bg-light @hover:bg-light-blue ][ rounded ][ mt-3 mt-lg-auto ]">
 									<a href="/resources/" class="[ text-reset @hover:dark text-decoration-none ][ d-flex w-100 align-items-center justify-content-between ][ p-3 ]">
 										<span>Explore all Resources</span>
-										<i class="[ fa-solid fa-chevron-right ]"></i>
+										<svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
 									</a>
 								</div>
 							</div>
@@ -444,7 +445,7 @@
 										$html .= '<li style="padding:1px;"><a href="' . $link . '" class="[ text-reset text-decoration-none ][ no-fa-animation ][ grid-article-side ]">';
 										$html .=  '<figure>' . $featureImg . '</figure>';
 										$html .= '<p class="[ leading-2 text-ellipsis ][ p-0 pt-lg-2 pb-lg-1 pr-lg-4 m-0 ]">' . $title . '</p>';
-										$html .= '<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><i class="[ text-teal ][ fa-solid fa-chevron-right ]"></i></div>';
+										$html .= '<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></div>';
 										$html .= '</a></li>';
 
 									endforeach;
@@ -457,7 +458,7 @@
 								<div class="[ bg-light @hover:bg-light-blue ][ rounded ][ mt-3 mt-lg-auto ]">
 									<a href="/blog/" class="[ text-reset @hover:dark text-decoration-none ][ d-flex w-100 align-items-center justify-content-between ][ p-3 ]">
 										<span>Explore our Blog</span>
-										<i class="[ fa-solid fa-chevron-right ]"></i>
+										<svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
 									</a>
 								</div>
 							</div>
@@ -475,10 +476,10 @@
 								<div class="[ bg-light ]">
 									<a href="/why-redwood/" class="[ menu-overview ][ d-block h-100 ][ text-reset link-unstyled @hover:bg-light-blue ][ no-fa-animation ][ p-3 p-lg-4 ]" href="">
 										<p class="[ m-0 ][ text-primary ]">Company Overview</p>
-										<p class="[ h5 leading-1 text-ellipsis ][ mt-2 mb-3 ]">Why Choose Us <i class="[ d-inline-block d-lg-none ][ fa-solid fa-chevron-right ][ ml-2 ]"></i></p>
+										<p class="[ h5 leading-1 text-ellipsis ][ mt-2 mb-3 ]">Why Choose Us <svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i></p>
 										<figure><?= wp_get_attachment_image( 31807, 'thumbnail', false, [ "class" => "[ d-block w-100 ratio-16:9 ][ border border-dark rounded ]", "style" => 'object-fit:cover;', "role" => 'presentation' ] )  ?></figure>
 										<p class="[ text-ellipsis leading-4 ][ mb-2 mt-3 ]" style="max-width: 30ch">Learn why the success of digital transformation depends on effective and efficient automation</p>
-										<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><i class="[ text-teal ][ fa-solid fa-chevron-right ]"></i></div>
+										<div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]"><span>Learn More</span><svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></div>
 									</a>
 								</div>
 								<div class="[ border-left border-gray ][ d-flex flex-column ]">
@@ -542,5 +543,5 @@
 			<span class="[ sr-only ]">Toggle Menu</span>
 		</div>
 	</div>
-</nav>
+</div>
 {% endblock %}
