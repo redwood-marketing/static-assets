@@ -348,7 +348,7 @@ $colors: map-remove($colors, 'blue', 'indigo', 'purple', 'pink', 'red', 'orange'
 				}
 				.desc {
 					grid-area: 👨‍💻;
-					color: var(--bs-gray-400) !important;
+					color: var(--bs-gray-600) !important;
 					padding-right: clamp(0.6rem, 0.5vw, 1.5rem);
 				}
 			}
