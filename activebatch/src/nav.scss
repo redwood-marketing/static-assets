@@ -1,4 +1,5 @@
-
+@use "sass:math";
+@use "sass:map";
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '../../node_modules/bootstrap/scss/functions';
 
@@ -9,50 +10,6 @@ $tertiary: #65c261;
 $quaternary: #66cc99;
 $accent: #E24650;
 $dark: $secondary;
-
-$enable-cssgrid: true;
-$grid-breakpoints: (
-	xs: 0,
-	sm: 36rem,
-	md: 48rem,
-	lg: 62rem,
-	xl: 80rem,
-	xxl: 100rem,
-);
-
-$enable-responsive-font-sizes: true;
-$spacer: 1rem;
-$spacers: (
-	0: 0,
-	1: (
-		$spacer * 0.25,
-	),
-	2: (
-		$spacer * 0.5,
-	),
-	3: $spacer,
-	4: (
-		$spacer * 2,
-	),
-	5: (
-		$spacer * 3,
-	),
-	6: (
-		$spacer * 4,
-	),
-	7: (
-		$spacer * 5,
-	),
-	8: (
-		$spacer * 6.5,
-	),
-	9: (
-		$spacer * 8,
-	),
-	10: (
-		$spacer * 10,
-	),
-);
 
 // --ff-body: "soleto", sans-serif;
 // --ff-titles: "prometo", sans-serif;
@@ -82,6 +39,44 @@ $colors: map-remove($colors, 'blue', 'indigo', 'purple', 'pink', 'orange', 'yell
 @import '../../node_modules/bootstrap/scss/maps';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/root';
+
+$enable-cssgrid: true;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 36rem,
+	md: 48rem,
+	lg: 62rem,
+	xl: 80rem,
+	xxl: 100rem,
+);
+
+$enable-responsive-font-sizes: true;
+$spacer: 1rem;
+$spacer-levels: 10;
+$spacer-scale: 1.33;
+$spacers: ();
+
+@for $level from ($spacer-levels * -1) through $spacer-levels {
+    @if $level < 0 {
+        $spacers: map.merge(
+            $spacers, 
+            ( #{"1\\/" + math.abs($level) }: $spacer * math.pow($spacer-scale, $level + 1) )
+        );
+    }
+    
+    @if $level == 0 {
+        $spacers: map.merge( $spacers, ( 0 : 0 ) );
+    }
+    
+    @else {
+        $spacers: map.merge( 
+            $spacers, 
+            ( $level: $spacer * math.pow($spacer-scale, $level - 1) )
+        );
+    }
+}
+
+$spacers: map.merge($spacers, $spacers);
 
 // 6. Optionally include any other parts as needed
 @import '../../node_modules/bootstrap/scss/utilities';

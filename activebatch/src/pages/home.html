@@ -6,12 +6,21 @@ title: Home
 {% block content %}
 
 
-<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-6 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
+<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-10 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
     <div class="[ container-fluid ]" style="max-width: 80ch">
         <h1 class="[ display-5 ]">The easiest-to-use job scheduler </h1>
         <p class="[ text-reset ][ my-4 ]">Make automation easy and accessible for your team and amp up business process efficiency with ActiveBatch by Redwood</p>
         <a href="" class="[ btn btn-primary ]">Get a Demo</a>
     </div>
+</section>
+<section class="[ mx-n5 mt-n4 ]">
+    <ul class="[ list-unstyled ][ d-flex gap-4 ]">
+        {% for item in [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,1,1,1,1] %}
+            <li class="">
+                <img class="[ w-100 ]" src="https://www.advsyscon.com/en-us/corporatesite/media/logo/activebatch-g2-leader-fall-2020-01.png" loading="lazy" width="100" height="100" alt="">
+            </li>
+        {% endfor %}
+    </ul>
 </section>
 
 <section class="[ container-fluid container-lg ][ py-6 ]">
@@ -246,20 +255,11 @@ title: Home
     </div>
 </section>
 
-<section class="[ d-flex align-items-center flex-column gap-6 ][ bg-light ][ mt-6 ]">
-    <ul class="[ list-unstyled ][ d-flex gap-3 ][ mx-n5 mt-n4 ]">
-        {% for item in [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7] %}
-            <li class="">
-                <img class="[ w-100 ]" src="https://www.advsyscon.com/en-us/corporatesite/media/logo/activebatch-g2-leader-fall-2020-01.png" loading="lazy" width="100" height="100" alt="">
-            </li>
-        {% endfor %}
-    </ul>
-    <aside class="[ bg-black ][ w-100 ][ mt-8 ]">
-        <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
-            <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
-            <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
-        </div>
-    </aside>
-</section>
+<aside class="[ d-flex align-items-center flex-column gap-6 ][ bg-black ][ w-100 ][ mt-10 ]">
+    <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
+        <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
+        <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
+    </div>
+</aside>
 
 {% endblock %}
