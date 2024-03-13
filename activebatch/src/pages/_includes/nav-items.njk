@@ -40,7 +40,7 @@
     {%- if args.desc -%}
     {%- set descClass = '[ has-desc ]' -%}
     {%- else -%}
-    {%- set descClass = '[ d-flex w-100 align-items-center gap-3 ]' -%}
+    {%- set descClass = '[ d-flex w-100 align-items-center gap-{3} ]' -%}
     {%- endif -%}
     {%- if cta.desc -%}
     {%- set descTxt = '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' -%}

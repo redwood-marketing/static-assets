@@ -34,9 +34,9 @@
 						<div class="[ constrain ][ rounded ]">
 							<div class="[ bg-white ][ grid-1-3 ]">
 								<div class="[ p-2 p-lg-3 ]">
-									<p class="[ mb-1 ][ text-accent ]">Product</p>
+									<p class="[ mb-{2} ][ text-accent ]">Product</p>
 									{% set args = {
-										'gap': 'gap-{3} gap-lg-1 py-0 py-lg-2',
+										'gap': 'gap-{3} gap-lg-1 py-0 py-lg-1',
 										'chevron': false,
 										'list': [
 											{
@@ -63,11 +63,11 @@
 									} %}
 									{% include "nav-items.njk" %}
 								</div>
-								<div class="[ p-3 p-lg-4 ][ border-start border-gray ]">
-									<p class="[ mb-1 ][ text-accent ]">Features</p>
+								<div class="[ p-2 p-lg-3 ][ border-start border-gray ]">
+									<p class="[ mb-{2} ][ text-accent ]">Features</p>
 									{% set args = {
 										'grid': 'grid-1-1-1',
-										'gap': 'gap-{1} gap-lg-1 py-0 py-lg-2',
+										'gap': 'gap-{1} gap-lg-1 py-0 py-lg-1',
 										'chevron': false,
 										'list': [
 											{
@@ -161,11 +161,10 @@
 					<section data-menu-target="use-case" class="[ mega_menu__sub_container container-full ]">
 						<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ grid-2-1 ]">
 							<div class="[ p-2 p-lg-3 ]">
-								<p class="[ mb-1 ][ text-accent ]">Use Cases</p>
+								<p class="[ mb-{2} ][ text-accent ]">Use Cases</p>
 								{% set args = {
 									'grid': 'grid-1-1',
-									'gap': 'gap-{1} gap-lg-1 py-0 py-lg-2',
-									'listClass': '[ p-2 ]',
+									'gap': 'gap-{1} gap-lg-1 py-0 py-lg-1',
 									'chevron': false,
 									'list': [
 										{
@@ -208,11 +207,10 @@
 								} %}
 								{% include "nav-items.njk" %}
 							</div>
-							<div class="[ border-start border-gray ][ p-3 p-lg-4 ]">
+							<div class="[ border-start border-gray ][ p-2 p-lg-3 ]">
 								<p class="[ d-none d-lg-block ][ mb-1 ][ text-primary ]"><br></p>
 								{% set args = {
-									'gap': 'gap-{1} gap-lg-1 py-0 py-lg-2',
-									'listClass': '[ p-2 ]',
+									'gap': 'gap-{1} gap-lg-1 py-0 py-lg-1',
 									'chevron': false,
 									'list': [
 										{
@@ -251,8 +249,8 @@
 					<span class="[ mega_menu__item ]" data-menu="resources">Resources <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="resources" class="[ mega_menu__sub_container container-follow ]">
 						<div class="[ constrain ][ rounded ][ bg-white ][ grid-1-1 ]">
-							<div class="[ d-flex flex-column ][ p-3 p-lg-4 ]">
-								<p class="[ mb-1 ][ text-accent ]">Resources</p>
+							<div class="[ d-flex flex-column ][ p-2 p-lg-3 ]">
+								<p class="[ mb-{2} ][ text-accent ]">Resources</p>
 								{% set args = {
 									'gap': 'gap-{3} gap-lg-{0}',
 									'chevron': false,
@@ -294,7 +292,7 @@
 							</div>
 							<div class="[ menu-latest-blog ][ d-flex flex-column ][ border-start border-gray ]">
                                 <a class="[ d-none d-lg-block h-100 ][ text-reset link-unstyled ][ border-left border-gray ][ no-fa-animation ][ p-4 ]" href="https://www.advsyscon.com/blog/redwood-university/">
-                                    <p class="[ mb-1 ][ text-accent ]">Featured Resource</p>
+                                    <p class="[ mb-{2} ][ text-accent ]">Featured Resource</p>
                                     <p class="[ h6 leading-2 text-ellipsis ][ my-3 ]">ActiveBatch Academy is now Redwood University!</p>
                                     <figure class="[ my-3 ]"><img width="128" height="85" src="https://www.advsyscon.com/blog/wp-content/uploads/redwood-university.jpg" class="[ d-block w-100 ratio-16:9 ][ border border-dark rounded ]" alt="" style="object-fit:cover;" role="presentation" decoding="async" loading="lazy" /></figure>
                                     <span class="[ d-block text-ellipsis ][ my-3 ]">Learn why the success of digital transformation depends on effective and efficient automation</span>
@@ -314,8 +312,8 @@
 							<div class="[ border-start border-gray ][ d-flex flex-column ]">
 								{% set args = {
 									'chevron': false,
-									'gap': 'gap-0',
-									'class': '[ px-lg-4 py-lg-3 ]',
+									'gap': 'gap-0', 
+									'class': '[ p-{3} px-lg-4 py-lg-3 ]',
 									'list': [
 										{
 											'text': 'About Redwood',
