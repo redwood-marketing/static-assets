@@ -35,11 +35,13 @@ const megaMenu = {
 			this.bodyY = document.documentElement.scrollTop || 0;
 			document.body.style.setProperty('position', 'fixed');
 			document.body.style.setProperty('top', `-${this.bodyY}px`);
+			document.body.style.setProperty('width', '100%');
 			document.documentElement.style.setProperty('scroll-behavior', 'auto');
 			this.megaHeader.insertAdjacentElement('afterend', this.overlay);
 		} else {
 			document.body.style.removeProperty('position');
 			document.body.style.removeProperty('top');
+			document.body.style.removeProperty('width');
 			if( scrolLock ){ 
 				document.documentElement.scrollTop = parseInt(this.bodyY);
 			 }
