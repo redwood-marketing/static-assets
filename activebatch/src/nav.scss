@@ -411,7 +411,7 @@ $btn-border-radius: 10rem;
 	}
 
 	&__extra-menu {
-		background-color: #0d3442;
+		background-color: var(--bs-black);
 		color: white;
 		padding: 0.1rem max(1.5em, (100vw - 90rem) / 2);
 		@include media-breakpoint-down(lg) {
