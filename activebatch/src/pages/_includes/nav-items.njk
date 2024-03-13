@@ -46,7 +46,7 @@
     {%- set descTxt = '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' -%}
     {%- endif -%}
 
-    <li class="[ bg-white @hover:bg-light-blue ][ rounded ]">
+    <li class="[ bg-white @hover:bg-light ][ rounded ]">
       <a href="{{ cta.link }}" target="{{ cta.target | default('_self') }}" class="[ text-reset @hover:dark text-decoration-none ] {{ args.listClass }} {{ descClass }}">
         {{ icon | safe }}
         {{ ctaHtml | safe }}

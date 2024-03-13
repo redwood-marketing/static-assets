@@ -124,7 +124,7 @@
 								</div>
 							</div>
 							<div class="[ bg-white ][ grid-2-3 grid-ai-center ][ border-top border-gray ]">
-								<a href="/connectors/" class="[ explore-integration ][ h-100 ][ text-reset link-unstyled ][ d-flex flex-wrap align-items-center gap-{3} gap-lg-1 ][ px-3 py-{2} ]">
+								<a href="/connectors/" class="[ explore-integration ][ h-100 ][ text-reset link-unstyled @hover:bg-light ][ d-flex flex-wrap align-items-center gap-{3} gap-lg-1 ][ px-3 py-{2} ]">
 									<div class="[ order-4 order-lg-0 ][ d-flex align-items-center gap-{3} ]">
 										<figure>
                                             <img src="https://static.marketing.redwood.com/media/nav-icons/integration/logo-sap.svg" alt="Icon SAP" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
@@ -291,7 +291,7 @@
 								
 							</div>
 							<div class="[ menu-latest-blog ][ d-flex flex-column ][ border-start border-gray ]">
-                                <a class="[ d-none d-lg-block h-100 ][ text-reset link-unstyled ][ border-left border-gray ][ no-fa-animation ][ p-4 ]" href="https://www.advsyscon.com/blog/redwood-university/">
+                                <a class="[ d-none d-lg-block h-100 ][ text-reset link-unstyled @hover:bg-light ][ border-left border-gray ][ no-fa-animation ][ p-4 ]" href="https://www.advsyscon.com/blog/redwood-university/">
                                     <p class="[ mb-{2} ][ text-accent ]">Featured Resource</p>
                                     <p class="[ h6 leading-2 text-ellipsis ][ my-3 ]">ActiveBatch Academy is now Redwood University!</p>
                                     <figure class="[ my-3 ]"><img width="128" height="85" src="https://www.advsyscon.com/blog/wp-content/uploads/redwood-university.jpg" class="[ d-block w-100 ratio-16:9 ][ border border-dark rounded ]" alt="" style="object-fit:cover;" role="presentation" decoding="async" loading="lazy" /></figure>
@@ -308,12 +308,12 @@
 					<span class="[ mega_menu__item ]" data-menu="company">Company <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
 					<section data-menu-target="company" class="[ mega_menu__sub_container  ]">
 						<div class="[ constrain ][ rounded ][ bg-white ]">
+							<div class="[ border-start border-gray ][ d-flex flex-column ][ p-2 p-lg-3 ]">
 							
-							<div class="[ border-start border-gray ][ d-flex flex-column ]">
 								{% set args = {
 									'chevron': false,
 									'gap': 'gap-0', 
-									'class': '[ p-{3} px-lg-4 py-lg-3 ]',
+									'listClass': '[ p-{3} px-lg-1 py-lg-{2} ]',
 									'list': [
 										{
 											'text': 'About Redwood',

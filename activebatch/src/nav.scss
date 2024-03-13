@@ -178,6 +178,9 @@ img {
 	> * {
 		box-sizing: border-box;
 	}
+	a {
+		text-decoration: none;
+	}
 
 	&__bar {
 		padding: clamp(1em, 2vw, 1.5em) max(1.5em, (100vw - 90rem) / 2);
