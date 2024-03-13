@@ -4,640 +4,262 @@ title: Home
 {% extends "base.njk" %}
 
 {% block content %}
-<section class="hero-section">
-    <div class="hero-overlay">
-        <div class="hero max-width">
-            <div class="hero-content">
-                <div class="content">
-                    <h1>Centralized <strong>Workload Automation</strong> & Job&nbsp;Scheduling</h1>
-                    <h2>Orchestrate your entire tech stack with our no-code connectors and low-code REST API adapter</h2>
-                    <a href="https://www.advsyscon.com/en-us/demo/quick" class="generic-cta" style="margin-top: 1em;">Get a Demo</a>
-                    
-                </div>
-                <div class="hero-image">
-                    <img 
-                    src="https://www.advsyscon.com/en-us/corporatesite/media/2d/activebatch.png" 
-                    alt="ActiveBatch Simulated"
-                    loading="lazy"
-                    width="560" height="322" 
-                    />
-                </div>
-            </div>
-        </div>
-        <div class="logo-band">
-            <div class="max-width">
-                <div class="logos">
-                    <img 
-                    alt="Verizon" 
-                    src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/verizon-white.png" 
-                    class="customer-logo"
-                    loading="lazy"
-                    width="100"
-                    height="50" 
-                    />
-                    <img 
-                    alt="Deloitte" 
-                    src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/deloitte-white.png" 
-                    class="customer-logo"
-                    loading="lazy"
-                    width="100"
-                    height="50" 
-                    />
-                    <img 
-                    alt="BlueCross BlueShield" 
-                    src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/bluecrossblueshield-white.png" 
-                    class="customer-logo"
-                    loading="lazy"
-                    width="100"
-                    height="50" 
-                    />
-                    <img 
-                    alt="Bosch" 
-                    src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/bosch-white.png" 
-                    class="customer-logo"
-                    loading="lazy"
-                    width="100"
-                    height="50" 
-                    />
-                    <img 
-                    alt="Subway" 
-                    src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/subway-white.png" 
-                    class="customer-logo"
-                    loading="lazy"
-                    width="100"
-                    height="50" 
-                    />
-                </div>
-            </div>
-        </div>
-        
-        <div class="learn-more">
-            <a href="#integrations">
-                <img src="https://www.advsyscon.com/en-us/corporatesite/media/i/more-arrow.png" alt="Learn More" />
-            </a>
-        </div>
+
+
+<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-6 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
+    <div class="[ container-fluid ]" style="max-width: 80ch">
+        <h1 class="[ display-5 ]">The easiest-to-use job scheduler </h1>
+        <p class="[ text-reset ][ my-4 ]">Make automation easy and accessible for your team and amp up business process efficiency with ActiveBatch by Redwood</p>
+        <a href="" class="[ btn btn-primary ]">Get a Demo</a>
     </div>
-    
 </section>
 
-<section class="[ new-integrations ][ max-width ]" id="integrations">
-    
-    <iframe 
-    src="https://player.vimeo.com/video/616979979?h=18e62be724&autoplay=1&muted=1&loop=1&controls=0" 
-    loading="lazy"
-    class="new-integrations__media"
-    width="500" 
-    height="375" 
-    frameborder="0" 
-    allow="autoplay; fullscreen; picture-in-picture" 
-    allowfullscreen
-    ></iframe>
-    <div class="new-integrations__content">
-        <h2 class="new-integrations__title">ActiveBatch Integrations and Extensions</h2>
-        <p class="new-integrations__subtitle">Build end-to-end workflows spanning your <strong>entire IT environment</strong> with ActiveBatch’s comprehensive library of integrations and extensions</p>
-        <a href="https://www.advsyscon.com/en-us/activebatch/extensions" class="c-btn c-btn--outline" title="Find Out More About Extensions">
-            Find Out More
-            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
-        </a>
-    </div>   
+<section class="[ container-fluid container-lg ][ py-6 ]">
+    <ul class="[ list-unstyled ][ d-flex row-cols-6 gap-2 ]">
+        {% for item in [1,2,3,4,5,6] %}
+        <li class="[ col ]">
+            <img class="[ w-100 ]" src="https://www.graymont.com/sites/default/files/logo_graymont.png" loading="lazy" width="100" height="100" alt="">
+        </li>
+        {% endfor %}
+    </ul>
 </section>
 
-
-<section class="highlights-section">
-    <div class="highlights max-width">
-        <h2>ActiveBatch <strong>Future-Proofs</strong> Workload Automation</h2>
-        <div class="activebatch-highlights">
-            <div class="highlight-item">
-                <div><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/infinite-extensibility.png" alt="Infinite Extensibility" /></div>
-                <div>
-                    <h3>Infinite Extensibility</h3><p>ActiveBatch connects to any server, any application, any service - giving you limitless endpoints.</p>
-                </div>
-            </div>
-            <div class="highlight-item">
-                <div><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/low-code.png" alt="Low Code" /></div>
-                <div>
-                    <h3>Low Code Drag-and-Drop GUI</h3><p>Easily build reliable, customizable end-to-end processes 50% faster with ActiveBatch’s hundreds of drag-and-drop actions and robust Job Step library.</p>
-                </div>
-            </div>
-            <div class="highlight-item">
-                <div><img src="https://www.advsyscon.com/en-us/corporatesite/media/i/unparalleled-reliability.png" alt="Unparalleled Reliability" /></div>
-                <div><h3>Unparalleled Reliability</h3><p>Our proactive support, in-app knowledgebase and vision for a self-healing platform make ActiveBatch the most stable platform on the market.</p></div>
-            </div>
+<section class="[ container-fluid container-lg ][ py-6 ]">
+    <div class="[ row ]">
+        <div class="[ col-12 col-lg-6 col-xl-4 ]">
+            <blockquote
+                cite="" 
+                class="[ bg-primary ][ text-white ][ p-4 ][ rounded ]"
+            >
+                Very easy to use. No prerequisites needed. Very good user interface and best event-based automation for real-time, accurate data.
+                <footer>Verified Capterra User</footer>
+            </blockquote>
+        </div>
+        <div class="[ col-12 col-lg-6 col-xl-8 ]">
+            <figure class="[ bg-light ][ p-2 ]">
+                <img src="./img/mockup.png" alt="" width="400" height="300">
+            </figure>
         </div>
     </div>
 </section>
-<section class="how-section">
-    <div class="how max-width">
-        
-        <h2>How ActiveBatch Works</h2>
-        
-        
-        <div class="how-content-border">
-            <div class="how-content">
-                <h3>Bring Everything Together Under A Single Pane of Glass</h3>
-                
-                <p>ActiveBatch provides a central automation hub for scheduling and monitoring so that business-critical systems, like CRM, ERP, Big Data, BI, ETL tools, work order management, project management, and consulting systems, work together seamlessly with minimal human intervention.</p>
-            </div>
-        </div>
-        <div class="how-architecture"><img src="https://www.advsyscon.com/en-us/corporatesite/media/2d/activebatch-simplified-architecture.png" alt="ActiveBatch Architecture Diagram"/></div>
-        <div class="how-breakdown">
-            <div class="user-interfaces">
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/user-interfaces.png" class="how-icon" alt="User Interfaces"/>
-                <h4>User Interfaces</h4>
-                <p>Access ActiveBatch from any device with flexible interfaces that give you powerful out-of-the-box functionality and the ability to customize.</p>
-            </div>
-            <div class="activebatch-job-scheduler">
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/activebatch-job-scheduler.png" class="how-icon" alt="ActiveBatch Job Scheduler"/>
-                <h4>ActiveBatch Job Scheduler</h4>
-                <p>The job scheduler is the brain of workload automation architecture, allowing you to build and orchestrate cross-functional workflows. It handles load balancing, scheduling, dependency checking, reporting and notifications.</p>
-            </div>
-            <div class="execution-agents">
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/execution-endpoints.png" class="how-icon" alt="Execution Endpoints"/>
-                <h4>Execution Endpoints</h4>
-                <p>Connect ActiveBatch to any server, application or service to orchestrate workflows that run jobs on endpoints across your entire stack.</p>
-            </div>
-        </div>
-        
-        <div class="how-video-section">
-            <div class="how-video-content">
-                <div>
-                    <h3>Create Seamless End-To-End Workload Automation</h3>
-                    <p>ActiveBatch elevates your IT automation strategy by centralizing your processes into one solution — allowing you to manage everything in a single platform.</p>
-                </div>
-            </div>
-            <div class="how-video">
-                <div class="embed-container" id="embed" style="padding-bottom:0px;">
-                    <img src="https://www.advsyscon.com/en-us/corporatesite/media/2d/demand-more.jpg" style="width: 100%;cursor:pointer;" title="Click to Play ActiveBatch Overview Video" alt="ActiveBatch Overview Video" />
-                </div>
-                <script type="text/javascript">
-                    function vimeoVid() {
-                        $('<iframe>').attr('src', 'https://player.vimeo.com/video/408063967?autoplay=0&amp;title=0&amp;byline=0&amp;portrait=0').appendTo('#embed');
-                        };
-                        window.addEventListener('load', function () {
-                            setTimeout(vimeoVid, 4000)
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="integrations-section">
-        <div class="integrations max-width">
-            <div class="integrations-header">
-                <h2>ActiveBatch Connects to Any Tool You Add to Your Environment</h2>
-                <p>Future-proof your automation with our flexible, extensible REST API adapter. Know that you can connect to any tool in your stack now &mdash; and those you add in your five-year plan.</p>
-            </div>
-            <div class="integrations-content">
-                <div>
-                    <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/rest-api-adapter.png" alt="REST API Adapter"/>
-                    <h3>REST API Adapter:</h3>
-                    <p>Take full advantage of API-first development and adapt to a rapidly changing landscape of software capabilities and business priorities with ActiveBatch&rsquo;s sophisticated REST API Adapter. Quickly create secure connections to any software or service with an API, extending automation to any endpoint.</p>
-                    <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/integrations.png" alt="Integrations" />
-                    <h3>Integrations:</h3>
-                    <p>Additionally, we have rigorously maintained and tested connectors to these common systems:</p>
-                </div>
-                <div class="integrations-screenshot">
-                    <img src="https://www.advsyscon.com/en-us/CorporateSite/media/2d/REST-Adapter.png" alt="ActiveBatch REST Adapter" />
-                </div>
-            </div>
-            <div class="integrations-list">
-                <div class="integrations-container">
-                    <div class="integrations-bar integrations-black">
-                        
-                        <button class="integrations-bar-item integrations-button tablink integrations-active" onclick="openTab(event,'DataProcessing');return false;">Data Processing</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'Schedulers');return false;">Automation Tools</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'IdentityManagement');return false;">Identity Management</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'CloudVirtual');return false;">Cloud & Virtual</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'Servers');return false;">Servers</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'ERP');return false;">ERP</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'ITSM');return false;">ITSM</button>
-                        <button class="integrations-bar-item integrations-button tablink" onclick="openTab(event,'Microsoft');return false;">Microsoft System Center</button>
-                    </div>
-                    
-                    <div id="DataProcessing" class="integrations-container integrations-border tab">
-                        <span>DataStage</span>
-                        <span>Informatica PowerCenter</span>
-                        <span>Informatica Cloud</span>
-                        <span>Hadoop</span>
-                        <span>PureData</span>
-                        <span>Cognos</span>
-                        <span>Crystal Reports</span>
-                        <span>Teradata</span>
-                    </div>
-                    <div id="Schedulers" class="integrations-container integrations-border tab" style="display:none">
-                        <span>Oracle Job Scheduler</span>
-                        <span>SQL Server Scheduler</span>
-                        <span>Task Scheduler</span>
-                        <span>PowerShell</span>
-                    </div>
-                    <div id="IdentityManagement" class="integrations-container integrations-border tab" style="display:none">
-                        <span>Active Directory</span>
-                        <span>Exchange Server</span>
-                        <span>CyberArk Application Access Management</span>
-                    </div>
-                    <div id="CloudVirtual" class="integrations-container integrations-border tab" style="display:none">
-                        <span>Amazon EC2</span>
-                        <span>Microsoft Azure</span>
-                        <span>Vmware</span>
-                        <span>System Center VMM</span>
-                    </div>
-                    
-                    <div id="Servers" class="integrations-container integrations-border tab" style="display:none">
-                        <span>SharePoint</span>
-                        <span>Azure DevOps Server</span>
-                    </div>
-                    
-                    <div id="ERP" class="integrations-container integrations-border tab" style="display:none">
-                        <span>Dynamics AX</span>
-                        <span>Oracle EBS</span>
-                        <span>PeopleSoft</span>
-                        <span>SAP NetWeaver</span>
-                        <span>SAP Business Objects Data Services</span>
-                    </div>
-                    <div id="ITSM" class="integrations-container integrations-border tab" style="display:none">
-                        <span>ServiceNow</span>
-                        <span>System Center Service Manager</span>
-                    </div>
-                    <div id="Microsoft" class="integrations-container integrations-border tab" style="display:none">
-                        <span>Virtual Machine Manager</span>
-                        <span>Service Manager</span>
-                        <span>Orchestrator</span>
-                        <span>Operations Manager</span>
-                        <span>Configuration Manager</span>
-                    </div>
-                </div>
-                
-                <script>
-                    function openTab(evt, tabName) {
-                        var i, x, tablinks;
-                        x = document.getElementsByClassName("tab");
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
-                        }
-                        tablinks = document.getElementsByClassName("tablink");
-                        for (i = 0; i < x.length; i++) {
-                            tablinks[i].className = tablinks[i].className.replace(" integrations-active", "");
-                        }
-                        document.getElementById(tabName).style.display = "block";
-                        evt.currentTarget.className += " integrations-active";
-                        return false;
-                    }
-                </script>
-            </div>
-            <div class="integrations-cta">
-                <a class="generic-cta" href="https://www.advsyscon.com/en-us/activebatch/extensions">See ActiveBatch’s Integrations</a>
-            </div>
-        </div>
-    </section>
-    <section class="analyst-section">
-        <div class="analyst max-width">
-            <h2>Independently Recognized As <strong>An Industry Leader</strong></h2>
-            <div class="analyst-content">
-                <div>
-                    <img alt="" src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/gartner.png" alt="Gartner"/>
-                    <p>"ActiveBatch is an easy-to-use, easy-to-install product with a rich jobs library at a competitive total cost of ownership."</p>
-                    
-                </div>
-                <div>
-                    <img alt="" src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/ema.png" alt="EMA"/>
-                    <p>"ActiveBatch is a great choice to manage a diverse IT landscape... within a single unified console designed for operational efficiency."</p>
-                    
-                    
-                </div>
-                <div>
-                    <img alt="" src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/ActiveBatch-G2-Leader-Fall-2020-01.png" alt="ActiveBatch G2 Leader Badge"/>
-                    <p>G2 named ActiveBatch a Leader in the Managed File Transfer category and a High Performer in Workload Automation for Fall 2020.</p>
-                    
-                    
-                </div>
-            </div>
-            <div class="analyst-images">
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/ema-most-automated-workload-management-badge.png" alt="ActiveBatch EMA Most Automated Workload Management Badge" />
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/logo/ema-value-leader-badge.png" alt="ActiveBatch EMA Value Leader Badge" />
-            </div>
-        </div>
-    </section>
-    <section class="use-section">
-        <div class="use max-width">
-            <span>Use Cases</span>
-            <h2><strong>ActiveBatch Workload Automation:</strong> One Platform, Limitless Potential</h2>
-            <div class="use-list">
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/managed-file-transfers.png" alt="Managed File Transfers" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/managed-file-transfer">Managed File Transfers</a></h3>
-                        
-                        <p>Coordinate enterprise-wide MFT processes using dozens of prebuilt actions for common file operations.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/data-warehouse.png" alt="Data Warehouse" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation">ETL Automation</a></h3>
-                        
-                        <p>Simplify processes and governance for database operations, ETL tasks and Hadoop workloads.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/it-process-automation_1.png" alt="IT Process Automation" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/it-automation/it-process-automation">IT Process Automation</a></h3>
-                        
-                        <p>Gain peace of mind by reducing manual tasks, preventing delays and auto-remediating issues.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/business-process-automation.png" alt="Business Process Automation" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/workload-automation">Business Process Automation</a></h3>
-                        
-                        <p>Accelerate your digital transformation by orchestrating BI, ERP and BPM processes across the enterprise.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/scripft-lifecycle-management.png" alt="Script Lifecycle Management" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/script-management">Script Lifecycle Management</a></h3>
-                        
-                        <p>Integrate and schedule scripts of any language into end-to-end, cross-platform workflows.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div class="use-list-item">
-                    <div class="use-list-image">
-                        <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/digital-infrastructure-automation.png" alt="Digital Infrastructure Automation" />
-                        
-                    </div>
-                    <div class="use-list-content">
-                        <h3><a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization">Digital Infrastructure Automation</a></h3>
-                        
-                        <p>Deliver the right resources at the right time with dynamic provisioning and cloud management tools.</p>
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <section class="features-section">
-        <div class="features max-width">
-            <h2>Mature, Feature-Rich Platform</h2>
-            
-            
-            
-            
-            
-            <div class="features-list">
-                <div>
-                    <h3>Low-Code GUI</h3>
-                    
-                    <p>Focus on the function, rather than the coding of workflows using hundreds of production-ready Job Steps and an intuitive graphical development environment.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Job Step Library</h3>
-                    
-                    <p>A rich content library consisting of hundreds of production-ready Job Steps &ndash; out-of-the-box building blocks for commonly scripted actions and functions &ndash; ready for assembly into IT and business workflows.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Event and Schedule Driven Triggers</h3>
-                    
-                    <p>Reduce slack time and improve job success rates with ActiveBatch&#39;s rich, event-driven architecture and advanced, customizable date/time scheduling options.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Dynamic Resource Allocation</h3>
-                    <p>Get seamless machine scalability with machine learning models that analyze historical instance data and predict optimal systems and virtual machine allocation.</p>
-                </div>
-                <div>
-                    <h3>Change Management Tools</h3>
-                    
-                    <p>Ensure a highly reliable approach to managing objects across different scheduling environments. Included in the core license, these tools give you the ability to easily move workflows between Dev and Production.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>High Availability Non-Cluster Failover</h3>
-                    
-                    <p>Experience reliable high availability in the event of a potential outage or failure. Jobs and plans are redirected to standby systems so they are completed on or near schedule.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Workflow Optimizer</h3>
-                    
-                    <p>Immediately highlight every workflow&rsquo;s critical path with a push of a button, allowing you to speed up run times by running non-dependent steps concurrently.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Role-Specific Views</h3>
-                    
-                    <p>Role-specific views let every department focus on the metrics that matter most. The Operations view shows job progress and status. Map View makes it easy for developers to build and optimize workflows.</p>
-                </div>
-                <div>
-                    <h3>Self-Service Portals</h3>
-                    
-                    <p>Democratize automation within IT and for your user community with self-service portals.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Security</h3>
-                    
-                    <p>ActiveBatch supports the Windows Security Model, including Kerberos and Active Directory, allowing organizations to manage access with their existing accounts and groups.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Auditing &amp; Compliance</h3>
-                    
-                    <p>Implement policy-driven governance throughout with capabilities such as revision history, policy authorizations, auditing, and advanced SLA management.</p>
-                    
-                    
-                    
-                    
-                </div>
-                <div>
-                    <h3>Reporting & Monitoring</h3>
-                    <p>ActiveBatch gives you the critical data you need to monitor and optimize your IT and business operations. Stay ahead of issues using proactive monitoring and alerting, delivered in a variety of channels.</p>
-                    
-                </div>
-            </div>
-            <div class="features-cta">
-                <a href="https://www.advsyscon.com/en-us/activebatch" class="generic-cta">See ActiveBatch's Features</a>
-            </div>
-            
-        </div>
-    </section>
-    <section class="quotes-section">
-        <div class="quotes max-width">
-            <div class="left-quote"><img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/left-quote.png" alt="Left Quote" /></div>
-            <div class="carousel">
-                <div class="quote">
-                    <h2>If it’s digital, ActiveBatch can do it. We know this is a tool that we’re going to be able to build, that we can go as far as we want to go and it’s going to be able to handle our needs.</h2>
-                    <p><strong>Steve Schneider</strong>, System Administrator and Automation Specialist, First Rate</p>
-                </div> 
-                <div class="quote">
-                    <h2>Our processes are scalable so if we doubled the size of our organization, the existing ActiveBatch environment and associated support staff could handle the growth.</h2>
-                    <p><strong>Garry Lengthorn</strong>, Director of IT Services, SThree</p>
-                </div>
-                <div class="quote">
-                    <h2>The software is rock solid; it’s always been reliable. I think we’ve barely tapped into what we can do with it.</h2>
-                    <p><strong>Matt Sullivan</strong>, BI Manager, PrimeSource</p>
-                </div>
-            </div>
-            <div class="right-quote"><img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/right-quote.png" alt="Right Quote" /></div>
-            
-            <a name="features" id="features"> </a>
-        </div>
-        <script type="text/javascript">
-            var slideIndex = 1;
-            var repeat;
-            showSlides(slideIndex);
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+
+<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+    <div class="[ text-center ]" style="max-width: 80ch">
+        <h2>Automate in half the time</h2>
+        <p>Without advanced development or custom scripting, ActiveBatch's user-friendly interface, prebuilt job steps and limitless connection across any tech stack make automation setup simple.</p>
+    </div>
+    <ul class="[ list-unstyled ][ grid ]">
+        {% for item in [
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "Consolidate scheduling tools",
+                "description": "Stop managing automation across multiple tools and start orchestrating in one platform with prebuilt connectors and infinite extensibility."
+            },
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "Consolidate scheduling tools",
+                "description": "Stop managing automation across multiple tools and start orchestrating in one platform with prebuilt connectors and infinite extensibility."
+            },
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "Consolidate scheduling tools",
+                "description": "Stop managing automation across multiple tools and start orchestrating in one platform with prebuilt connectors and infinite extensibility."
             }
-            function currentSlide(n) {
-                clearTimeout(repeat);
-                showSlides(slideIndex = n);
-            }
-            function showSlides(n) {
-                var slides = document.getElementsByClassName("quote");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+        ] %}
+            <li class="[ g-col-4 d-flex flex-column align-items-center gap-3 ][ bg-light ][ p-4 ][ rounded ]">
+                <img 
+                    class="[ mt-n5 ]"
+                    src="{{ item.img }}" 
+                    alt="" 
+                    width="50" 
+                    height="50"
+                >
+                <h3 class="[ h5 ]">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+    <div class="[ text-center ]" style="max-width: 80ch">
+        <h2>Automate in half the time</h2>
+        <p>Without advanced development or custom scripting, ActiveBatch's user-friendly interface, prebuilt job steps and limitless connection across any tech stack make automation setup simple.</p>
+    </div>
+    <ul class="[ list-unstyled ][ grid ]">
+        {% for item in [
+            {
+                "img": "./img/mockup.png",
+                "title": "Job Steps Library",
+                "description": "Get hundreds of prebuilt job steps so you and your team don’t need to spend time building and maintaining custom scripts, and can focus on more innovative and outcome-driven initiatives. Continue using existing custom scripts you’ve built while gaining an extensive library of turnkey job steps.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
                 }
-                slideIndex = n;
-                if (slideIndex > slides.length) { slideIndex = 1 }
-                slides[slideIndex - 1].style.display = "block";
-                repeat = setTimeout(function () {
-                    repeatSlider()
-                }, 8000);
+            },
+            {
+                "img": "./img/mockup.png",
+                "title": "Job Steps Library",
+                "description": "Get hundreds of prebuilt job steps so you and your team don’t need to spend time building and maintaining custom scripts, and can focus on more innovative and outcome-driven initiatives. Continue using existing custom scripts you’ve built while gaining an extensive library of turnkey job steps.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
+            },
+            {
+                "img": "./img/mockup.png",
+                "title": "Job Steps Library",
+                "description": "Get hundreds of prebuilt job steps so you and your team don’t need to spend time building and maintaining custom scripts, and can focus on more innovative and outcome-driven initiatives. Continue using existing custom scripts you’ve built while gaining an extensive library of turnkey job steps.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
             }
-            function repeatSlider() {
-                showSlides(slideIndex = slideIndex + 1)
-            }
-        </script>
-    </section>
-    
-    <section class="support-section">
-        <div class="support max-width">
-            <h2>Customer Success Model</h2>
-            
-            <div class="support-content">
-                <div class="support-points">
-                    <div class="bullet">
-                        <h3>White Glove Onboarding</h3>
-                        <p>Your success starts with onboarding. We work side-by-side with you, actively guiding you through the installation and configuration process. We also go through training with your team so they can build what you need for your unique business requirements.</p>
-                        
+        ] %}
+            <li class="[ g-col-12 ][ text-start ]">
+                <article class="[ grid align-items-center gap-5 ]">
+                    <figure class="[ g-col-6 {{ "order-1" if loop.index % 2 }} ]">
+                        <img 
+                            class="[ w-100 ]"
+                            src="{{ item.img }}" 
+                            alt="" 
+                            width="50" 
+                            height="50"
+                        >
+                    </figure>
+                    <div class="[ g-col-6 ][ d-flex flex-column align-items-start gap-3 ]">
+                        <h3 class="[ h2 ]">{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                        <a href="" class="[ btn btn-outline-dark ]">{{ item.link.text }}</a>
                     </div>
-                    <div class="bullet">
-                        <h3>Optimize Performance With Health Checks</h3>
-                        <p>We want to ensure you’re getting the most from your investment. Our Customer Success team conducts periodic health checks to assess the maturity of your ActiveBatch configuration across four key success factors. You’ll get specific recommendations to improve efficiency and reliability.</p>
-                        
-                        
-                    </div>
-                    <div class="bullet">
-                        <h3>Comprehensive, In-House Support</h3>
-                        <p>At ActiveBatch, support is available whenever you need it. You get direct access to our in-house experts and a Knowledgebase of hundreds of support articles and tactical, how-to videos. Continue building your expertise through Redwood University, with more than 300 courses and modules.</p>
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <div>
-                    <img src="https://www.advsyscon.com/en-us/CorporateSite/media/2d/proactive-support-model.png" alt="ActiveBatch Proactive Support Model" />
-                    
-                </div>
-            </div>
-            
-            <div class="support-cta">
-                <a href="https://www.advsyscon.com/en-us/services/support-options">Learn More About ActiveBatch’s Proactive Support »</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="callback-section">
-        <div class="callback max-width">
-            <div class="callback-image">
-                <img src="https://www.advsyscon.com/en-us/CorporateSite/media/i/automation-expert.png" alt="ActiveBatch Automation Expert" />
-                
-                
-            </div>
-            <div class="callback-content">
-                <h2>Ready to see how ActiveBatch can simplify your workload automation?</h2>
-                
-                <p>Our experts will run your actual jobs in ActiveBatch so you see how it simplifies your automation environment. Get your questions answered as you see how easy it is to build and maintain your jobs in ActiveBatch.</p>
-                <a href="https://www.advsyscon.com/en-us/demo/quick" class="generic-cta">Get a Demo</a>
-                
-                
-                
-                
-            </div>
-        </div>
-    </section>
-    
-    
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
 </section>
+
+<section class="[ bg-light ][ py-6 ]">
+    <div class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ]">
+        <div class="[ text-center ]" style="max-width: 80ch">
+            <h2>Integrations</h2>
+        </div>
+        accordions
+    </div>
+</section>
+
+<section class="[ bg-light ][ py-6 ]">
+    <div class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ]">
+        <div class="[ text-center ]" style="max-width: 80ch">
+            <h2>Use Cases</h2>
+        </div>
+        <ul class="[ list-unstyled ][ grid ]">
+        {% for item in [
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "File Transfer Automation",
+                "description": "Securely manage and automate data and file transfers using dozens of prebuilt actions for common file operations.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
+            },
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "File Transfer Automation",
+                "description": "Securely manage and automate data and file transfers using dozens of prebuilt actions for common file operations.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
+            },
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "File Transfer Automation",
+                "description": "Securely manage and automate data and file transfers using dozens of prebuilt actions for common file operations.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
+            },
+            {
+                "img": "https://static.thenounproject.com/png/1403596-200.png",
+                "title": "File Transfer Automation",
+                "description": "Securely manage and automate data and file transfers using dozens of prebuilt actions for common file operations.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "google.com"
+                }
+            }
+        ] %}
+            <li class="[ g-col-12 g-col-md-6 ][ text-start ]">
+                <article class="[ grid align-items-center gap-4 ][ bg-white ][ rounded-4 ][ border border-dark ][ p-4 ]">
+                    <figure class="[ g-col-2 ]">
+                        <img 
+                            class="[ w-100 ]"
+                            src="{{ item.img }}" 
+                            alt="" 
+                            width="50" 
+                            height="50"
+                        >
+                    </figure>
+                    <div class="[ g-col-10 ][ d-flex flex-column align-items-start gap-2 ][ position-relative ]">
+                        <h3 class="[ h6 ]">
+                            <a 
+                                class="[ text-decoration-none text-reset stretched-link ]"
+                                href="{{ item.link.url }}"
+                            >
+                                {{ item.title }} 
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M-2.19579e-07 5.02338C-2.30448e-07 5.27203 0.102517 5.51048 0.284998 5.6863C0.467478 5.86211 0.714975 5.96088 0.973042 5.96088L8.67954 5.96088L6.12368 8.42339C5.9518 8.6011 5.85823 8.83616 5.86268 9.07904C5.86713 9.32191 5.96925 9.55365 6.14752 9.72541C6.3258 9.89718 6.56632 9.99557 6.8184 9.99985C7.07049 10.0041 7.31446 9.91399 7.49891 9.74838L11.7154 5.68589C11.8976 5.5101 12 5.27182 12 5.02339C12 4.77495 11.8976 4.53667 11.7154 4.36089L7.49891 0.298385C7.40983 0.206277 7.30241 0.132399 7.18305 0.081159C7.06369 0.029919 6.93484 0.00236666 6.80419 0.000145675C6.67354 -0.00207531 6.54376 0.0210803 6.4226 0.0682316C6.30144 0.115383 6.19138 0.185564 6.09898 0.274587C6.00658 0.36361 5.93374 0.469653 5.8848 0.586388C5.83586 0.703123 5.81183 0.82816 5.81413 0.954038C5.81644 1.07992 5.84504 1.20406 5.89822 1.31906C5.9514 1.43406 6.02808 1.53756 6.12368 1.62338L8.67954 4.08588L0.973042 4.08588C0.435922 4.08588 -1.96958e-07 4.50588 -2.19579e-07 5.02338Z" fill="#082029"/>
+                                </svg>
+
+                            </a>
+                        </h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+</section>
+
+<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+    <div class="[ text-center ]" style="max-width: 80ch">
+        <h2>Customer Success</h2>
+        <p>Get the tools, resources and valuable education to make you and your team successful.</p>
+    </div>
+    <div class="[ w-100 ][ grid ]" style="--bs-rows: 2">
+        <article class="[ g-col-6 ][ bg-light ][ p-6 ][ overflow-hidden rounded-4 ][ d-flex flex-column gap-3 ]" style="grid-row: span 2">
+            <h3 class="[ h5 ]">Redwood University</h3>
+            <p>Access Redwood University for on-demand training and certification courses</p>
+            <div class="[ mx-n6 mb-n6 mt-auto ]" style="background: black; height: 30rem"></div>
+        </article>
+        <article class="[ g-col-6 ][ bg-light ][ p-6 ][ overflow-hidden rounded-4 ][ d-flex flex-column gap-3 ]" >
+            <h3 class="[ h5 ]">Redwood University</h3>
+            <p>Access Redwood University for on-demand training and certification courses</p>
+        </article>
+        <article class="[ g-col-6 ][ bg-light ][ p-6 ][ overflow-hidden rounded-4 ][ d-flex flex-column gap-3 ]" >
+            <h3 class="[ h5 ]">Redwood University</h3>
+            <p>Access Redwood University for on-demand training and certification courses</p>
+        </article>
+    </div>
+</section>
+
+<section class="[ d-flex align-items-center flex-column gap-6 ][ bg-light ][ mt-6 ]">
+    <ul class="[ list-unstyled ][ d-flex gap-3 ][ mx-n5 mt-n4 ]">
+        {% for item in [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7] %}
+            <li class="">
+                <img class="[ w-100 ]" src="https://www.advsyscon.com/en-us/corporatesite/media/logo/activebatch-g2-leader-fall-2020-01.png" loading="lazy" width="100" height="100" alt="">
+            </li>
+        {% endfor %}
+    </ul>
+    <aside class="[ bg-black ][ w-100 ][ mt-8 ]">
+        <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
+            <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
+            <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
+        </div>
+    </aside>
+</section>
+
 {% endblock %}

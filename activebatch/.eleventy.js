@@ -21,7 +21,7 @@ module.exports = (config) => {
 	});
 
 
-	const passThrough = ['*.min.*', 'src/img', 'src/*.png', 'src/*.svg', 'src/*.ico', 'src/*.webmanifest'];
+	const passThrough = ['*.min.*'];
 
 	passThrough.forEach((item) => {
 		config.addPassthroughCopy(item);
