@@ -60,7 +60,7 @@ $spacers: ();
     @if $level < 0 {
         $spacers: map.merge(
             $spacers, 
-            ( #{"1\\/" + math.abs($level) }: $spacer * math.pow($spacer-scale, $level + 1) )
+            ( #{"\\{" + math.abs($level) + "\\}"}: $spacer * math.pow($spacer-scale, $level + 1) )
         );
     }
     
