@@ -171,9 +171,9 @@ img {
 	--menu--bg-color: #051421;
 	--menu--mobile-shadow: 0 7px 22px -18px rgba(0, 0, 0, 0.25), 0 39px 37px 3px rgba(0, 0, 0, 0.05);
 	--menu--desktop-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.25);
-	--menu--transition: 0.3s ease-in;
-	--menu--border-top: 0.375rem 0.375rem 0 0;
-	--menu--border-bottom: 0 0 0.375rem 0.375rem;
+	--menu--transition: .3s ease-in;
+	--menu--border-top: .375rem .375rem 0 0;
+	--menu--border-bottom: 0 0 .375rem .375rem;
 	--menu--toggle-line-width: 3px;
 	> * {
 		box-sizing: border-box;
