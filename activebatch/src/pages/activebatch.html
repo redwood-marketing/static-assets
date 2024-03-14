@@ -4,4 +4,293 @@ title: ActiveBatch
 {% extends "base.njk" %}
 
 {% block content %}
+
+
+<section class="[ text-white text-center text-lg-start ][ d-flex align-items-center ][ position-relative overflow-hidden ][ bg-dark ][ py-8 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
+    <div class="[ container-fluid container-lg ]">
+        <div class="[ row align-items-center gx-5 ]">
+            <div class="[ col-6 ]">
+                <h1 class="[ display-5 ]">Automate in half the time</h1>
+                <p class="[ lead ][ mt-3 mb-4 ]">Easily orchestrate end-to-end IT and business processes in one platform with low-code/no-code functionality and drag-and-drop design</p>
+                <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
+                    Get a Demo
+                    <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="[ col-6 ]">
+                <iframe 
+                    class="[ w-100 ][ rounded-4 ]"
+                    allowfullscreen
+                    frameborder="0"
+                    mozallowfullscreen
+                    src="https://player.vimeo.com/video/156021205?autoplay=0&amp;title=0&amp;byline=0&amp;portrait=0" 
+                    webkitallowfullscreen
+                    style="aspect-ratio: 16 / 9"
+                ></iframe>
+            </div>
+        </div>
+        
+        <svg class="[ d-none d-lg-block ][ position-absolute top-50 end-50 ][ h-100 ][ pe-none ]" 
+			style="opacity:.05; transform: scale(3) translate(40%, -5%);"
+			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path fill="currentColor" d="m22.4 19.2-2.3 4.4-8.2-13.9h16.2l-2 3.1h7.3L39 3.5H1l19 33 9.8-17.3h-7.4z"/></svg>
+    </div>
+</section>
+
+<section class="[ mt-n4 ][ mw-100 ][ overflow-hidden ][ z-1 position-relative ]">
+    {% include "module-g2-badges.njk" %} 
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>Advanced job scheduling made simple</h2>
+        <p>Empower your entire team to automate manual processes and focus on more high-value work with user-friendly job scheduling from ActiveBatch by Redwood—no custom scripting or extensive dev time required.</p>
+    </div>
+    <div class="[ grid ]">
+
+        {% for item in [
+            {
+                "img": "../img/icon-hands.svg",
+                "title": "Easy to use",
+                "description": "Make building and managing workload automation effortless across your team with an intuitive no-code/low-code drag-and-drop design."
+            },
+            {
+                "img": "../img/icon-eye.svg",
+                "title": "One powerful platform",
+                "description": "Centralize process automation across your tech stack by managing, monitoring and alerting in a simplified, controlled environment for clear visibility."
+            },
+            {
+                "img": "../img/icon-hands.svg",
+                "title": "Any tech stack",
+                "description": "Use a job scheduler that you know will scale as your tech stack evolves with limitless integration, pre-built connectors and Super REST API to truly automate end-to-end."
+            }
+        ] %}
+            <div class="[ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-center gap-3 ][ text-center ][ bg-light ][ pb-5 px-4 ][ rounded-4 ]">
+                <img 
+                    class="[ mt-n3 ]"
+                    src="{{ item.img }}" 
+                    alt="" 
+                    width="60" 
+                    height="60"
+                >
+                <h3 class="[ h6 fw-medium ]">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+<section class="[ pb-6 pb-xl-8 ]">
+    <div class="[ container-fluid container-xl ][ d-grid justify-items-center gap-4 ]">
+        <div class="[ text-center ][ d-grid gap-2 ]" style="max-width: 80ch">
+            <h2>Integrations</h2>
+        </div>
+        {% include "module-intergration.njk" %}
+    </div>
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7  ][ py-6 py-xl-8 ]">
+    <ul class="[ list-unstyled ][ grid row-gap-5 row-gap-xxl-8 ]">
+        {% for item in [
+            {
+                "img": "../img/stock-1.jpg",
+                "title": "ActiveBatch Job Steps Library",
+                "description": "Seamless automation can’t get any easier than with ActiveBatch's Job Steps Library. Access hundreds of pre-built job steps for end-to-end automation across diverse systems and platforms, eliminating the need for custom scripting and maximizing efficiency in your workflows.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library"
+                }
+            },
+            {
+                "img": "../img/stock-2.jpg",
+                "title": "Event-driven and time-based triggers",
+                "description": "Job scheduling can’t be limited to time triggers. Create end-to-end process automation and increase job success rates with ActiveBatch's robust event-driven automation and advanced date/time scheduling. Trigger jobs based on various external conditions with flexible scheduling options tailored to your organization's needs, all to streamline workflows and minimize delays.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/stock-3.jpg",
+                "title": "Views and interfaces",
+                "description": "Versatile user interfaces aid efficiency and useability. ActiveBatch console gives comprehensive access to the job steps library and integrations with the web-based console providing remote management and the user-friendly self-service portal simplifies IT and business user collaboration and empowers users through secure, high-performance access anytime, anywhere.",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces"
+                }
+            }
+        ] %}
+            <li class="[ g-col-12 ][ text-start ]">
+                <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                    <figure class="[ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ][ rounded-4 ][ overflow-hidden ]">
+                        <img 
+                            class="[ w-100 h-auto ]"
+                            src="{{ item.img }}" 
+                            alt="" 
+                            width="400" 
+                            height="300"
+                        >
+                    </figure>
+                    <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-3 ]">
+                        <h3 class="[ h2 ]">{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                        <a href="{{ item.link.url }}" class="[ btn btn-outline-dark ]">
+                            {{ item.link.text }}
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
+    <div class="[ grid ]">
+
+        {% for item in [
+            {
+                "img": "../img/icon-hands.svg",
+                "title": "SLA management",
+                "description": "Take control of your service level agreements (SLA) with strong SLA management capabilities to automate processes and operations for better performance and SLA delivery. Monitor and manage critical workflows from a centralized view, visualizing key details, customizing alerts and automating remediation for optimal service delivery without delays.
+                ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/icon-eye.svg",
+                "title": "Reporting and monitoring",
+                "description": "Keep strict control with comprehensive monitoring, alerting and reporting, designed to prevent job failures and delays. Customizable alerts and proactive SLA monitoring significantly reduce SLA breaches, ensuring seamless end-to-end workflow execution and timely completion. Multiple developer and operations views, including forecasting and Gantt, and reporting templates enable informed decision-making and optimal resource allocation. ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/icon-hands.svg",
+                "title": "Security, auditing and governance",
+                "description": "Strengthen your organization’s security around job scheduling with robust security features and real-time monitoring spanning on-premises, cloud and hybrid environments. Authorized access and granular permissions ensure that security stays intact as you enable a broader team to minimize manual work and optimize process management. Easily integrate your existing cybersecurity solutions like CyberArk using prebuilt integrations for greater protection. ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            }
+        ] %}
+            <div class="[ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ bg-light ][ pb-5 px-4 ][ rounded-4 ]">
+                <img 
+                    class="[ mt-n3 ]"
+                    src="{{ item.img }}" 
+                    alt="" 
+                    width="60" 
+                    height="60"
+                >
+                <h3 class="[ h6 fw-medium ]">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <!-- <a href="{{ item.link.url }}" class="[ btn btn-outline-dark ]">
+                    {{ item.link.text }}
+                    <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                    </svg>
+                </a> -->
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
+    <div class="[ grid ]">
+
+        {% for item in [
+            {
+                "img": "../img/abstract-1.png",
+                "title": "SLA management",
+                "description": "Take control of your service level agreements (SLA) with strong SLA management capabilities to automate processes and operations for better performance and SLA delivery. Monitor and manage critical workflows from a centralized view, visualizing key details, customizing alerts and automating remediation for optimal service delivery without delays.
+                ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/abstract-2.png",
+                "title": "Reporting and monitoring",
+                "description": "Keep strict control with comprehensive monitoring, alerting and reporting, designed to prevent job failures and delays. Customizable alerts and proactive SLA monitoring significantly reduce SLA breaches, ensuring seamless end-to-end workflow execution and timely completion. Multiple developer and operations views, including forecasting and Gantt, and reporting templates enable informed decision-making and optimal resource allocation. ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/abstract-3.png",
+                "title": "Reporting and monitoring",
+                "description": "Keep strict control with comprehensive monitoring, alerting and reporting, designed to prevent job failures and delays. Customizable alerts and proactive SLA monitoring significantly reduce SLA breaches, ensuring seamless end-to-end workflow execution and timely completion. Multiple developer and operations views, including forecasting and Gantt, and reporting templates enable informed decision-making and optimal resource allocation. ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            },
+            {
+                "img": "../img/abstract-4.png",
+                "title": "Security, auditing and governance",
+                "description": "Strengthen your organization’s security around job scheduling with robust security features and real-time monitoring spanning on-premises, cloud and hybrid environments. Authorized access and granular permissions ensure that security stays intact as you enable a broader team to minimize manual work and optimize process management. Easily integrate your existing cybersecurity solutions like CyberArk using prebuilt integrations for greater protection. ",
+                "link": {
+                    "text": "Learn More",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
+                }
+            }
+        ] %}
+            <div class="[ mt-3 ][ g-col-12 g-col-lg-3 d-flex flex-column align-items-start gap-3 ][ bg-light ][ pb-5 px-4 ][ rounded-4 ]">
+                <figure class="[ bg-dark ][ p-2 mx-n2 w-100 ]"></figure>
+                <img 
+                    class="[ w-100 h-auto ][ mx-n4  ]"
+                    src="{{ item.img }}" 
+                    alt="" 
+                    width="160" 
+                    height="90"
+                >
+                <h3 class="[ h6 fw-medium ]">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a href="{{ item.link.url }}" class="[ btn btn-outline-dark ]">
+                    {{ item.link.text }}
+                    <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+<section class="[ container-fluid container-xl ][ py-6 !py-xl-8 ]">
+    <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
+        {% for item in [
+            "../img/logo-xtra.svg",
+            "../img/logo-graymont.svg",
+            "../img/logo-firstrate.svg",
+            "../img/logo-bluebay.svg",
+            "../img/logo-xcel.svg",
+            "../img/logo-relayhealth.svg"
+        ] %}
+        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
+            <img src="{{ item }}" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{%- set bannerArgs = {
+	'heading': 'Ready to see how ActiveBatch can simplify your workload automation?',
+	'content': ''
+} -%}
+{% include "cta.njk" %} 
+
 {% endblock %}
