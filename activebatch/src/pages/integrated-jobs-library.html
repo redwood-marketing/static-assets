@@ -5,4 +5,61 @@ title: Integrated Jobs Library
 
 
 {% block content %}
+
+{%- set heroArgs = { 
+	'heading': '<h1 class="[ display-6 ]">ActiveBatch Job Steps Library</h1>', 
+	'content': '<p class="[ lead fw-bolder ][ mt-3 mb-4 ]">Easily build and automate jobs without development skills</p>' 
+} -%}
+{% include "hero-inner.njk" %}
+
+
+<section class="[ container-fluid container-lg ][ py-6 ]">
+
+	<div class="[ text-center mx-auto ]" style="max-width:68rem;">
+		<h1 class="[ h1 ][ mt-3 mb-2 ]">Largest library of automated job steps</h1>
+		<p>ActiveBatch provides your team with hundreds of production-ready job steps to easily assemble into IT and business workflows—no custom scripting or advanced development skills required. Free up IT and development resources to focus on innovation. </p>
+	</div>
+
+	<article class="[ grid align-items-center gap-md-5 ][ my-6 ]">
+		<figure class="[ g-col-12 g-col-md-6 m-0 ]">
+			<img class="[ w-100 ]" src="../img/activebatch-job-steps-library.png" alt="" />
+		</figure>
+		<div class="[ g-col-12 g-col-md-6 ][ d-flex flex-column align-items-start gap-1 ]">
+			<h2 class="[ h4 ]">End-to-end automation</h2>
+			<p class="[ m-0 ]">Seamlessly integrate across a wide range of applications, databases, platforms and more to facilitate true end-to-end job automation and data exchange between disparate technologies.</p>
+
+			<h2 class="[ h4 ]">No custom scripting</h2>
+			<p class="[ m-0 ]">Eliminate the need for new custom scripts without losing existing scripts. Script vaulting and lifecycle management capabilities, like auditing and versioning, let you combine existing scripts with pre-built.</p>
+
+			<h2 class="[ h4 ]">Proven-effective job steps</h2>
+			<p class="[ m-0 ]">Use job steps designed, tested and maintained by a team of automation experts. Leverage proven-effective reusable job steps for common processes to maximize efficiency in your workflows.</p>
+		</div>
+	</article>
+    
+    <h2 class="[ text-center ][ my-2 ]">Integrations</h2>
+	<div class="[ mb-8 ]" >
+		{% include "module-intergration.njk" %}
+	</div>
+
+    <h1 class="[ h1 ][ mb-2 ]">ActiveBatch Service Library</h2>
+	<p>ActiveBatch Job Steps Library is augmented by the <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/service-library">ActiveBatch Service Library</a>, a dynamic framework that extends ActiveBatch&rsquo;s integration capabilities with additional actions from other applications. Load and execute APIs (WSDLs and SOAP Web Services, RESTful services, .Net assemblies, stored procedures and command lines) without custom coding and create reusable job steps for your Job Steps Library. </p>
+
+    <h2 class="[ text-center ][ mt-8 my-2 ]">What ActiveBatch Users are Saying</h2>
+	<div class="[ text-center ][ mb-8 ]" >[ Sliding Quotes Here ]</div>
+</section>
+
+<section class="[ bg-white ][ pt-6 ]">
+	<div class="[ container-fluid container-lg ]">
+		<img class="[ w-100 ]" src="../img/logo-bar.png" alt="">
+	</div>
+</section>
+
+
+{%- set bannerArgs = {
+	'topColor': 'var(--bs-white)',
+	'heading': '<h2 class="[ h3 ]">Start automating in half the time</h2>',
+	'content': '<p class="[ m-0 ]">Build and automate workflows without scripting and gain unimaginable operational efficiency. Single pane of glass visibility, real-time insights, customizable alerting and more keep you in control while freeing up your team’s time.</p>'
+} -%}
+{% include "banner-be-ready.njk" %}
+
 {% endblock %}

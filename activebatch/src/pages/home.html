@@ -147,7 +147,9 @@ title: Home
         <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
             <h2>Integrations</h2>
         </div>
-        accordions
+       	<div>
+            {% include "module-intergration.njk" %}
+        </div>
     </div>
 </section>
 
@@ -341,21 +343,19 @@ title: Home
     </div>
 </section>
 
-<section class="[ container-fluid container-lg ][ py-6 ]">
-    <ul class="[ list-unstyled ][ d-flex row-cols-6 gap-2 ]">
-        {% for item in [1,2,3,4,5,6] %}
-        <li class="[ col ]">
-            <img class="[ w-100 ]" src="https://www.graymont.com/sites/default/files/logo_graymont.png" loading="lazy" width="100" height="100" alt="">
-        </li>
-        {% endfor %}
-    </ul>
-</section>
-
+<!-- 
 <aside class="[ d-flex align-items-center flex-column gap-6 ][ bg-black ][ w-100 ][ mt-10 ]">
     <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
         <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
         <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
     </div>
-</aside>
+</aside> -->
+
+{%- set bannerArgs = {
+	'topColor': 'var(--bs-white)',
+	'heading': '<h2>Ready to see how ActiveBatch can simplify your workload automation?</h2>',
+	'content': ''
+} -%}
+{% include "banner-be-ready.njk" %} 
 
 {% endblock %}

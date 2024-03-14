@@ -1,0 +1,24 @@
+{%- set defaultArgs = {
+	'topColor': 'var(--bs-light)',
+	'bottomColor': 'var(--bs-dark)',
+	'heading': '<h2 class="[ h3 ]">Be ready to automate anything.</h2>',
+	'content': '<p class="[ m-0 ]">Build and automate workflows in half the time without the need for scripting. Gain operational peace of mind with real-time insights, customizable alerting, and more.</p>',
+	'includeImg': true
+} -%}
+{%- set args = defaultArgs|mergeAttributes( bannerArgs ) -%}
+<section class="[ py-6 ]" style="background:linear-gradient({{ args.topColor }} 49.999%, {{ args.bottomColor }} 50%)">
+	<section class="[ container-fluid container-lg ][ grid align-items-center gap-md-5 ][ bg-primary text-white ][ rounded ][ position-relative overflow-hidden ][ p-3 p-lg-7 ]">
+		<div class="[ g-col-12 g-col-md-7 ][ d-flex flex-column align-items-start gap-2 ]" style="z-index:1;" >
+			{{ args.heading | safe }}
+			{{ args.content | safe }}
+		</div>
+		<div class="[ g-col-12 g-col-md-5 ][ text-center ]" style="z-index:1;" >
+			<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn ]" style="--bs-btn-bg:var(--bs-white);--bs-btn-hover-bg:#036b6a;">Get a Demo</a>
+		</div>
+		{% if args.includeImg %}
+		<svg class="[ d-none d-lg-block ][ position-absolute top-0 end-0 ][ h-100 ]" 
+			style="opacity:.05;transform:scale(1.8) translate(-15%, 11% );"
+			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="m22.4 19.2-2.3 4.4-8.2-13.9h16.2l-2 3.1h7.3L39 3.5H1l19 33 9.8-17.3h-7.4z"/></svg>
+		{% endif %}
+	</section>
+</section>

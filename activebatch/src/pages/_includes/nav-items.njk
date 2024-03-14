@@ -1,8 +1,8 @@
 {%- set defaultArgs = {
     'grid': 'd-flex flex-column',
-    'gap': 'gap-1 gap-lg-2',
+    'gap': 'gap-{3} gap-lg-1',
     'class': '',
-    'listClass': '[ p-2 ]',
+    'listClass': '[ p-{3} ]',
     'chevron': true,
     'desc': false,
     'icon': false,
@@ -40,13 +40,13 @@
     {%- if args.desc -%}
     {%- set descClass = '[ has-desc ]' -%}
     {%- else -%}
-    {%- set descClass = '[ d-flex w-100 align-items-center gap-3 ]' -%}
+    {%- set descClass = '[ d-flex w-100 align-items-center gap-{3} ]' -%}
     {%- endif -%}
     {%- if cta.desc -%}
     {%- set descTxt = '<p class="[ desc ][ text-gray text-smaller ][ m-0 ]">' + cta.desc + ' </p>' -%}
     {%- endif -%}
 
-    <li class="[ bg-white @hover:bg-light-blue ][ rounded ]">
+    <li class="[ bg-white @hover:bg-light ][ rounded ]">
       <a href="{{ cta.link }}" target="{{ cta.target | default('_self') }}" class="[ text-reset @hover:dark text-decoration-none ] {{ args.listClass }} {{ descClass }}">
         {{ icon | safe }}
         {{ ctaHtml | safe }}

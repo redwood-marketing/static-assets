@@ -1,0 +1,21 @@
+{%- set defaultArgs = {
+	'minHeight': 'min(30rem, 70vh)',
+	'maxWidth': '90ch',
+    'background': 'linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);',
+	'heading': '<h1 class="[ display-5 ]">Heading</h1>',
+	'content': '<p class="[ lead ][ mt-3 mb-4 ]">Content</p>',
+	'includeCta': true
+} -%}
+{%- set args = defaultArgs|mergeAttributes( heroArgs ) -%}
+<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-10 ]" 
+	style="
+		min-height: {{ args.minHeight | safe }}; 
+		background: {{ args.background | safe }}">
+    <div class="[ container-fluid ]" style="max-width: {{ args.maxWidth | safe }}">
+        {{ args.heading | safe }}
+		{{ args.content | safe }}
+		{%- if args.includeCta -%}
+        <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">Get a Demo</a>
+		{%- endif -%}
+    </div>
+</section>
