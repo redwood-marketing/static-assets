@@ -10,7 +10,7 @@ $tertiary: #65c261;
 $quaternary: #66cc99;
 $accent: #E24650;
 $dark: $secondary;
-$light: #f2f2f2;
+$light: #f7f7f7;
 
 // --ff-body: "soleto", sans-serif;
 // --ff-titles: "prometo", sans-serif;
@@ -23,7 +23,9 @@ $enable-negative-margins: true;
 @import '../../node_modules/bootstrap/scss/variables';
 
 $font-family-base: "soleto";
-$font-weight-base: $font-weight-light;
+$font-weight-base: $font-weight-normal;
+
+$paragraph-margin-bottom: 0;
 
 $headings-font-family:   "prometo";
 $headings-margin-bottom: 0;
@@ -46,13 +48,6 @@ $colors: map-merge(
 );
 
 $colors: map-remove($colors, 'blue', 'indigo', 'purple', 'pink', 'orange', 'yellow', 'green', 'teal', 'cyan');
-
-// 4. Include any default map overrides here
-
-// 5. Include remainder of required parts
-@import '../../node_modules/bootstrap/scss/maps';
-@import '../../node_modules/bootstrap/scss/mixins';
-@import '../../node_modules/bootstrap/scss/root';
 
 $enable-cssgrid: true;
 $grid-breakpoints: (
@@ -92,6 +87,14 @@ $spacers: ();
 
 $spacers: map.merge($spacers, $spacers);
 
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/root';
+
 // 6. Optionally include any other parts as needed
 @import '../../node_modules/bootstrap/scss/utilities';
 
@@ -127,13 +130,24 @@ $spacers: map.merge($spacers, $spacers);
 @import "../../node_modules/bootstrap/scss/grid";
 @import '../../node_modules/bootstrap/scss/helpers';
 
-$btn-border-radius: 10rem;
-$btn-padding-y:               1em;
-$btn-padding-x:               3em;
-$btn-font-family:             $headings-font-family;
-$btn-font-size:               1rem;
-$btn-line-height:             1;
-$btn-white-space:             nowrap;
+$btn-border-radius:    10rem;
+$btn-padding-y:        .8em;
+$btn-padding-x:        3em;
+$btn-font-family:      $headings-font-family;
+$btn-font-size:        .8rem;
+$btn-font-weight:      $font-weight-medium;
+$btn-line-height:      1;
+$btn-white-space:      nowrap;
+
+$btn-font-size-sm:     $btn-font-size * 0.8;
+$btn-border-radius-sm: $btn-border-radius; 
+$btn-padding-y-sm:     $btn-padding-y;
+$btn-padding-x-sm:     $btn-padding-x;
+
+$btn-font-size-lg:     $btn-font-size * 1.2;
+$btn-border-radius-lg: $btn-border-radius; 
+$btn-padding-y-lg:     $btn-padding-y;
+$btn-padding-x-lg:     $btn-padding-x;
 
 @import '../../node_modules/bootstrap/scss/buttons';
 
