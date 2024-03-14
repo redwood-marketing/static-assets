@@ -320,7 +320,7 @@ title: Home
     </div>
 </section>
 
-<section class="[ container-fluid container-xl ][ py-6 !py-xl-8 ]">
+<section class="[ container-fluid container-xl ][ pb-6 pt-4 pb-xl-8 pt-6 ]">
     <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
         {% for item in [
             "../img/logo-xtra.svg",
@@ -339,7 +339,8 @@ title: Home
 
 {%- set bannerArgs = {
 	'heading': 'Ready to see how ActiveBatch can simplify your workload automation?',
-	'content': ''
+	'content': '',
+    'backgroundStrips': ["transparent", "var(--bs-black)"]
 } -%}
 {% include "cta.njk" %} 
 
