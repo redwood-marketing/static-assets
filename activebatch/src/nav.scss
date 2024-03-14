@@ -173,7 +173,7 @@ img {
 svg {
     transition: translate .2s ease;
 
-    &:is(a:hover > &) {
+    &:is(.btn, button:hover > &) {
         translate: .5ch;
     }
 }

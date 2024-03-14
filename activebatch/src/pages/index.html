@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ydj8avx.css" />
+    <link id="navigation-css" rel="stylesheet" href="./nav.min.css">
+    <script id="navigation-js" src="./nav.min.js"></script>
+</head>
+<body class="[ container ][ d-grid ]" style="min-height: 100vh;  place-content: center">
+    <div class="[ grid gap-1 align-items-center ]" style="grid-auto-rows: 1fr">
+    {% for item in [
+        {
+            "title": "Homepage & Navigation",
+            "url": "./home/",
+            "done": true
+        },
+        {
+            "title": "ActiveBatch Overview",
+            "url": "./activebatch/",
+            "done": false
+        },
+        {
+            "title": "Job Scheduling",
+            "url": "./job.scheduling/",
+            "done": false
+
+        },
+        {
+            "title": "Job Steps Library",
+            "url": "./integrated-jobs-library/",
+            "done": false
+
+        },
+        {
+            "title": "IT Process Automation",
+            "url": "./it-processing-automation/",
+            "done": false
+
+        },
+        {
+            "title": "Workload Automation Software",
+            "url": "./workload-automation/",
+            "done": false
+
+        },
+        {
+            "title": "ETL Automation",
+            "url": "./data-warehouse-etl-automation/",
+            "done": false
+        }
+    ] %}
+        <div class="[ position-relative ][ h-100 ][ g-col-lg-4 d-flex flex-column align-items-center gap-1 ][ text-center ][ bg-light ][ @hover:border-primary border border-dark ][ p-5 ][ rounded-4 ]">
+            {% if item.done %}
+            <div class="[ border text-primary border-primary py-{6} px-{4} rounded-1 ]" style="font-size: .6em; background-color: rgba(var(--bs-primary-rgb), 0.1)">Ready for review</div>
+            {% else %}
+            <div class="[ border text-dark border-dark py-{6} px-{4} rounded-1 ]" style="font-size: .6em; background-color: rgba(var(--bs-dark-rgb), 0.1)">Almost there</div>
+            {% endif %}
+            <h3 class="[ h4 fw-medium ]">
+                {{ item.title }} 
+                {% if item.done %}
+                    <a href="{{ item.url }}" class="[ text-decoration-none stretched-link ]">↗</a>
+                {% endif %}
+            </h3>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
