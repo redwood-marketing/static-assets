@@ -6,25 +6,50 @@ title: Home
 {% block content %}
 
 
-<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-10 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
+<section class="[ text-white text-center ][ d-flex align-items-center ][ position-relative overflow-hidden ][ bg-dark ][ py-10 ]" style="min-height: min(30rem, 70vh); background: linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);">
     <div class="[ container-fluid ]" style="max-width: 90ch">
         <h1 class="[ display-5 ]">The easiest-to-use job scheduler </h1>
         <p class="[ lead ][ mt-3 mb-4 ]">Make automation easy and accessible for your team and amp up business process efficiency with ActiveBatch by Redwood</p>
-        <a href="" class="[ btn btn-primary ]">Get a Demo</a>
+        <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
+            Get a Demo
+            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+            </svg>
+        </a>
+        
+        <svg class="[ d-none d-lg-block ][ position-absolute top-50 end-50 ][ h-100 ][ pe-none ]" 
+			style="opacity:.05; transform: scale(3) translate(40%, -5%);"
+			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path fill="currentColor" d="m22.4 19.2-2.3 4.4-8.2-13.9h16.2l-2 3.1h7.3L39 3.5H1l19 33 9.8-17.3h-7.4z"/></svg>
     </div>
 </section>
 
-<section class="[ mx-n5 mt-n4 ][ mw-100 ][ overflow-hidden ]">
-    <ul class="[ list-unstyled ][ d-flex gap-4 ]">
-        {% for item in [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,1,1,1,1] %}
-            <li class="">
-                <img class="[ w-100 ]" src="https://www.advsyscon.com/en-us/corporatesite/media/logo/activebatch-g2-leader-fall-2020-01.png" loading="lazy" width="100" height="100" alt="">
+<section class="[ mt-n4 ][ mw-100 ][ overflow-hidden ][ z-1 position-relative ]">
+    <ul class="[ list-unstyled ][ d-flex gap-2 gap-xl-4 align-items-center justify-content-center ][ mx-n5 ]">
+        {% for item in [
+            "../img/badges/DataWarehouseAutomation_HighPerformer_HighPerformer.svg",
+            "../img/badges/DataWarehouseAutomation_MomentumLeader_Leader.svg",
+            "../img/badges/ManagedFileTransfer(MFT)_Leader_Leader.svg",
+            "../img/badges/ManagedFileTransfer(MFT)_MomentumLeader_Leader.svg",
+            "../img/badges/WorkloadAutomation_BestMeetsRequirements_Mid-Market_MeetsRequirements.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_Mid-Market_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_Leader_Enterprise_Leader.svg",
+            "../img/badges/WorkloadAutomation_Leader_Leader.svg",
+            "../img/badges/WorkloadAutomation_MomentumLeader_Leader.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_Asia_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_AsiaPacific_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_Enterprise_Asia_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_Enterprise_AsiaPacific_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_Enterprise_India_HighPerformer.svg",
+            "../img/badges/WorkloadAutomation_HighPerformer_India_HighPerformer.svg"
+        ] %}
+            <li style="min-width: 5rem">
+                <img class="[ w-100 ]" src="{{ item }}" loading="lazy" width="100" height="100" alt="">
             </li>
         {% endfor %}
     </ul>
 </section>
 
-<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
     <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
         <h2>Automate in half the time</h2>
         <p>Without advanced development or custom scripting, ActiveBatch's user-friendly interface, prebuilt job steps and limitless connection across any tech stack make automation setup simple.</p>
@@ -38,16 +63,16 @@ title: Home
             },
             {
                 "img": "../img/icon-eye.svg",
-                "title": "Consolidate scheduling tools",
-                "description": "Stop managing automation across multiple tools and start orchestrating in one platform with prebuilt connectors and infinite extensibility."
+                "title": "Gain single-pane visibility",
+                "description": "Manage and monitor end-to-end processes in real time with custom notifications and alerts, SLA management capabilities and auto-remediation."
             },
             {
                 "img": "../img/icon-hands.svg",
-                "title": "Consolidate scheduling tools",
-                "description": "Stop managing automation across multiple tools and start orchestrating in one platform with prebuilt connectors and infinite extensibility."
+                "title": "Design automation with ease",
+                "description": "Visual process editor with drag-and-drop capabilities makes building workflows attainable for team members without development expertise."
             }
         ] %}
-            <div class="[ g-col-4 d-flex flex-column align-items-center gap-3 ][ text-center ][ bg-light ][ pb-5 px-4 ][ rounded-4 ]">
+            <div class="[ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-center gap-3 ][ text-center ][ bg-light ][ pb-5 px-4 ][ rounded-4 ]">
                 <img 
                     class="[ mt-n3 ]"
                     src="{{ item.img }}" 
@@ -59,31 +84,34 @@ title: Home
                 <p>{{ item.description }}</p>
             </div>
         {% endfor %}
-        <div class="[ g-col-8 ][ bg-light ][ rounded-4 ][ overflow-hidden ]">
-            <img src="../img/ab.jpg" alt="" width="400" height="300" class="[ w-100 h-100 ]">
+        <div class="[ g-col-12 g-col-lg-8 ][ bg-light ][ rounded-4 ][ overflow-hidden ]">
+            <img src="../img/ab.jpg" alt="" width="400" height="300" class="[ w-100 h-100 object-fit-cover ]">
         </div>
         
         <blockquote
-            cite="" 
-            class="[ g-col-4 ][ lead ][ d-flex flex-column gap-2 justify-content-center ][ bg-primary ][ text-white ][ px-4 py-5 ][ m-0 ][ rounded-4 ]"
+            cite="https://www.capterra.com/p/16100/ActiveBatch-Workload-Automation/reviews/4747075/" 
+            class="[ g-col-12 g-col-lg-4 ][ lead leading-3 ][ d-flex flex-column gap-2 justify-content-center ][ bg-primary ][ text-white ][ px-4 py-5 ][ m-0 ][ rounded-4 ]"
         >
-            <svg width="76" height="67" viewBox="0 0 76 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg style="width: 3em" width="76" height="67" viewBox="0 0 76 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M75.8731 0.783996V14.434C73.2037 14.5553 70.5951 15.5867 68.0471 17.528C65.4991 19.4693 63.3757 21.9567 61.6771 24.99C60.0997 28.0233 59.3111 31.36 59.3111 35H75.8731V66.85H42.0211V38.822C42.0211 30.814 43.5984 24.08 46.7531 18.62C49.9077 13.0387 54.0331 8.79199 59.1291 5.88C64.3464 2.84666 69.9277 1.14799 75.8731 0.783996ZM34.0131 0.783996V14.434C31.3437 14.5553 28.7351 15.5867 26.1871 17.528C23.6391 19.4693 21.5157 21.9567 19.8171 24.99C18.2397 28.0233 17.4511 31.36 17.4511 35H34.0131V66.85H0.161063V38.822C0.161063 30.814 1.7384 24.08 4.89306 18.62C8.04773 13.0387 12.1731 8.79199 17.2691 5.88C22.4864 2.84666 28.0677 1.14799 34.0131 0.783996Z" fill="#082029"/>
             </svg>
             <p class="[ fw-medium ]">Very easy to use. No prerequisites needed. Very good user interface and best event-based automation for real-time, accurate data.</p>
-            <footer>Verified Capterra User</footer>
+            <footer>
+                    <a class="[ text-reset text-decoration-none ]" href="https://www.capterra.com/p/16100/ActiveBatch-Workload-Automation/reviews/4747075/" target="_blank">
+                        Verified Capterra User
+                    </a>
+                </footer>
         </blockquote>
     </div>
-    <div>
 </section>
 
 
-<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7  ][ py-6 py-xl-8 ]">
     <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
         <h2>Key ActiveBatch features</h2>
         <p>Designed for ease of use and efficiency, specialized ActiveBatch features and capabilities make end-to-end IT and business process automation effortless.</p>
     </div>
-    <ul class="[ list-unstyled ][ grid row-gap-8 ]">
+    <ul class="[ list-unstyled ][ grid row-gap-5 row-gap-xxl-8 ]">
         {% for item in [
             {
                 "img": "../img/stock-1.jpg",
@@ -91,7 +119,7 @@ title: Home
                 "description": "Get hundreds of prebuilt job steps so you and your team don’t need to spend time building and maintaining custom scripts, and can focus on more innovative and outcome-driven initiatives. Continue using existing custom scripts you’ve built while gaining an extensive library of turnkey job steps.",
                 "link": {
                     "text": "Learn More",
-                    "url": "google.com"
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library"
                 }
             },
             {
@@ -100,7 +128,7 @@ title: Home
                 "description": "Extend your job scheduling beyond simple date/time triggers with dynamic event-based scheduling. Deploy a variety of triggers, including email, FTP, web services and message queues, alongside automated remediation, alerts and advanced scheduling capabilities, all supported by built-in machine learning for intelligent workload distribution to eliminate bottlenecks and delays. ",
                 "link": {
                     "text": "Learn More",
-                    "url": "google.com"
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation"
                 }
             },
             {
@@ -110,13 +138,13 @@ title: Home
                 ",
                 "link": {
                     "text": "Learn More",
-                    "url": "google.com"
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces"
                 }
             }
         ] %}
             <li class="[ g-col-12 ][ text-start ]">
-                <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]">
-                    <figure class="[ g-col-6 {{ "order-1" if loop.index % 2 }} ][ rounded-4 ][ overflow-hidden ]">
+                <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                    <figure class="[ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ][ rounded-4 ][ overflow-hidden ]">
                         <img 
                             class="[ w-100 h-auto ]"
                             src="{{ item.img }}" 
@@ -125,10 +153,10 @@ title: Home
                             height="300"
                         >
                     </figure>
-                    <div class="[ g-col-6 ][ d-flex flex-column align-items-start gap-3 ]">
+                    <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-3 ]">
                         <h3 class="[ h2 ]">{{ item.title }}</h3>
                         <p>{{ item.description }}</p>
-                        <a href="" class="[ btn btn-outline-dark ]">
+                        <a href="{{ item.link.url }}" class="[ btn btn-outline-dark ]">
                             {{ item.link.text }}
                             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
@@ -142,23 +170,21 @@ title: Home
     </ul>
 </section>
 
-<section class="[ bg-light ][ py-6 ]">
-    <div class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ]">
-        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+<section class="[ bg-light ][ py-6 py-xl-8 ]">
+    <div class="[ container-fluid container-xl ][ d-grid justify-items-center gap-4 ]">
+        <div class="[ text-center ][ d-grid gap-2 ]" style="max-width: 80ch">
             <h2>Integrations</h2>
         </div>
-       	<div>
-            {% include "module-intergration.njk" %}
-        </div>
+        {% include "module-intergration.njk" %}
     </div>
 </section>
 
-<section class="[ bg-light ][ py-6 ]">
-    <div class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ]">
-        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+<section class="[ bg-light ][ pb-6 pb-xl-8 ]">
+    <div class="[ container-fluid container-xl ][ d-grid justify-items-center gap-4 ]">
+        <div class="[ text-center ][ d-grid gap-2 ]" style="max-width: 80ch">
             <h2>Use Cases</h2>
         </div>
-        <ul class="[ list-unstyled ][ grid ]" style="grid-auto-rows: 1fr;">
+        <ul class="[ list-unstyled ][ grid gap-1 gap-lg-2 ]" style="grid-auto-rows: 1fr;">
         {% for item in [
             {
                 "img": "../img/icon-1.svg",
@@ -251,19 +277,18 @@ title: Home
                 }
             }
         ] %}
-            <li class="[ g-col-12 g-col-md-6 ][ text-start ]" style="--bs-columns: 6">
-                <article class="[ grid row-columns-2 align-items-center column-gap-3 row-gap-4 ][ h-100 ][ bg-white ][ rounded-4 ][ border border-dark ][ p-4 ]">
-                    <figure class="[ g-col-1 ]">
+            <li class="[ g-col-12 g-col-md-6 ][ text-start ]" >
+                <article class="[ @hover:bg-quaternary grid row-columns-2 align-items-lg-center column-gap-3 row-gap-2 row-gap-lg-4 ][ position-relative ][ h-100 ][ bg-white ][ rounded-4 ][ border border-dark ][ p-2 p-lg-4 ]" style="--bs-columns: 6">
+                    <figure class="[ g-col-6 g-col-lg-1 ][ m-0 ]">
                         <img 
-                            class="[ w-100 ]"
                             src="{{ item.img }}" 
                             alt="" 
                             width="50" 
                             height="50"
                         >
                     </figure>
-                    <div class="[ g-col-5 ][ d-flex flex-column align-items-start gap-2 ][ position-relative ]">
-                        <h3 class="[ h6 ]">
+                    <div class="[ g-col-6 g-col-lg-5 ][ d-flex flex-column align-items-start gap-2 ]">
+                        <h3 class="[ h5 ]">
                             <a 
                                 class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-{3} ]"
                                 href="{{ item.link.url }}"
@@ -284,14 +309,14 @@ title: Home
     </div>
 </section>
 
-<section class="[ container-fluid container-lg ][ d-flex align-items-center flex-column gap-7 ][ py-6 ]">
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center gap-4 ][ py-6 py-xl-8 ]">
     <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
         <h2>Customer Success</h2>
         <p>Get the tools, resources and valuable education to make you and your team successful.</p>
     </div>
-    <div class="[ w-100 ][ grid ]" style="grid-auto-rows: 1fr;">
-        <article class="[ g-col-6 ][ bg-light ][ p-7 ][ overflow-hidden rounded-4 ][ d-flex flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
-            <img src="../img/logo-ru.svg" class="" width="279" height="32">
+    <div class="[ w-100 ][ grid ]">
+        <article class="[ g-col-12 g-col-lg-6 ][ bg-light ][ p-4 p-md-7 ][ overflow-hidden rounded-4 ][ d-flex flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+            <img src="../img/logo-ru.svg" class="[ mw-75 ][ d-block ]" width="279" height="32">
             <h3 class="[ h5 ][ sr-only ]">Redwood University</h3>
             <p>Access Redwood University for on-demand training and certification courses</p>
             <a 
@@ -309,9 +334,9 @@ title: Home
                 <img src="../img/ru.jpg" class="[ w-100 h-100 ][ object-fit-cover ]" width="400" height="300">
             </figure>
         </article>
-        <article class="[ g-col-6 ][ bg-light ][ overflow-hidden rounded-4 ][ grid align-items-center ][ position-relative ]">
-            <img class="[ g-col-4 ][ w-100 h-100 ][ object-fit-cover ]" src="../img/support.png" width="10" height="30">
-            <div class="[ g-col-8 ][ p-4 ][ d-flex flex-column row-gap-2 ]">
+        <article class="[ g-col-12 g-col-lg-6 ][ bg-light ][ p-4 p-md-0 pe-md-4 ][ overflow-hidden rounded-4 ][ grid align-items-center align-content-stretch gap-6 ][ position-relative ]" style="--bs-columns: 3">
+            <img class="[ g-col-1 ][ d-none d-md-block ][ w-100 h-100 ][ object-fit-cover ]" src="../img/support.png" width="10" height="30">
+            <div class="[ g-col-3 g-col-md-2 ][ d-flex flex-column row-gap-2 ]">
                 <h3 class="[ h5 ]">Support</h3>
                 <p>Get ongoing support from a dedicated team of automation experts</p>
                 <a 
@@ -326,11 +351,11 @@ title: Home
                 </a>
             </div>
         </article>
-        <article class="[ g-col-6 ][ bg-light ][ p-7 ][ overflow-hidden rounded-4 ][ d-flex justify-content-center flex-column gap-3 ]" >
+        <article class="[ g-col-12 g-col-lg-6 ][ bg-light ][ p-4 p-md-7 ][ overflow-hidden rounded-4 ][ d-flex justify-content-center flex-column gap-3 ][ position-relative ]" >
             <h3 class="[ h5 ]">Health Check</h3>
             <p>Receive health checks to optimize performance and maximize your investments.</p>
             <a 
-                class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ position-relative ]"
+                class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ]"
                 href="https://www.advsyscon.com/en-us/activebatch"
             >
                 Learn more
@@ -343,19 +368,27 @@ title: Home
     </div>
 </section>
 
-<!-- 
-<aside class="[ d-flex align-items-center flex-column gap-6 ][ bg-black ][ w-100 ][ mt-10 ]">
-    <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
-        <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
-        <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
-    </div>
-</aside> -->
+<section class="[ container-fluid container-xl ][ py-6 !py-xl-8 ]">
+    <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
+        {% for item in [
+            "../img/logo-xtra.svg",
+            "../img/logo-graymont.svg",
+            "../img/logo-firstrate.svg",
+            "../img/logo-bluebay.svg",
+            "../img/logo-xcel.svg",
+            "../img/logo-relayhealth.svg"
+        ] %}
+        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
+            <img src="{{ item }}" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
+        </li>
+        {% endfor %}
+    </ul>
+</section>
 
 {%- set bannerArgs = {
-	'topColor': 'var(--bs-white)',
-	'heading': '<h2>Ready to see how ActiveBatch can simplify your workload automation?</h2>',
+	'heading': 'Ready to see how ActiveBatch can simplify your workload automation?',
 	'content': ''
 } -%}
-{% include "banner-be-ready.njk" %} 
+{% include "cta.njk" %} 
 
 {% endblock %}

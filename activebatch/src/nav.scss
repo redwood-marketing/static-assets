@@ -7,7 +7,7 @@
 $primary: #00b16b;
 $secondary: #04213f;
 $tertiary: #65c261;
-$quaternary: #66cc99;
+$quaternary: #eafef4;
 $accent: #E24650;
 $dark: $secondary;
 $light: #f7f7f7;
@@ -36,7 +36,7 @@ $display-font-family: $headings-font-family;
 $display-font-weight: $font-weight-bold;
 
 $min-contrast-ratio: 2.7;
-$colors: map-merge(
+$theme-colors: map-merge(
 	(
 		'primary':    $primary,
 		'secondary':  $secondary,
@@ -44,7 +44,7 @@ $colors: map-merge(
 		'quaternary': $quaternary,
 		'accent':     $accent
 	),
-	$colors
+	$theme-colors
 );
 
 $colors: map-remove($colors, 'blue', 'indigo', 'purple', 'pink', 'orange', 'yellow', 'green', 'teal', 'cyan');
@@ -58,6 +58,7 @@ $grid-breakpoints: (
 	xl: 80rem,
 	xxl: 100rem,
 );
+$container-padding-x: clamp(1rem, 5vw, 4rem);
 
 $enable-responsive-font-sizes: true;
 $spacer: 1rem;
@@ -123,12 +124,18 @@ $spacers: map.merge($spacers, $spacers);
 	}
 }
 
+.justify-items-center {
+    justify-items: center;
+}
+
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
 @import '../../node_modules/bootstrap/scss/helpers';
+@import '../../node_modules/bootstrap/scss/transitions';
+@import '../../node_modules/bootstrap/scss/nav';
 
 $btn-border-radius:    10rem;
 $btn-padding-y:        .8em;
@@ -154,8 +161,21 @@ $btn-padding-x-lg:     $btn-padding-x;
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '../../node_modules/bootstrap/scss/utilities/api';
 
+::selection {
+    background-color: var(--selection, var(--#{$prefix}primary));
+    color: var(--selection, var(--#{$prefix}white))
+}
+
 img {
     object-fit: contain;
+}
+
+svg {
+    transition: translate .2s ease;
+
+    &:is(a:hover > &) {
+        translate: .5ch;
+    }
 }
 .sr-only {
 	border: 0 !important;
