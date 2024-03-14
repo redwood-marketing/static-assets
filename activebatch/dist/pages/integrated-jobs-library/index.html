@@ -27,8 +27,9 @@
 <link href="\https://www.advsyscon.com/styles/home.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="https://use.typekit.net/ydj8avx.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script id="navigation-js" src="../js/nav.min.js"></script>
 <link id="navigation-css" rel="stylesheet" href="../nav.min.css">
-<script id="navigation-js" src="../nav.min.js"></script>
 
          
     </head>
@@ -1306,8 +1307,74 @@
     <h1 class="[ h1 ][ mb-2 ]">ActiveBatch Service Library</h2>
 	<p>ActiveBatch Job Steps Library is augmented by the <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/service-library">ActiveBatch Service Library</a>, a dynamic framework that extends ActiveBatch&rsquo;s integration capabilities with additional actions from other applications. Load and execute APIs (WSDLs and SOAP Web Services, RESTful services, .Net assemblies, stored procedures and command lines) without custom coding and create reusable job steps for your Job Steps Library. </p>
 
-    <h2 class="[ text-center ][ mt-8 my-2 ]">What ActiveBatch Users are Saying</h2>
-	<div class="[ text-center ][ mb-8 ]" >[ Sliding Quotes Here ]</div>
+    <h2 class="[ text-center ][ mt-6 mb-2 ]">What ActiveBatch Users are Saying</h2>
+
+	<div id="activebatch-quotes" class="[ text-center ][ mb-6 ][ carousel slide ][ bg-dark ][ rounded-4 ]">
+		<div class="carousel-inner">
+			<div class="[ carousel-item active ]">
+				<blockquote class="[ m-0 p-3 p-lg-7 ][ d-flex justify-content-between align-items-center ]">
+					<img class="[ d-none d-lg-block ]" style="width:77px;height:71px;transform:rotate(180deg);" src="../img/quote-mark.svg" alt="">
+					<div style="max-width:840px" class="[ text-white ]">
+						<q class="[ d-block ][ h3 ][ mb-3 ]">If it’s digital, ActiveBatch can do it.</q>
+						<cite class="[ fst-normal fw-light ]" style="font-size:1.5rem;">System Administrator, First Rate</cite>
+					</div>
+					<img class="[ d-none d-lg-block ]" style="width:77px;height:71px;" src="../img/quote-mark.svg" alt="">
+				</blockquote>
+			</div>
+			<div class="carousel-item">
+				<blockquote class="[ m-0 p-3 p-lg-7 ][ d-flex justify-content-between align-items-center ]">
+					<svg class="[ d-none d-lg-block ]" style="width:77px;height:71px;transform:rotate(180deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 67"><path fill="#00B16B" d="M.13 66.22V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 16.7 32H.13V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74a37.44 37.44 0 0 1-16.74 5.1Zm41.86 0V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 58.55 32H41.99V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74A37.44 37.44 0 0 1 42 66.22Z"/></svg>
+					<div style="max-width:840px" class="[ text-white ]">
+						<q class="[ d-block ][ h3 ][ mb-3 ]">We have been able to accomplish exponentially more with ActiveBatch than what we could have with our previous solution.</q>
+						<cite class="[ fst-normal fw-light ]" style="font-size:1.5rem;">Network Services Manager, ACES Energy</cite>
+					</div>
+					<svg class="[ d-none d-lg-block ]" style="width:77px;height:71px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 67"><path fill="#00B16B" d="M.13 66.22V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 16.7 32H.13V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74a37.44 37.44 0 0 1-16.74 5.1Zm41.86 0V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 58.55 32H41.99V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74A37.44 37.44 0 0 1 42 66.22Z"/></svg>
+				</blockquote>
+			</div>
+			<div class="carousel-item">
+				<blockquote class="[ m-0 p-3 p-lg-7 ][ d-flex justify-content-between align-items-center ]">
+					<svg class="[ d-none d-lg-block ]" style="width:77px;height:71px;transform:rotate(180deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 67"><path fill="#00B16B" d="M.13 66.22V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 16.7 32H.13V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74a37.44 37.44 0 0 1-16.74 5.1Zm41.86 0V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 58.55 32H41.99V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74A37.44 37.44 0 0 1 42 66.22Z"/></svg>
+					<div style="max-width:840px" class="[ text-white ]">
+						<q class="[ d-block ][ h3 ][ mb-3 ]">Implementing ActiveBatch has been extremely positive&hellip; ActiveBatch has set us up for success as we increase the volume and complexity of our automated workflows.</q>
+						<cite class="[ fst-normal fw-light ]" style="font-size:1.5rem;">Data and Integration Manager, Finance Industry</cite>
+					</div>
+					<svg class="[ d-none d-lg-block ]" style="width:77px;height:71px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 67"><path fill="#00B16B" d="M.13 66.22V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 16.7 32H.13V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74a37.44 37.44 0 0 1-16.74 5.1Zm41.86 0V52.57c2.67-.13 5.27-1.16 7.82-3.1a23.92 23.92 0 0 0 6.37-7.46A21.37 21.37 0 0 0 58.55 32H41.99V.15h33.85v28.03c0 8-1.58 14.74-4.73 20.2-3.16 5.58-7.28 9.83-12.38 12.74A37.44 37.44 0 0 1 42 66.22Z"/></svg>
+				</blockquote>
+			</div>
+		</div>
+		<!-- <button class="carousel-control-prev" type="button" data-bs-target="#activebatch-quotes" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#activebatch-quotes" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button> -->
+		<div class="carousel-indicators">
+			<button class="active rounded rounded-4 rounded-omfg-please " type="button" data-bs-target="#activebatch-quotes" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#activebatch-quotes" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#activebatch-quotes" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<style>
+			/* why the fuck bootstrap doing this weird shit */
+			.carousel-indicators [data-bs-target] {
+				background-color: var(--bs-white);
+				opacity: 1;
+				background-clip: border-box;
+				border-top: 0;
+				border-bottom: 5px;
+				border-radius: 5rem !important;
+			}
+			.carousel-indicators [data-bs-target].active {
+				background-color: var(--bs-primary);
+			}
+		</style>
+	<script>
+		const carousel = new bootstrap.Carousel('#activebatch-quotes')
+	</script>
+	</div>
+
+
 </section>
 
 <section class="[ bg-white ][ pt-6 ]">
@@ -1320,9 +1387,9 @@
 >
     <div class="[ container-fluid container-lg ][ d-flex flex-column flex-md-row align-items-md-center gap-2 ][ bg-primary text-white ][ overflow-hidden ][ rounded-4 ][ p-4 p-lg-6 px-lg-8 ][ position-relative z-6 ]">
         <div class="[ d-grid gap-2 ]" style="max-width: 60ch">
-            <h2><h2 class="[ h3 ]">Start automating in half the time</h2></h2>
+            <h2>Start automating in half the time</h2>
             
-                <p class="[ m-0 ]">&lt;p class=&quot;[ m-0 ]&quot;&gt;Build and automate workflows without scripting and gain unimaginable operational efficiency. Single pane of glass visibility, real-time insights, customizable alerting and more keep you in control while freeing up your team’s time.&lt;/p&gt;</p>
+                <p class="[ m-0 ]">Build and automate workflows without scripting and gain unimaginable operational efficiency. Single pane of glass visibility, real-time insights, customizable alerting and more keep you in control while freeing up your team’s time.</p>
             
         </div>
         <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-light ][ ms-auto ][ position-relative z-1 ]">
