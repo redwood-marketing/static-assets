@@ -145,7 +145,9 @@ title: Home
         <div class="[ text-center ]" style="max-width: 80ch">
             <h2>Integrations</h2>
         </div>
-        accordions
+       	<div>
+            {% include "module-intergration.njk" %}
+        </div>
     </div>
 </section>
 
@@ -248,11 +250,19 @@ title: Home
     </div>
 </section>
 
+<!-- 
 <aside class="[ d-flex align-items-center flex-column gap-6 ][ bg-black ][ w-100 ][ mt-10 ]">
     <div class="[ container-fluid container-lg ][ d-flex  align-items-center ][ bg-primary text-white ][ rounded-4 ][ p-6 px-8 ][ mt-n8 ][ position-relative z-6 ]">
         <h2 style="flex-basis: 30ch">Ready to see how ActiveBatch can simplify your workload automation?</h2>
         <a href="" class="[ btn btn-light ][ ms-auto ]">Get a Demo</a>
     </div>
-</aside>
+</aside> -->
+
+{%- set bannerArgs = {
+	'topColor': 'var(--bs-white)',
+	'heading': '<h2>Ready to see how ActiveBatch can simplify your workload automation?</h2>',
+	'content': ''
+} -%}
+{% include "banner-be-ready.njk" %} 
 
 {% endblock %}
