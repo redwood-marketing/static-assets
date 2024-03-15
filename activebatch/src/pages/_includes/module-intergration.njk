@@ -58,6 +58,11 @@
                 "link": "https://www.advsyscon.com/en-us/activebatch/extensions/sql-server-scheduling"
             },
             {
+                "name": "SAP NetWeaver",
+                "img": "../img/logos/logo-sap.svg",
+                "link": "https://www.advsyscon.com/en-us/activebatch/extensions/sap-netweaver"
+            },
+            {
                 "name": "Task Scheduler",
                 "img": "../img/logos/logo-microsoft.svg",
                 "link": "https://www.advsyscon.com/en-us/activebatch/extensions/task-scheduler-automation"
@@ -143,11 +148,6 @@
                 "link": "https://www.advsyscon.com/en-us/activebatch/extensions/oracle-peoplesoft"
             },
             {
-                "name": "SAP NetWeaver",
-                "img": "../img/logos/logo-sap.svg",
-                "link": "https://www.advsyscon.com/en-us/activebatch/extensions/sap-netweaver"
-            },
-            {
                 "name": "SAP BusinessObjects Data Services",
                 "img": "../img/logos/logo-sap.svg",
                 "link": "https://www.advsyscon.com/en-us/activebatch/extensions/sap-businessobjects"
@@ -193,6 +193,16 @@
                 "link": "https://www.advsyscon.com/en-us/activebatch/extensions/configuration-manager"
             }
         ]
+    },
+    {
+        "category": "File Transfer Automation",
+        "apps": [
+            {
+                "name": "JSCAPE MFT",
+                "img": "../img/logos/logo-jscape.svg",
+                "link": "https://www.advsyscon.com/en-us/activebatch/extensions/jscape"
+            }
+        ]
     }
 ] %}
 
@@ -224,7 +234,7 @@
                                 width="150" 
                                 height="100"
                             >
-                            <h3 class="[ h6 ]" style="min-height: 5em">
+                            <h3 class="[ h6 fw-medium ]" style="min-height: 5em">
                                 {{ app.name }} 
                             </h3>
                             {% if app.link %}

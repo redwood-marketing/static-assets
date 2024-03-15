@@ -203,10 +203,10 @@ ul, ol {
     margin: 0;
 }
 
-svg {
+svg:has(path:only-child) {
     transition: translate .2s ease;
 
-    &:is(.btn:hover > &) {
+    &:is(a:hover > &) {
         translate: .5ch;
     }
 }
