@@ -105,8 +105,9 @@ title: Data Warehouse ETL Automation
 		<div class="[ g-col-12 g-col-md-6 ][ d-flex flex-column align-items-start gap-2 ]">
 			<h2 class="[ h2 ][ m-0 ]">Big data and Hadoop automation</h2>
 				<p class="[ m-0 ]">
-					ActiveBatch simplifies process development and ongoing maintenance through a unique, templated approach to automating and integrating the<a href="https://www.advsyscon.com/en-us/activebatch/extensions/hadoop-ecosystem"> Hadoop Ecosystem</a>.
-					ActiveBatch workload automation runs within the framework of a Hadoop grid or cluster from prominent distributors such as Cloudera, MapR, Hortonworks, Amazon and others.
+					ActiveBatch simplifies process development and ongoing maintenance through a unique, templated approach to automating and integrating the <a 
+					href="https://www.advsyscon.com/en-us/activebatch/extensions/hadoop-ecosystem">Hadoop Ecosystem</a>. ActiveBatch workload automation runs 
+					within the framework of a Hadoop grid or cluster from prominent distributors such as Cloudera, MapR, Hortonworks, Amazon and others.
 				</p>
 				<p class="[ m-0 ]">Numerous Hadoop subsets are supporting, including:</p>
 				<ul class="[ m-0 ]" style="column-count:2;">
@@ -149,27 +150,41 @@ title: Data Warehouse ETL Automation
 
 		<details class="[ py-2 border-bottom border-dark ]">
 			<summary class="[ h4 fw-bolder ]">What is ETL automation?</summary>
-			<p class="[ py-2 px-lg-3 ]">ETL automation tools enable IT teams to perform ETL (Extract, Transform, Load) tasks without manual intervention. ETL is a data integration process that transfers raw data into a data warehouse or other data system. ETL processes are increasingly complex as data sources become more numerous and diverse. To manage ETL at scale, IT teams must be able to build reliable, automated ETL processes. This can be done with extensible workload automation software that provides automated ETL tasks out of the box. <a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch.</a></p>
+			<div class="[ py-2 px-lg-3 ]">
+				<p class="mb-1">ETL automation tools enable IT teams to perform ETL (Extract, Transform, Load) tasks without manual intervention. ETL is a data integration process that transfers raw data into a data warehouse or other data system. ETL processes are increasingly complex as data sources become more numerous and diverse. To manage ETL at scale, IT teams must be able to build reliable, automated ETL processes. This can be done with extensible workload automation software that provides automated ETL tasks out of the box.</p>
+				<p><a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch</a>.</p>
+			</div>
 		</details>
 
 		<details class="[ py-2 border-bottom border-dark ]">
 			<summary class="[ h4 fw-bolder ]">What is a data warehouse vs. a database?</summary>
-			<p class="[ py-2 px-lg-3 ]">A database is a collection of structured data stored within a computer system, while a database is a computer system used to perform queries, reporting and analysis. Databases typically support Online Transaction Processing (OLTP), while data warehouses typically support Online Analytical Processing (OLAP) using data from various sources. Workload automation solutions can readily integrate common data warehouse systems, enabling IT to streamline data pipelines across the enterprise. <a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch.</a></p>
+			<div class="[ py-2 px-lg-3 ]">
+				<p class="mb-1">A database is a collection of structured data stored within a computer system, while a database is a computer system used to perform queries, reporting and analysis. Databases typically support Online Transaction Processing (OLTP), while data warehouses typically support Online Analytical Processing (OLAP) using data from various sources. Workload automation solutions can readily integrate common data warehouse systems, enabling IT to streamline data pipelines across the enterprise.</p>
+				<p><a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch</a>.</p>
+			</div>
 		</details>
 
 		<details class="[ py-2 ]">
 			<summary class="[ h4 fw-bolder ]">Can I automate ETL with workload automation?</summary>
-			<p class="[ py-2 px-lg-3 ]">Yes, you can automate ETL processes with workload automation solutions. Workload automation solutions can provide prebuilt integrations with Big Data platforms, data warehouse systems and more while simplifying the creation of REST API adapters that allow IT to connect virtually any endpoint. Workload automation solutions such as ActiveBatch provide a centralized control panel for building, monitoring and managing data processes across the enterprise. <a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch.</a></p>
+			<div class="[ py-2 px-lg-3 ]">
+				<p class="mb-1">Yes, you can automate ETL processes with workload automation solutions. Workload automation solutions can provide prebuilt integrations with Big Data platforms, data warehouse systems and more while simplifying the creation of REST API adapters that allow IT to connect virtually any endpoint. Workload automation solutions such as ActiveBatch provide a centralized control panel for building, monitoring and managing data processes across the enterprise.</p>
+				<p><a href="https://www.advsyscon.com/en-us/lp/ex5/activebatch">See what you can achieve with ActiveBatch</a>.</p>
+			</div>
 		</details>
 	</section>
 </section>
 
-<section class="[ bg-light ][ pt-6 ]">
+
+<section class="[ bg-light ][ py-6 ]">
 	<div class="[ container-fluid container-lg ]">
 		<img class="[ w-100 ]" src="../img/logo-bar.png" alt="">
 	</div>
 </section>
 
+{%- set bannerArgs = {
+	'backgroundStrips': ["var(--bs-light)", "var(--bs-black)"]
+} -%}
 {% include "cta.njk" %}
+
 
 {% endblock %}
