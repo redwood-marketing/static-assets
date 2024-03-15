@@ -178,6 +178,27 @@ img {
     object-fit: contain;
 }
 
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    &::after {
+        content: "";
+        display: block;
+        width: .7em;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        background-image: url('data:image/svg+xml,<svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L10 10L18 2" stroke="black" stroke-width="4" stroke-linecap="round"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: rotate .2s ease;
+    }
+}
+
+details:not([open]) summary::after { rotate: -90deg }
+
 ul, ol {
     margin: 0;
 }

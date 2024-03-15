@@ -19,7 +19,7 @@
         <div class="[ d-grid gap-2 ]" style="max-width: 60ch">
             <h2>{{ args.heading | safe }}</h2>
             {% if args.content %}
-                <p class="[ m-0 ]">{{ args.content }}</p>
+                <p class="[ m-0 ]">{{ args.content | safe  }}</p>
             {% endif %}
         </div>
         <a href="{{ args.link.url }}" class="[ btn btn-{{ args.buttonTheme }} ][ ms-auto ][ position-relative z-1 ]">

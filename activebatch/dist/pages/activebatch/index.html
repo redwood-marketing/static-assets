@@ -8,6 +8,7 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="content-style-type" content="text/css" />
 <meta http-equiv="content-script-type" content="text/javascript" />
+
 <!-- Mutiny -->
 <script>
 (function(){var a=window.mutiny=window.mutiny||{};if(!window.mutiny.client){a.client={_queue:{}};var b=['identify','trackConversion'];var c=[].concat(b,['defaultOptOut','optOut','optIn']);var d=function factory(c){return function(){for(var d=arguments.length,e=new Array(d),f=0;f<d;f++){e[f]=arguments[f]}a.client._queue[c]=a.client._queue[c]||[];if(b.includes(c)){return new Promise(function(b,d){a.client._queue[c].push({args:e,resolve:b,reject:d});setTimeout(d,500)})}else{a.client._queue[c].push({args:e})}}};c.forEach(function(b){a.client[b]=d(b)})}})();
@@ -1666,7 +1667,7 @@
             
         </div>
         <a href="https://www.advsyscon.com/en-us/services/support-options" class="[ btn btn-primary ][ ms-auto ][ position-relative z-1 ]">
-            Learn more about customer success
+            Learn more
             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
             </svg>
@@ -1680,37 +1681,37 @@
 </aside> 
 
 <section class="[ bg-light ][ py-8 ]">
-	<section class="[ container-fluid container-lg ][ bg-white ][ rounded ][ p-2 p-lg-4 ]">
+	<div class="[ container-fluid container-lg ][ bg-white ][ rounded-4 ][ p-4 p-7 ]">
 		<h1 class="mb-3">Job Scheduling FAQs</h1>
 
-		<details class="[ py-2 border-bottom border-dark ]">
-			<summary class="[ h4 fw-bolder ]">What is a job scheduling tool?</summary>
-			<p class="[ py-2 px-lg-3 ]">Commonly, a <a href="https://www.advsyscon.com/blog/workload-automation-job-scheduling/">job scheduling</a> tools allow users to schedule workflows to run at specific dates and times with a typical configuration including a job scheduler and
+		<details>
+			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is a job scheduling tool?</summary>
+			<p class="[ py-2 ]">Commonly, a <a href="https://www.advsyscon.com/blog/workload-automation-job-scheduling/">job scheduling</a> tools allow users to schedule workflows to run at specific dates and times with a typical configuration including a job scheduler and
 				an execution agent. The job scheduler is responsible for job management, scheduling tasks, passing job information along and dispatching jobs to the right agent at the right time. More advanced job scheduling software or workload automation
 				tool lets user trigger jobs triggered based on events or run ad hoc jobs, allowing you to run automation end-to-end. <a 
 				href="https://www.advsyscon.com/en-us/activebatch">Explore what you can do with ActiveBatch&rsquo;s enterprise job scheduling software.</a>
 			</p>
 		</details>
 
-		<details class="[ py-2 border-bottom border-dark ]">
-			<summary class="[ h4 fw-bolder ]">What&rsquo;s the best job scheduling software?</summary>
-			<p class="[ py-2 px-lg-3 ]">IT environments are increasingly complex and diverse so many IT organizations are moving toward end-to-end enterprise job schedulers and automation platforms that provide event-based workload automation, constraints and intelligent facilities
+		<details>
+			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What&rsquo;s the best job scheduling software?</summary>
+			<p class="[ py-2 ]">IT environments are increasingly complex and diverse so many IT organizations are moving toward end-to-end enterprise job schedulers and automation platforms that provide event-based workload automation, constraints and intelligent facilities
 				for managing IT infrastructure. The best job scheduling software products available also provide universal connectors and powerful REST APIs for endless extensibility. <a 
 				href="https://www.advsyscon.com/">See what you can accomplish with ActiveBatch.</a>
 			</p>
 		</details>
 
-		<details class="[ py-2 border-bottom border-dark ]">
-			<summary class="[ h4 fw-bolder ]">Does job scheduling software include event-driven automation?</summary>
-			<p class="[ py-2 px-lg-3 ]">Yes. ActiveBatch <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling/enterprise-scheduler">job scheduler</a> supports many event triggers for email events, file events, FTP events, database modifications and much more. This
+		<details>
+			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">Does job scheduling software include event-driven automation?</summary>
+			<p class="[ py-2 ]">Yes. ActiveBatch <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling/enterprise-scheduler">job scheduler</a> supports many event triggers for email events, file events, FTP events, database modifications and much more. This
 				reduces delays and manual errors, keeping crucial timely processes, such as invoicing and credit card processing, on time for both large and small businesses. <a
 				href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation">Explore ActiveBatch&rsquo;s event automation capabilities.</a>
 			</p>
 		</details>
 
-		<details class="[ py-2 ]">
-			<summary class="[ h4 fw-bolder ]">What interfaces does ActiveBatch workload automation software support?</summary>
-			<p class="[ py-2 px-lg-3 ]">ActiveBatch&rsquo;s workload automation solution functionality supports a range of interfaces and works on users&rsquo; favorite web interfaces like Chrome, Firefox, IE, Safari and Opera. ActiveBatch Web Console offers access to all
+		<details>
+			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What interfaces does ActiveBatch workload automation software support?</summary>
+			<p class="[ py-2 ]">ActiveBatch&rsquo;s workload automation solution functionality supports a range of interfaces and works on users&rsquo; favorite web interfaces like Chrome, Firefox, IE, Safari and Opera. ActiveBatch Web Console offers access to all
 				capabilities to simplify workflows in ActiveBatch&rsquo;s drag-and-drop workflow designer as well as customizable template reports. ActiveBatch also includes a Linux | UNIX command line interface (CLI) and is available as a separate
 				download. <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces">Discover more of the user interfaces ActiveBatch supports.</a>
 			</p>
