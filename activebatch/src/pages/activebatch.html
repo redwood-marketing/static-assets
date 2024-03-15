@@ -285,7 +285,7 @@ title: ActiveBatch
 } -%}
 {% include "cta.njk" %} 
 
-<section class="[ bg-light ][ pt-8 ]">
+<section class="[ bg-light ][ py-8 ]">
 	<section class="[ container-fluid container-lg ][ bg-white ][ rounded ][ p-2 p-lg-4 ]">
 		<h1 class="mb-3">Job Scheduling FAQs</h1>
 
@@ -324,27 +324,14 @@ title: ActiveBatch
 	</section>
 </section>
 
-<section class="[ container-fluid container-xl ][ py-6 !py-xl-8 ]">
-    <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
-        {% for item in [
-            "../img/logo-xtra.svg",
-            "../img/logo-graymont.svg",
-            "../img/logo-firstrate.svg",
-            "../img/logo-bluebay.svg",
-            "../img/logo-xcel.svg",
-            "../img/logo-relayhealth.svg"
-        ] %}
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="{{ item }}" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        {% endfor %}
-    </ul>
+<section class="[ bg-light ][  pb-6 ]">
+    {% include "module-logos.njk" %} 
 </section>
 
 {%- set bannerArgs = {
 	'heading': 'Ready to see how ActiveBatch can simplify your workload automation?',
 	'content': '',
-    'backgroundStrips': ["transparent", "var(--bs-black)"]
+    'backgroundStrips': ["var(--bs-light)", "var(--bs-black)"]
 } -%}
 {% include "cta.njk" %} 
 

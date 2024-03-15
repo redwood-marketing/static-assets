@@ -178,6 +178,10 @@ img {
     object-fit: contain;
 }
 
+ul, ol {
+    margin: 0;
+}
+
 svg {
     transition: translate .2s ease;
 
