@@ -12,14 +12,6 @@ $accent: #E24650;
 $dark: $secondary;
 $light: #f7f7f7;
 
-// --ff-body: "soleto", sans-serif;
-// --ff-titles: "prometo", sans-serif;
-
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
-$enable-negative-margins: true;
-
-
-
 @import '../../node_modules/bootstrap/scss/variables';
 
 $font-family-base: "soleto";
@@ -87,14 +79,11 @@ $spacers: ();
 }
 
 $spacers: map.merge($spacers, $spacers);
-
-
-// 4. Include any default map overrides here
-
 // 5. Include remainder of required parts
 @import '../../node_modules/bootstrap/scss/maps';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/root';
+
 
 // 6. Optionally include any other parts as needed
 @import '../../node_modules/bootstrap/scss/utilities';
@@ -124,50 +113,8 @@ $spacers: map.merge($spacers, $spacers);
 	}
 }
 
-.justify-items-center {
-    justify-items: center;
-}
-
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import '../../node_modules/bootstrap/scss/helpers';
-@import '../../node_modules/bootstrap/scss/transitions';
-@import '../../node_modules/bootstrap/scss/nav';
-
-$btn-border-radius:    10rem;
-$btn-padding-y:        .8em;
-$btn-padding-x:        3em;
-$btn-font-family:      $headings-font-family;
-$btn-font-size:        .8rem;
-$btn-font-weight:      $font-weight-medium;
-$btn-line-height:      1;
-$btn-white-space:      nowrap;
-
-$btn-font-size-sm:     $btn-font-size * 0.8;
-$btn-border-radius-sm: $btn-border-radius; 
-$btn-padding-y-sm:     $btn-padding-y;
-$btn-padding-x-sm:     $btn-padding-x;
-
-$btn-font-size-lg:     $btn-font-size * 1.2;
-$btn-border-radius-lg: $btn-border-radius; 
-$btn-padding-y-lg:     $btn-padding-y;
-$btn-padding-x-lg:     $btn-padding-x;
-
-@import '../../node_modules/bootstrap/scss/buttons';
-
-$carousel-indicator-opacity: .5;
-$carousel-indicator-active-bg: $tertiary;
-$carousel-indicator-spacer: 5px;
-$carousel-indicator-width: 10px;
-$carousel-indicator-height: 10px;
-
-@import '../../node_modules/bootstrap/scss/carousel';
-
-// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '../../node_modules/bootstrap/scss/utilities/api';
+
 
 ::selection {
     background-color: var(--selection, var(--#{$prefix}primary));
@@ -177,27 +124,6 @@ $carousel-indicator-height: 10px;
 img {
     object-fit: contain;
 }
-
-summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    &::after {
-        content: "";
-        display: block;
-        width: .7em;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        background-image: url('data:image/svg+xml,<svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L10 10L18 2" stroke="black" stroke-width="4" stroke-linecap="round"/></svg>');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        transition: rotate .2s ease;
-    }
-}
-
-details:not([open]) summary::after { rotate: -90deg }
 
 ul, ol {
     margin: 0;
@@ -346,7 +272,6 @@ svg {
 	.mega_menu {
 		grid-area: 🍰;
 		width: 100%;
-
 		&__items {
 			overflow: hidden;
 			list-style: none;

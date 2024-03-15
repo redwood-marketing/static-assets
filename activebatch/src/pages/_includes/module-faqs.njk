@@ -1,0 +1,16 @@
+<section class="[ bg-light ][ pt-8 ]">
+	<div class="[ container-fluid container-lg ][ bg-white ][ rounded-4 ][ p-4 p-7 ]">
+		<h1 class="mb-3">Frequently Asked Questions</h1>
+
+        {% for q, a in faqs %}
+		<details class="">
+			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">{{ q }}</summary>
+			<div class="[ mt-4 ]">
+				{{ a  | safe | nl2br }}
+			</div>
+		</details>
+
+        {% endfor %}
+
+	</div>
+</section>
