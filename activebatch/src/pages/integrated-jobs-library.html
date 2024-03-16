@@ -1,5 +1,6 @@
 ---
-title: Integrated Jobs Library
+title: Integrated Jobs Library | Job Steps Library
+description: ActiveBatch's Integrated Jobs Library allows users to build and automate reliable end-to-end workflows in half the time.
 ---
 {% extends "base.njk" %}
 
@@ -8,7 +9,7 @@ title: Integrated Jobs Library
 
 {%- set heroArgs = { 
 	'heading': '<h1 class="[ display-6 ]">ActiveBatch Job Steps Library</h1>', 
-	'content': '<p class="[ lead  ][ mt-3 mb-4 ]">Easily build and automate jobs without development skills</p>' 
+	'content': '<p class="[ lead fw-medium ][ mt-3 mb-4 ]">Easily build and automate jobs without development skills</p>' 
 } -%}
 {% include "hero-inner.njk" %}
 
@@ -111,13 +112,10 @@ title: Integrated Jobs Library
 		</script>
 	</div>
 
-
 </section>
 
-<section class="[ bg-white ][ pb-3 ]">
-	<div class="[ container-fluid container-xl ]">
-		<img class="[ w-100 ]" src="../img/logo-bar.png" alt="">
-	</div>
+<section class="[ pb-6 pb-xl-9 ]">
+    {{ components.customers() }}
 </section>
 
 

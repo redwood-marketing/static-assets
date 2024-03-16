@@ -1,6 +1,19 @@
 ---
-title: ActiveBatch
-faqs: 
+title: ActiveBatch Workload Automation and Enterprise Job Scheduling Software
+description: ActiveBatch workload automation and enterprise job scheduling software allows you to automate in half the time and easily orchestrate end-to-end IT and business processes in one platform.
+faqs:
+    What is workload automation software (WLA)?:
+        Workload automation platforms enable users to automate manual, repetitive IT processes, reducing the need for manual human intervention and providing no-code/low-code workflow development for devops and much more.
+
+        ActiveBatch workload automation provides an intuitive user interface so users can easily build and monitor processes that orchestrate data center workflows.
+
+        <a href="https://www.advsyscon.com/blog/what-is-workload-automation/">Discover the capabilities workload automation products offer across use cases like IT automation, ETL, and more.</a>
+    Is there a difference between job scheduling and workload automation?:
+        Job scheduling and workload automation solutions were designed for different goals, but they’re closely related and share some functionality, and when combined into a single platform can provide powerful orchestration from a single point of control.
+
+        Enterprise job scheduling tools like ActiveBatch makes it easy for IT to develop, optimize, and orchestrate automated processes across the organization and drive innovation.
+
+        <a href="https://www.advsyscon.com/blog/workload-automation-job-scheduling/">Learn more about how job scheduling and workload automation are revolutionizing the modern workplace.</a>
 ---
 {% extends "base.njk" %}
 
@@ -291,46 +304,9 @@ faqs:
 } -%}
 {% include "cta.njk" %} 
 
-<section class="[ bg-light ][ py-8 ]">
-	<div class="[ container-fluid container-xl ][ bg-white ][ rounded-4 ][ p-4 p-7 ]">
-		<h1 class="mb-3">Job Scheduling FAQs</h1>
-
-		<details>
-			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is a job scheduling tool?</summary>
-			<p class="[ py-2 ]">Commonly, a <a href="https://www.advsyscon.com/blog/workload-automation-job-scheduling/">job scheduling</a> tools allow users to schedule workflows to run at specific dates and times with a typical configuration including a job scheduler and
-				an execution agent. The job scheduler is responsible for job management, scheduling tasks, passing job information along and dispatching jobs to the right agent at the right time. More advanced job scheduling software or workload automation
-				tool lets user trigger jobs triggered based on events or run ad hoc jobs, allowing you to run automation end-to-end. <a 
-				href="https://www.advsyscon.com/en-us/activebatch">Explore what you can do with ActiveBatch&rsquo;s enterprise job scheduling software.</a>
-			</p>
-		</details>
-
-		<details>
-			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What&rsquo;s the best job scheduling software?</summary>
-			<p class="[ py-2 ]">IT environments are increasingly complex and diverse so many IT organizations are moving toward end-to-end enterprise job schedulers and automation platforms that provide event-based workload automation, constraints and intelligent facilities
-				for managing IT infrastructure. The best job scheduling software products available also provide universal connectors and powerful REST APIs for endless extensibility. <a 
-				href="https://www.advsyscon.com/">See what you can accomplish with ActiveBatch.</a>
-			</p>
-		</details>
-
-		<details>
-			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">Does job scheduling software include event-driven automation?</summary>
-			<p class="[ py-2 ]">Yes. ActiveBatch <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling/enterprise-scheduler">job scheduler</a> supports many event triggers for email events, file events, FTP events, database modifications and much more. This
-				reduces delays and manual errors, keeping crucial timely processes, such as invoicing and credit card processing, on time for both large and small businesses. <a
-				href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation">Explore ActiveBatch&rsquo;s event automation capabilities.</a>
-			</p>
-		</details>
-
-		<details>
-			<summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What interfaces does ActiveBatch workload automation software support?</summary>
-			<p class="[ py-2 ]">ActiveBatch&rsquo;s workload automation solution functionality supports a range of interfaces and works on users&rsquo; favorite web interfaces like Chrome, Firefox, IE, Safari and Opera. ActiveBatch Web Console offers access to all
-				capabilities to simplify workflows in ActiveBatch&rsquo;s drag-and-drop workflow designer as well as customizable template reports. ActiveBatch also includes a Linux | UNIX command line interface (CLI) and is available as a separate
-				download. <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces">Discover more of the user interfaces ActiveBatch supports.</a>
-			</p>
-		</details>
-	</section>
+<section class="[ py-7 ][ bg-light ]">
+    {{ components.faqs("Workload Automation FAQs", faqs) }}
 </section>
-
-
 
 {%- set bannerArgs = {
 	'heading': 'Ready to see how ActiveBatch can simplify your workload automation?',

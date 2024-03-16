@@ -5,8 +5,10 @@
         {% block external %} {% endblock %}
     </head>
     <body>
+        {% import "components.njk" as components %}
         {% include "nav.njk" %}
-        {% block content %} {% endblock %}
+        {% block content %}
+        {% endblock %}
         {% include 'footer.njk' %}
     </body>
 </html> 

@@ -1,6 +1,6 @@
 <meta name="robots" content="noindex">
-<title>{{title}}</title>
-<meta name="description" content="ActiveBatch Workload Automation and Enterprise Job Scheduling makes it easy for IT to develop, optimize, and orchestrate automated processes across the organization. Find out how you can drive innovation with ActiveBatch." />
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="content-style-type" content="text/css" />
@@ -14,10 +14,10 @@
         {% for q, a in faqs %}
                 {
                     "@type": "Question",
-                    "name": {{ q | dump }},
+                    "name": "{{ q | safe }}",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": {{ a | dump }}
+                        "text": "{{ a | escape }}"
                     }
                 }{{ "," if not loop.last  }}
             {% endfor %}
@@ -45,5 +45,6 @@
 <link rel="stylesheet" href="https://use.typekit.net/ydj8avx.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script id="navigation-js" src="../js/nav.min.js"></script>
 <link id="navigation-css" rel="stylesheet" href="../nav.min.css">

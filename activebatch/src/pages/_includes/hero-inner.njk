@@ -1,5 +1,4 @@
 {%- set defaultArgs = {
-	'minHeight': 'min(30rem, 70vh)',
 	'maxWidth': '90ch',
     'background': 'linear-gradient(179.11deg, #041220 39.39%, #099794 217.56%);',
 	'heading': '<h1 class="[ display-5 ]">Heading</h1>',
@@ -7,10 +6,8 @@
 	'includeCta': true
 } -%}
 {%- set args = defaultArgs|mergeAttributes( heroArgs ) -%}
-<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-6 py-8 ]" 
-	style="
-		min-height: {{ args.minHeight | safe }}; 
-		background: {{ args.background | safe }}">
+<section class="[ text-white text-center ][ d-flex align-items-center ][ bg-dark ][ py-6 py-xl-8 ]" 
+	style="background: {{ args.background | safe }}">
     <div class="[ container-fluid ]" style="max-width: {{ args.maxWidth | safe }}">
         {{ args.heading | safe }}
 		{{ args.content | safe }}

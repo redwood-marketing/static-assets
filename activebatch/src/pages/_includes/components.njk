@@ -1,0 +1,33 @@
+{% macro faqs(title = "Frequently Asked Questions", faqs = []) %}
+<div class="[ container-fluid container-xl ][ bg-white ][ rounded-4 ][ p-4 p-7 ]">
+    <h1 class="mb-3">{{ title }}</h1>
+    {% for q, a in faqs %}
+        <details>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">{{ q }}</summary>
+            <div class="[ mt-4 ]">
+                <p>{{ a  | safe | nl2br | nl2br }}</p>
+            </div>
+        </details>
+    {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro customers(logos = [
+        "../img/logo-xtra.svg",
+        "../img/logo-graymont.svg",
+        "../img/logo-firstrate.svg",
+        "../img/logo-bluebay.svg",
+        "../img/logo-xcel.svg",
+        "../img/logo-relayhealth.svg"
+]) %}
+
+<div class="[ container-fluid container-xl ]">
+    <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
+        {% for logo in logos  %}
+        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
+            <img src="{{ logo }}" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endmacro %}
