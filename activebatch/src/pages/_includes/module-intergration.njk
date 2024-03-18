@@ -221,10 +221,10 @@
     </ul>
     <ul class="[ g-col-3 g-col-md-2  ][ list-unstyled ][ tab-content ][ m-0 ]">
         {% for item in integrations %}
-        <li id="tab-{{loop.index}}" class="[ col ][ p-1 p-lg-2 ][ tab-pane ][ fade {{ "show active" if loop.index === 1 }} ]">
-            <ul class="[ list-unstyled ][ grid gap-1 gap-lg-2 ]"  style="grid-template-rows: repeat(2, 1fr); --bs-columns: 4">
+        <li id="tab-{{loop.index}}" class="[ col ][ p-1 p-xl-2 ][ tab-pane ][ fade {{ "show active" if loop.index === 1 }} ]">
+            <ul class="[ list-unstyled ][ grid gap-1 gap-xl-2 ]"  style="grid-template-rows: repeat(2, 1fr); --bs-columns: 4">
                 {% for app in item.apps %}
-                    <li class="[ g-col-2 g-col-md-2 g-col-lg-1 ][ position-relative ][ text-start ]">
+                    <li class="[ g-col-2 g-col-md-2 g-col-xl-1 ][ position-relative ][ text-start ]">
                         <article class="[ d-flex flex-column gap-1 ][ h-100 ][ @hover:bg-quaternary bg-white ][ rounded-3 ][ border border-dark ][ p-2 ]">
                             <img 
                                 class=""
@@ -260,7 +260,7 @@
             this.querySelector(".tab-pane.active.show").classList.remove("active", "show");
             this.querySelector(event.target.dataset.target).classList.add("active", "show");
 
-            this.querySelector("[data-target].bg-white").classList.remove("bg-white", "border-lg-end");
+            this.querySelector("[data-target].bg-white").classList.remove("bg-white", "border-xl-end");
             event.target.classList.add("bg-white");
         }
     })
