@@ -177,12 +177,17 @@ $carousel-indicator-height: 10px;
 img {
     object-fit: contain;
 }
-
 summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1em;
+    appearance: none;
+    list-style: none !important;
+
+    &::-webkit-details-marker {
+        display: none
+    }
     &::after {
         content: "";
         display: block;
