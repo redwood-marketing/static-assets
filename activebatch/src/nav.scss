@@ -876,6 +876,7 @@ rich-text {
 
     p {
         line-height: 1.7;
+        hyphens: auto;
 
         &:empty {
             display: none;
@@ -905,6 +906,24 @@ rich-text {
             font-weight: 500;
             &::before { content: "― "  }
         }
+    }
+
+    img {
+        margin-inline: calc(var(--gap) * 2.5);
+        max-width: min(50ch, 100%);
+        
+        &[style*="float"] {
+            clear: both;
+
+            &[style*="left"] {
+                margin-left: 0;
+            }
+
+            &[style*="right"] {
+                margin-right: 0;
+            }
+        }
+        
     }
 
     
