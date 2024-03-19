@@ -199,6 +199,7 @@ summary {
         background-position: center;
         background-size: contain;
         transition: rotate .2s ease;
+        flex-shrink: 0;
     }
 }
 
