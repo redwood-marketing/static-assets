@@ -252,6 +252,7 @@ svg:has(path:only-child) {
 	}
 	a {
 		text-decoration: none;
+        font-weight: inherit;
 	}
 
 	&__bar {
