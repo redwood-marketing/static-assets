@@ -159,12 +159,42 @@ $btn-padding-x-lg:     $btn-padding-x;
 @import '../../node_modules/bootstrap/scss/buttons';
 
 $carousel-indicator-opacity: .5;
-$carousel-indicator-active-bg: $tertiary;
-$carousel-indicator-spacer: 5px;
-$carousel-indicator-width: 10px;
-$carousel-indicator-height: 10px;
+$carousel-indicator-active-bg: $primary;
+$carousel-indicator-spacer: .4rem;
+$carousel-indicator-width: .6rem;
+$carousel-indicator-height: $carousel-indicator-width;
 
 @import '../../node_modules/bootstrap/scss/carousel';
+
+
+/**
+ * Bootstrap Carousel Overrides
+ */
+.carousel {
+    overflow: hidden;
+
+    &-indicators {
+        > [data-bs-target] {
+            all: unset;
+            --size: #{$carousel-indicator-width};
+            text-indent: -999vw;
+            box-sizing: border-box;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            background-color: var(--color, var(--#{$prefix}white));
+            border: 0.065rem solid var(--color);
+            flex: 0 1 auto;
+            cursor: pointer;
+            margin: 1rem $carousel-indicator-spacer;
+
+            &.active {
+                --color: #{$carousel-indicator-active-bg};
+            }
+        }
+    }
+}
+
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '../../node_modules/bootstrap/scss/utilities/api';
