@@ -170,26 +170,26 @@ footer {
     width: 100%;
 }
 
-#brands {
+:is(#brands, #certifications) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(12ch, 1fr));
     gap: 1em;
 
-    [type="radio"] {
+    :is([type="radio"], [type="checkbox"]) {
         display: none;
 
         ~ img {
             border: 1px solid currentColor;
             color: var(--color-red);
             cursor: pointer;
-            padding: 1.5em;
+            padding: 1em;
             border-radius: .2rem;
             box-shadow:  0 .3rem .4rem -.2rem rgb(0 0 0 / 15%);
             transition: all .3s ease;
             object-fit: contain;
             width: 100%;
             height: auto;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 5 / 4;
         }
 
         &:is(:not(:checked, :hover)) ~ img {
