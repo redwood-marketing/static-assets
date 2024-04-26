@@ -8,6 +8,28 @@ Thumbs.db
 .sass-cache
 .env
 .cache
+.vscode
 
 # Node modules and output
 node_modules
+
+#wordpress ignores
+wordpress/wp-admin
+wordpress/wp-includes
+wordpress/wp-*.php
+wordpress/.wpe-*
+wordpress/.htaccess
+wordpress/favicon*
+wordpress/index.php
+wordpress/license.txt
+wordpress/apple-touch*
+wordpress/local-xdebug*
+wordpress/readme.html
+wordpress/xmlrpc.php
+
+#wp content
+wordpress/wp-content/advanced-cache.php
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/updraft/
+wordpress/wp-content/themes/twenty*/

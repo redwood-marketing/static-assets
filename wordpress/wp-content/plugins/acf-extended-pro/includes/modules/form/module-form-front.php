@@ -1,0 +1,440 @@
+<?php
+
+if(!defined('ABSPATH')){
+    exit;
+}
+
+if(!class_exists('acfe_module_form_front')):
+
+class acfe_module_form_front{
+    
+    function __construct(){
+        
+        add_action('acf/validate_save_post', array($this, 'validate_save_post'), 1);
+        add_action('wp',                     array($this, 'save_post'));
+        
+    }
+    
+    
+    /**
+     * get_form_validation
+     * @return false|mixed
+     */
+    function get_form_validation(){
+    
+        $valid_screen = acfe_is_front() && acf_maybe_get_POST('_acf_screen') === 'acfe_form';
+        $form = $this->get_form_data(); // get $_POST data
+        
+        if($valid_screen && $form){
+            
+            // pass thru filters (validate_item...)
+            return $this->get_form($form);
+            
+        }
+        
+        return false;
+    }
+    
+    
+    /**
+     * get_form_submission
+     * @return false|mixed
+     */
+    function get_form_submission(){
+        
+        $valid_screen = acf_verify_nonce('acfe_form');
+        $form = $this->get_form_data(); // get $_POST data
+    
+        if($valid_screen && $form){
+            
+            // pass thru filters (validate_item...)
+            return $this->get_form($form);
+            
+        }
+    
+        return false;
+        
+    }
+    
+    
+    /**
+     * get_form_data
+     * @return false|mixed
+     */
+    function get_form_data(){
+        
+        if(isset($_POST['_acf_form'])){
+            if($form = json_decode(acf_decrypt($_POST['_acf_form']), true)){
+                return $form;
+            }
+        }
+        
+        return false;
+        
+    }
+    
+    
+    /**
+     * validate_save_post
+     *
+     * acf/validate_save_post:1
+     */
+    function validate_save_post(){
+    
+        // get form
+        $form = $this->get_form_validation();
+    
+        // bail early
+        if(!$form){
+            return;
+        }
+        
+        // set form data (used in validation with acfe_add_validation_error())
+        acf_set_form_data('acfe/form', $form);
+        
+        // tags context
+        acfe_add_context('form', $form);
+        acfe_add_context('method', 'validate');
+        
+        // setup meta
+        acfe_setup_meta($_POST['acf'], 'acfe/form/validation', true);
+        
+        // force array
+        $form['actions'] = acf_get_array($form['actions']);
+    
+        // validate actions
+        foreach($form['actions'] as $action){
+            
+            // tags context
+            acfe_add_context('action', $action);
+            
+            // validate action
+            do_action("acfe/form/validate_{$action['action']}",                          $form, $action);
+            do_action("acfe/form/validate_{$action['action']}/form={$form['name']}",     $form, $action);
+            do_action("acfe/form/validate_{$action['action']}/action={$action['name']}", $form, $action);
+            
+            // tags context
+            acfe_delete_context('action');
+            
+        }
+    
+        // validate form
+        do_action("acfe/form/validate_form",                      $form);
+        do_action("acfe/form/validate_form/form={$form['name']}", $form);
+        
+        // reset
+        acfe_reset_meta();
+        
+    }
+    
+    
+    /**
+     * save_post
+     *
+     * wp
+     */
+    function save_post(){
+        
+        // get form
+        $form = $this->get_form_submission();
+    
+        // bail early
+        if(!$form){
+            return;
+        }
+        
+        // default acf
+        if(empty($_POST['acf'])){
+            $_POST['acf'] = array();
+        }
+        
+        // default acf
+        // this pass thru acf_sanitize_request_args() which use wp_kses
+        // and break block editor image metadata
+        // $_POST['acf'] = acf_maybe_get_POST('acf', array());
+        
+        // run kses on all $_POST data
+        if($form['settings']['kses']){
+            
+            // wp_kses_post_deep() expects unslashed data
+            $_POST['acf'] = wp_kses_post_deep(wp_unslash($_POST['acf']));
+            $_POST['acf'] = wp_slash($_POST['acf']); // slash data back
+            
+        }
+        
+        // validate save post
+        // pass thru $this->validate_save_post()
+        acf_validate_save_post(true);
+        
+        // set form data
+        acf_set_form_data('acfe/form', $form);
+        
+        // tags context
+        acfe_add_context('form', $form);
+        acfe_add_context('method', 'submit');
+        
+        // remove save post action
+        add_filter('acf/pre_update_value', '__return_false', 99);
+    
+        // upload files but do not save post
+        acf_save_post(false);
+        
+        // restore save post action
+        remove_filter('acf/pre_update_value', '__return_false', 99);
+        
+        // unset files to avoid duplicate upload
+        unset($_FILES);
+        
+        // remove shortcode (temp)
+        // https://github.com/elementor/elementor/issues/10998
+        // https://github.com/Yoast/wordpress-seo/issues/14643
+        remove_shortcode('acfe_form');
+        
+        // setup meta
+        acfe_setup_meta($_POST['acf'], 'acfe/form/submit', true);
+        
+        // force array
+        $form['actions'] = acf_get_array($form['actions']);
+    
+        // submit actions
+        foreach($form['actions'] as $action){
+            
+            // tags context
+            acfe_add_context('action', $action);
+            
+            // prepare action
+                        $action = apply_filters("acfe/form/prepare_{$action['action']}",                          $action, $form);
+            if($action){$action = apply_filters("acfe/form/prepare_{$action['action']}/form={$form['name']}",     $action, $form);}
+            if($action){$action = apply_filters("acfe/form/prepare_{$action['action']}/action={$action['name']}", $action, $form);}
+            
+            if($action === false){
+                continue;
+            }
+            
+            // make action
+            do_action("acfe/form/make_{$action['action']}", $form, $action);
+            
+            // tags context
+            acfe_delete_context('action');
+        
+        }
+    
+        // submit form
+        do_action("acfe/form/submit_form",                      $form);
+        do_action("acfe/form/submit_form/form={$form['name']}", $form);
+        
+        // reset
+        acfe_reset_meta();
+        
+        // re-add shortcode
+        add_shortcode('acfe_form', array(acf_get_instance('acfe_module_form_shortcode'), 'render_shortcode'));
+    
+        // return (deprecated)
+        if($return = acf_maybe_get($form, 'return')){
+            wp_redirect($return);
+            exit;
+        }
+        
+    }
+    
+    
+    /**
+     * get_form
+     *
+     * @param $form
+     *
+     * @return array|mixed
+     */
+    function get_form($form){
+        
+        // allow non array argument
+        if(!is_array($form)){
+            
+            $name_or_id = $form;
+            $form = array();
+            
+            if(is_numeric($name_or_id)){
+                $form['ID'] = $name_or_id;
+            }else{
+                $form['name'] = $name_or_id;
+            }
+            
+        }
+    
+        // check lowercase id
+        if(isset($form['id'])){
+            $form['ID'] = $form['id'];
+            unset($form['id']);
+        }
+    
+        // get module
+        $module = acfe_get_module('form');
+    
+        // get by name or ID
+        $name = acf_maybe_get($form, 'name', acf_maybe_get($form, 'ID'));
+        
+        if($name){
+        
+            // get item
+            $item = $module->get_item($name);
+        
+            // merge arrays
+            if($item){
+            
+                $form['ID'] = $item['ID'];
+                $form['name'] = $item['name'];
+                $form = acfe_parse_args_r($form, $item);
+    
+                acf_extract_vars($form, array('_valid'));
+            
+            }
+        
+        }
+    
+        // validate form (set alias)
+        $form = $module->validate_item($form);
+        
+        // cleanup keys
+        acf_extract_vars($form, array('label', 'modified', 'local', 'local_file', '_valid'));
+        
+        // add post id
+        if(!isset($form['post_id'])){
+            $form['post_id'] = acfe_get_post_id(); // important to pass current term in ajax validation
+        }
+        
+        // add map
+        if(!isset($form['map'])){
+            $form['map'] = array();
+        }
+        
+        return $form;
+    
+    }
+    
+    
+    /**
+     * load_form
+     *
+     * @param $form
+     *
+     * @return mixed|void
+     */
+    function load_form($form){
+        
+        // load_form
+                  $form = apply_filters("acfe/form/load_form",                      $form);
+        if($form){$form = apply_filters("acfe/form/load_form/form={$form['name']}", $form);}
+        
+        if(!$form){
+            return false;
+        }
+        
+        // tags context
+        acfe_add_context('form', $form);
+        acfe_add_context('method', 'load');
+        
+        // apply tags
+        acfe_apply_tags($form['attributes']['form']['class']);
+        acfe_apply_tags($form['attributes']['form']['id']);
+        acfe_apply_tags($form['attributes']['fields']['wrapper_class']);
+        acfe_apply_tags($form['attributes']['fields']['class']);
+        acfe_apply_tags($form['attributes']['submit']['value']);
+        acfe_apply_tags($form['attributes']['submit']['button']);
+        acfe_apply_tags($form['attributes']['submit']['spinner']);
+        acfe_apply_tags($form['validation']['errors_class']);
+        
+        // deprecated
+        if(isset($form['return'])){
+            acfe_apply_tags($form['return']);
+        }
+    
+        // load form per action
+        foreach($form['actions'] as $action){
+            
+            // tags context
+            acfe_add_context('action', $action);
+            
+            // load action
+            $form = apply_filters("acfe/form/load_{$action['action']}",                          $form, $action);
+            $form = apply_filters("acfe/form/load_{$action['action']}/form={$form['name']}",     $form, $action);
+            $form = apply_filters("acfe/form/load_{$action['action']}/action={$action['name']}", $form, $action);
+            
+            // tags context
+            acfe_delete_context('action');
+            
+        }
+        
+        // check active
+        if(empty($form['active'])){
+            return false;
+        }
+        
+        // return
+        return $form;
+        
+    }
+    
+    
+    /**
+     * render_form
+     *
+     * @param $form
+     */
+    function render_form($form){
+    
+        // get form
+        $form = $this->get_form($form);
+        
+        // load form
+        $form = $this->load_form($form);
+    
+        // validate
+        if($form === false){
+            return;
+        }
+        
+        // prepare form
+                  $form = apply_filters("acfe/form/prepare_form",                      $form);
+        if($form){$form = apply_filters("acfe/form/prepare_form/form={$form['name']}", $form);}
+    
+        // enqueue acf
+        acf_enqueue_scripts();
+        
+        // validate
+        if($form === false){
+            return;
+        }
+        
+        // hooks
+        do_action("acfe/form/render_before_form",                        $form);
+        do_action("acfe/form/render_before_form/form={$form['name']}",   $form);
+        
+        do_action("acfe/form/render_before_fields",                      $form);
+        do_action("acfe/form/render_before_fields/form={$form['name']}", $form);
+        
+        do_action("acfe/form/render_fields",                             $form);
+        do_action("acfe/form/render_fields/form={$form['name']}",        $form);
+        
+        do_action("acfe/form/render_after_fields",                       $form);
+        do_action("acfe/form/render_after_fields/form={$form['name']}",  $form);
+        
+        do_action("acfe/form/render_after_form",                         $form);
+        do_action("acfe/form/render_after_form/form={$form['name']}",    $form);
+        
+    }
+    
+    
+}
+
+acf_new_instance('acfe_module_form_front');
+
+endif;
+
+/**
+ * acfe_form
+ *
+ * @param $form
+ */
+function acfe_form($form = array()){
+    acf_get_instance('acfe_module_form_front')->render_form($form);
+}
