@@ -8,4 +8,8 @@
 </head>
 <body <?php body_class(); ?>>
     <?php get_template_part("navigation"); ?>
+    <?php if (!is_page()): ?>
     <div id="main-page-content">
+    <?php else: ?>
+    <div>
+    <?php endif ?>

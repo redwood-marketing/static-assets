@@ -75,7 +75,4 @@ echo paginate_links( array(
 ?>
 </div>
 <?php
-
-
 get_footer();
-?>

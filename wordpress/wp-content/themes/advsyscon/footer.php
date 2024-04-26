@@ -8,15 +8,16 @@ $query = new WP_Query(array(
 
 if ($query->have_posts()) : $query->the_post();
     
-?>
+     if ( !is_page() ): ?>
     <!-- Above Footer -->
     <section id="above-footer" class="py-100 color-light">
         <div class="wrapper">
             <div class="above-footer-container">
-                <?php the_field( 'footer_above', 'option' ); ?>
+                <?= wp_kses_post( get_field('footer_above', 'option') ) ?>
             </div>
         </div>
     </section>
+    <?php endif ?>
 
     <div class="footer" id="reg-footer">
         <div class="max-width">
@@ -65,7 +66,7 @@ if ($query->have_posts()) : $query->the_post();
                             <strong>Company</strong>
                             <a href="/en-us/about-us">About Us</a>
                             <a href="/en-us/news">News and Press Releases</a>
-                            <!--<a href="/en-us/news/events">Events</a>-->
+                            <?php #<a href="/en-us/news/events">Events</a> ?>
                             <a href="/en-us/about-us/partners">Partners</a>
                             <a href="/en-us/about-us/careers">Careers</a>
                         </div>
@@ -81,10 +82,10 @@ if ($query->have_posts()) : $query->the_post();
                     </div>
                     <div>
                         <strong>Connect with us</strong>
-                        <a href="https://www.linkedin.com/company/advanced-systems-concepts-inc-/" title="LinkedIn" target="_blank"><img src="/en-us/corporatesite/media/i/linkedin-icon.png" alt="LinkedIn"></a>
-                        <a href="https://twitter.com/activebatch" title="Twitter" target="_blank"><img src="/en-us/corporatesite/media/i/twitter-icon.png" alt="Twitter"></a>
-                        <a href="https://www.youtube.com/channel/UC7QZYvPkK93amZEn6VsOXYg" title="Youtube" target="_blank"><img src="/en-us/corporatesite/media/i/youtube-icon.png" alt="Youtube"></a>
-                        <a href="https://www.facebook.com/AdvancedSystemsConceptsInc" title="Facebook" target="_blank"><img src="/en-us/corporatesite/media/i/facebook-icon.png" alt="Facebook"></a>
+                        <a href="https://www.linkedin.com/company/advanced-systems-concepts-inc-/" title="LinkedIn" target="_blank"><img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/linkedin-icon.png' ); ?>" alt="LinkedIn"></a>
+                        <a href="https://twitter.com/activebatch" title="Twitter" target="_blank"><img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/twitter-icon.png' ); ?>" alt="Twitter"></a>
+                        <a href="https://www.youtube.com/channel/UC7QZYvPkK93amZEn6VsOXYg" title="Youtube" target="_blank"><img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/youtube-icon.png' ); ?>" alt="Youtube"></a>
+                        <a href="https://www.facebook.com/AdvancedSystemsConceptsInc" title="Facebook" target="_blank"><img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/facebook-icon.png' ); ?>" alt="Facebook"></a>
                     </div>
                 </div>
 
@@ -99,7 +100,7 @@ if ($query->have_posts()) : $query->the_post();
                     © <?= date("Y"); ?> - Redwood Software, Inc. All Rights Reserved.
                 </div>
                 <div class="footer-item logo">
-                    <a id="p_lt_ctl02_UserControl1_userControlElem_logohome" href="https://www.advsyscon.com"><img src="/activebatch-logo.svg" alt="ActiveBatch Workload Automation"></a>
+                    <a id="p_lt_ctl02_UserControl1_userControlElem_logohome" href="https://www.advsyscon.com"><img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/activebatch-logo.svg' ); ?>" alt="ActiveBatch Workload Automation"></a>
                 </div>
             </div>
 

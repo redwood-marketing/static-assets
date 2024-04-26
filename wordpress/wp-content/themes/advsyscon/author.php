@@ -66,6 +66,5 @@ get_header();
     </div>
 
 <?php
-wp_reset_query();         
+wp_reset_query();
 get_footer();
-?>

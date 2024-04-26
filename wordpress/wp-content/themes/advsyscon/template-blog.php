@@ -256,4 +256,3 @@ echo paginate_links( array(
 
 
 get_footer();
-?>

@@ -184,6 +184,7 @@ if ( function_exists('acf_add_options_page') ) {
  * Reading Time
  */
 
+if ( !function_exists('reading_time') ):
 function reading_time() {
 
     $content     = get_post_field( 'post_content', $post->ID );
@@ -201,4 +202,4 @@ function reading_time() {
     return $totalreadingtime;
 
 }
-?>
+endif;
