@@ -22,14 +22,14 @@ $enable-negative-margins: true;
 
 @import '../../node_modules/bootstrap/scss/variables';
 
-$font-family-base: "soleto";
+$font-family-base: "Roboto Flex", sans-serif;
 $font-weight-base: $font-weight-normal;
 
 $paragraph-margin-bottom: 0;
 
-$headings-font-family:   "prometo";
+$headings-font-family:   "Archivo", sans-serif;
 $headings-margin-bottom: 0;
-$headings-font-weight:   $font-weight-normal;
+$headings-font-weight:   $font-weight-semibold;
 $headings-line-height:   1.2;
 
 $display-font-family: $headings-font-family;
