@@ -33,7 +33,7 @@ $headings-font-weight:   $font-weight-semibold;
 $headings-line-height:   1.2;
 
 $display-font-family: $headings-font-family;
-$display-font-weight: $font-weight-bold;
+$display-font-weight: $font-weight-semibold;
 
 $min-contrast-ratio: 2.7;
 $theme-colors: map-merge(
@@ -887,7 +887,6 @@ rich-text {
 
     :is(h1, h2, h3, h4, h5, h6) {
         --gap: 1.5rem;
-        font-weight: 400;
         line-height: 1.2;
 
         &:not(:first-child) {
