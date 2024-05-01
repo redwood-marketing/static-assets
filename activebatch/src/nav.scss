@@ -206,6 +206,11 @@ $carousel-indicator-height: $carousel-indicator-width;
     color: var(--selection, var(--#{$prefix}white))
 }
 
+b,
+strong {
+    font-weight: $font-weight-semibold;
+}
+
 img {
     object-fit: contain;
 }
