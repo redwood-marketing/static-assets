@@ -1,0 +1,44 @@
+<div id="activebatch-quotes" class="[ text-center ][ mb-3 ][ carousel slide ][ bg-dark ][ rounded-4 ]">
+    <div class="carousel-inner">
+        {% set quotes = [
+            {
+                "q": "If it’s digital, ActiveBatch can do it.",
+                "cite": "System Administrator, First Rate"
+            },
+            {
+                "q": "We have been able to accomplish exponentially more with ActiveBatch than what we could have with our previous solution.",
+                "cite": "Network Services Manager, ACES Energy"
+            },
+            {
+                "q": "Implementing ActiveBatch has been extremely positive… ActiveBatch has set us up for success as we increase the volume and complexity of our automated workflows.",
+                "cite": "Data and Integration Manager, Finance Industry"
+            }
+        ] %}    
+
+        {% for item in quotes  %}
+        <div class="[ carousel-item {{ "active" if loop.index === 1 }} ]">
+            <blockquote class="[ m-0 p-4 pt-lg-7 pb-lg-5  ][ d-flex justify-content-around align-items-center ]">
+                <img class="[ d-none d-lg-block ]" style="width: 3em; transform:rotate(180deg);" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/quote-mark.svg" alt="">
+                <div style="max-width:70ch" class="[ text-white ]">
+                    <q class="[ d-block ][ h4 ][ mb-3 ]">{{ item.q }}</q>
+                    <cite class="[ fst-normal fw-light h4 ]">{{ item.cite }}</cite>
+                </div>
+                <img class="[ d-none d-lg-block ]" style="width: 3em" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/quote-mark.svg" alt="">
+            </blockquote>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="[ carousel-indicators ][ position-relative ]">
+        {% for item in quotes  %}
+        <button class="{{ "active" if loop.index === 1 }} rounded-5" type="button" data-bs-target="#activebatch-quotes" data-bs-slide-to="{{ loop.index0 }}" aria-current="true" aria-label="Slide {{ loop.index }}"></button>
+        {% endfor %}
+    </div>
+    <style>
+        /* why the fuck bootstrap doing this weird shit */
+        .carou
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer>
+        const carousel = new bootstrap.Carousel('#activebatch-quotes')
+    </script>
+</div>
