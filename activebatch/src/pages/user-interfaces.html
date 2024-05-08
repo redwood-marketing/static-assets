@@ -68,14 +68,15 @@ description: ActiveBatch workload automation and enterprise job scheduling softw
         ] %}
             <li class="[ g-col-12 ][ text-start ]">
                 <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
-                    <figure class="[ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ][ rounded-4 ][ overflow-hidden ]">
+                    <figure class="[ m-0 ][ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ]">
                         <img 
-                            class="[ w-100 h-auto ]"
+                            class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
                             src="{{ item.img }}" 
                             alt="" 
                             width="400" 
                             height="300"
                             loading="lazy"
+                            style="aspect-ratio: 5 / 4"
                         >
                     </figure>
                     <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
