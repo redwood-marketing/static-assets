@@ -2,7 +2,21 @@
     opacity: 0.7 !important;
 }
 input:not(:placeholder-shown):not([aria-invalid="true"]) {
-    border-color: #6ACCBA !important;
+    border-color: #1AC8C6 !important;
+}
+
+[type="checkbox"] {
+    accent-color: #1AC8C6;
+}
+
+.form-label-checkbox {
+    flex-basis: 100%;
+}
+
+.form-checkable-field {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.6rem;
 }
 
 [data-sticky="true"] {
