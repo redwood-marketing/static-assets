@@ -2,11 +2,11 @@
     opacity: 0.7 !important;
 }
 input:not(:placeholder-shown):not([aria-invalid="true"]) {
-    border-color: #1AC8C6 !important;
+    border-color: #2dc8c6 !important;
 }
 
-[type="checkbox"] {
-    accent-color: #1AC8C6;
+.form-multiple-input:checked + .form-checkbox-label::before {
+    background-color: #2dc8c6;
 }
 
 .form-label-checkbox {
