@@ -9,6 +9,10 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
     background-color: #2dc8c6;
 }
 
+.form-label-title {
+    font-weight: 700;
+}
+
 .form-label-checkbox {
     flex-basis: 100%;
 }
