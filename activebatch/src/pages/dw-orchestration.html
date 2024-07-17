@@ -1,0 +1,354 @@
+---
+title: Data Warehouse Automation and Orchestration
+description: Learn how to automate data warehouse operations with ActiveBatch. Improve data quality, streamline workflows and enhance data accuracy with our automation tools.
+faqs:
+    What is data warehouse automation?:
+        Data warehouse automation (DWA) refers to using tools and software to automate the processes involved in developing, managing and operating data warehouses. It includes tasks such as data integration, data modeling and data processing and reduces the need for manual intervention. DWA helps shorten development cycles and improve data operations' efficiency and accuracy.
+
+        Data warehouse automation tools like ActiveBatch can automate repetitive tasks and manage dependencies within data infrastructure. ActiveBatch allows teams to integrate seamlessly with other tools that support various business needs and requirements by providing data analytics, business intelligence and real-time data processing functionalities. These tools can be used with both on-premises and cloud data warehouses, such as Snowflake and Microsoft Azure, to extend the capabilities of IT teams to deliver data-driven insights efficiently.
+
+        <a href="https://www.advsyscon.com/blog/data-warehouse-automation/">Unlock speed, efficiency and visibility with data warehouse automation</a>.
+
+    What is the difference between data warehouse automation and ETL?:
+        Data warehouse automation (DWA) encompasses broader functionalities beyond traditional extract, transform, load (ETL) processes. While ETL focuses on moving data from various sources to a data warehouse, DWA automates the entire lifecycle, including data integration, modeling and metadata management. DWA tools streamline tasks such as data processing, workflow orchestration and dependency management for better overall data infrastructure efficiency.
+        
+        ETL processes are often a component of DWA &mdash; specifically handling data extraction, transformation and loading. In contrast, DWA integrates these processes with features like real-time data processing, automated data quality checks, advanced analytics and machine learning model support. This holistic approach ensures faster development cycles, improved data accuracy and better alignment with business requirements for data analytics and reporting.
+        
+        <a href="https://www.advsyscon.com/en-us/activebatch/etl-automation/">Learn how ActiveBatch can help you automate your ETL solution</a>.
+
+    How to automate an ETL process?:
+        Automating an extract, transform, load (ETL) process involves using specialized ETL tools and data warehouse automation software. Select an ETL tool that fits your business requirements and integrates with your data platforms. These tools can automate data extraction from various sources, transform the data to meet business needs and load it into data warehouses or data marts.
+
+        Set up workflows to schedule and monitor ETL tasks, ensuring they run at specified times or in response to specific events. Implement templates for common ETL processes to standardize and accelerate development. Use features like error handling, logging, and notifications to manage and troubleshoot ETL workflows effectively. Automation improves time-to-value by reducing manual intervention and allowing your data team to focus on higher-value tasks.
+
+        Learn all about<a href="https://www.advsyscon.com/blog/etl-automation-process/"> extract, transform, load (ETL) automation and testing</a>, including testing tools and how they streamline data management.
+
+    What is a data warehouse vs. database?:
+        A database is a system for storing and managing data for daily operations. It supports transactional processing and allows for operations such as create, read, update, delete (CRUD). Databases are optimized for real-time data entry and retrieval, making them suitable for apps and operational data stores.
+
+        A data warehouse, on the other hand, is designed for analytical purposes. It consolidates and organizes large volumes of data from various sources, including databases, to support business intelligence (BI) tools, data analytics and reporting. Data warehouses are structured to optimize query performance and handle complex queries on historical data. They often include components like data lakes and data marts, forming a comprehensive data infrastructure. Data warehouse design focuses on efficiently managing enterprise data, utilizing SQL for querying and BI tools for data visualization and insights.
+        
+        Explore how<a href="https://www.advsyscon.com/blog/automation-data-warehousing/"> IT automation can transform your data strategy</a>.
+---
+{% extends "base.njk" %}
+
+{% block content %}
+
+
+{%- set heroArgs = { 
+	'heading': '<h1 class="[ display-6 text-balance ]">Reliably automate and orchestrate the entire data warehouse lifecycle
+    </h1>',
+    'maxWidth': '100ch', 
+	'content': '<p class="[ lead text-balance ][ mt-3 mb-4 ][ opacity-75 ]">Streamline data warehouse operations and processes while improving your data quality and consistency.</p>' 
+} -%}
+{% include "hero-inner.njk" %}
+
+<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pt-7 pt-lg-9 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2 class="[ text-balance ]">Elevate your data warehouse orchestration with ActiveBatch</h2>
+        <p>Engage in more informed decision-making with reliable and traceable data, superior error handling, enhanced security and a seamless user experience.</p>
+    </div>
+    <div class="[ grid ]" style="grid-auto-rows: 1fr">
+
+        {% for item in [
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+                "title": "Easy-to-use pre-built job steps",
+                "description": "Eliminate time-consuming manual coding and simplify workflow creation with drag-and-drop components pre-configured for data warehouse tasks. "
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg",
+                "title": "Low-code API accessibility",
+                "description": "Develop custom job steps using APIs to automate specific data warehouse tasks and easily interact with any program or process your team uses."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-3.svg",
+                "title": "Real-time activity monitoring",
+                "description": "Get greater visibility and control with real-time monitoring and custom alerts to notify you of potential issues in your environment."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg",
+                "title": "Consistent data quality and validation",
+                "description": "Ensure data accuracy with automatic data cleansing, filtering and validation within your data warehouse workflows."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-hands.svg",
+                "title": "Flexible event-based triggers",
+                "description": "Keep your data up to date without manual intervention. Schedule jobs automatically based on specific triggers and events."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-nodes.svg",
+                "title": "High availability and scalability",
+                "description": "Minimize downtime due to system failures while handling large data volumes and complex data warehouse workflows."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-lock.svg",
+                "title": "First-rate security and compliance",
+                "description": "Enhance data security and compliance in your warehouse environment with data encryption, auditing and logging."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-layers.svg",
+                "title": "Long-term connectivity",
+                "description": "Integrate with any data source or application now or any new technology you may obtain with the help of the Super REST API Adapter."
+            }
+        ] %}
+            <div class="[ bg-light {{ "@hover:bg-quaternary" if item.link }} ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+                <img 
+                    class="[ mt-n3 ]"
+                    src="{{ item.img }}" 
+                    alt="" 
+                    width="60" 
+                    height="60"
+                    loading="lazy"
+                >
+                <h3 class="[ h5 fw-medium ]">{{ item.title }}</h3>
+                <p>{{ item.description | safe }}</p>
+                {% if item.link %}
+                    <a href="{{ item.link.url }}" class="[ border-bottom border-2 border-secondary text-dark ][ stretched-link ][ mt-auto ]">
+                        {{ item.link.text }}
+                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 ]">
+    <blockquote class="[ w-100 ][ position-relative ][ text-center ][ mb-3 ][ bg-dark @hover:bg-primary ][ rounded-4 ][ m-0 p-4 p-lg-5 p-xl-7 ][ d-flex justify-content-around align-items-center gap-6 ]">
+        <div class="[ text-white ][ d-grid gap-6 ]">
+            <q class="[ d-block ][ h3 fw-normal lh-base ]">Having to hard code job variables with command-line scripts to automate data warehousing steps takes a lot of time and a lot of testing. That’s why finding a scheduling solution with direct integration of PowerCenter was so important.</q>
+            <cite class="[ fst-normal fw-light h4 ]">
+                <img class="" aria-hidden="true" style="width: 8em; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-xcel.svg" alt="">
+                <a href="https://www.advsyscon.com/en-us/activebatch/case-studies/xcel-energy" class="[ stretched-link ]">
+                    <span class="[ sr-only ]">Read the XcelEnergy case study</span> 
+                </a>
+            </cite>
+        </div>
+    </blockquote>
+</div>
+</section>
+
+<section class="[ text-balancecontainer-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 pt-lg-7 pb-lg-9 ]">
+    <ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
+        {% for item in [
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
+                "title": "Improve collaboration among cross-functional teams",
+                "description": "Store and manage all your jobs in a central location for easy access and version control. <br><br>   
+                The no-code, drag-and-drop interface and a library of pre-built components make it easy for both technical and business users to participate in data warehouse orchestration workflows. Your teams can foster collaboration and empower business users to take more ownership of data management processes. <br><br> For organizations with existing scripts, ActiveBatch offers a central repository for storing and securing all scripts, no matter the language used.",
+                "link": {
+                    "text": "Job Steps Library overview",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library"
+                }
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-2.jpg",
+                "title": "Gain infinite extensibility across your tech stack",
+                "description": "With the Super REST API Adapter, ActiveBatch's universal connector, you can integrate with virtually any data source or application relevant to your data warehouse needs, regardless of its native APIs. <br><br> Future-proof data pipelines by accommodating new technologies while giving your team the unmatched flexibility to connect to modern data sources and tools within your data warehouse ecosystem.",
+                "link": {
+                    "text": "Super REST API Adapter overview",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/rest-api-adapter"
+                }
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
+                "title": "Eliminate common data warehouse frustrations",
+                "description": "ActiveBatch solves common pain points that teams often struggle with in data warehouse orchestration. <br><br>
+                Automate workflows and scripting: Eliminate the need for manual scripting and coding with a no-code drag-and-drop interface and pre-built job steps that streamline workflow creation and reduce development time.<br><br>
+                Improve data quality and consistency:  Cleanse, validate and improve data accuracy throughout data warehouse workflows with built-in data transformation capabilities and the ability to easily integrate with data quality tools.<br><br>
+                Grow and scale with your data: ActiveBatch is built with a scalable architecture that adapts to your evolving data needs — it can handle large data volumes and complex data warehouse workflows."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-4.jpg",
+                "title": "Maintain data security and compliance",
+                "description": "Improve data traceability and identify the impact of changes or errors within your data warehouse environment. Audit logging allows teams to keep detailed records of all data warehouse job executions to adhere to data governance regulations. <br><br>
+                With ActiveBatch, it's easy to troubleshoot and review time stamps, user information and job parameters. Track data origin, transformation and destination throughout every data warehouse workflow. "
+            },
+            {
+                "img": "https://www.redwood.com/wp-content/uploads/RunMyJobs-2.png",
+                "title": "Easily integrate with data warehouse databases",
+                "description": "Build end-to-end workflows spanning your entire IT environment with ActiveBatch’s comprehensive library of integrations and extensions.<br><br>Get instant access to the top data warehouse databases like <a href=\"https://www.advsyscon.com/en-us/activebatch/extensions/teradata\">Teradata</a> and <a href=\"https://www.advsyscon.com/en-us/activebatch/extensions/ibm-puredatahttps://www.advsyscon.com/en-us/activebatch/extensions/ibm-puredata\">Netezza</a> to streamline extraction, transformation and loading tasks",
+                "link": {
+                    "text": "Integrations and extensions",
+                    "url": "https://www.advsyscon.com/en-us/activebatch/extensions"
+                }
+            }
+        ] %}
+            <li class="[ g-col-12 ][ text-start ]">
+                <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                    <figure class="[ m-0 ][ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ]">
+                        <img 
+                            class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                            src="{{ item.img }}" 
+                            alt="" 
+                            width="400" 
+                            height="300"
+                            loading="lazy"
+                            style="aspect-ratio: 5 / 4"
+                        >
+                    </figure>
+                    <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                        <h3 class="[ h2 text-balance ]">{{ item.title }}</h3>
+                        <p>{{ item.description | safe }}</p>
+                        {% if item.link %}
+                            <a href="{{ item.link.url }}" class="[ btn btn-primary ]">
+                                {{ item.link.text }}
+                                <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    </div>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{%- set bannerArgs = {
+	'heading': 'Ready to simplify your data warehouse automation and orchestration?',
+	'content': 'Our team of experts will show you how your actual jobs run in ActiveBatch. Ask questions and see how easy it is to build and maintain jobs with the right solution.',
+    'backgroundTheme': 'dark',
+    'backgroundStrips': ["transparent", "transparent"]
+} -%}
+{% include "cta.njk" %} 
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center gap-6 ][ pt-6 pt-xl-8 pt-xxl-9 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>Explore data-focused ActiveBatch use cases</h2>
+    </div>
+    <div class="[ w-100 ][ grid ]">
+        <article class="[ border border-light @hover:border-dark ][ g-col-12 g-col-lg-6 ][ bg-light ][ p-4 p-md-7 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+            <svg viewBox="0 0 240 47.8" height="102.3" width="600.1" style="height: 2rem; width: auto">
+                <path fill="var(--bs-dark)" d="M39.2,32c0,5.9-3.4,9.5-8.8,10.6-1.5.3-4,.3-5.7.3l-13.1-.1v5L0,38.3l11.6-9.5v5l14.7.1c1.4,0,2-.8,2-1.6,0-1.5-1.4-2-5.6-4-6.7-3.2-11.9-5.5-11.9-12.8,0-5.7,4.1-9.6,10.1-10.4,1.2-.2,3.5-.2,4.9-.2,3,0,11.4.2,11.4.2v9.1l-13.8-.2c-1.2,0-1.8.8-1.8,1.6,0,1.2,1,1.7,4.9,3.5,8.2,3.8,12.7,5.9,12.7,12.9ZM60.9,31.3c0,1.7-1.5,3.1-4.2,3.1-2.9,0-4.2-1.4-4.2-3.1V5h-11.3v27.2c0,6,5,11.7,15.4,11.7s15.4-5.6,15.4-11.7V5h-11.1v26.3ZM106.7,31.5c0,7.5-5.1,11.6-12.5,11.6h-18.7V5h18c8.1,0,12.2,4.5,12.2,10.4,0,3-1.4,5.6-4.2,7.5,3.3,1.8,5.2,4.6,5.2,8.6ZM86.6,20.1h5.2c2,0,2.9-1.4,2.9-3.4,0-2.1-.9-3.4-2.9-3.4h-5.2s0,6.8,0,6.8ZM95.4,31c0-2.3-1.1-3.6-3.1-3.6h-5.7v7.2h5.7c2.1,0,3.1-1.4,3.1-3.6ZM144.1,5h11.1v26.8c0,6.2-4.4,11.8-13.7,11.8-4,0-7.1-1.2-9.3-3-2.2,1.8-5.2,3-8.9,3-9.9,0-14-5.6-14-11.8V5h11.1v26.6c0,1.1.6,2.5,3.1,2.5s3.2-1.3,3.2-2.5V5h11.1v26.6c0,1.1.6,2.5,3.1,2.5s3.2-1.3,3.2-2.5V5ZM203,20V5h-11v16c0,5.3,3.6,9.3,9.7,11v11h11.3v-11c6.2-1.7,9.6-5.7,9.6-11v-5.9c0-.6.3-.9.9-.9h4.9v4.8l11.6-9.5-11.6-9.5v4.8h-7.7c-6.5,0-9.2,3.8-9.2,9.2v6c0,1.4-1,3.1-4.3,3.1s-4.2-1.7-4.2-3.1ZM189.2,15.9v27.2h-11.1v-11.1h-8.4v11h-11.1V15.9c0-6.8,5.6-12,15.3-12s15.3,5.1,15.3,12ZM178.1,23.3v-6.8c0-1.8-1.3-3.1-4.2-3.1s-4.2,1.3-4.2,3.1v6.8h8.4Z"/>
+            </svg>
+            <h3 class="[ h5 ][ sr-only ]">Subway</h3>
+            <p>Restaurant chain reduces time building and updating data workflows by 75%</p>
+            <a 
+                class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ]"
+                href="https://www.redwood.com/redwood-university/"
+                target="_blank"
+            >
+                Read Subway’s story
+                <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+                </svg>
+
+            </a>
+            <figure class="[ mx-n7 mb-n7 mt-auto ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
+                <img src="https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="[ w-100 h-100 ][ object-fit-cover ]" width="400" height="300">
+            </figure>
+        </article>
+        <article class="[ border border-light @hover:border-dark ][ g-col-12 g-col-lg-6 ][ bg-light ][ p-4 p-md-7 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+            <svg viewBox="0 0 600.1 102.3" height="102.3" width="600.1" style="height: 2rem; width: auto">
+                <path fill="var(--bs-dark)" d="M594.9,25.7c2.9,0,5.2,2.3,5.2,5.2s-2.3,5.2-5.2,5.2-5.2-2.3-5.2-5.2,2.3-5.2,5.2-5.2M594.9,26.3c2.6,0,4.6,2.1,4.6,4.6s-2.1,4.6-4.6,4.6-4.6-2.1-4.6-4.6,2-4.6,4.6-4.6M595,30.3c.5,0,.9-.1,1.1-.2.2-.2.3-.4.3-.8s-.1-.6-.3-.8c-.2-.2-.6-.2-1.2-.2h-1.3v2h1.4ZM592.7,34.2v-6.8h2.4c.8,0,1.3.2,1.7.5s.6.7.6,1.3c0,.4-.1.8-.3,1-.2.3-.5.5-.9.6.3.1.5.2.7.3.1.1.2.4.3.7,0,.1.1.4.1,1,.1.5.2,1,.3,1.4h-1c-.1-.4-.2-.8-.2-1.4-.1-.5-.1-.9-.2-1-.1-.3-.2-.4-.4-.5s-.5-.2-.9-.2h-1.1v3.1h-1.1ZM548.8,27.5h36.7c-1.4,3.8-2.8,7.6-4.2,11.4h-18.3c-2.2,6-4.4,12.1-6.6,18.1h17.1c-1.4,3.8-2.8,7.6-4.1,11.4h-17.1c-1.3,3.6-2.5,7.2-3.9,10.7-1.3,3.6-2.6,7.1-3.9,10.7h19.9c-1.3,3.8-2.7,7.5-4.1,11.3h-38.2c2.3-6.1,4.5-12.2,6.7-18.3,2.2-6.1,4.4-12.3,6.6-18.4,2.2-6.1,4.5-12.3,6.7-18.4,2.2-6.2,4.4-12.4,6.7-18.5M537,47.9c-.3,1-.7,1.9-1.1,2.8h-17.7c.2-.5.3-1.1.5-1.6,1.7-4.7,2.4-7.8,2-9.2-.4-1.4-1.7-2.2-3.9-2.2s-4.1.8-5.5,2.2c-1.4,1.4-3,4.5-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.2-5.4,15.2-1.7,4.6-2.4,7.7-2,9.2s1.8,2.2,4,2.2,4-.7,5.3-2.1c1.4-1.4,2.8-4.1,4.2-8,.5-1.4,1-2.8,1.5-4.1h17.7c-.5,1.4-1,2.7-1.4,4-2.9,8-6.7,13.6-11.3,16.8-4.6,3.1-11.1,4.7-19.7,4.7-9.3,0-15.2-1.8-17.5-5.5-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.7,3.2-12.7c1.4-3.9,2.8-7.9,4.3-11.8,1.4-3.9,2.8-7.9,4.3-11.9,1.8-5,3.8-9.2,5.9-12.6,2.1-3.4,4.5-6.1,7-7.9,4.9-3.7,12.2-5.6,21.5-5.6,8.5,0,14,1.6,16.3,4.8,2.4,3.2,2.1,8.8-.8,16.8M447.2,27.5h22.2c8.7,0,14.6,1.4,17.3,4,2.8,2.7,3.2,7.1,1,13.1-.4,1-.8,2.1-1.1,3.1-1.9,5.3-4.7,9.2-8.3,11.8-3.7,2.6-8.8,4.2-15.4,5,6.4.5,10.4,2.1,12,4.7,1.6,2.7,1.3,7.3-1.1,13.9-2.2,6-4.3,12-6.5,18h-18.3c1.3-3.7,2.7-7.5,4-11.3,1.3-3.7,2.7-7.5,4.1-11.3,1.3-3.7,1.6-6,.7-7s-3.1-1.5-6.8-1.5h-2c-1.9,5.2-3.7,10.4-5.6,15.5-1.9,5.2-3.7,10.3-5.6,15.5h-17.2c2.2-6.1,4.4-12.2,6.6-18.3,2.2-6.1,4.4-12.2,6.6-18.4,2.2-6.1,4.4-12.3,6.6-18.4,2.3-6.1,4.5-12.3,6.8-18.4M460.4,38.5c-1.3,3.5-2.5,6.9-3.7,10.4-1.3,3.5-2.5,6.9-3.7,10.4h1.7c3.6,0,6.2-.6,8.1-1.8,1.8-1.2,3.3-3.4,4.4-6.6.5-1.3.9-2.6,1.4-3.9,1.1-3.2,1.3-5.4.3-6.6-.9-1.2-3.2-1.8-6.8-1.8h-1.7v-.1ZM394.7,27.5h18.3c-1.5,4.4-3.1,8.7-4.7,13.1-1.6,4.3-3.1,8.7-4.6,13-1.6,4.3-3.1,8.7-4.7,13-1.5,4.3-3.1,8.7-4.7,13-1.7,4.7-2.3,7.7-1.9,9.1s1.7,2.1,4,2.1,4.1-.7,5.5-2.1c1.3-1.4,2.9-4.5,4.6-9.2,1.6-4.3,3.1-8.7,4.6-13s3.1-8.7,4.7-13c1.5-4.3,3.1-8.7,4.7-13s3.1-8.7,4.7-13.1h18.4c-1.4,4.1-2.9,8.2-4.4,12.2-1.4,4.1-2.9,8.1-4.4,12.2s-2.9,8.1-4.4,12.2-2.9,8.1-4.4,12.2c-1.8,5-3.9,9.2-5.9,12.6-2.1,3.4-4.4,6.1-6.8,7.9-4.9,3.8-11.9,5.6-21.1,5.6s-14.8-1.8-17.1-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.6,3.2-12.7c1.4-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.1M382.6,52.5c-1.4,4-2.8,7.9-4.2,11.9-1.4,3.9-2.8,7.9-4.2,11.8-1.8,5-3.8,9.2-5.9,12.6s-4.3,6-6.9,7.9c-5,3.7-11.9,5.6-21.3,5.6s-15.2-1.8-17.5-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.3-7.7,3.1-12.7c1.4-3.9,2.8-7.9,4.2-11.8,1.4-3.9,2.8-7.9,4.2-11.9,1.8-5,3.7-9.2,5.8-12.6,2.1-3.4,4.4-6.1,6.9-7.9,5-3.8,12.1-5.6,21.4-5.6s15.2,1.9,17.4,5.6c1.2,1.9,1.6,4.5,1.2,7.9-.2,3.4-1.2,7.6-3,12.6M365.5,49.1c1.7-4.8,2.3-7.9,1.9-9.3s-1.9-2.1-4.4-2.1-4.4.7-5.9,2.2c-1.5,1.4-3,4.6-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.1-5.4,15.2-1.7,4.7-2.3,7.8-1.9,9.2.5,1.4,1.9,2.1,4.3,2.1s4.5-.7,5.9-2.2c1.5-1.4,3.1-4.5,4.7-9.1,1.8-5.1,3.6-10.1,5.5-15.2,2-5,3.7-10.1,5.5-15.2M336.6,23.6c-.8,2.5-1.6,5-2.3,7.5h-21c.9-2.9,1.8-5.9,2.7-8.8.8-2.6,1-4.5.5-5.6s-1.7-1.6-3.7-1.6-3.4.5-4.5,1.6-2.1,3-2.9,5.6c-.7,2.2-1.3,4.3-2,6.5-.8,2.5-.8,4.7-.1,6.7.7,1.9,2.5,4.3,5.3,6.8,2.3,2.1,4.6,4.2,6.9,6.3.4.3.9.8,1.7,1.5,3.4,3,5.3,5.7,6.2,8.1.6,1.8.8,3.9.7,6.1-.2,2.3-.9,5-1.8,8.2-.6,2-1.3,4-1.9,6-2.4,7.6-6.5,13.5-12.8,17.6-6.2,4.1-14,6.1-23.2,6.1s-15.9-1.9-18.8-5.7c-2.9-3.8-3-10.2-.2-19.1.8-2.4,1.5-4.9,2.2-7.3h21.8c-.9,2.8-1.7,5.6-2.6,8.4-.9,3-1.2,5.2-.6,6.5s2,1.9,4.2,1.9,4.1-.6,5.3-1.8,2.4-3.4,3.4-6.6c.4-1.2.8-2.6,1.2-3.8.8-2.8.9-5.1.3-7.2-.6-2-2.8-4.7-6.5-8-2.3-2.1-4.5-4.3-6.9-6.4-3.4-3-5.6-6.2-6.4-9.7-.7-3.4-.4-7.6,1-12.3.9-2.9,1.9-5.8,2.8-8.7,2.1-6.7,6.2-12.1,12.6-16.2,6.5-4.1,14-6.2,22.4-6.2s13.4,2,16.3,6c2.8,4,3.1,9.9.7,17.6M242.8,25.4h36.4c-1.4,3.8-2.7,7.6-4,11.4h-18.1c-2.1,6-4.3,12.1-6.4,18.1h16.7c-1.3,3.8-2.7,7.6-4,11.4h-16.8c-1.3,3.6-2.5,7.2-3.8,10.7-1.3,3.6-2.5,7.1-3.8,10.7h19.7c-1.4,3.8-2.7,7.5-4,11.3h-37.9c2.2-6.1,4.3-12.2,6.5-18.4,2.2-6.1,4.3-12.3,6.5-18.4s4.3-12.3,6.5-18.4c2.1-6.1,4.4-12.3,6.5-18.4M165.2,27.5h25.1c-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.6,13.2-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.5,13.2h.9c2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,7-13.2h24.7c-2.2,6.2-4.3,12.3-6.5,18.4s-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4h-15.2c1.8-5,3.5-10,5.3-15.1,1.8-5,3.5-10.1,5.3-15.1s3.5-10.1,5.3-15.1,3.6-10.1,5.4-15.1h-1.2c-2.7,5-5.4,10.1-8,15.1s-5.3,10.1-7.9,15.1c-2.6,5-5.3,10.1-7.9,15.1-2.6,5-5.3,10.1-7.9,15.1h-16.4c1-5,2-10,3-15.1,1-5,2-10.1,3-15.1s2-10.1,3-15.1,2-10.1,3-15.1h-1c-1.8,5-3.5,10.1-5.3,15.1s-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1h-14.3c2.1-6.1,4.3-12.2,6.4-18.3,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.3-6.2,4.5-12.4,6.6-18.5M141.9,27.5h18.3c-2.1,6.2-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.2-6.4,18.3h-18.4c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.2-6,4.4-12.2,6.5-18.3M90.6,27.5h22.2c8.7,0,14.5,1.3,17.4,4,2.8,2.6,3.3,7,1.2,13.1-.4,1-.7,2.1-1.1,3.1-1.8,5.3-4.7,9.2-8.2,11.8-3.6,2.6-8.8,4.2-15.3,5,6.4.5,10.4,2.1,12.1,4.7,1.7,2.7,1.4,7.3-.9,13.9-2.1,6-4.2,12-6.3,18h-18.3c1.3-3.8,2.6-7.5,3.9-11.3s2.6-7.5,4-11.3c1.3-3.7,1.5-6,.6-7s-3.2-1.5-6.9-1.5h-2c-1.8,5.2-3.6,10.4-5.4,15.5-1.8,5.2-3.6,10.3-5.4,15.5h-17.2c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4s4.3-12.3,6.4-18.4c2.1-6,4.3-12.2,6.4-18.3M103.9,38.5c-1.2,3.5-2.4,6.9-3.6,10.4-1.2,3.4-2.4,6.9-3.6,10.3h1.6c3.6,0,6.3-.6,8-1.8,1.8-1.2,3.3-3.4,4.4-6.6.4-1.3.9-2.6,1.4-3.9,1.1-3.2,1.1-5.4.2-6.6-.9-1.2-3.2-1.8-6.7-1.8h-1.7ZM33.1,4.6h24.7c12.7,0,21,2,24.9,6.1,3.8,4,4.1,10.9.8,20.5-.7,2.1-1.5,4.2-2.2,6.3-3.1,9.1-7.9,15.8-14.3,20-6.4,4.3-14.9,6.4-25.4,6.4h-6.7c-2.2,6.3-4.3,12.6-6.5,19-2.1,6.3-4.2,12.6-6.4,18.9H0c2.8-8.1,5.5-16.2,8.3-24.3,2.8-8.1,5.5-16.2,8.2-24.3,2.7-8.1,5.5-16.2,8.2-24.3,2.8-8.1,5.6-16.2,8.4-24.3M50.2,19.1c-1.7,5.1-3.5,10.2-5.2,15.2-1.7,5.1-3.4,10.2-5.1,15.2h2c4.3,0,7.6-.9,9.9-2.7,2.3-1.8,4.4-5,5.9-9.7.6-1.9,1.3-3.9,2-5.8,1.6-4.6,1.8-7.8.7-9.6-1.1-1.8-3.8-2.7-8-2.7h-2.2v.1Z"/>
+            </svg>
+            <h3 class="[ h5 ][ sr-only ]">PrimeSource</h3>
+            <p>Building material distributor cuts ETL processing time by 89.5%</p>
+            <a 
+                class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ]"
+                href="https://www.advsyscon.com/en-us/activebatch/case-studies/primesource"
+                target="_blank"
+            >
+                Read PrimeSource’s story
+                <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+                </svg>
+
+            </a>
+            <figure class="[ mx-n7 mb-n7 mt-auto ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
+                <img src="https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="[ w-100 h-100 ][ object-fit-cover ]" width="400" height="300">
+            </figure>
+        </article>
+    </div>
+</section>
+
+<section class="[ py-4 py-xl-7 pb-xxl-9 ]">
+    <h2 class="[ sr-only ]">100+ Companies Trust ActiveBatch</h2>
+    {{ components.customers() }}
+</section>
+
+<section class="[ py-7 ][ bg-light ]">
+    {{ components.faqs("Data warehouse automation FAQs", faqs) }}
+</section>
+
+<section class="[ bg-light ][ pb-7 pb-xl-8 ]">
+    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xl ]">
+        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+            <h2>Popular data warehouse articles</h2>
+            <p>Expand your knowledge of how traditional data warehouse systems work, different methodologies to handle multiple data sets and how cloud-based tools can help with automation. </p>
+        </div>
+        <div class="[ grid ]">
+            {% for item in [
+                {
+                    "img": "https://www.advsyscon.com/blog/wp-content/uploads/big-data-orchestration.jpg",
+                    "title": "Simplifying big data with data orchestration",
+                    "description": "See how big data orchestration can simplify and streamline data from disparate sources and help your organization optimize and innovate.",
+                    "link": {
+                        "text": "Learn More",
+                        "url": "https://www.advsyscon.com/blog/big-data-orchestration/"
+                    }
+                },
+                {
+                    "img": "https://www.advsyscon.com/blog/wp-content/uploads/Title_Images/Data-Center-Security.jpeg",
+                    "title": "4 ways to level up physical data center security",
+                    "description": "Learn four best practices for enhancing physical security in your data center, data warehouse or server room.",
+                    "link": {
+                        "text": "Learn More",
+                        "url": "https://www.advsyscon.com/blog/security-data-center/"
+                    }
+                },
+                {
+                    "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/abstract-3.png",
+                    "title": "What drives innovation at your organization?",
+                    "description": "Hear how a Senior Director of Data Warehousing uses ActiveBatch to execute a data warehouse automation framework.",
+                    "link": {
+                        "text": "Learn More",
+                        "url": "https://www.advsyscon.com/en-us/resource/data-warehouse-automation"
+                    }
+                },
+                {
+                    "img": "https://www.advsyscon.com/blog/wp-content/uploads/Title_Images/Data-Warehouse-Automation-1.jpeg",
+                    "title": "Data warehouse automation: Unlock speed, efficiency and visibility",
+                    "description": "Workload automation solutions can optimize any data warehouse operation, regardless of complexity.",
+                    "link": {
+                        "text": "Learn More",
+                        "url": "https://www.advsyscon.com/blog/data-warehouse-automation/"
+                    }
+                }
+            ] %}
+                <div class="[ position-relative ][ g-col-12 g-col-md-6 g-col-lg-3 ][ bg-white @hover:bg-quaternary ][ border border-dark  rounded-4 ][ overflow-hidden ]">
+                    <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]">
+                        <img 
+                            class="[ w-100 h-auto ][ object-fit-cover ]"
+                            src="{{ item.img }}" 
+                            alt="" 
+                            width="1600" 
+                            height="600"
+                            style="aspect-ratio: 21 / 9"
+                        >
+                    </figure>
+                    <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
+                        <h3 class="[ h6 fw-medium ]">
+                            <a href="{{ item.link.url }}" class="[ stretched-link ][ text-decoration-none text-reset ]">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+                        <p class="[ small ]">{{ item.description }}</p>
+                        <span class="[ mt-auto ][ text-reset text-decoration-none small ]">
+                            {{ item.link.text | safe }}
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
