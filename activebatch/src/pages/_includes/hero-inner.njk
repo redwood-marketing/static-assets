@@ -1,7 +1,7 @@
 {%- set defaultArgs = {
-	'maxWidth': '90ch',
     'eyebrow': '',
-    'background': 'https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg',
+    'background': 'https://static.marketing.redwood.com/activebatch/dist/pages/img/bg-hero-1.jpg',
+    'theme': 'light',
 	'heading': 'Heading',
 	'content': 'Content',
 	'includeCta': true
@@ -10,17 +10,21 @@
 
 
 <section 
-    class="[ text-white ][ bg-dark ][ py-4 py-md-5 py-xl-6 ]" 
-    style="background: linear-gradient(160deg, #041220 50%, #099794 217.56%)">
-    <div class="[ container-fluid container-xl ][ grid gap-5 gap-xl-6 ]">
-        <div class="[ g-col-12 g-col-lg-6 d-grid align-content-center justify-items-start ]">
+    class="{{ "[ text-white ][ bg-dark ]" if args.theme == "dark"  else "[ text-dark ][ bg-light ]" }}[ position-relative ]" 
+    style="box-shadow: 0 2px 0 -1px var(--bs-dark)"
+>
+    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 98rem">
+        <div 
+            class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 ][ py-4 py-md-6 py-xl-8 px-3 px-sm-4 px-md-5 pl-xl-7 pr-lg-5 pr-xl-6 ]"
+            style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--dark)"
+        >
             <hgroup class="[ d-flex flex-column align-items-start gap-3 ]">
                 {% if args.eyebrow %}
                     <span class="[ py-{4} px-1 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">Data warehousing automation</span>
                 {% endif %}
                 <h1 class="[ display-6 text-balance ]">{{ args.heading | safe }}</h1>
             </hgroup>
-            <p class="[ lead text-balance ][ mt-3 mb-4 ][ opacity-75 ]">{{ args.content | safe }}</p>
+            <p class="[ lead text-balance ][ mt-2 mb-4 ]">{{ args.content | safe }}</p>
             {%- if args.includeCta -%}
             <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
                 Get a Demo
@@ -30,11 +34,11 @@
             </a>
             {%- endif -%}
         </div>
-        <div class="[ g-col-12 g-col-lg-6 ][ d-none d-lg-flex align-items-center ]">
+        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 40ch); ">
             <img 
-                class="[ w-100 h-auto object-fit-cover ][ rounded-4 ]" 
+                class="[ w-100 h-100 ]" 
                 src="{{ args.background | safe }}"
-                style="aspect-ratio: 4 / 3"
+                style="object-fit: cover; box-shadow: 0 0 0 1px var(--dark)"
             >
         </div>
     </div>
