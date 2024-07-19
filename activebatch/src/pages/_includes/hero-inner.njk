@@ -19,7 +19,7 @@
             style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--bs-dark)"
         >
             {% if args.eyebrow %}
-                <span class="[ py-{5} px-1 mb-2 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">Data warehousing automation</span>
+                <span class="[ py-{5} px-1 mb-2 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">{{ args.eyebrow }}</span>
             {% endif %}
             <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">{{ args.heading | safe }}</h1>
             <p class="[ lead text-balance fw-normal ][ mt-2 mb-4 ]">{{ args.content | safe }}</p>
