@@ -1,6 +1,6 @@
 {%- set defaultArgs = {
     'eyebrow': '',
-    'background': 'https://static.marketing.redwood.com/activebatch/dist/pages/img/bg-hero-1.jpg',
+    'background': 'https://static.marketing.redwood.com/activebatch/dist/pages/img/bg-hero-2.jpg',
     'theme': 'light',
 	'heading': 'Heading',
 	'content': 'Content',
@@ -13,18 +13,18 @@
     class="{{ "[ text-white ][ bg-dark ]" if args.theme == "dark"  else "[ text-dark ][ bg-light ]" }}[ position-relative ]" 
     style="box-shadow: 0 2px 0 -1px var(--bs-dark)"
 >
-    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 98rem">
+    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 90rem">
         <div 
-            class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 ][ py-4 py-md-6 py-xl-8 px-3 px-sm-4 px-md-5 pl-xl-7 pr-lg-5 pr-xl-6 ]"
+            class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 ][ p-4 p-lg-5 p-xl-7 ]"
             style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--dark)"
         >
             <hgroup class="[ d-flex flex-column align-items-start gap-3 ]">
                 {% if args.eyebrow %}
-                    <span class="[ py-{4} px-1 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">Data warehousing automation</span>
+                    <span class="[ py-{5} px-1 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">Data warehousing automation</span>
                 {% endif %}
-                <h1 class="[ display-6 text-balance ]">{{ args.heading | safe }}</h1>
+                <h1 class="[ display-5 text-balance ]">{{ args.heading | safe }}</h1>
             </hgroup>
-            <p class="[ lead text-balance ][ mt-2 mb-4 ]">{{ args.content | safe }}</p>
+            <p class="[ lead text-balance fw-normal ][ mt-2 mb-4 ]">{{ args.content | safe }}</p>
             {%- if args.includeCta -%}
             <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
                 Get a Demo
@@ -34,7 +34,7 @@
             </a>
             {%- endif -%}
         </div>
-        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 40ch); ">
+        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 60ch); ">
             <img 
                 class="[ w-100 h-100 ]" 
                 src="{{ args.background | safe }}"
