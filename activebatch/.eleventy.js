@@ -20,6 +20,9 @@ module.exports = (config) => {
 		callback(null, result);
 	});
 
+	config.addNunjucksFilter("wpautop", function(content) {
+        return wpautop(content);
+    });
 
 	const passThrough = ['*.min.*'];
 
@@ -39,3 +42,11 @@ module.exports = (config) => {
 		},
 	};
 };
+
+function wpautop(content) {
+    content = content.trim();
+    content = content.replace(/(\r\n|\n|\r){2,}/g, '</p><p>');
+    content = `<p>${content}</p>`;
+    content = content.replace(/<p>\s*<\/p>/g, '');
+    return content;
+}

@@ -5,7 +5,7 @@
         <details>
             <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">{{ q }}</summary>
             <div class="[ mt-4 ]">
-                <p>{{ a  | safe | nl2br | nl2br }}</p>
+                {{ a | nl2br | wpautop  | safe }}
             </div>
         </details>
     {% endfor %}
@@ -95,7 +95,7 @@
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
                     <h3 class="[ h2 text-balance ]">{{ item.title }}</h3>
-                    <p>{{ item.description | safe }}</p>
+                    <div>{{ item.description | nl2br | wpautop | safe }}</div>
                     {% if item.link %}
                         <a href="{{ item.link.url }}" class="[ btn btn-primary ]">
                             {{ item.link.text }}
