@@ -82,7 +82,7 @@
     {% for item in items %}
         <li class="[ g-col-12 ][ text-start ]">
             <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
-                <figure class="[ m-0 ][ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 }} ]">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 {{ "order-md-1" if loop.index % 2 and items.length > 1 }} ]">
                     <img 
                         class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
                         src="{{ item.img }}" 
