@@ -265,6 +265,339 @@ ul, ol {
     margin: 0;
 }
 
+/* My body don't */
+@keyframes jiggle {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-0.5ch);
+	}
+	50% {
+		transform: translateX(0.5ch);
+	}
+	75% {
+		transform: translateX(-0.5ch);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes loading {
+	0% {
+		background-position: right;
+	}
+}
+
+.c-form {
+	/* API */
+	--c-form-global-accent-color: var(--bs-primary);
+	--c-form-global-bg-color: transparent;
+	--c-form-global-text-color: inherit;
+	--c-form-global-warning-color: var(--bs-danger);
+	--c-form-global-width: 100%;
+
+	--c-form-control-text-color: var(--bs-dark);
+	--c-form-control-border-color: var(--c-form-control-text-color, var(--bs-dark));
+	--c-form-control-focus-border-color: var(--c-form-global-accent-color, currentColor);
+	--c-form-control-border-radius: initial;
+	--c-form-control-border-style: solid;
+	--c-form-control-border-width: 1px;
+	--c-form-control-gap: clamp(0.6rem, 1.5vw, 1.2rem);
+
+    --c-form-control-checkbox-border-width: max( .15em, var(--c-form-control-border-width) );
+    --c-form-control-checkbox-indicator-color: transparent;
+
+	background-color: var(--c-form-global-bg-color);
+	border-radius: var(--c-form-control-border-radius);
+	background-color: var(--c-form-global-bg-color);
+	color: var(--c-form-global-text-color);
+	width: clamp(var(--c-form-global-width), 100%);
+
+	position: relative;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+    text-align: left;
+	font-size: 0.9rem;
+
+	::placeholder {
+		opacity: 1;
+		color: currentColor;
+	}
+
+	&:is(
+        [data-state="submitting"], 
+        [data-state="submitted"]
+    ) input[type="submit"]:is(:enabled, :focused, :active, :disabled) {
+		background-color: var(--bs-secondary-bg-subtle);
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+
+	*:not([class*="fa"]) {
+		font-size: inherit;
+		margin: 0;
+	}
+
+	:is(input, select, textarea) {
+		--c-form-control-state-color: var(--c-form-control-border-color);
+	}
+
+	:is(input, select, textarea):focus-visible {
+		--c-form-control-state-color: var(--c-form-global-accent-color);
+	}
+
+	.invalid:not(:placeholder-shown, :focus) {
+		--c-form-control-state-color: var(--c-form-global-warning-color);
+		color: var(--c-form-control-state-color);
+		animation: jiggle 0.4s ease;
+	}
+
+	:is(
+        input:is(
+            [type="text"], 
+            [type="email"], 
+            [type="password"], 
+            [type="tel"], 
+            [type="number"]
+        ), 
+        select, 
+        textarea
+    ):is(:enabled, :focus-visible) {
+		border-style: var(--c-form-control-border-style);
+		border-color: var(--c-form-control-state-color);
+		border-width: var(--c-form-control-border-width);
+		border-radius: var(--c-form-control-border-radius);
+        color: var(--c-form-control-text-color);
+		padding: 0.6em 1em;
+		outline: none;
+		appearance: none;
+		width: 100%;
+	}
+
+    [type="checkbox"] { 
+        appearance: none;
+        cursor: pointer;
+        color: var(--c-form-control-checkbox-indicator-color);
+        border-style: var(--c-form-control-border-style);
+		border-color: var(--c-form-control-state-color);
+		border-width: var(--c-form-control-checkbox-border-width);
+        width: 1.5em;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 0.4em;
+        background-color: transparent;
+        position: relative;
+        transition: background-color .2s ease;
+        outline: none;
+
+        &:checked {
+            --c-form-control-state-color: var(--c-form-global-accent-color);
+            --c-form-control-checkbox-indicator-color: var(--bs-white);
+            background-color: var(--c-form-global-accent-color);
+        }
+
+        &::before {
+            content: "";
+            color: inherit;
+            display: block;
+            position: absolute;
+            width: 40%;
+            height: auto;
+            aspect-ratio: 1 / 1.8;
+            border-color: transparent currentColor currentColor transparent;
+            border-style: inherit;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -63%) rotateZ(45deg);
+            pointer-events: none;
+            border-width: 0 var(--c-form-control-checkbox-border-width) var(--c-form-control-checkbox-border-width) 0;
+            transition: color .2s ease;
+        }
+    }
+    
+	a:any-link {
+		color: var(--c-form-global-accent-color);
+	}
+
+	label[for],
+	legend {
+		font-weight: 700;
+		
+		&:not([class*="hs"], :has(~ .input .multi-container)) {
+		   display: none !important;
+	    }
+	}
+	
+	.cookie-reset-container {
+		color: currentColor;
+		font-size: 0.9em;
+		font-weight: 500;
+	}
+
+	.cookie-reset-container u {
+		color: var(--c-form-global-warning-color);
+		text-decoration-style: dotted;
+	}
+
+	.cookie-reset-container :is(a, a:hover) {
+		background-color: var(--c-form-global-accent-color);
+		color: var(--bs-dark);
+		padding: 0.2em 0.8em;
+		border-radius: 10rem;
+		text-decoration: none;
+		white-space: nowrap;
+		font-size: 0.95em;
+        cursor: pointer;
+        margin-left: .2em;
+	}
+
+    .inputs-list {
+        list-style: none;
+        padding: 0;
+
+        &.multi-container {
+            display: grid;
+            gap: calc(var(--c-form-control-gap) * 0.6);
+			margin: 0;
+			font-size: 0.9em;
+			grid-template-columns: repeat(auto-fit, minmax(min(50%, 16ch), 1fr));
+        }
+    }
+
+	.hbspt-form {
+		width: 100%;
+	}
+    
+
+	.hs-form {
+		width: 100%;
+
+        &-booleancheckbox, 
+        &-checkbox {
+            &-display {
+				font-weight: 600;
+                color: var(--c-form-control-text-color);
+                user-select: none;
+                padding: .8em;
+                background: var(--light);
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: calc( var(--c-form-control-gap) / 2 );
+                cursor: pointer;
+                border: max(var(--c-form-control-border-width), .12em) solid var(--c-form-control-state-color, var(--gray));
+                border-radius: var(--c-form-control-border-radius);
+                transition: border-color .3s ease;
+
+                &:is(
+                    :hover,
+                    :has(input:checked) 
+                )  {
+                    --c-form-control-state-color: var(--c-form-global-accent-color);
+                }
+            }
+
+        }
+	}
+
+	.hs-error-msgs {
+		color: var(--c-form-global-warning-color);
+		font-size: 0.8em;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		font-weight: initial;
+	}
+
+	// Stacked Variation
+
+	&--stacked {
+		--c-form-control-border-radius: 0.4rem;
+		min-height: 15em;
+
+		.hs-form {
+			display: grid;
+			gap: var(--c-form-control-gap);
+			// > *:not(:first-child, .hs-submit) {
+			// 	margin-top: var(--c-form-control-gap);
+			// }
+
+			.hs-form-field {
+				max-width: 100%;
+				display: inherit;
+				gap: calc(var(--c-form-control-gap) * 0.6);
+			}
+
+			// .hs-submit {
+			// 	margin-top: min(1.7em, var(--c-form-control-gap) * 1.7);
+			// }
+		}
+	}
+
+	// Single field
+
+	&--single {
+		--c-form-control-border-radius: 10rem;
+		--c-form-control-border-width: 1px;
+		--c-form-global-bg-color: var(--bs-white);
+		border-style: var(--c-form-control-border-style);
+		border-color: var(--c-form-control-state-color);
+		border-width: var(--c-form-control-border-width);
+        width: clamp(35ch, 10em, 100%);
+
+        &:not([data-state="loaded"], [data-state="submitting"]) {
+            min-height: 3.2em;
+        }
+
+		&:focus-within {
+			--c-form-control-state-color: var(--c-form-global-accent-color);
+		}
+
+        &::before {
+            bottom: 0;
+            right: 0;
+            height: min(3.2em, 100%);
+            width: 10em;
+            background: var(--c-form-global-accent-color);
+            z-index: 1;
+        }
+
+		input,
+		input:focus {
+			--c-form-control-border-width: 0;
+		}
+
+		.hs-form {
+			display: flex;
+
+			> .hs-form-field {
+				flex: 1 1 0;
+			}
+
+            .input {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+			.hs-error-msgs {
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+
+			.hs_error_rollup {
+				display: none;
+			}
+		}
+	}
+}
+
+
 svg:has(path:only-child) {
     transition: translate .2s ease;
 
@@ -774,7 +1107,7 @@ svg:has(path:only-child) {
 			}
 			&::-webkit-scrollbar-thumb {
 				border-radius: 5px;
-				background-color: var(--teal);
+				background-color: var(--bs-primary);
 			}
 
 			&__items {

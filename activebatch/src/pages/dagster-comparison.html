@@ -1,30 +1,33 @@
 ---
-title: "Prefect Cloud Comparison: Upgrade to Advanced Workload Automation"
-description: Learn more about Prefect Cloud Comparison. Discover how upgrading to ActiveBatch provides advanced workload automation, seamless data integration, and efficient resource optimization for modern enterprises.
+title: "Dagster Cloud vs. ActiveBatch: Beyond Data Pipelines to Full IT Operations"
+description: Learn more about Dagster Cloud alternatives. Discover how ActiveBatch fully orchestrates IT and business processes, ensuring efficiency and control.
 faqs:
-    What is Prefect Cloud?:
-        Prefect Cloud is a managed orchestration service provided by Prefect.io that enables data engineers and IT professionals to automate and manage complex data workflows. Users can define, schedule and monitor workflows, known as Prefect flows, through an intuitive Prefect UI or command-line interface (CLI). The platform also offers concurrency controls and work pools to optimize flow runs and ensure high availability of data pipelines.
+    What is Dagster used for?:
+        Dagster.io is an orchestration platform designed to manage the complexity of data pipelines and workflows. Its primary function is to enable the development, testing an deployment of data-centric applications.
 
 
-        Flows can run in various environments, including Docker, AWS, GCP and cloud-run platforms. Prefect Cloud supports service accounts and single sign-on (SSO)for secure access control and API keys for simplified application authentication.
-        Prefect&rsquo;s API allows for seamless integration with popular data platforms like Snowflake.
-
+        With Dagster, you can define, schedule and monitor your data pipelines across various environments, including hybrid deployments. Dagster also integrates well with cloud-native technologies, so it&rsquo;s a good fit for infrastructure setups that leverage AWS and Kubernetes.
         
-        Learn more about ActiveBatch and how your team can <a href="https://www.advsyscon.com/en-us/activebatch/orchestration/workflow-orchestration">orchestrate any workflow</a> in a matter of clicks.
-    Why should I consider ActiveBatch over Prefect Cloud?:
-        ActiveBatch offers a wider range of capabilities than Prefect Cloud. It&rsquo;s designed for organizations and IT operations teams that want to automate workflows across different business domains rather than just data pipelines. Its comprehensive job scheduling and orchestration features make ActiveBatch suitable for those with the initiative to build a mature ecosystem with consolidated tools and organization-wide visibility.
+
+        One of Dagster&rsquo;s key features is its ability to work with software-defined assets, which means it ensures your data transformations are well-defined. It can also handle branch deployments and allow different versions of your data pipelines to run simultaneously.
 
 
-        Despite its sophistication, ActiveBatch is accessible to all types of users. A library of pre-built job steps and the ability to build custom reusable components using any API make it a more flexible, easy-to-use solution than Prefect.
+        Explore how ActiveBatch can help you integrate, automate, and monitor your multiple tech stacks from a single point of control with <a href="https://www.advsyscon.com/en-us/activebatch/orchestration/workflow-orchestration">workflow orchestration</a>.
+    What is the difference between Dagster and ActiveBatch?:
+        While both Dagster and ActiveBatch are orchestration tools, they cater to different use cases and organizational needs.&nbsp;
+        Dagster is focused on data engineering and orchestrating data-centric workflows. It ensures data integrity throughout a pipeline and offers advanced debugging capabilities.
+
+
+        ActiveBatch is a broader workload automation tool that supports a wide range of IT and business processes. Because it&rsquo;s not limited to data pipeline orchestration, it can drive efficient workflows across many enterprise applications and platforms. ActiveBatch is well-suited for organizations and IT teams looking to automate diverse tasks with minimal manual intervention.
         
         
-        Discover how to <a href="https://www.advsyscon.com/en-us/activebatch">easily orchestrate end-to-end IT and business processes in one platform</a> with low-code/no-code functionality and drag-and-drop design.
+        Discover how ActiveBatch can help your team build, monitor and manage business processes end-to-end in one <a href="https://www.advsyscon.com/en-us/activebatch/workload-automation">workload automation platform</a> with limitless integrations.
 
     Is it difficult to migrate to ActiveBatch?:
         No, migrating to ActiveBatch is a streamlined process because of Redwood Software&rsquo;s leading support and customer success offerings. While the complexity of your migration depends on your existing infrastructure and understanding the schema of your critical business processes, ActiveBatch&rsquo;s comprehensive documentation and training ensure a seamless move from your current platform.
-
-
-        Learn how to <a href="https://www.advsyscon.com/blog/migrate-workload-automation/">migrate from your legacy job scheduler</a> to a modern workload automation scheduler
+        
+        
+        Learn how to <a href="https://www.advsyscon.com/blog/migrate-workload-automation/">migrate from your legacy job scheduler</a> to a modern workload automation scheduler.
 ---
 {% extends "base.njk" %}
 
@@ -33,15 +36,15 @@ faqs:
 
 <section class="[ text-light ][ bg-dark ][ position-relative ][ py-6 py-xl-8 ]" style="background: linear-gradient(160deg, #041220 39.39%, #099794 217.56%);">
     <div class="[ container-fluid container-xl ][ grid justify-items-center align-items-center gap-xl-6 ]" style="--bs-columns: 6">
-        <div class="[ g-col-6 g-col-lg-3 g-col-xl-4 d-grid justify-items-start gap-3 fs-5 ]">
+        <div class="[ g-col-6 g-col-lg-3 g-col-xl-4 d-grid gap-3 justify-items-start fs-5 ]">
             <span class="[ py-{5} px-1 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">ActiveBatch alternatives</span>
-            <h1 class="[ display-5 lh-2 ]">Upgrade from Prefect Cloud to advanced workload automation</h1>
+            <h1 class="[ display-5 lh-2 ]">Beyond Dagster Cloud: Drive all IT operations from one limitless platform</h1>
             <div class="[ opacity-75 ][ d-grid gap-2 ]">
-                <p>Orchestrate limitless use cases beyond data pipelines when you move to ActiveBatch by Redwood.</p>
+                <p>Unify data pipeline and business process orchestration with ActiveBatch by Redwood.</p>
                 <ul>
-                    <li>Simplify workflow orchestration with pre-built job steps</li>
+                    <li>Design and automate workflows with pre-built job steps</li>
                     <li>Connect to any data source or application via API</li>
-                    <li>Automate resource provisioning to minimize costs</li>
+                    <li>Protect efficiency with dynamic resource allocation</li>
                 </ul>
             </div>
         </div>
@@ -65,18 +68,18 @@ faqs:
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-8 ]">
     {{ components.zigzag([
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/bg-hero-1.jpg",
-            "title": "Streamline your data flows and business processes",
-            "description": "ActiveBatch is a workload automation platform that manages data automation tasks and offers greater flexibility for modern enterprises compared to Prefect. With event-driven scheduling, you gain enhanced control over dependencies and complex workflows. 
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/bg-hero-2.jpg",
+            "title": "Stay in control of data quality <em>and</em> end-to-end processes",
+            "description": "ActiveBatch is both an accessible data orchestration platform and an effective business process automation solution. 
             
-            Centralized monitoring provides real-time insights into job performance across your organization, ensuring efficient and predictable operations."
+            Use flexible, event-driven scheduling to ensure your data pipeline deployments and operations remain uninterrupted no matter how large and complex your workflows become."
         }
     ]) }}
 </section>
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center  gap-6 ]">
     <div class="[ d-flex flex-column gap-2 ]" style="max-width: 80ch">
-        <h2>Opt for a superior orchestration platform</h2>
+        <h2>Choose the most robust data platform</h2>
     </div>
     <table class="table align-middle">
         <thead>
@@ -92,15 +95,7 @@ faqs:
           <tr>
             <th scope="row" class="[ py-2 d-grid gap-{3} ]">
                 <strong class="[ h6 ]">Low-code/no-code automation</strong>
-                <span class="[ fw-normal ][ d-block ]">While Prefect offers customizable workflow configurations, ActiveBatch provides pre-built job steps and allows you to create your own reusable components for simple automation design.</span>
-            </th>
-            <td class="[ text-success text-center ]">✔</td>
-            <td class="[ text-danger text-center ]">✖</td>
-          </tr>
-          <tr>
-            <th scope="row" class="[ py-2 d-grid gap-{3} ]">
-                <strong class="[ h6 ]">Sophisticated job scheduling</strong>
-                <span class="[ fw-normal ][ d-block ]">Unlike Prefect, which only offers cron, interval and RRule scheduling, ActiveBatch supports event- and calendar-based settings to trigger actions and workflows.</span>
+                <span class="[ fw-normal ][ d-block ]">While Dagster promotes modularity to simplify the developer experience, ActiveBatch’s Integrated Jobs Library makes it easy for non-technical users to design automations.</span>
             </th>
             <td class="[ text-success text-center ]">✔</td>
             <td class="[ text-danger text-center ]">✖</td>
@@ -108,23 +103,31 @@ faqs:
           <tr>
             <th scope="row" class="[ py-2 d-grid gap-{3} ]">
                 <strong class="[ h6 ]">Automated resource optimization</strong>
-                <span class="[ fw-normal ][ d-block ]">Rather than relying on manual adjustments, ActiveBatch leverages machine learning to distribute jobs efficiently and improve success rates based on usage patterns.</span>
+                <span class="[ fw-normal ][ d-block ]">Unlike Dagster, which only offers abstraction for compute resources, ActiveBatch leverages machine learning to distribute jobs efficiently and improve success rates based on usage patterns.</span>
             </th>
             <td class="[ text-success text-center ]">✔</td>
             <td class="[ text-danger text-center ]">✖</td>
           </tr>
           <tr>
             <th scope="row" class="[ py-2 d-grid gap-{3} ]">
-                <strong class="[ h6 ]">Broad connectivity</strong>
-                <span class="[ fw-normal ][ d-block ]">Integrate your essential tools across any environment, with any mix of legacy and modern systems, to seamlessly drive end-to-end processes — not just data workflows.</span>
+                <strong class="[ h6 ]">Centralized visibility of all processes</strong>
+                <span class="[ fw-normal ][ d-block ]">Dagster may be known for its detailed metadata tracking, but ActiveBatch gives you complete observability of all your data assets and end-to-end workflows in a single control plane.</span>
             </th>
             <td class="[ text-success text-center ]">✔</td>
             <td class="[ text-danger text-center ]">✖</td>
           </tr>
           <tr>
             <th scope="row" class="[ py-2 d-grid gap-{3} ]">
-                <strong class="[ h6 ]">Detailed auditing and compliance </strong>
-                <span class="[ fw-normal ][ d-block ]">ActiveBatch offers robust compliance tracking and security features, including AES 256-bit encryption, to support large enterprises that must adhere to strict regulatory requirements.</span>
+                <strong class="[ h6 ]">Universal connectivity</strong>
+                <span class="[ fw-normal ][ d-block ]">Envision and build your perfect data and business process management environment using the execution variables you create with ActiveBatch’s Service Library and Super REST API Adapter.</span>
+            </th>
+            <td class="[ text-success text-center ]">✔</td>
+            <td class="[ text-danger text-center ]">✖</td>
+          </tr>
+          <tr>
+            <th scope="row" class="[ py-2 d-grid gap-{3} ]">
+                <strong class="[ h6 ]">Powerfully secure job scheduling </strong>
+                <span class="[ fw-normal ][ d-block ]">ActiveBatch is a complete workload automation solution with industry gold-standard security and compliance features, including AES 256-bit encryption, for all jobs — data-related or not.</span>
             </th>
             <td class="[ text-success text-center ]">✔</td>
             <td class="[ text-danger text-center ]">✖</td>
@@ -136,19 +139,19 @@ faqs:
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-8 ]">
     {{ components.zigzag([
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Cross-functional automation.jpg",
-            "title": "Cross-functional automation",
-            "description": "Coordinating resources and steps to build efficient workflows that work for every department can be time-consuming and costly. With ActiveBatch, you can consolidate your automations for multiple business functions in one easy-to-use platform. 
-
-            Without custom scripting, set up processes for managing ETL processes, driving security verification and more key actions while maintaining your core data management workflows.
-
-            Rely on real-time monitoring and predictive notifications to preempt issues, plus inspire informed decisions with detailed analytics."
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Organization-wide automation.jpg",
+            "title": "Organization-wide automation",
+            "description": "Coordinating resources and steps to build efficient cross-departmental workflows can be time-consuming and costly. With ActiveBatch, you can consolidate your automations for multiple business domains in one easy-to-use platform. 
+            
+            Without custom scripting, set up processes for managing systems and networks, driving security verification and performing other key actions while maintaining your core data management workflows.
+            
+            Rely on real-time monitoring and predictive notifications to preempt issues, plus inspire informed decisions with detailed analytics. "
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Round-the-clock support.jpg",
-            "title": "Round-the-clock support",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Market-leading support.jpg",
+            "title": "Market-leading support",
             "description": "Reflective of the Redwood Software standard for first-rate customer support, ActiveBatch’s Support team is here for your team 24/7, with 15-minute response times.
-
+            
             You’ll also get in-depth platform training, dedicated account management with regular health checks and access to a growing library of on-demand learning resources via Redwood University."
         }
     ]) }}
@@ -156,11 +159,11 @@ faqs:
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ]">
     {{ components.quote({
-        "quote": "It’s about scalability, and ActiveBatch provides that. Could I go and write scripts for everything we want to do? Yes, but it would take forever, and centrally managing the workflows would be nearly impossible. ActiveBatch provides us with that single point of control.",
-        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-ignite.svg",
+        "quote": "If it’s digital, ActiveBatch can do it. We know this is a tool that we’re going to be able to build, that we can go as far as we want to go and it’s going to be able to handle our needs.",
+        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-firstrate.svg",
         "link": {
             "text": "Read the case study",
-            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/read/ignite-technologies"
+            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/first-rate"
         }
     }) }}
 </section>
@@ -168,17 +171,17 @@ faqs:
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-8 ]">
     {{ components.zigzag([
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Perpetual scalability.jpg",
-            "title": "Perpetual scalability",
-            "description": "No matter what the future holds, stay confident in your workload reliability.  
-
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Low-risk scalability.jpg",
+            "title": "Low-risk scalability",
+            "description": "No matter what the future holds, stay confident in your workload execution for data-specific and all other IT and business processes.  
+            
             As your data and business needs become more complex, ActiveBatch helps you keep up without worry. It automatically scales your resources based on demand so you can run all jobs on time and with minimal idling.
-
-            Managing all your processes, data-specific or otherwise, from one place gives you ultimate control and boosts efficiency."
+            
+            Provisioning resources only when needed reduces costs and further drives business growth."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Endless integration options.jpg",
-            "title": "Endless integration options",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/Pre-built and custom integrations.jpg",
+            "title": "Pre-built and custom integrations",
             "description": "ActiveBatch’s extensibility is second to none. Connect to all your essential data platforms and tools, including:
             
                 <ul><li>Cloud and virtualization services like Amazon EC2 and Microsoft Azure</li><li>Big data solutions, including open-source frameworks such as Apache Hadoop</li><li>System, network and data center management tools like Microsoft Orchestrator</li></ul>
@@ -194,8 +197,8 @@ faqs:
 
 
 {%- set bannerArgs = {
-	'heading': 'Explore how ActiveBatch stacks up',
-	'content': 'We’ll show you the powerful features that prompt IT teams to implement robust workload automation instead of limited data pipeline solutions.',
+	'heading': 'See why ActiveBatch wins',
+	'content': 'Get a live look at the powerful features that prompt IT teams to opt for robust workload automation instead of limited data pipeline solutions.',
     'backgroundTheme': 'dark',
     'backgroundStrips': ["transparent", "transparent"]
 } -%}
@@ -203,8 +206,8 @@ faqs:
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pt-7 pt-lg-9 ]">
     <header class="[ d-flex flex-column gap-2 ][ text-center ]" style="max-width: 80ch">
-        <h2 class="[ h1 ]">Make an informed decision</h2>
-        <p> Find out more about what you get with ActiveBatch.</p>
+        <h2 class="[ h1 ]">Learn more</h2>
+        <p> Read about ActiveBatch’s most notable features.</p>
     </header>
     
     <div class="[ grid ]" style="grid-auto-rows: 1fr">
@@ -277,7 +280,7 @@ faqs:
 </section>
 
 <section class="[ py-7 ][ bg-light ]">
-    {{ components.faqs("Prefect vs. ActiveBatch FAQs", faqs) }}
+    {{ components.faqs("Dagster Cloud vs. ActiveBatch FAQs", faqs) }}
 </section>
 
 {% endblock %}

@@ -67,7 +67,7 @@
         <cite class="[ fst-normal fw-light h5 ][ d-grid gap-5 ]">
             {{ "— " + quote.cite if quote.cite }}
             <div>
-                <img class="" aria-hidden="true" style="width: 15rem; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="{{ quote.logo }}" alt="">
+                <img class="" aria-hidden="true" style="max-height: 4rem; width: 15rem; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="{{ quote.logo }}" alt="">
                 <a href="{{ quote.link.url }}" class="[ stretched-link ]">
                     <span class="[ sr-only ]">{{ quote.link.text }}</span> 
                 </a>
@@ -88,13 +88,12 @@
                         src="{{ item.img }}" 
                         alt="" 
                         width="400" 
-                        height="300"
+                        height="auto"
                         loading="lazy"
-                        style="aspect-ratio: 5 / 4"
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">{{ item.title }}</h3>
+                    <h3 class="[ h2 text-balance ]">{{ item.title | safe }}</h3>
                     <div>{{ item.description | nl2br | wpautop | safe }}</div>
                     {% if item.link %}
                         <a href="{{ item.link.url }}" class="[ btn btn-primary ]">
