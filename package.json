@@ -5,7 +5,8 @@
         "custom-elements": "babel custom-elements/src -d custom-elements/dist --out-file-extension .min.js",
         "vidyard": "sass --no-source-map -s compressed -c vidyard/src/styles.scss:vidyard/dist/styles.min.css && babel vidyard/src -d vidyard/dist --out-file-extension .min.js",
         "activebatch": "concurrently \"sass --watch --no-source-map -s compressed -c activebatch/src/nav.scss:activebatch/dist/pages/nav.min.css\" \"babel activebatch/src -d activebatch/dist/pages --watch --out-file-extension .min.js\" \"eleventy --config=./activebatch/.eleventy.js --serve\"",
-        "signature": "sass --no-source-map -s compressed -c signature/src/styles.scss:signature/dist/styles.min.css && babel signature/src -d signature/dist --out-file-extension .min.js"
+        "signature": "sass --no-source-map -s compressed -c signature/src/styles.scss:signature/dist/styles.min.css && babel signature/src -d signature/dist --out-file-extension .min.js",
+        "tracking": "babel tracking/src -d tracking/dist --out-file-extension .min.js"
     },
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",
