@@ -15,7 +15,7 @@ function DOMReady(callback) {
 
 DOMReady(() => {
 
-    (function initDOMForms () {
+    (function formTracking () {
 
         const fields = {
             get cached() {
