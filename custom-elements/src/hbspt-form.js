@@ -6,7 +6,6 @@
 		function ($) {
 			return typeof $ === 'string' ? document.querySelector($) : $;
 		};
-	var utms = utms || new UTMCookie();
 
 	renderForms();
 
@@ -82,15 +81,6 @@
 			form.elements.region.dispatchEvent(new Event('input', { bubbles: true }));
 		});
 
-		try {
-			utms.formUnpack(form);
-		} catch (error) {
-			console.warn("Couldn't add 🍪 without ga-ready", error);
-			window.addEventListener('ga-ready', function () {
-				utms.formUnpack(form);
-			});
-		}
-
 		if (options.prefill) {
 			for (var field in options.prefill) {
 				try {
@@ -110,7 +100,6 @@
 			instance = form.closest('hbspt-form');
 		instance.dataset.state = 'submitting';
 		submit.value = 'Sending';
-		utms.formPacking(form);
 	}
 
 	function getGeo() {
