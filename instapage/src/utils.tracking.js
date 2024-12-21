@@ -1,7 +1,6 @@
 "use strict";
 
 window.measurementId = window.measurementId ?? document.currentScript.dataset.measurementId;
-window.formCallbacks = window.formCallbacks || [];
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments) }
 
@@ -154,8 +153,12 @@ DOMReady(() => {
 
 (function onFormSubmit () {
 
-    formCallbacks.push((form) => {
-        
+    /**
+     * @see https://help.instapage.com/hc/en-us/articles/115001889787-Form-Submission-tracking-for-Google-Tag-Manager
+     */
+
+    window.instapageFormSubmitSuccess = (form) => {
+
         const formData = new FormData(form);
         const blacklist = [
             "salesforce-integration", 
@@ -192,6 +195,13 @@ DOMReady(() => {
 
         window.mutiny && window.mutiny.client.identify(null, personalizationPayload).then(() => { console.log(personalizationPayload) })
 
-    });
+        /* Marked for deletion */
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'instapageFormSubmissionSuccess',
+            'instapageSubmittedForm': form
+        }); /* Marked for deletion */
+
+    };
 
 })();    

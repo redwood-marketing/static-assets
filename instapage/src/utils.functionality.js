@@ -1,17 +1,8 @@
 "use strict";
 
 window.measurementId = window.measurementId ?? document.currentScript.dataset.measurementId;
-window.formCallbacks = window.formCallbacks || [];
-window.dataLayer     = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments) }
-
-/**
- * @see https://help.instapage.com/hc/en-us/articles/115001889787-Form-Submission-tracking-for-Google-Tag-Manager
- */
-window.instapageFormSubmitSuccess = (form) => {
-    if ( Array.isArray(window.formCallbacks) && window.formCallbacks.length ) 
-      window.formCallbacks.forEach( callback => ( typeof callback === "function" && callback(form) ) )
-}
 
 function DOMReady(callback) {
     let { readyState } = document; 
@@ -86,15 +77,6 @@ DOMReady(() => {
             });
 
             return validations;
-        })();
-
-        /**
-         * Make sure forms dispatch a bubbling event
-         */
-        (function onFormSubmit() {
-            window.formCallbacks.push((form) => {
-                form.dispatchEvent(new SubmitEvent("instapageFormSubmitted", { bubbles: true } ))
-            });
         })();
         
     })();
@@ -176,8 +158,6 @@ DOMReady(() => {
         const block          = context.closest("[id^='page-block-']");
         block.dataset.sticky = true;
     })();
-
-    
     
 }); 
 
