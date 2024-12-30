@@ -78,6 +78,16 @@ DOMReady(() => {
 
             return validations;
         })();
+
+        /**
+         * Set all email addresses to lowercase to prevent issues with the HubSpot API
+         * @see https://help.instapage.com/hc/requests/661938
+         */
+
+        window.addEventListener("input", ({target}) => {
+            if ( target?.type === "email" ) 
+                target.value = target.value.toLowerCase();
+        });
         
     })();
 
