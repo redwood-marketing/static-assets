@@ -1,0 +1,234 @@
+---
+title: Web Services API for ActiveBatch Job Scheduler
+description: ActiveBatch Web Services API provides developers a direct approach to invoke ActiveBatch methods to interact with non-ActiveBatch programs and processes.
+
+faqs:
+    What is a job scheduler API?:
+        A job scheduler API is a programming interface that allows developers to automate and control the scheduling of jobs within a software environment. This type of API enables the creation, management and deletion of jobs. Through endpoints exposed by the API, users can specify job details such as jobname, runtime and the specific automation schema in the request body. Functions typically include running jobs at predetermined times or in response to specified events, managing job retries and overseeing job execution statuses. 
+        
+
+        Job scheduler APIs are essential in environments like Google Cloud, where managing and scaling numerous tasks efficiently is crucial. 
+        
+
+        Find the right <a href="https://www.advsyscon.com/blog/process-automation-tools/">process automation tool</a> for IT.
+    What is an API scheduler?:
+        An API scheduler refers to a tool or service that organizes and controls the timing and order of API calls within software applications or between services. It helps to efficiently manage the execution of multiple API requests by scheduling them based on predetermined conditions or dynamic requirements. This tool is especially useful for handling dependencies among tasks and making sure API calls occur at the right moment to maintain system integrity and performance. 
+        
+
+        Features of an API scheduler include webhook and callback setup, permissions handling and authentication with API keys to secure communication through headers. 
+        
+
+        Discover how to <a href="https://www.advsyscon.com/blog/rest-api-adapter/">rapidly create APIs</a> for reliable end-to-end processes without custom scripting so your team can achieve more faster.
+    What is the API specification of a task scheduler?:
+        The API specification of a task scheduler outlines the technical details and protocol for interacting with the task scheduling service. This specification includes definitions of available endpoints, supported API calls, data structures and the necessary parameters for each function, such as job ID, jobname and runtime, all formatted in JSON. It also describes how to initiate job execution, manage job states, delete jobs and automate retries through POST requests.
+        
+
+        The specification ensures that developers understand authentication requirements, such as API keys and the necessary permissions for making API requests. It might also detail the use of webhooks or callbacks for event-driven job management. Developers can refer to the API reference for detailed documentation and may utilize an SDK to simplify interactions with the API.
+    What is the job scheduler process?:
+        The job scheduler process involves a series of steps and operations that a job scheduler undertakes to manage and execute scheduled jobs within a system. This process begins with the definition of jobs through an API call where specific details like jobname, runtime and automation schema are specified. The scheduler then stores these configurations and monitors the system clock or listens for defined triggers to start job execution. Throughout the job lifecycle, the scheduler manages tasks such as retry attempts on failure, updating job statuses and invoking callbacks or webhooks as necessary.
+        
+
+        This process is crucial for maintaining the efficiency and reliability of automated tasks.
+        
+
+        Learn about <a href="https://www.advsyscon.com/blog/job-scheduling-algorithms/">job scheduling algorithms</a> for optimizing task execution.
+
+---
+{% extends "base.njk" %}
+
+{% block content %}
+
+
+{%- set heroArgs = { 
+    'eyebrow': false,
+	'heading': 'Web Services API',
+    'maxWidth': '100ch', 
+	'content': 'Programmatically retrieve, access, manage and submit information across your enterprise using ActiveBatch by Redwood’s sophisticated scheduler API.' 
+} -%}
+{% include "hero-inner.njk" %}
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 pt-xl-9 ]">
+    {{ components.zigzag([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
+            "title": "Integrate quickly with a sophisticated web services API",
+            "description": "Part of the core ActiveBatch license, ActiveBatch’s web services application programming interface (API) provides developers with an industry-standard and direct approach to programmatically invoke ActiveBatch methods to easily interact with non-ActiveBatch programs and processes. The web services API supports SOAP 1.1–1.2 and REST protocols. 
+            
+            ActiveBatch is a comprehensive and powerful approach to programmatically retrieving, accessing, managing and submitting information across your extended enterprise.",
+            "link": {
+                "text": "Explore ActiveBatch Architecture",
+                "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-2.jpg",
+            "title": "Connect to any tech stack",
+            "description": "Use the ActiveBatch web services API to integrate any application, database, or endpoint. As your tech stack evolves, the web services API empowers you with limitless integration possibilities.",
+            "link": {
+                "text": "Easily build integrations to any application",
+                "url": "https://activebatch.advsyscon.com/lp/activebatch"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
+            "title": "Automate IT operations and DevOps",
+            "description": "ActiveBatch is an all-in-one process management solution. Not only does it support the entire DevOps life cycle but it also drives efficiency across IT operations. By integrating ActiveBatch with system management tools, teams can automate routine tasks like server maintenance, backups and patch management. 
+            
+            ActiveBatch offers a single point of control to reduce costs and simplify IT processes, enabling your organization to become more agile and meet changing needs.",
+            "link": {
+                "text": "Reinvent Your IT Operations",
+                "url": "https://www.advsyscon.com/en-us/activebatch/operations-management/it-operations-management"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-4.jpg",
+            "title": "Streamline data automation tasks",
+            "description": "ActiveBatch simplifies data management and accelerates data integration with an extract, transform, load (ETL) automation tool that offers an intuitive user experience. 
+            
+            Schedule and automate ETL processes with drag-and-drop job steps and trigger workflows based on data availability or updates. Monitor and manage all your ETL jobs from a centralized console that offers a holistic dashboard view of your data integration processes.",
+            "link": {
+                "text": "Simplify ETL Automation",
+                "url": "https://www.advsyscon.com/en-us/activebatch/etl-automation"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-5.jpg",
+            "title": "Unify cloud and hybrid environments",
+            "description": "Manage and automate jobs across your ecosystem to consistently execute tasks. 
+            
+            ActiveBatch enables teams to integrate and automate workloads across multiple platforms in a simplified, controlled space, allowing you to manage workflows and resources across on-premises, cloud and hybrid.",
+            "link": {
+                "text": "Read More About Hybrid Cloud Management",
+                "url": "https://www.advsyscon.com/en-us/activebatch/hybrid-cloud-management"
+            }
+        }
+    ]) }}
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 ]">
+    {{ components.quote({
+        "quote": "ActiveBatch will not just automate tasks and workflows but also automate the management and provisioning of resources throughout the IT organization. ActiveBatch is expanding into an enterprise-wide IT automation tool.",
+        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-turkiye-finans.svg",
+        "link": {
+            "text": "Mucahit Yavuz, Release and Patch Manager, IT Operations at Türkiye Finans",
+            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/read/turkiye-finans"
+        }
+    }) }}
+</section>
+
+<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 py-lg-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2 class="[ text-balance ]">Benefits of integrating with ActiveBatch</h2>
+        <p>Enhance automation capabilities, streamline operations and integrate scheduling functionality into your broader IT and business workflows. </p>
+    </div>
+    {{ components.boxes([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+            "title": "Scalability and flexibility",
+            "description": "The Service Library and Super REST API adapter help you easily scale your automation efforts and adapt to new requirements with minimal changes."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg",
+            "title": "Enhanced efficiency",
+            "description": "When you automate repetitive tasks and allow systems to trigger jobs based on real-time data, your workflows require far less human intervention."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-3.svg",
+            "title": "Real-time monitoring",
+            "description": "Gain visibility into job execution and status and proactively respond to issues through API connections."
+        }
+    ]) }}
+</section>
+
+{%- set bannerArgs = {
+    'heading': 'Stay ready to automate anything',
+    'content': 'Build and automate workflows in half the time without the need for scripting, knowing you’ll have peace of mind from real-time insights, customizable alerting and more.',
+    'backgroundTheme': 'dark',
+    'backgroundStrips': ["transparent", "transparent"]
+} -%}
+{% include "cta.njk" %} 
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    {{ components.zigzag([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-6.jpg",
+            "title": "Effortless Microsoft integration",
+            "description": "Build end-to-end workflows across your IT environments with ActiveBatch&rsquo;s comprehensive Job Steps Library, integrations and web services API. Explore our Microsoft connections, including:
+            
+            <ul><li><a href=\"https://www.advsyscon.com/en-us/activebatch/extensions/sql-server-scheduling\">SQL Server</a></li><li><a href=\"https://www.advsyscon.com/en-us/activebatch/extensions/microsoft-azure\">Microsoft Azure</a></li><li><a href=\"https://www.advsyscon.com/en-us/activebatch/extensions/task-scheduler-automation\">Task Scheduler</a></li></ul>",
+            "link": {
+            "text": "See All Integrations",
+            "url": "https://www.advsyscon.com/en-us/activebatch/extensions"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-7.jpg",
+            "title": "Straightforward setup",
+            "description": "It&rsquo;s easy to get started using ActiveBatch&rsquo;s web services API. You only need to use three components:
+            
+            <ol><li><strong>API endpoint URL</strong>: The base URL where the ActiveBatch API is accessible</li><li><strong>API key or credentials</strong>: Authentication details are needed to access the API securely</li><li><strong>API documentation</strong>: The ActiveBatch<a href=\"https://support.advsyscon.com/\"> docs and support portal</a> with detailed documentation of available endpoints, parameters and usage examples</li></ol>",
+            "link": {
+            "text": "Get Started",
+            "url": "https://support.advsyscon.com/"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-8.jpg",
+            "title": "Versatile API endpoints",
+            "description": "Dynamically manage jobs without manual intervention with ActiveBatch&rsquo;s API endpoints to streamline workflow automation.
+            
+            <ul><li><code>/jobs/create</code>: Create a new job in ActiveBatch with specific parameters (scripts, schedules and dependencies).</li><li><code>/jobs/{jobId}/status</code>: Get the current status of a specific job.</li><li><code>/jobs/{jobId}/start</code>: Start a specified job manually or via a third-party trigger.</li><li><code>/jobs/{jobId}/stop</code>: Stop a running job.</li><li><code>/jobs/{jobId}/log</code>: Retrieve the execution logs for a specified job.</li><li><code>/schedules/create</code>: Create or update schedules for automated job execution.</li><li><code>/alerts/create</code>: Set up alerts and notifications based on job events.</li></ul>"
+        }
+    ]) }}
+</section>
+
+<section class="[ py-7 py-lg-8 py-xl-9 ][ bg-light ]">
+    {{ components.faqs("Business process automation FAQs", faqs) }}
+</section>
+
+<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 py-lg-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2 class="[ text-balance ]">Achieve end-to-end automation with ActiveBatch</h2>
+        <p>Explore more features that enable you to easily orchestrate workflows across diverse systems. </p>
+    </div>
+    {{ components.boxes([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg",
+            "title": "Job management",
+            "description": "Programmatically define and manage schedules for job execution, including complex scheduling patterns like time-based, event-based and conditional triggers."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-5.svg",
+            "title": "Monitoring and control",
+            "description": "Start, stop and restart jobs based on predefined conditions or external triggers easily with API endpoints."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg",
+            "title": "Event-driven triggers",
+            "description": "Eliminate manual tasks and intervention for business and IT workflows to reduce delays and meet or exceed service-level agreements (SLAs)."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg",
+            "title": "Integration with third-party systems",
+            "description": "Connect with ERP systems, cloud services, databases and other tools to automate cross-platform workflows."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg",
+            "title": "Workflow automation",
+            "description": "Build and automate reliable end-to-end workflows in half the time with advanced workflow development and management capabilities."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+            "title": "Security and access control",
+            "description": "Manage user permissions for API access with role-based access control (RBAC)."
+        }
+    ]) }}
+    <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
+        Get a demo
+        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+        </svg>
+    </a>
+</section>
+
+{% endblock %}

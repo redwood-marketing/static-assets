@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta name="robots" content="noindex">
-<title>Data Pipeline Management from ActiveBatch</title>
-<meta name="description" content="Learn more about how to ensure data quality and scalability with an automation-first approach to data pipeline management. Discover tools and techniques for efficient data processing." />
+<title>Web Services API for ActiveBatch Job Scheduler</title>
+<meta name="description" content="ActiveBatch Web Services API provides developers a direct approach to invoke ActiveBatch methods to interact with non-ActiveBatch programs and processes." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="content-style-type" content="text/css" />
@@ -17,54 +17,51 @@
         
                 {
                     "@type": "Question",
-                    "name": "What is data management pipeline?",
+                    "name": "What is a job scheduler API?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "A data management pipeline is the systematic movement, transformation and storage of datasets from various sources to a destination where it can be analyzed and utilized. This pipeline ensures that data flows efficiently and accurately through different stages, including extraction from source systems, transformation to meet business requirements and loading into a target system like a data warehouse, data lake or analytical tool.
+                        "text": "A job scheduler API is a programming interface that allows developers to automate and control the scheduling of jobs within a software environment. This type of API enables the creation, management and deletion of jobs. Through endpoints exposed by the API, users can specify job details such as jobname, runtime and the specific automation schema in the request body. Functions typically include running jobs at predetermined times or in response to specified events, managing job retries and overseeing job execution statuses.
 
-The primary goal of a data management pipeline is to ensure data integrity, quality and accessibility while minimizing latency to enable organizations to make data-driven decisions and perform advanced data analytics.
+Job scheduler APIs are essential in environments like Google Cloud, where managing and scaling numerous tasks efficiently is crucial.
 
-Data pipelines can handle both structured and unstructured data and can be implemented across all types of technologies, including cloud-based platforms like AWS or open-source tools.
-
-Discover how to unlock speed, efficiency and visibility with &lt;a href=&quot;https://www.advsyscon.com/blog/data-warehouse-automation/&quot;&gt;data warehouse automation&lt;/a&gt;."
+Find the right &lt;a href=&quot;https://www.advsyscon.com/blog/process-automation-tools/&quot;&gt;process automation tool&lt;/a&gt; for IT."
                     }
                 },
             
                 {
                     "@type": "Question",
-                    "name": "What are the main 3 stages in a data pipeline?",
+                    "name": "What is an API scheduler?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The three main stages in a data pipeline are extraction, transformation and loading.
+                        "text": "An API scheduler refers to a tool or service that organizes and controls the timing and order of API calls within software applications or between services. It helps to efficiently manage the execution of multiple API requests by scheduling them based on predetermined conditions or dynamic requirements. This tool is especially useful for handling dependencies among tasks and making sure API calls occur at the right moment to maintain system integrity and performance.
 
-&lt;ol&gt; &lt;li&gt;&lt;strong&gt;Extraction:&lt;/strong&gt; This stage involves retrieving raw data from source systems, which may include databases, APIs, flat files and real-time data streams. The extraction process needs to be robust to handle different data formats and structures.&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Transformation:&lt;/strong&gt; During the data transformation stage, the extracted data is cleaned, formatted and transformed to meet specific business needs. To transform is to optimize &amp;mdash; to check for duplicates and engage in data normalization, aggregation, filtering, enrichment and validation. Schema transformations and dependency management are crucial at this stage, and data scientists often play a key role in defining transformation rules with languages such as Python.&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Loading:&lt;/strong&gt; The final stage is loading the transformed data into a target data repository. Popular destinations include cloud-based solutions like Snowflake. The data will then be organized and stored in a way that makes it easy to access for querying and data analysis.&lt;/li&gt; &lt;/ol&gt;
-Learn all about &lt;a href=&quot;https://www.advsyscon.com/blog/etl-automation-process/&quot;&gt; extract, transform, load (ETL) automation and testing&lt;/a&gt; and how to streamline data management."
+Features of an API scheduler include webhook and callback setup, permissions handling and authentication with API keys to secure communication through headers.
+
+Discover how to &lt;a href=&quot;https://www.advsyscon.com/blog/rest-api-adapter/&quot;&gt;rapidly create APIs&lt;/a&gt; for reliable end-to-end processes without custom scripting so your team can achieve more faster."
                     }
                 },
             
                 {
                     "@type": "Question",
-                    "name": "What is data pipeline and ETL?",
+                    "name": "What is the API specification of a task scheduler?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "A data pipeline is a series of processes and tools that automate the movement and transformation of data from various sources to a destination where it can be analyzed and used. Data pipelines can handle different data types, such as batch processing, stream processing and data from IoT devices. They ensure that data is collected, processed and stored efficiently in data storage systems like databases or data lakes.
+                        "text": "The API specification of a task scheduler outlines the technical details and protocol for interacting with the task scheduling service. This specification includes definitions of available endpoints, supported API calls, data structures and the necessary parameters for each function, such as job ID, jobname and runtime, all formatted in JSON. It also describes how to initiate job execution, manage job states, delete jobs and automate retries through POST requests.
 
-ETL (Extract, Transform, Load) is a specific type of data pipeline focused on extracting data from different sources, transforming it into a suitable format and loading it into a final data storage system. ETL processes are crucial for integrating data from multiple sources, ensuring data quality and preparing it for analysis. Technologies like SQL, Amazon data services and tools for handling streaming data pipelines and batch processing often play critical roles in ETL processes.
-
-Learn more about&lt;a href=&quot;https://www.advsyscon.com/blog/automation-data-warehousing/&quot;&gt; data warehouse automation (DWA)&lt;/a&gt; and how it includes ETL processes, data modeling, data quality management and more."
+The specification ensures that developers understand authentication requirements, such as API keys and the necessary permissions for making API requests. It might also detail the use of webhooks or callbacks for event-driven job management. Developers can refer to the API reference for detailed documentation and may utilize an SDK to simplify interactions with the API."
                     }
                 },
             
                 {
                     "@type": "Question",
-                    "name": "What is the main purpose of a data pipeline?",
+                    "name": "What is the job scheduler process?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The main purpose of a data pipeline is to automate the process of collecting, processing and transporting data from various sources to a destination. It makes data available, accurate and timely for use in business intelligence, reporting and real-time analytics.
+                        "text": "The job scheduler process involves a series of steps and operations that a job scheduler undertakes to manage and execute scheduled jobs within a system. This process begins with the definition of jobs through an API call where specific details like jobname, runtime and automation schema are specified. The scheduler then stores these configurations and monitors the system clock or listens for defined triggers to start job execution. Throughout the job lifecycle, the scheduler manages tasks such as retry attempts on failure, updating job statuses and invoking callbacks or webhooks as necessary.
 
-Data pipelines aim to ensure data quality, improve efficiency, enhance scalability, enable real-time processing and facilitate data integration. These benefits streamline an end-to-end data flow to generate high-quality data that supports informed decision-making. Well-structured pipelines support strong data science initiatives.
+This process is crucial for maintaining the efficiency and reliability of automated tasks.
 
-See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&quot;&gt; big data orchestration&lt;/a&gt; can simplify and streamline data from disparate sources."
+Learn about &lt;a href=&quot;https://www.advsyscon.com/blog/job-scheduling-algorithms/&quot;&gt;job scheduling algorithms&lt;/a&gt; for optimizing task execution."
                     }
                 }
             
@@ -464,10 +461,8 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
             style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--bs-dark)"
         >
             
-                <span class="[ py-{5} px-1 mb-2 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .7em">Data pipeline management</span>
-            
-            <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">Level up your data pipeline management strategy</h1>
-            <div class="[ lead text-balance fw-normal ][ mt-2 mb-4 ]"><p>Ensure data quality and scalability with an automation-first approach to data pipeline management.</p></div><a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
+            <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">Web Services API</h1>
+            <div class="[ lead text-balance fw-normal ][ mt-2 mb-4 ]"><p>Programmatically retrieve, access, manage and submit information across your enterprise using ActiveBatch by Redwood’s sophisticated scheduler API.</p></div><a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
                 Get a Demo
                 <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
@@ -483,103 +478,7 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
     </div>
 </section>
 
-<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pt-7 pt-lg-8 ]">
-    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
-        <h2 class="[ text-balance ]">Process large volumes of data with ease</h2>
-        <p>Free up time for analysis and decision-making by automating data integration, transformation, ETL and other key data processing tasks.</p>
-    </div>
-    
-<div class="[ grid ]" style="grid-auto-rows: 1fr">
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">Low-code/no-code development</h3>
-            <p>Empower technical and non-technical users to build workflows to streamline data pipeline processes. Pre-built job steps enable automation development with minimal coding.</p>
-            
-        </div>
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">Universal connectivity</h3>
-            <p>With its <a href="https://www.advsyscon.com/en-us/resource/super-rest-api-adapter">Super REST API Adapter,</a> ActiveBatch by Redwood offers true extensibility &mdash; connect to any app, data source or critical system for seamless data flow through any type of data pipeline.</p>
-            
-        </div>
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-3.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">Flexible time and event-based triggers</h3>
-            <p>Trigger jobs based on specific events, such as file receipt or a database update, or run them on a predetermined schedule to keep your data accurate and readily available.</p>
-            
-        </div>
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-hands.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">Dashboard-driven visibility</h3>
-            <p>Keep an eye on historical and real-time job performance and workload analytics using consolidated visualizations and set up custom alerts for specified conditions.</p>
-            
-        </div>
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-nodes.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">Endless scalability</h3>
-            <p>Because of its ease of use and extensibility, ActiveBatch can handle the growing complexity of data pipelines, data ingestion and <a href="https://www.advsyscon.com/en-us/activebatch/orchestration">orchestration</a> as your business expands and your use cases evolve.</p>
-            
-        </div>
-    
-        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
-            <img 
-                class="[ mt-n3 ]"
-                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg" 
-                alt="" 
-                width="60" 
-                height="60"
-                loading="lazy"
-            >
-            <h3 class="[ h5 fw-medium ]">First-rate security</h3>
-            <p>Protect your business, users and data and stay compliant with role-based access control, gold-standard encryption (AES 256-bit), auditing and logging, reports and a Health Service.</p>
-            
-        </div>
-    
-</div>
-
-</section>
-
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-7 ]">
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 pt-xl-9 ]">
     
 <ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
     
@@ -596,13 +495,13 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">Access advanced workflow management tools</h3>
-                    <div><p>Make ActiveBatch an essential part of your data pipeline architecture. Build thorough, reliable workflows with easy-to-use job templates and references, plus job chaining and branching features.<br />
-<br />
-            Rest easy with built-in error handling and recovery, and compare job scheduling environments to handle exceptions, approve changes and update end-to-end workflows without disruption.</p></div>
+                    <h3 class="[ h2 text-balance ]">Integrate quickly with a sophisticated web services API</h3>
+                    <div><p>Part of the core ActiveBatch license, ActiveBatch’s web services application programming interface (API) provides developers with an industry-standard and direct approach to programmatically invoke ActiveBatch methods to easily interact with non-ActiveBatch programs and processes. The web services API supports SOAP 1.1–1.2 and REST protocols. <br />
+            <br />
+            ActiveBatch is a comprehensive and powerful approach to programmatically retrieving, accessing, managing and submitting information across your extended enterprise.</p></div>
                     
-                        <a href="https://www.advsyscon.com/en-us/activebatch/workflow-automation" class="[ btn btn-primary ]">
-                            Workflow Automation
+                        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture" class="[ btn btn-primary ]">
+                            Explore ActiveBatch Architecture
                             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
                             </svg>
@@ -625,13 +524,11 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">Adapt effortlessly to resource demands</h3>
-                    <div><p>Unlike many <a href="https://www.advsyscon.com/en-us/activebatch/workload-automation">workload automation solutions</a> on the market, ActiveBatch offers dynamic resource allocation to keep your data pipeline activity cost-effective. <br />
-            <br />
-            ActiveBatch Smart Queue spins up new virtual machines when your pipeline capacity is stretched by new data and spins down excess machines to protect your budget. Heuristic Queue Allocation determines patterns in your job history and sets up the optimal schedule across your on-premises and cloud environments.</p></div>
+                    <h3 class="[ h2 text-balance ]">Connect to any tech stack</h3>
+                    <div><p>Use the ActiveBatch web services API to integrate any application, database, or endpoint. As your tech stack evolves, the web services API empowers you with limitless integration possibilities.</p></div>
                     
-                        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization" class="[ btn btn-primary ]">
-                            Digital Infrastructure Automation
+                        <a href="https://activebatch.advsyscon.com/lp/activebatch" class="[ btn btn-primary ]">
+                            Easily build integrations to any application
                             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
                             </svg>
@@ -654,11 +551,13 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">Drive efficient data pipelines in any environment</h3>
-                    <div><p>ActiveBatch is cloud-agnostic — it can be deployed on-premises, in the cloud or in a hybrid environment, so your data engineers get the ultimate flexibility to optimize data management under any cloud strategy.</p></div>
+                    <h3 class="[ h2 text-balance ]">Automate IT operations and DevOps</h3>
+                    <div><p>ActiveBatch is an all-in-one process management solution. Not only does it support the entire DevOps life cycle but it also drives efficiency across IT operations. By integrating ActiveBatch with system management tools, teams can automate routine tasks like server maintenance, backups and patch management. <br />
+            <br />
+            ActiveBatch offers a single point of control to reduce costs and simplify IT processes, enabling your organization to become more agile and meet changing needs.</p></div>
                     
-                        <a href="https://advsyscon.com/en-us/activebatch/etl-automation/data-management/" class="[ btn btn-primary ]">
-                            Data Management Orchestration
+                        <a href="https://www.advsyscon.com/en-us/activebatch/operations-management/it-operations-management" class="[ btn btn-primary ]">
+                            Reinvent Your IT Operations
                             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
                             </svg>
@@ -681,13 +580,42 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">Work confidently knowing you’re supported</h3>
-                    <div><p>Drive success with the help of an active user community, ample educational resources such as Redwood University for ActiveBatch and custom training packages from a dedicated Customer Success team.<br />
-<br />
-            You get 24/7/365 support for any technical issues, plus the opportunity to provide product feedback any time.</p></div>
+                    <h3 class="[ h2 text-balance ]">Streamline data automation tasks</h3>
+                    <div><p>ActiveBatch simplifies data management and accelerates data integration with an extract, transform, load (ETL) automation tool that offers an intuitive user experience. <br />
+            <br />
+            Schedule and automate ETL processes with drag-and-drop job steps and trigger workflows based on data availability or updates. Monitor and manage all your ETL jobs from a centralized console that offers a holistic dashboard view of your data integration processes.</p></div>
                     
-                        <a href="https://www.advsyscon.com/en-us/activebatch" class="[ btn btn-primary ]">
-                            ActiveBatch Overview
+                        <a href="https://www.advsyscon.com/en-us/activebatch/etl-automation" class="[ btn btn-primary ]">
+                            Simplify ETL Automation
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-5.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Unify cloud and hybrid environments</h3>
+                    <div><p>Manage and automate jobs across your ecosystem to consistently execute tasks. <br />
+            <br />
+            ActiveBatch enables teams to integrate and automate workloads across multiple platforms in a simplified, controlled space, allowing you to manage workflows and resources across on-premises, cloud and hybrid.</p></div>
+                    
+                        <a href="https://www.advsyscon.com/en-us/activebatch/hybrid-cloud-management" class="[ btn btn-primary ]">
+                            Read More About Hybrid Cloud Management
                             <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
                             </svg>
@@ -705,13 +633,13 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
     
 <blockquote class="[ w-100 ][ position-relative ][ text-center ][ bg-dark @hover:bg-primary ][ rounded-4 ][ m-0 p-4 p-lg-5 p-xl-7 ][ d-flex justify-content-around align-items-center gap-6 ]">
     <div class="[ text-white ][ d-grid gap-5 ]">
-        <p class="[ d-block ][ h3 fw-normal lh-base ]">"We selected ActiveBatch for its rich functionality, its cross-platform capabilities and integration points. The value ActiveBatch offered made the investment an easy one."</p>
+        <p class="[ d-block ][ h3 fw-normal lh-base ]">"ActiveBatch will not just automate tasks and workflows but also automate the management and provisioning of resources throughout the IT organization. ActiveBatch is expanding into an enterprise-wide IT automation tool."</p>
         <cite class="[ fst-normal fw-light h5 ][ d-grid gap-5 ]">
             
             <div>
-                <img class="" aria-hidden="true" style="max-height: 4rem; width: 15rem; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-xtra.svg" alt="">
-                <a href="https://www.advsyscon.com/en-us/activebatch/case-studies/xtra-lease" class="[ stretched-link ]">
-                    <span class="[ sr-only ]">Read the case study</span> 
+                <img class="" aria-hidden="true" style="max-height: 4rem; width: 15rem; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-turkiye-finans.svg" alt="">
+                <a href="https://www.advsyscon.com/en-us/activebatch/case-studies/read/turkiye-finans" class="[ stretched-link ]">
+                    <span class="[ sr-only ]">Mucahit Yavuz, Release and Patch Manager, IT Operations at Türkiye Finans</span> 
                 </a>
             </div>
         </cite>
@@ -720,40 +648,57 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
 
 </section>
 
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 pb-lg-9 ]">
+<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 py-lg-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2 class="[ text-balance ]">Benefits of integrating with ActiveBatch</h2>
+        <p>Enhance automation capabilities, streamline operations and integrate scheduling functionality into your broader IT and business workflows. </p>
+    </div>
     
-<ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
+<div class="[ grid ]" style="grid-auto-rows: 1fr">
     
-        <li class="[ g-col-12 ][ text-start ]">
-            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
-                <figure class="[ m-0 ][ g-col-2 g-col-md-1  ]">
-                    <img 
-                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
-                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/RunMyJobs-2.jpg" 
-                        alt="" 
-                        width="400" 
-                        height="auto"
-                        loading="lazy"
-                    >
-                </figure>
-                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
-                    <h3 class="[ h2 text-balance ]">Create workflows your way with unlimited integrations</h3>
-                    <div><p>Integrate the tools you need to manage your data pipelines how you prefer. Stick with custom scripting or use ActiveBatch&rsquo;s <a href="https://www.advsyscon.com/en-us/activebatch/extensions">library of pre-built connectors</a>, including <a href="https://www.advsyscon.com/en-us/activebatch/extensions/hadoop-ecosystem">Hadoop</a> and <a href="https://www.advsyscon.com/en-us/activebatch/extensions/teradata">Teradata</a> extensions for handling big data.<br />
-            <br />
-            To simplify how your team creates cross-platform processes, take advantage of the Super REST API adapter to build reusable API <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library">job steps</a> and maintain end-to-end visibility.</p></div>
-                    
-                        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library" class="[ btn btn-primary ]">
-                            Job Steps Library overview
-                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
-                            </svg>
-                        </a>
-                    
-                </div>
-            </article>
-        </li>
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Scalability and flexibility</h3>
+            <p>The Service Library and Super REST API adapter help you easily scale your automation efforts and adapt to new requirements with minimal changes.</p>
+            
+        </div>
     
-</ul>
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Enhanced efficiency</h3>
+            <p>When you automate repetitive tasks and allow systems to trigger jobs based on real-time data, your workflows require far less human intervention.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-3.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Real-time monitoring</h3>
+            <p>Gain visibility into job execution and status and proactively respond to issues through API connections.</p>
+            
+        </div>
+    
+</div>
 
 </section><aside 
     class="[ px-2 ][ text-center text-md-start ][ d-flex align-items-center flex-column gap-6 ][ position-relative ]" 
@@ -761,9 +706,9 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
 >
     <div class="[ container-fluid container-xl ][ d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 ][ bg-dark text-white ][ overflow-hidden ][ rounded-4 ][ p-4 p-lg-6 px-lg-8 ][ position-relative z-6 ]">
         <div class="[ d-grid gap-2 ]" style="max-width: 65ch">
-            <h2>Automate data pipelines across your entire enterprise</h2>
+            <h2>Stay ready to automate anything</h2>
             
-                <p class="[ m-0 ]">ActiveBatch meshes with your infrastructure strategy and business-critical systems to drive efficient data movement and boost productivity.</p>
+                <p class="[ m-0 ]">Build and automate workflows in half the time without the need for scripting, knowing you’ll have peace of mind from real-time insights, customizable alerting and more.</p>
             
         </div>
         <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-light ][ position-relative z-1 ]">
@@ -780,86 +725,87 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
     
 </aside> 
 
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center gap-6 ][ pt-6 pt-xl-8 pt-xxl-9 ]">
-    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
-        <h2>Explore data-focused ActiveBatch use cases</h2>
-    </div>
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
     
-<ul class="[ list-unstyled ][ w-100 ][ grid ]">
+<ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
     
-        <li class="[ g-col-12 g-col-lg-4 ]]">
-            <article class="[ h-100 [ border border-light @hover:border-dark ][ bg-light ][ p-4 p-md-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
-                <svg viewBox="0 0 600.1 102.3" height="102.3" width="600.1" style="height: 2rem; width: auto">
-                <path fill="var(--bs-dark)" d="M594.9,25.7c2.9,0,5.2,2.3,5.2,5.2s-2.3,5.2-5.2,5.2-5.2-2.3-5.2-5.2,2.3-5.2,5.2-5.2M594.9,26.3c2.6,0,4.6,2.1,4.6,4.6s-2.1,4.6-4.6,4.6-4.6-2.1-4.6-4.6,2-4.6,4.6-4.6M595,30.3c.5,0,.9-.1,1.1-.2.2-.2.3-.4.3-.8s-.1-.6-.3-.8c-.2-.2-.6-.2-1.2-.2h-1.3v2h1.4ZM592.7,34.2v-6.8h2.4c.8,0,1.3.2,1.7.5s.6.7.6,1.3c0,.4-.1.8-.3,1-.2.3-.5.5-.9.6.3.1.5.2.7.3.1.1.2.4.3.7,0,.1.1.4.1,1,.1.5.2,1,.3,1.4h-1c-.1-.4-.2-.8-.2-1.4-.1-.5-.1-.9-.2-1-.1-.3-.2-.4-.4-.5s-.5-.2-.9-.2h-1.1v3.1h-1.1ZM548.8,27.5h36.7c-1.4,3.8-2.8,7.6-4.2,11.4h-18.3c-2.2,6-4.4,12.1-6.6,18.1h17.1c-1.4,3.8-2.8,7.6-4.1,11.4h-17.1c-1.3,3.6-2.5,7.2-3.9,10.7-1.3,3.6-2.6,7.1-3.9,10.7h19.9c-1.3,3.8-2.7,7.5-4.1,11.3h-38.2c2.3-6.1,4.5-12.2,6.7-18.3,2.2-6.1,4.4-12.3,6.6-18.4,2.2-6.1,4.5-12.3,6.7-18.4,2.2-6.2,4.4-12.4,6.7-18.5M537,47.9c-.3,1-.7,1.9-1.1,2.8h-17.7c.2-.5.3-1.1.5-1.6,1.7-4.7,2.4-7.8,2-9.2-.4-1.4-1.7-2.2-3.9-2.2s-4.1.8-5.5,2.2c-1.4,1.4-3,4.5-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.2-5.4,15.2-1.7,4.6-2.4,7.7-2,9.2s1.8,2.2,4,2.2,4-.7,5.3-2.1c1.4-1.4,2.8-4.1,4.2-8,.5-1.4,1-2.8,1.5-4.1h17.7c-.5,1.4-1,2.7-1.4,4-2.9,8-6.7,13.6-11.3,16.8-4.6,3.1-11.1,4.7-19.7,4.7-9.3,0-15.2-1.8-17.5-5.5-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.7,3.2-12.7c1.4-3.9,2.8-7.9,4.3-11.8,1.4-3.9,2.8-7.9,4.3-11.9,1.8-5,3.8-9.2,5.9-12.6,2.1-3.4,4.5-6.1,7-7.9,4.9-3.7,12.2-5.6,21.5-5.6,8.5,0,14,1.6,16.3,4.8,2.4,3.2,2.1,8.8-.8,16.8M447.2,27.5h22.2c8.7,0,14.6,1.4,17.3,4,2.8,2.7,3.2,7.1,1,13.1-.4,1-.8,2.1-1.1,3.1-1.9,5.3-4.7,9.2-8.3,11.8-3.7,2.6-8.8,4.2-15.4,5,6.4.5,10.4,2.1,12,4.7,1.6,2.7,1.3,7.3-1.1,13.9-2.2,6-4.3,12-6.5,18h-18.3c1.3-3.7,2.7-7.5,4-11.3,1.3-3.7,2.7-7.5,4.1-11.3,1.3-3.7,1.6-6,.7-7s-3.1-1.5-6.8-1.5h-2c-1.9,5.2-3.7,10.4-5.6,15.5-1.9,5.2-3.7,10.3-5.6,15.5h-17.2c2.2-6.1,4.4-12.2,6.6-18.3,2.2-6.1,4.4-12.2,6.6-18.4,2.2-6.1,4.4-12.3,6.6-18.4,2.3-6.1,4.5-12.3,6.8-18.4M460.4,38.5c-1.3,3.5-2.5,6.9-3.7,10.4-1.3,3.5-2.5,6.9-3.7,10.4h1.7c3.6,0,6.2-.6,8.1-1.8,1.8-1.2,3.3-3.4,4.4-6.6.5-1.3.9-2.6,1.4-3.9,1.1-3.2,1.3-5.4.3-6.6-.9-1.2-3.2-1.8-6.8-1.8h-1.7v-.1ZM394.7,27.5h18.3c-1.5,4.4-3.1,8.7-4.7,13.1-1.6,4.3-3.1,8.7-4.6,13-1.6,4.3-3.1,8.7-4.7,13-1.5,4.3-3.1,8.7-4.7,13-1.7,4.7-2.3,7.7-1.9,9.1s1.7,2.1,4,2.1,4.1-.7,5.5-2.1c1.3-1.4,2.9-4.5,4.6-9.2,1.6-4.3,3.1-8.7,4.6-13s3.1-8.7,4.7-13c1.5-4.3,3.1-8.7,4.7-13s3.1-8.7,4.7-13.1h18.4c-1.4,4.1-2.9,8.2-4.4,12.2-1.4,4.1-2.9,8.1-4.4,12.2s-2.9,8.1-4.4,12.2-2.9,8.1-4.4,12.2c-1.8,5-3.9,9.2-5.9,12.6-2.1,3.4-4.4,6.1-6.8,7.9-4.9,3.8-11.9,5.6-21.1,5.6s-14.8-1.8-17.1-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.6,3.2-12.7c1.4-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.1M382.6,52.5c-1.4,4-2.8,7.9-4.2,11.9-1.4,3.9-2.8,7.9-4.2,11.8-1.8,5-3.8,9.2-5.9,12.6s-4.3,6-6.9,7.9c-5,3.7-11.9,5.6-21.3,5.6s-15.2-1.8-17.5-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.3-7.7,3.1-12.7c1.4-3.9,2.8-7.9,4.2-11.8,1.4-3.9,2.8-7.9,4.2-11.9,1.8-5,3.7-9.2,5.8-12.6,2.1-3.4,4.4-6.1,6.9-7.9,5-3.8,12.1-5.6,21.4-5.6s15.2,1.9,17.4,5.6c1.2,1.9,1.6,4.5,1.2,7.9-.2,3.4-1.2,7.6-3,12.6M365.5,49.1c1.7-4.8,2.3-7.9,1.9-9.3s-1.9-2.1-4.4-2.1-4.4.7-5.9,2.2c-1.5,1.4-3,4.6-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.1-5.4,15.2-1.7,4.7-2.3,7.8-1.9,9.2.5,1.4,1.9,2.1,4.3,2.1s4.5-.7,5.9-2.2c1.5-1.4,3.1-4.5,4.7-9.1,1.8-5.1,3.6-10.1,5.5-15.2,2-5,3.7-10.1,5.5-15.2M336.6,23.6c-.8,2.5-1.6,5-2.3,7.5h-21c.9-2.9,1.8-5.9,2.7-8.8.8-2.6,1-4.5.5-5.6s-1.7-1.6-3.7-1.6-3.4.5-4.5,1.6-2.1,3-2.9,5.6c-.7,2.2-1.3,4.3-2,6.5-.8,2.5-.8,4.7-.1,6.7.7,1.9,2.5,4.3,5.3,6.8,2.3,2.1,4.6,4.2,6.9,6.3.4.3.9.8,1.7,1.5,3.4,3,5.3,5.7,6.2,8.1.6,1.8.8,3.9.7,6.1-.2,2.3-.9,5-1.8,8.2-.6,2-1.3,4-1.9,6-2.4,7.6-6.5,13.5-12.8,17.6-6.2,4.1-14,6.1-23.2,6.1s-15.9-1.9-18.8-5.7c-2.9-3.8-3-10.2-.2-19.1.8-2.4,1.5-4.9,2.2-7.3h21.8c-.9,2.8-1.7,5.6-2.6,8.4-.9,3-1.2,5.2-.6,6.5s2,1.9,4.2,1.9,4.1-.6,5.3-1.8,2.4-3.4,3.4-6.6c.4-1.2.8-2.6,1.2-3.8.8-2.8.9-5.1.3-7.2-.6-2-2.8-4.7-6.5-8-2.3-2.1-4.5-4.3-6.9-6.4-3.4-3-5.6-6.2-6.4-9.7-.7-3.4-.4-7.6,1-12.3.9-2.9,1.9-5.8,2.8-8.7,2.1-6.7,6.2-12.1,12.6-16.2,6.5-4.1,14-6.2,22.4-6.2s13.4,2,16.3,6c2.8,4,3.1,9.9.7,17.6M242.8,25.4h36.4c-1.4,3.8-2.7,7.6-4,11.4h-18.1c-2.1,6-4.3,12.1-6.4,18.1h16.7c-1.3,3.8-2.7,7.6-4,11.4h-16.8c-1.3,3.6-2.5,7.2-3.8,10.7-1.3,3.6-2.5,7.1-3.8,10.7h19.7c-1.4,3.8-2.7,7.5-4,11.3h-37.9c2.2-6.1,4.3-12.2,6.5-18.4,2.2-6.1,4.3-12.3,6.5-18.4s4.3-12.3,6.5-18.4c2.1-6.1,4.4-12.3,6.5-18.4M165.2,27.5h25.1c-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.6,13.2-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.5,13.2h.9c2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,7-13.2h24.7c-2.2,6.2-4.3,12.3-6.5,18.4s-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4h-15.2c1.8-5,3.5-10,5.3-15.1,1.8-5,3.5-10.1,5.3-15.1s3.5-10.1,5.3-15.1,3.6-10.1,5.4-15.1h-1.2c-2.7,5-5.4,10.1-8,15.1s-5.3,10.1-7.9,15.1c-2.6,5-5.3,10.1-7.9,15.1-2.6,5-5.3,10.1-7.9,15.1h-16.4c1-5,2-10,3-15.1,1-5,2-10.1,3-15.1s2-10.1,3-15.1,2-10.1,3-15.1h-1c-1.8,5-3.5,10.1-5.3,15.1s-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1h-14.3c2.1-6.1,4.3-12.2,6.4-18.3,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.3-6.2,4.5-12.4,6.6-18.5M141.9,27.5h18.3c-2.1,6.2-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.2-6.4,18.3h-18.4c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.2-6,4.4-12.2,6.5-18.3M90.6,27.5h22.2c8.7,0,14.5,1.3,17.4,4,2.8,2.6,3.3,7,1.2,13.1-.4,1-.7,2.1-1.1,3.1-1.8,5.3-4.7,9.2-8.2,11.8-3.6,2.6-8.8,4.2-15.3,5,6.4.5,10.4,2.1,12.1,4.7,1.7,2.7,1.4,7.3-.9,13.9-2.1,6-4.2,12-6.3,18h-18.3c1.3-3.8,2.6-7.5,3.9-11.3s2.6-7.5,4-11.3c1.3-3.7,1.5-6,.6-7s-3.2-1.5-6.9-1.5h-2c-1.8,5.2-3.6,10.4-5.4,15.5-1.8,5.2-3.6,10.3-5.4,15.5h-17.2c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4s4.3-12.3,6.4-18.4c2.1-6,4.3-12.2,6.4-18.3M103.9,38.5c-1.2,3.5-2.4,6.9-3.6,10.4-1.2,3.4-2.4,6.9-3.6,10.3h1.6c3.6,0,6.3-.6,8-1.8,1.8-1.2,3.3-3.4,4.4-6.6.4-1.3.9-2.6,1.4-3.9,1.1-3.2,1.1-5.4.2-6.6-.9-1.2-3.2-1.8-6.7-1.8h-1.7ZM33.1,4.6h24.7c12.7,0,21,2,24.9,6.1,3.8,4,4.1,10.9.8,20.5-.7,2.1-1.5,4.2-2.2,6.3-3.1,9.1-7.9,15.8-14.3,20-6.4,4.3-14.9,6.4-25.4,6.4h-6.7c-2.2,6.3-4.3,12.6-6.5,19-2.1,6.3-4.2,12.6-6.4,18.9H0c2.8-8.1,5.5-16.2,8.3-24.3,2.8-8.1,5.5-16.2,8.2-24.3,2.7-8.1,5.5-16.2,8.2-24.3,2.8-8.1,5.6-16.2,8.4-24.3M50.2,19.1c-1.7,5.1-3.5,10.2-5.2,15.2-1.7,5.1-3.4,10.2-5.1,15.2h2c4.3,0,7.6-.9,9.9-2.7,2.3-1.8,4.4-5,5.9-9.7.6-1.9,1.3-3.9,2-5.8,1.6-4.6,1.8-7.8.7-9.6-1.1-1.8-3.8-2.7-8-2.7h-2.2v.1Z"/>
-            </svg>
-                <h3 class="[ h5 ][ sr-only ]">PrimeSource</h3>
-                <p>Building material distributor reduces ETL processing time by 89.5%</p>
-                <a 
-                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
-                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/primesource"
-                    target="_blank"
-                >
-                    Read PrimeSource’s story
-                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
-                    </svg>
-
-                </a>
-                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
-                    <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-warehouse.jpeg" class="[ w-100 h-100 ][ object-fit-cover ]" loading="lazy" width="400" height="300">
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-6.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                    >
                 </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Effortless Microsoft integration</h3>
+                    <div><p>Build end-to-end workflows across your IT environments with ActiveBatch&rsquo;s comprehensive Job Steps Library, integrations and web services API. Explore our Microsoft connections, including:<br />
+            <br />
+            <ul><li><a href="https://www.advsyscon.com/en-us/activebatch/extensions/sql-server-scheduling">SQL Server</a></li><li><a href="https://www.advsyscon.com/en-us/activebatch/extensions/microsoft-azure">Microsoft Azure</a></li><li><a href="https://www.advsyscon.com/en-us/activebatch/extensions/task-scheduler-automation">Task Scheduler</a></li></ul></p></div>
+                    
+                        <a href="https://www.advsyscon.com/en-us/activebatch/extensions" class="[ btn btn-primary ]">
+                            See All Integrations
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
             </article>
         </li>
     
-        <li class="[ g-col-12 g-col-lg-4 ]]">
-            <article class="[ h-100 [ border border-light @hover:border-dark ][ bg-light ][ p-4 p-md-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
-                <?xml version="1.0" encoding="UTF-8"?>
-            <svg viewBox="0 0 189.65 37.66" style="height: 2rem; width: auto">
-              <path fill="var(--bs-dark)" d="M37.21,27.23c-1.4,1.8-3.51,3.6-6.4,5.57-9.39,6.47-21.49,6.47-26.49,0-2.02-2.7-2.72-5.93-2.19-9.35.88-5.57,5.09-11.15,11.84-15.73,2.1-1.44,3.77-1.44,4.74-1.17,1.23.36,1.93,1.17,2.19,1.71.44.9,1.58,3.15-2.72,6.65-8.68,6.83-11.67,13.04-8.51,17.44,3.25,4.5,13.86,4.32,20.96-.45,2.19-1.53,4.12-2.79,5.96-5.03.17-.27.44-.27.53-.18.18.18.26.45.09.54ZM.1,10.42c1.4-1.8,3.51-3.6,6.32-5.57,9.47-6.47,21.58-6.47,26.58.09,2.02,2.61,2.72,5.84,2.19,9.35-.88,5.48-5.09,11.06-11.84,15.64-2.11,1.44-3.77,1.44-4.74,1.17-1.23-.27-1.93-1.17-2.19-1.62-.53-.99-1.58-3.24,2.72-6.65,8.68-6.92,11.67-13.13,8.51-17.44-3.25-4.59-13.86-4.32-20.96.45-2.19,1.44-4.12,2.79-5.97,4.94-.26.27-.44.27-.61.18-.09-.18-.18-.36,0-.54ZM55.1,16.71l-4.21-8.81h6.14l1.75,4.94,3.6-4.94h6.75l-7.63,8.81,4.39,9.98h-6.32l-2.02-5.3-4.21,5.3h-6.93l8.68-9.98ZM75.45,18.24c.09-.72-.09-1.08-.35-1.35-.26-.27-.7-.45-1.23-.45-2.28,0-2.81,2.97-2.81,4.32,0,1.26.26,2.52,1.75,2.52,1.32,0,1.93-1.26,2.19-2.07h4.91c-.88,3.96-3.33,5.84-7.19,5.84-5.61,0-6.75-3.69-6.75-6.29,0-4.59,2.89-8.09,7.98-8.09,3.68,0,6.49,1.71,6.4,5.57h-4.91ZM86.32,18.33c.44-1.44,1.32-2.25,2.63-2.25s1.93.81,1.93,1.8v.45h-4.56ZM90.01,22.73c-.26.45-.97.99-2.02.99-1.58,0-2.11-1.26-2.11-2.7h9.47c.26-.81.26-1.62.26-2.34,0-4.32-3.51-6.02-6.49-6.02-3.33,0-7.98,2.07-7.98,8.36,0,3.33,1.93,6.02,6.67,6.02,5.7,0,6.67-3.42,7.02-4.32h-4.82ZM99.75,7.9h5.09l-3.77,18.79h-5.09l3.77-18.79ZM111.24,7.9h12.63l-.44,2.16h-10.17l-1.23,5.93h9.47l-.44,2.07h-9.47l-1.31,6.47h10.26l-.44,2.16h-12.72l3.86-18.79ZM125.01,13.12h2.11l-.44,2.07h.09c1.05-1.53,2.89-2.43,4.65-2.43,2.54,0,3.77,1.17,3.77,3.51,0,.63-.18,1.62-.44,2.7l-1.58,7.73h-2.19l1.67-7.91c.09-.54.35-1.71.35-2.16,0-1.26-1.05-1.89-2.37-1.89-1.14,0-2.46.72-3.25,1.62-.79.63-1.14,1.71-1.49,2.79l-1.49,7.55h-2.19l2.81-13.58ZM138.6,18.6c.7-2.16,2.02-3.87,4.65-3.87,2.37,0,3.24,1.98,3.07,3.87h-7.72ZM148.25,20.58c.09-.36.26-1.08.26-1.8,0-3.78-1.75-6.02-5.61-6.02s-6.84,3.6-6.84,8.81c0,2.34,1.23,5.39,5.61,5.39,2.9,0,5.26-1.53,5.97-4.49h-2.11c-.61,1.62-1.93,2.52-3.86,2.52-1.75,0-3.42-1.17-3.42-3.24,0-.36,0-.81.09-1.17h9.91ZM151.67,13.12h2.1l-.7,2.88h.09c1.05-1.89,2.54-3.24,4.82-3.24h.79l-.53,2.43h-.7c-.53,0-.79,0-1.23.09-1.23.36-2.19,1.17-2.89,2.25-.53.81-.88,2.16-1.05,3.15l-1.23,6.02h-2.19l2.72-13.58ZM171.58,32.18l3.07-5.48-2.37-13.58h2.37l1.49,10.79h.09l5.53-10.79h2.46l-10.53,19.06h-2.1ZM159.74,21.12c0-2.43,1.67-6.38,4.74-6.38,2.28,0,3.42,1.44,3.42,3.6,0,2.7-1.58,6.47-4.82,6.47-2.19,0-3.33-1.71-3.33-3.69ZM168.86,24.71l2.37-11.6h-2.11l-.35,2.52h-.09v-.09c-.35-1.71-2.28-2.79-4.21-2.79-4.3,0-6.84,4.4-6.84,8.36,0,3.24,1.67,5.66,4.91,5.66,1.67,0,3.24-.63,4.12-2.07h.09c-1.23,4.94-4.74,6.11-8.42,6.11-.18.54-.61,1.26-.88,1.98,4.38,0,9.74-.99,11.4-8.09ZM185.18,14.73c-.09.27.09.45.35.45s.61-.09.61-.45c.09-.18-.09-.27-.26-.36-.35,0-.96-.09-.79-.63.09-.54.53-.72.97-.72.35,0,.7.18.61.63h-.35c.09-.27-.09-.36-.35-.36-.18,0-.53.09-.53.36-.09.27.09.27.26.36.35.18.96.18.79.72-.09.54-.61.72-1.05.72s-.7-.27-.62-.72h.35ZM189.3,13.29l-1.14,2.07h-.26l-.35-2.07-.35,2.07h-.35l.44-2.25h.61l.26,1.89.97-1.89h.53l-.44,2.25h-.35l.44-2.07Z"/>
-            </svg>
-                <h3 class="[ h5 ][ sr-only ]">Xcel Energy</h3>
-                <p>Energy company achieves end-to-end automation of data warehousing</p>
-                <a 
-                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
-                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/read/xcel-energy"
-                    target="_blank"
-                >
-                    Read Xcel Energy’s story
-                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
-                    </svg>
-
-                </a>
-                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
-                    <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-energy.jpg" class="[ w-100 h-100 ][ object-fit-cover ]" loading="lazy" width="400" height="300">
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1  ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-7.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                    >
                 </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Straightforward setup</h3>
+                    <div><p>It&rsquo;s easy to get started using ActiveBatch&rsquo;s web services API. You only need to use three components:<br />
+            <br />
+            <ol><li><strong>API endpoint URL</strong>: The base URL where the ActiveBatch API is accessible</li><li><strong>API key or credentials</strong>: Authentication details are needed to access the API securely</li><li><strong>API documentation</strong>: The ActiveBatch<a href="https://support.advsyscon.com/"> docs and support portal</a> with detailed documentation of available endpoints, parameters and usage examples</li></ol></p></div>
+                    
+                        <a href="https://support.advsyscon.com/" class="[ btn btn-primary ]">
+                            Get Started
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
             </article>
         </li>
     
-        <li class="[ g-col-12 g-col-lg-4 ]]">
-            <article class="[ h-100 [ border border-light @hover:border-dark ][ bg-light ][ p-4 p-md-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
-                <svg viewBox="0 0 556.44 109.91" height="109.91" width="556.44" style="height: 2rem; width: auto">
-                <polygon style="opacity: .75" fill="var(--bs-dark)" points="64.98 20.01 53.43 0 31.73 0 0 54.96 31.73 109.91 53.43 109.91 64.98 89.91 50.81 65.36 64.97 65.36 64.97 44.56 50.81 44.56 64.98 20.01"/>
-                <polygon style="opacity: .55" fill="var(--bs-dark)" points="129.97 54.96 98.24 0 76.54 0 64.98 20.01 79.16 44.56 65 44.56 65 65.36 79.16 65.36 64.98 89.91 76.54 109.91 98.24 109.91 129.97 54.96"/>
-                <path style="opacity: .95" fill="var(--bs-dark)" d="M64.98,89.91l-11.55,20.01h23.1l-11.55-20.01ZM64.98,20.01L76.54,0h-23.1l11.55,20.01Z"/>
-                <path fill="var(--bs-dark)" d="M445.31,0h-24.47v71.89h17.43V16.97l41.64,54.93h17.64l41.45-54.16v54.16h17.43V0h-23.99l-43.67,57.45L445.31,0ZM305.66,71.89h85.59c20.63,0,23.71-6.74,23.71-21.68s-3.09-21.68-23.71-21.68h-68.15v-13.51h90.89V0h-84.63c-20.63,0-23.71,6.84-23.71,21.78s3.09,21.78,23.71,21.78h68.15v13.31h-91.86v15.02ZM207.82,42.41l24.39-28.82,24.58,28.82h-48.96ZM222.77,0l-60.63,71.89h20.82l12.34-14.55h74.31l12.44,14.55h22.65L243.2,0h-20.43ZM533.95,105.85v-14.97h-4.59v18.92h26.41v-3.96h-21.82ZM500.56,102.04l6.42-7.59,6.47,7.59h-12.89ZM504.49,90.88l-15.96,18.92h5.48l3.25-3.83h19.56l3.28,3.83h5.96l-16.19-18.92h-5.38ZM454.13,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM424.33,94.83h20.61v11.02h-20.61v-11.02ZM419.75,105.85c0,2.44,1.68,3.96,4.59,3.96h20.61c2.92,0,4.59-1.52,4.59-3.96v-11.01c0-2.44-1.67-3.96-4.59-3.96h-20.61c-2.91,0-4.59,1.52-4.59,3.96v11.01ZM410.56,109.8h4.59v-18.92h-4.59v18.92ZM407.26,90.88h-32.37v3.96h13.88v14.97h4.61v-14.97h13.88v-3.96ZM356.89,102.04l6.42-7.59,6.47,7.59h-12.89ZM360.82,90.88l-15.96,18.92h5.48l3.25-3.83h19.56l3.27,3.83h5.96l-16.19-18.92h-5.38ZM310.46,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM281.45,94.83h19.85v3.56h-19.85v-3.56ZM301.27,109.8h4.62v-5.28c0-2.69-1.27-4.06-3.78-4.31v-.13c3.32-.51,3.78-2.16,3.78-4.42,0-3.4-1.35-4.79-5-4.79h-24.03v18.92h4.59v-7.46h19.82v7.46ZM248.49,102.34h14.77v-3.96h-14.77v-3.55h23.78v-3.96h-28.37v18.92h28.37v-3.96h-23.78v-3.5ZM240.6,90.88h-32.37v3.96h13.88v14.97h4.61v-14.97h13.88v-3.96ZM173.84,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM164.66,109.8h4.59v-18.92h-4.59v18.92Z"/>
-            </svg>
-                <h3 class="[ h5 ][ sr-only ]">ASM International</h3>
-                <p>International materials manufacturer achieves time savings of 390%</p>
-                <a 
-                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
-                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/asm-international"
-                    target="_blank"
-                >
-                    Read ASM’s story
-                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
-                    </svg>
-
-                </a>
-                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
-                    <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-welding.jpeg" class="[ w-100 h-100 ][ object-fit-cover ]" loading="lazy" width="400" height="300">
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-8.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                    >
                 </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Versatile API endpoints</h3>
+                    <div><p>Dynamically manage jobs without manual intervention with ActiveBatch&rsquo;s API endpoints to streamline workflow automation.<br />
+            <br />
+            <ul><li><code>/jobs/create</code>: Create a new job in ActiveBatch with specific parameters (scripts, schedules and dependencies).</li><li><code>/jobs/{jobId}/status</code>: Get the current status of a specific job.</li><li><code>/jobs/{jobId}/start</code>: Start a specified job manually or via a third-party trigger.</li><li><code>/jobs/{jobId}/stop</code>: Stop a running job.</li><li><code>/jobs/{jobId}/log</code>: Retrieve the execution logs for a specified job.</li><li><code>/schedules/create</code>: Create or update schedules for automated job execution.</li><li><code>/alerts/create</code>: Set up alerts and notifications based on job events.</li></ul></p></div>
+                    
+                </div>
             </article>
         </li>
     
@@ -867,88 +813,50 @@ See how&lt;a href=&quot;https://www.advsyscon.com/blog/big-data-orchestration/&q
 
 </section>
 
-<section class="[ py-4 py-xl-7 pb-xxl-9 ]">
-    <h2 class="[ sr-only ]">100+ Companies Trust ActiveBatch</h2>
-    
-<div class="[ container-fluid container-xl ]">
-    <ul class="[ list-unstyled ][ row align-items-center justify-content-center row-gap-4 ]">
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-xtra.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-graymont.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-firstrate.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-bluebay.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-xcel.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-        <li class="[ col-6 col-md-4 col-lg ][ text-center ]">
-            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-relayhealth.svg" class="bg-sblack" loading="lazy"  alt="" style="max-height: 4rem; max-width: 8rem">
-        </li>
-        
-    </ul>
-</div>
-
-</section>
-
-<section class="[ py-7 ][ bg-light ]">
+<section class="[ py-7 py-lg-8 py-xl-9 ][ bg-light ]">
     
 <div class="[ container-fluid container-lg ][ bg-white ][ rounded-4 ][ p-4 p-md-5 p-xl-7 ]">
-    <h1 class="mb-3">Data warehouse automation FAQs</h1>
+    <h1 class="mb-3">Business process automation FAQs</h1>
     
         <details>
-            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is data management pipeline?</summary>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is a job scheduler API?</summary>
             <div class="[ mt-4 ]">
-                <p>A data management pipeline is the systematic movement, transformation and storage of datasets from various sources to a destination where it can be analyzed and utilized. This pipeline ensures that data flows efficiently and accurately through different stages, including extraction from source systems, transformation to meet business requirements and loading into a target system like a data warehouse, data lake or analytical tool.<br />
+                <p>A job scheduler API is a programming interface that allows developers to automate and control the scheduling of jobs within a software environment. This type of API enables the creation, management and deletion of jobs. Through endpoints exposed by the API, users can specify job details such as jobname, runtime and the specific automation schema in the request body. Functions typically include running jobs at predetermined times or in response to specified events, managing job retries and overseeing job execution statuses.<br />
 <br />
-The primary goal of a data management pipeline is to ensure data integrity, quality and accessibility while minimizing latency to enable organizations to make data-driven decisions and perform advanced data analytics.<br />
+Job scheduler APIs are essential in environments like Google Cloud, where managing and scaling numerous tasks efficiently is crucial.<br />
 <br />
-Data pipelines can handle both structured and unstructured data and can be implemented across all types of technologies, including cloud-based platforms like AWS or open-source tools.<br />
-<br />
-Discover how to unlock speed, efficiency and visibility with <a href="https://www.advsyscon.com/blog/data-warehouse-automation/">data warehouse automation</a>.</p>
+Find the right <a href="https://www.advsyscon.com/blog/process-automation-tools/">process automation tool</a> for IT.</p>
             </div>
         </details>
     
         <details>
-            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What are the main 3 stages in a data pipeline?</summary>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is an API scheduler?</summary>
             <div class="[ mt-4 ]">
-                <p>The three main stages in a data pipeline are extraction, transformation and loading.<br />
+                <p>An API scheduler refers to a tool or service that organizes and controls the timing and order of API calls within software applications or between services. It helps to efficiently manage the execution of multiple API requests by scheduling them based on predetermined conditions or dynamic requirements. This tool is especially useful for handling dependencies among tasks and making sure API calls occur at the right moment to maintain system integrity and performance.<br />
 <br />
-<ol> <li><strong>Extraction:</strong> This stage involves retrieving raw data from source systems, which may include databases, APIs, flat files and real-time data streams. The extraction process needs to be robust to handle different data formats and structures.</li> <li><strong>Transformation:</strong> During the data transformation stage, the extracted data is cleaned, formatted and transformed to meet specific business needs. To transform is to optimize &mdash; to check for duplicates and engage in data normalization, aggregation, filtering, enrichment and validation. Schema transformations and dependency management are crucial at this stage, and data scientists often play a key role in defining transformation rules with languages such as Python.</li> <li><strong>Loading:</strong> The final stage is loading the transformed data into a target data repository. Popular destinations include cloud-based solutions like Snowflake. The data will then be organized and stored in a way that makes it easy to access for querying and data analysis.</li> </ol><br />
-Learn all about <a href="https://www.advsyscon.com/blog/etl-automation-process/"> extract, transform, load (ETL) automation and testing</a> and how to streamline data management.</p>
+Features of an API scheduler include webhook and callback setup, permissions handling and authentication with API keys to secure communication through headers.<br />
+<br />
+Discover how to <a href="https://www.advsyscon.com/blog/rest-api-adapter/">rapidly create APIs</a> for reliable end-to-end processes without custom scripting so your team can achieve more faster.</p>
             </div>
         </details>
     
         <details>
-            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is data pipeline and ETL?</summary>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is the API specification of a task scheduler?</summary>
             <div class="[ mt-4 ]">
-                <p>A data pipeline is a series of processes and tools that automate the movement and transformation of data from various sources to a destination where it can be analyzed and used. Data pipelines can handle different data types, such as batch processing, stream processing and data from IoT devices. They ensure that data is collected, processed and stored efficiently in data storage systems like databases or data lakes.<br />
+                <p>The API specification of a task scheduler outlines the technical details and protocol for interacting with the task scheduling service. This specification includes definitions of available endpoints, supported API calls, data structures and the necessary parameters for each function, such as job ID, jobname and runtime, all formatted in JSON. It also describes how to initiate job execution, manage job states, delete jobs and automate retries through POST requests.<br />
 <br />
-ETL (Extract, Transform, Load) is a specific type of data pipeline focused on extracting data from different sources, transforming it into a suitable format and loading it into a final data storage system. ETL processes are crucial for integrating data from multiple sources, ensuring data quality and preparing it for analysis. Technologies like SQL, Amazon data services and tools for handling streaming data pipelines and batch processing often play critical roles in ETL processes.<br />
-<br />
-Learn more about<a href="https://www.advsyscon.com/blog/automation-data-warehousing/"> data warehouse automation (DWA)</a> and how it includes ETL processes, data modeling, data quality management and more.</p>
+The specification ensures that developers understand authentication requirements, such as API keys and the necessary permissions for making API requests. It might also detail the use of webhooks or callbacks for event-driven job management. Developers can refer to the API reference for detailed documentation and may utilize an SDK to simplify interactions with the API.</p>
             </div>
         </details>
     
         <details>
-            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is the main purpose of a data pipeline?</summary>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is the job scheduler process?</summary>
             <div class="[ mt-4 ]">
-                <p>The main purpose of a data pipeline is to automate the process of collecting, processing and transporting data from various sources to a destination. It makes data available, accurate and timely for use in business intelligence, reporting and real-time analytics.<br />
+                <p>The job scheduler process involves a series of steps and operations that a job scheduler undertakes to manage and execute scheduled jobs within a system. This process begins with the definition of jobs through an API call where specific details like jobname, runtime and automation schema are specified. The scheduler then stores these configurations and monitors the system clock or listens for defined triggers to start job execution. Throughout the job lifecycle, the scheduler manages tasks such as retry attempts on failure, updating job statuses and invoking callbacks or webhooks as necessary.<br />
 <br />
-Data pipelines aim to ensure data quality, improve efficiency, enhance scalability, enable real-time processing and facilitate data integration. These benefits streamline an end-to-end data flow to generate high-quality data that supports informed decision-making. Well-structured pipelines support strong data science initiatives.<br />
+This process is crucial for maintaining the efficiency and reliability of automated tasks.<br />
 <br />
-See how<a href="https://www.advsyscon.com/blog/big-data-orchestration/"> big data orchestration</a> can simplify and streamline data from disparate sources.</p>
+Learn about <a href="https://www.advsyscon.com/blog/job-scheduling-algorithms/">job scheduling algorithms</a> for optimizing task execution.</p>
             </div>
         </details>
     
@@ -956,138 +864,106 @@ See how<a href="https://www.advsyscon.com/blog/big-data-orchestration/"> big dat
 
 </section>
 
-<section class="[ bg-light ][ pb-7 pb-xl-8 ]">
-    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xl ]">
-        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
-            <h2>Explore related resources</h2>
-            <p>Learn more about how to orchestrate efficient data pipelines using advanced automation.</p>
-        </div>
-        
-<ul class="[ grid ][ list-unstyled ]">
-    
-        <li class="[ g-col-12 g-col-md-6 g-col-lg-3 ]">
-            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
-                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
-                    <img 
-                        class="[ w-100 h-100 ][ object-fit-cover ]"
-                        src="https://www.advsyscon.com/blog/wp-content/uploads/Title_Images/Data-Warehouse-Automation-1.jpeg" 
-                        alt="" 
-                        width="1600" 
-                        height="600"
-                        style="aspect-ratio: 21 / 9"
-                        loading="lazy"
-                    >
-                </figure>
-                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
-                    <h3 class="[ h6 fw-medium ]">
-                        <a href="https://www.advsyscon.com/blog/data-warehouse-automation/" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
-                            Data warehouse automation: Unlock speed, efficiency and visibility
-                        </a>
-                    </h3>
-                    <p class="[ small ]">Workload automation solutions have the power and flexibility to optimize any data warehouse operation, regardless of complexity.</p>
-                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
-                        Learn More
-                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                </div>
-            </article>
-        </li>
-    
-        <li class="[ g-col-12 g-col-md-6 g-col-lg-3 ]">
-            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
-                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
-                    <img 
-                        class="[ w-100 h-100 ][ object-fit-cover ]"
-                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/abstract-3.png" 
-                        alt="" 
-                        width="1600" 
-                        height="600"
-                        style="aspect-ratio: 21 / 9"
-                        loading="lazy"
-                    >
-                </figure>
-                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
-                    <h3 class="[ h6 fw-medium ]">
-                        <a href="https://www.advsyscon.com/en-us/activebatch-resources/webinars/activebatch-super-rest-api-adapter-webinar" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
-                            ActiveBatch Super REST API Adapter webinar
-                        </a>
-                    </h3>
-                    <p class="[ small ]">See how this popular feature dramatically simplifies the authentication and creation of extensions and connectors into third-party services and applications.</p>
-                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
-                        Learn More
-                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                </div>
-            </article>
-        </li>
-    
-        <li class="[ g-col-12 g-col-md-6 g-col-lg-3 ]">
-            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
-                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
-                    <img 
-                        class="[ w-100 h-100 ][ object-fit-cover ]"
-                        src="https://www.advsyscon.com/blog/wp-content/uploads/Title_Images/IT-Automation-2020.jpeg" 
-                        alt="" 
-                        width="1600" 
-                        height="600"
-                        style="aspect-ratio: 21 / 9"
-                        loading="lazy"
-                    >
-                </figure>
-                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
-                    <h3 class="[ h6 fw-medium ]">
-                        <a href="https://www.advsyscon.com/blog/gartner-it-automation/" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
-                            2024: Gartner’s automation trends revisited
-                        </a>
-                    </h3>
-                    <p class="[ small ]">Gartner’s IT Automation predictions include hyperautomation, hybrid infrastructure tools, cost overruns for digital transformation and more.</p>
-                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
-                        Learn More
-                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                </div>
-            </article>
-        </li>
-    
-        <li class="[ g-col-12 g-col-md-6 g-col-lg-3 ]">
-            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
-                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
-                    <img 
-                        class="[ w-100 h-100 ][ object-fit-cover ]"
-                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/abstract-3.png" 
-                        alt="" 
-                        width="1600" 
-                        height="600"
-                        style="aspect-ratio: 21 / 9"
-                        loading="lazy"
-                    >
-                </figure>
-                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
-                    <h3 class="[ h6 fw-medium ]">
-                        <a href="https://www.advsyscon.com/en-us/resource/data-management-automation/" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
-                            Video: What every Informatica user needs to know about data management automation
-                        </a>
-                    </h3>
-                    <p class="[ small ]">Learn how a leading biotech firm reduced workflow time by 93% while adapting to rapid growth in data volumes.</p>
-                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
-                        Learn More
-                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                </div>
-            </article>
-        </li>
-    
-</ul>
-
+<section class="[ container-fluid container-xxl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-7 py-lg-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2 class="[ text-balance ]">Achieve end-to-end automation with ActiveBatch</h2>
+        <p>Explore more features that enable you to easily orchestrate workflows across diverse systems. </p>
     </div>
+    
+<div class="[ grid ]" style="grid-auto-rows: 1fr">
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Job management</h3>
+            <p>Programmatically define and manage schedules for job execution, including complex scheduling patterns like time-based, event-based and conditional triggers.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-5.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Monitoring and control</h3>
+            <p>Start, stop and restart jobs based on predefined conditions or external triggers easily with API endpoints.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Event-driven triggers</h3>
+            <p>Eliminate manual tasks and intervention for business and IT workflows to reduce delays and meet or exceed service-level agreements (SLAs).</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Integration with third-party systems</h3>
+            <p>Connect with ERP systems, cloud services, databases and other tools to automate cross-platform workflows.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Workflow automation</h3>
+            <p>Build and automate reliable end-to-end workflows in half the time with advanced workflow development and management capabilities.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Security and access control</h3>
+            <p>Manage user permissions for API access with role-based access control (RBAC).</p>
+            
+        </div>
+    
+</div>
+
+    <a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">
+        Get a demo
+        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+        </svg>
+    </a>
 </section>
 
 
