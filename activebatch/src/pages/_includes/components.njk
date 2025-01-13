@@ -111,11 +111,11 @@
 </ul>
 {% endmacro %}
 
-{% macro stories(items = [], itemWidth = "g-col-lg-4", articlePad = "p-md-5") %}
-<ul class="[ list-unstyled ][ w-100 ][ grid ]">
+{% macro stories(items = [], itemWidth = "20rem" ) %}
+<ul class="[ list-unstyled ][ w-100 ][ grid ]" style="grid-template-columns: repeat(auto-fit, minmax({{ itemWidth }}, 1fr))">
     {% for item in items %}
-        <li class="[ g-col-12 {{ itemWidth }} ]]">
-            <article class="[ h-100 [ border border-light @hover:border-dark ][ bg-light ][ p-4 {{ articlePad }} ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+        <li>
+            <article class="[ h-100 ][ border border-light @hover:border-dark ][ bg-light ][ py-4 px-2 px-lg-3 p-xl-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
                 {{ item.logo | safe }}
                 <h3 class="[ h5 ][ sr-only ]">{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
