@@ -95,7 +95,7 @@
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
                     <h3 class="[ h2 text-balance ]">{{ item.title | safe }}</h3>
-                    <div>{{ item.description | nl2br | wpautop | safe }}</div>
+                    <rich-text>{{ item.description | safe }}</rich-text>
                     {% if item.link %}
                         <a href="{{ item.link.url }}" class="[ btn btn-primary ]">
                             {{ item.link.text }}
@@ -118,7 +118,7 @@
             <article class="[ h-100 ][ border border-light @hover:border-dark ][ bg-light ][ py-4 px-2 px-lg-3 p-xl-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
                 {{ item.logo | safe }}
                 <h3 class="[ h5 ][ sr-only ]">{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+                <rich-text>{{ item.description | safe }}</rich-text>
                 <a 
                     class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
                     href="{{ item.link.url }}"
@@ -131,7 +131,7 @@
 
                 </a>
                 <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
-                    <img src="{{ item.img }}" class="[ w-100 ][ object-fit-cover ]" loading="lazy" width="400" height="300" style="aspect-ratio: 4 / 3">
+                    <img src="{{ item.img }}" class="[ w-100 ][ object-fit-cover ]" loading="lazy" width="400" height="auto" style="aspect-ratio: 4 / 3">
                 </figure>
             </article>
         </li>
