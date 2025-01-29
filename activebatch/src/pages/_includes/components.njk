@@ -4,9 +4,9 @@
     {% for q, a in faqs %}
         <details>
             <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">{{ q }}</summary>
-            <div class="[ mt-4 ]">
+            <rich-text class="[ mt-4 ]">
                 {{ a | nl2br | wpautop  | safe }}
-            </div>
+            </rich-text>
         </details>
     {% endfor %}
 </div>
@@ -90,7 +90,7 @@
                         width="400" 
                         height="auto"
                         loading="lazy"
-                        style="aspect-ratio: 4 / 3"
+                        style="aspect-ratio: 5 / 4"
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
