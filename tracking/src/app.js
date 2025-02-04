@@ -29,9 +29,7 @@ class UTMCookie {
             this.trackingData["ga_client_id"] = clientId; 
         }).finally(() => {
             this.cookiePacking(this.trackingData);
-        }) 
-        
-
+        })  
     }
 
     getClientId(measurementId) { 
@@ -67,14 +65,8 @@ class UTMCookie {
      * @todo use URLSearchParams
      */
     getUrlVars() {
-        let vars = {}, hash;
-        let hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&");
-        for (let i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split("=");
-            vars[hash[0]] = decodeURIComponent(hash[1]);
-        }
-
-        return vars;
+        let entries = Object.fromEntries(new URLSearchParams(window.location.search));
+        return entries;
     }
     
     isBase64(str) {
