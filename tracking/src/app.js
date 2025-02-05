@@ -2,7 +2,6 @@
 * debugger
 * http://localhost/?utm_term=jams%20scheduler&utm_campaign=13699724608&utm_content=530384573472&utm_source=adwords&utm_medium=cpc&utm_adgroup=123858829893&gclid=CjwKCAjwhaaKBhBcEiwA8acsHGsnkHqaSdqOekxUVztueP13ol2SqyovYUGiAcKEW4IuLcJbbMDP-BoCdMcQAvD_BwE
 */
-window.measurementId = window.measurementId ?? document.currentScript.dataset.measurementId;
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments) }
 
@@ -25,20 +24,7 @@ class UTMCookie {
             "msclkid"
         ]
         this.trackingData = this.getUrlVars();
-        this.getClientId(measurementId).then((clientId) => {
-            this.trackingData["ga_client_id"] = clientId; 
-        }).finally(() => {
-            this.cookiePacking(this.trackingData);
-        })  
-    }
-
-    getClientId(measurementId) { 
-        return new Promise(resolve => {
-            gtag("get", measurementId, "client_id", (clientId) => {
-                const product = location.pathname.includes("finance") ? "FA" : "RMJ"
-                resolve(`${product}::${clientId}`);
-            })
-        })
+        this.cookiePacking(this.trackingData);
     }
     
     saveCookie(name, value, days = 7, path = "/") {
