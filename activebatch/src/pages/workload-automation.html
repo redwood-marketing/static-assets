@@ -1,88 +1,269 @@
 ---
-title: Workload Automation Software
-description: Automate routine, repetitive tasks with Workload Automation software. Reduce manual interventions, maintain production uptime, and get back to innovation. With no-code workflow development, real-time monitoring, auto-remediation, and more, ActiveBatch is a platform for IT’s digital future. 
+title: Enterprise Workload Automation Software
+description: Discover how to build, monitor and manage critical business processes with enterprise workload automation software. ActiveBatch offers an easy-to-use workload automation solution with powerful integrations to automate end-to-end processes.
 faqs:
-    What is workload automation software (WLA)?:
-        Workload automation platforms enable users to automate manual, repetitive IT processes, reducing the need for manual human intervention. Workload automation solutions can provide no-code/low-code workflow development for devops, plus real-time <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling/batch-scheduling">batch monitoring</a>, alerting, auto-remediation, script lifecycle management tools and much more.
+    What is workload automation (WLA) software?:
+        Workload automation (WLA) software is a comprehensive solution designed to manage, schedule and automate workflows and processes across diverse systems, applications and environments. By streamlining manual, repetitive tasks, WLA software helps organizations improve operational efficiency, reduce errors and ensure the consistent execution of critical business and IT processes.
+
+
+        Workload automation solutions can provide no-code/low-code workflow development for DevOps, plus real-time batch monitoring, alerting, auto-remediation, script lifecycle management tools and much more.
 
         <a href="https://www.advsyscon.com/en-us/activebatch">Learn more about workload automation capabilities</a>.
+    How does WLA software integrate with my environment?:
+        There are workload automation solutions that integrate with virtually any application or technology. This can be accomplished with universal connectors, direct integrations or REST APIs and web services. Integrations, APIs and scripts can be turned into reusable jobs for reliable end-to-end processes across on-premises and cloud environments (SaaS, PaaS or IaaS).
 
-    Are WLA solutions extensible?:
-        There are workload automation solutions that integrate with virtually any application or technology. This can be accomplished with universal connectors, direct integrations, or through REST APIs and web services. Integrations, APIs and scripts can be turned into reusable jobs for reliable end-to-end processes across on-premises and cloud environments (SaaS, PaaS, or IaaS). ActiveBatch provides extensions for tools like IBM, Oracle, Microsoft and SAP.
+
+        ActiveBatch, for example, provides extensions for tools like IBM, Oracle, Microsoft and SAP. 
         
-        Unlike most workload automation, workflow automation and job scheduling tools, ActiveBatch integrates with virtually any cloud platform and operating system (Windows, OS, Linux, UNIX, and more). These numerous integrations support scores of use cases across business and IT functions.
-        <a href="https://www.advsyscon.com/en-us/activebatch/extensions">Explore ActiveBatch&rsquo;s integrations and extensions</a>.
+        <a href="https://www.advsyscon.com/blog/rest-api-adapter/">Explore how you can build your own integrations using the Super REST API Adapter</a>.
+    What is ActiveBatch workload automation?:
+        ActiveBatch by Redwood is a workload automation and enterprise job scheduling solution known for its ease of use, event-based automation and scalability. It allows users to build and monitor automated processes that orchestrate data center workflows, IT operations and infrastructure tasks, business applications, batch jobs and more.
 
-    What is ActiveBatch Workload Automation?:
-        ActiveBatch Workload Automation provides an intuitive user interface so users can easily build and monitor automated processes that orchestrate data center workflows, IT operations and infrastructure tasks, business applications, batch jobs and more. With programmatic integrations and low-code API accessibility, users can coordinate data, dependencies and resources between IT.
 
-        <a href="https://www.advsyscon.com/">See what you can accomplish with ActiveBatch WLA tools</a>.
+        With programmatic integrations and low-code API accessibility, users can coordinate data, dependencies and resources between IT and other departments. Thus, ActiveBatch reduces the complexity of an IT infrastructure and helps all kinds of teams meet business needs.
 
-    Does workload automation support event-driven automation?:
-        Yes. For example, ActiveBatch job scheduling software provides an event-driven architecture that supports a variety of event types. Users can trigger jobs to run based on a variety of events including file events, FTP file events, message queues, database modifications, tweets and much more. 
-        
-        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation">Explore ActiveBatch’s event automation capabilities.</a>
-    
-    What does ActiveBatch workload automation integrate with?:
-        <a href="https://www.advsyscon.com/en-us/activebatch/extensions">Explore ActiveBatch’s integrations and extensions.</a>
+
+        <a href="https://www.advsyscon.com/">See what you can accomplish with ActiveBatch\'s WLA and scheduling tools</a>.
 ---
 {% extends "base.njk" %}
-
 
 {% block content %}
 
 {%- set heroArgs = { 
-	'maxWidth': '94ch',
-	'heading': 'ActiveBatch workload automation software', 
-	'content': 'Build, monitor and manage business processes end-to-end in one workload automation platform with limitless integrations' 
+    'background': 'https://www.advsyscon.com/wp-content/uploads/0824_AB_FTPtoMFT_Blog_v2.jpg',
+	'heading': 'Next-level workload automation software', 
+	'content': 'Build, monitor and manage critical business processes end to end with ActiveBatch by Redwood’s easy-to-use interface with powerful integrations.' 
 } -%}
+
 {% include "hero-inner.njk" %}
 
-<section class="[ container ][ my-7 ]" style="max-width: 100ch;">
-    <rich-text>
-        <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/data-warehouse-figure.png" alt="" style="float: left" />
-        <h2>Orchestrate across IT infrastructure and business applications</h2>
-        <p>Easily automate all IT and business processes across your tech stack for greater efficiency and visibility with ActiveBatch by Redwood.&nbsp;</p>
-        <h2>Consolidate automation tools</h2>
-        <p>Eliminate duplicate solutions and automate business processes in one workload automation platform for complete visibility into workflows across your tech stack.</p>
-        <h2>Easily automate jobs&nbsp;</h2>
-        <p>Make building end-to-end workflows simple with easy-to-use, powerful workload automation with pre-built job step templates, drag-and-drop workflow designer and seamless integrations.</p>
-        <h2>Save dev resources</h2>
-        <p>With low code/no code user-friendly UI, anyone on your IT team can quickly and easily spin up automations without any required development expertise or custom scripting.</p>
-        <h2>Automation for hybrid cloud environments</h2>
-        <p>ActiveBatch provides advanced enterprise workload automation and <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling">job scheduling capabilities</a> for on-premises, cloud and hybrid cloud applications&mdash;designed for today&rsquo;s IT environments.&nbsp;</p>
-        <ul>
-            <li><a href="https://www.advsyscon.com/en-us/activebatch/business-process-automation">Business process automation</a>: Microsoft apps suite, HR platforms, enterprise resource management (ERP), business process management (BPM) and BI tools</li>
-            <li>Data center: Big data/ Hadoop ecosystem, Microsoft SQL and Oracle databases, Informatica and other <a href="https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation">ETL tools</a></li>
-            <li>Infrastructure automation: On-premises data centers plus cloud vendors including VMware, Amazon EC2 and Microsoft Azure for <a href="https://www.advsyscon.com/blog/hybrid-cloud-management/">hybrid-IT and multi-cloud orchestration</a></li>
-            <li>Secure file transfers: <a href="https://www.advsyscon.com/en-us/activebatch/managed-file-transfer/managed-file-transfer-automation">Managed File Transfers</a>(MFT), SFTP and FTPS with advanced file event triggers and parallel transfer capabilities for <a href="https://www.advsyscon.com/blog/batch-processing-system/">batch processes</a></li>
-        </ul>
-        <h2>Pre-built job steps library</h2>
-        <p>ActiveBatch Job Steps Library provides hundreds of pre-built, platform-neutral connectors and low-code API accessibility. IT teams can quickly and easily build end-to-end workflows that streamline IT processes, promote scalability and accelerate digital transformation.</p>
-        <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/use-event-driven-workload-automation.png" alt="" style="float: left" />
-        <h2>Event-driven job scheduling software</h2>
-        <p>Eliminate manual tasks and manual intervention with event-driven triggers for business and IT workflows, including email, file events, FTP file triggers and data modifications. Reduce delays and improve service levels with constraint-based scheduling and SLA monitoring. Simplifying <a href="https://www.advsyscon.com/en-us/activebatch/it-automation/it-process-automation">process automation</a> lets IT teams focus more on innovation and doing valuable work.&nbsp;&nbsp;</p>
-        <h2>Centralized compliance management</h2>
-        <p>With a centralized workload automation tool, IT can streamline business automation policies and deployment across teams, departments and geographic locations from a single point of control. Full audit trails on all jobs and workflows <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/compliance">standardize governance</a> with granular permissioning, MFA and privileged access management prevent unauthorized access. Plus, improve SLA management with a workload automation tool that helps prevent issues with custom alerting and automated remediation.</p>
-        <h2>Smart Queue and Heuristic Queue Allocation (HQA)</h2>
-        <p>Standard IT automation and job scheduling software automate simple tasks. Workload management tools such as ActiveBatch go further with <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization">resource provisioning tools</a> that use machine learning to distribute jobs across on-premises and virtual or cloud-based servers, enabling IT to meet business needs in real-time.</p>
-    </rich-text>
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pt-6 pt-xl-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>Stay in control of your data and processes</h2>
+        <p>The days of simple task scheduling are over. Leverage advanced IT automation and orchestration capabilities to maintain uninterrupted cross-departmental processes.</p>
+    </div>
+    {{ components.boxes([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg",
+            "title": "Complex workflow management",
+            "description": "Features like load balancing, dashboards and a REST API adapter help you accommodate larger volumes of jobs and data."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-5.svg",
+            "title": "Pre-built job steps library",
+            "description": "Anyone on your IT team can quickly and easily spin up automation — no development expertise or custom scripting required."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg",
+            "title": "Drag-and-drop user interface",
+            "description": "A low-code/no-code GUI and endless options for time- and event-based triggers allow for faster workflow development."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg",
+            "title": "Convenient self-service portal",
+            "description": "Easily accessible jobs and plans eliminate bottlenecks by giving your business users timely data without delay."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg",
+            "title": "Real-time SLA monitoring and alerts",
+            "description": "Issue notification is just the beginning — dynamically provision resources and meet SLAs without manual intervention."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+            "title": "Intelligent workload scalability",
+            "description": "Heuristic Queue Allocation and automatic Health Check scans offer ways to continuously improve performance despite increasing workloads."
+        }
+    ]) }}
 </section>
 
-<section class="[ py-7 ][ bg-light ]">
-    {{ components.faqs("Frequently Asked Questions", faqs) }}
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    {{ components.zigzag([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
+            "title": "Achieve unprecedented efficiency",
+            "description": "<p>No matter how talented your team is, they can't beat the efficiency potential of automation. Workload automation (WLA) simplifies connection and orchestration across your entire business and IT landscape.</p>
+            <p>With WLA tools, you can:</p>
+            <ul>
+            <li>Implement and automate end-to-end processes with infinite extensibility, connecting all business systems and applications.</li>
+            <li>Amplify efficiency with swift workflow deployment and custom roles for business users to access their automation workflows.</li>
+            <li>Ensure complete control with total process management and visibility in a single platform with predictive SLAs and alerts.</li>
+            </ul>",
+            "link": {
+                "text": "Learn the Benefits of WLA",
+                "url": "https://www.advsyscon.com/en-us/activebatch"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-2.jpg",
+            "title": "Support any IT environment",
+            "description": "<p>ActiveBatch provides advanced enterprise workload automation and job scheduling capabilities for your infrastructure — on-premises, cloud or hybrid cloud.</p>
+            <p>Implement complete business process automation by connecting your Microsoft apps suite, HR platforms and enterprise resource management (ERP), business process management (BPM) and BI tools.</p>
+            <p>Achieve true multi-cloud orchestration by linking on-premises data centers with cloud vendors, including VMware, Amazon EC2 and Microsoft Azure.</p>
+            <p>Secure your data at rest and in transit with managed file transfer (MFT), SFTP and FTPS protocols, plus advanced file event triggers and parallel transfer capabilities for batch processes.</p>",
+            "link": {
+            "text": "Explore Cloud Infrastructure Orchestration",
+            "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization"
+            }
+        }
+    ]) }}
 </section>
 
-<section class="[ pb-6 pb-xl-8 ][ bg-light ]">
-    {{ components.customers() }}
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
+    {{ components.quote({
+        "quote": "[ActiveBatch] saves us time when setting up the jobs, and it saves us time when troubleshooting because we know exactly what the job is doing.",
+        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg",
+        "link": {
+            "text": "Read the case study",
+            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/sub-zero-group"
+        }
+    }) }}
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    {{ components.zigzag([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
+            "title": "Manage growing data volumes",
+            "description": "<p>ActiveBatch offers advanced features for handling large data sets, improving data quality, data reporting and simplifying data warehousing through:</p>
+            <ul>
+            <li>Event-driven architecture and constraint-based scheduling for easy management of warehouse and ETL processes</li>
+            <li>Granular permissions, audit trails, transformation rules and more to standardize auditing and governance</li>
+            <li>Connectors for big data/ Hadoop ecosystems, Microsoft SQL and Oracle databases, Informatica and other ETL tools</li>
+            </ul>",
+            "link": {
+            "text": "See More About Data Automation with WLA",
+            "url": "https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-4.jpg",
+            "title": "Meet every SLA",
+            "description": "<p>WLA can prevent service-level agreement (SLA) violations. ActiveBatch prioritizes SLA-marked jobs, allocating additional compute resources and allowing them to proceed to execution before less important jobs in the queue. It also increases the OS priority of workflows that exceed a defined percentage of their expected or historical runtimes. <p></p>Over time, ActiveBatch learns which execution queues fit the needs of your SLA-dependent workflows.</p>",
+            "link": {
+            "text": "Improve SLA Performance",
+            "url": "https://www.advsyscon.com/en-us/activebatch/core-capabilities/compliance/service-level-agreement"
+            }
+        }
+    ]) }}
 </section>
 
 {%- set bannerArgs = {
-    'heading': 'Be ready to automate anything',
-    'content': 'Build and automate workflows in half the time without the need for custom scripting. Gain operational peace of mind with real-time insights, customizable alerting, and more.',
-	'backgroundStrips': ["var(--bs-light)", "var(--bs-black)"]
+    'heading': 'See modern workload automation in action',
+    'content': 'Let us show you ActiveBatch\'s key features and how they can streamline workflows, drive efficient data pipeline management and enable seamless orchestration in on-premises, cloud and hybrid environments.',
+    'backgroundTheme': 'dark',
+    'buttonTheme': 'primary',
+    'backgroundStrips': ["transparent", "transparent"],
+    'link': {
+        'text': 'Get a Demo',
+        'url': 'https://www.redwood.com/demo/quick/'
+    }
 } -%}
-{% include "cta.njk" %}
+{% include "cta.njk" %} 
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center gap-6 ][ py-6 py-xl-8 py-xxl-9 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>See how ActiveBatch excels</h2>
+        <p>Learn why successful organizations prefer advanced workload automation over basic task scheduling.</p>
+    </div>
+    {{ components.stories([
+        {
+            "img": "https://enegvm7yhcq.exactdn.com/wp-content/uploads/2024/08/DSC1778-scaled-1-1536x1024.jpeg?strip=all&lossy=1&ssl=1",
+            "logo": '<svg style="height: 2.5rem; width: auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1011.42 197.17"><path d="M417.65,197.17c-.01-63.49-.03-126.99-.03-190.48,0-6.36.31-6.64,6.88-6.64,61.43-.01,122.86.01,184.28-.04,4.1,0,6.96.24,6.94,5.7-.15,63.16-.11,126.32-.12,189.49,0,.66-.08,1.32-.12,1.99h-197.84ZM423.8,98.68c0,28.68.08,57.36-.08,86.04-.02,4.57,1.14,6.46,6.12,6.44,57.77-.14,115.54-.13,173.31-.01,4.72,0,6.39-1.42,6.38-6.24-.13-57.53-.13-115.06,0-172.59.01-4.87-1.77-6.21-6.43-6.2-57.6.11-115.2.07-172.81.08-6.31,0-6.48.18-6.49,6.42-.02,28.68,0,57.36,0,86.04ZM0,140.45c1.66.01,3.33.04,4.99.03,6.8-.03,7.01-.21,7.03-6.99.02-8.12-.02-16.25.02-24.37.03-6.14.3-6.42,6.55-6.43,16.65-.03,33.3.02,49.94-.04,4.68-.02,6.16-1.89,5.33-6.05-.72-3.58-3.5-3-5.9-3-16.81-.05-33.63-.11-50.44.03-4.11.03-5.73-1.45-5.53-5.53.22-4.47.03-8.95.05-13.43.03-6.54.25-6.79,6.68-6.8,17.48-.02,34.96-.03,52.44,0,3.31,0,5.95-.32,5.88-4.69-.06-4.05-2.47-4.45-5.62-4.44-23.81.07-47.61.09-71.42.13v81.59ZM707.94,100.61c11.06,3.47,13.44,11.42,13.93,20.84.32,6.04,1.57,12.02,2.41,18.05-8.71,3.02-12.15,1.21-13.45-7.41-.49-3.25-.37-6.6-.55-9.9-.51-9.68-4.63-15.21-14.16-16.28-10.03-1.12-20.22-.87-30.34-1.13-4.65-.12-9.32.13-13.97-.06-3.84-.16-5.39,1.32-5.32,5.21.17,8.28-.15,16.57.12,24.84.16,4.84-2.14,5.8-6.38,5.82-4.29.02-5.88-1.51-5.86-5.82.13-23.35.14-46.71,0-70.06-.03-4.56,1.64-6.07,6.15-6.02,18.29.18,36.6-.18,54.88.24,5.53.13,11.2,1.59,16.47,3.42,6.79,2.35,10.79,7.61,11.57,14.86.88,8.15-1.2,15.14-8.72,19.65-1.84,1.1-3.75,2.09-6.78,3.77ZM674.11,67.94s0-.04,0-.06c-7.65,0-15.31.04-22.96-.02-3.08-.03-4.64,1.18-4.6,4.39.08,6.46-.2,12.94.21,19.37.09,1.4,2.43,3.79,3.76,3.81,15.3.22,30.61.3,45.91-.09,5.42-.14,10.54-2.31,13.24-7.57,4.88-9.53-1.2-19.2-12.61-19.76-7.63-.37-15.3-.07-22.96-.07ZM195.47,100.68c11.74,2.98,13.76,11.41,14.51,20.84.48,6.04,1.5,12.05,2.28,18.12-9.66,3.07-13.19.66-13.55-9.32-.13-3.63-.32-7.28-.85-10.87-1.23-8.38-4.85-12.67-13.4-13.57-9.88-1.04-19.89-.87-29.84-1.12-4.99-.12-9.98.08-14.97-.04-3.42-.08-4.77,1.41-4.74,4.76.09,8.45-.14,16.9.08,25.34.11,4.4-1.72,5.74-5.93,5.75-4.32.01-6.34-1.14-6.3-5.89.17-23.35.16-46.71,0-70.06-.03-4.64,1.78-6,6.21-5.95,17.96.17,35.93-.16,53.88.22,5.38.11,10.94,1.31,16.03,3.1,8.32,2.93,12.7,9.35,12.99,18.21.3,8.92-4.85,14.4-12.21,18.33-.58.31-1.25.46-1.85.73-.44.2-.83.49-2.33,1.41ZM162.07,67.93s0-.04,0-.06c-7.49,0-14.98.04-22.47-.02-3.03-.02-4.7,1.09-4.67,4.34.07,6.46-.2,12.94.21,19.38.09,1.42,2.42,3.83,3.74,3.85,15.31.23,30.63.38,45.93-.12,5.8-.19,11.02-3.05,13.43-8.91,3.84-9.31-2.42-17.83-13.71-18.39-7.47-.37-14.98-.07-22.47-.07ZM237.38,61.97c-8.16,3.98-12.46,10.34-12.1,19.42.36,9.26,6.52,14.08,14.6,16.07,10.62,2.62,21.54,4.05,32.24,6.35,7.1,1.53,14.31,3.09,21.01,5.78,5.82,2.34,7.41,8.53,3.94,13.78-1.87,2.83-5.05,5.37-8.2,6.69-9.77,4.09-20.13,3.91-30.48,2.78-11.46-1.25-20.9-4.98-24.38-17.63-1.32-4.78-6.26-2.44-9.6-2.29-.53.02-1.61,3.92-1.21,5.76,1.91,8.65,7.03,15.23,15.29,18.41,18.87,7.25,38.09,7.26,57.15.76,6.23-2.12,11.52-6.18,14.05-12.64,4.84-12.38-.62-22.75-14.59-26.37-9.31-2.41-18.97-3.42-28.42-5.33-7.32-1.48-14.63-3.09-21.78-5.2-3.75-1.11-6.63-3.78-6.94-8.24-.32-4.56,1.92-7.69,5.71-9.67,2.77-1.45,5.74-3.03,8.76-3.37,6.73-.76,13.57-1.27,20.33-1,10.37.41,19.75,2.75,23.88,14.29,1.62,4.52,6.39,2.27,9.77,2.03.5-.03,1.67-4.29.91-5.75-2.17-4.14-4.47-8.74-8.01-11.53-9.64-7.59-21.45-8.25-33.22-8.35-9.93-.15-19.6.83-28.7,5.26ZM1005.93,140.46c4.53-.03,6.6-2.34,4.9-6.12-.7-1.54-3.79-2.81-5.81-2.83-19.64-.21-39.28-.21-58.93-.07-4.25.03-6.09-1.29-5.89-5.7.26-5.46.04-10.94.06-16.41.03-6.4.26-6.64,6.84-6.65,18.14-.02,36.29.02,54.43-.03,4.93-.01,6.25-1.56,5.63-5.8-.52-3.63-3.21-3.27-5.67-3.27-18.48-.03-36.95-.08-55.43.02-3.78.02-6.07-.8-5.85-5.2.23-4.63.02-9.28.05-13.92.03-6.39.26-6.62,6.85-6.63,18.81-.02,37.62-.03,56.43,0,3.36,0,5.89-.45,5.79-4.78-.09-4.13-2.62-4.36-5.69-4.35-23.3.02-46.61.07-69.91-.04-4.04-.02-5.65,1.39-5.63,5.5.11,23.54.12,47.08-.02,70.62-.03,4.39,1.7,5.79,5.93,5.73,11.82-.17,23.64-.06,35.46-.06,12.15,0,24.3.04,36.46-.03ZM838.03,139.26c-8.84,2.9-12.33,1.74-16.32-5.2-2.73-4.74-4.99-9.77-8.02-14.3-1.24-1.86-3.93-3.83-6-3.88-14.63-.33-29.27-.33-43.9,0-2.13.05-4.9,1.85-6.17,3.68-3.12,4.47-5.53,9.42-8.23,14.17-4.23,7.42-6.09,8.17-15.42,5.84.47-1.35.74-2.76,1.41-3.95,13.83-24.35,27.79-48.63,41.52-73.03,2.71-4.82,6.91-3.57,10.9-3.86,3.37-.25,5.45,1.03,7.16,4.07,13.28,23.52,26.75,46.93,40.13,70.39,1.05,1.84,1.86,3.81,2.94,6.07ZM765.04,105.95h41.17c-6.95-12.54-13.42-24.23-20.42-36.87-7.14,12.69-13.77,24.47-20.75,36.87ZM318.59,58.72c-3.32-.01-5.93.31-5.9,4.66.03,4.48,2.91,4.48,6.08,4.47,9.32-.02,18.64.18,27.95-.08,4.66-.13,6.12,1.69,5.98,6.14-.25,8.11-.07,16.23-.07,24.35,0,12.26-.1,24.52.12,36.78.03,1.75,1.21,4.51,2.56,5.04,6.1,2.42,9.41-.09,9.42-6.6.02-19.88.11-39.76-.06-59.64-.04-4.53,1.52-6.2,6.08-6.06,8.31.25,16.64.21,24.95,0,3.23-.08,7.94,1.79,8.06-4.37.12-6.14-4.49-4.59-7.81-4.62-12.64-.12-25.29-.05-37.93-.05-13.14,0-26.29.03-39.43-.02ZM832.1,58.75c-3.31,0-6.95-.62-6.87,4.66.08,5.37,3.92,4.39,7.09,4.42,8.49.08,16.97.02,25.46.03q7.36.01,7.38,7.56c0,19.72.05,39.44-.03,59.16-.02,3.69.71,5.96,5.16,5.99,4.38.03,6.27-1.26,6.22-5.96-.19-19.88-.09-39.77-.07-59.66,0-7.07.03-7.08,7.33-7.09,7.99-.01,15.98.19,23.96-.09,3.3-.12,8.4,2.17,8.54-4.34.14-6.52-4.92-4.56-8.29-4.61-12.31-.18-24.63-.07-36.94-.07-12.98,0-25.96,0-38.94,0ZM101.13,64.39c.07-4.39-1.69-5.75-5.91-5.73-4.18.02-5.48,1.71-5.46,5.68.1,23.5.12,47-.02,70.49-.03,4.39,1.7,5.77,5.92,5.74,4.15-.03,5.51-1.7,5.46-5.69-.16-11.75-.06-23.5-.06-35.25,0-11.75-.13-23.5.07-35.25ZM563.05,97.05c17.1-8.92,22.82-32.77,11.41-48.37-7.47-10.21-18.95-12.82-30.44-13.59-16.4-1.11-32.89-.77-49.34-1.29-4.85-.15-6.33,1.68-6.33,6.37,0,4.67,1.84,6,6.25,5.94,13.98-.18,27.97-.4,41.94.11,5.5.2,11.11,1.8,16.36,3.65,8.12,2.85,11.93,9.56,12.32,17.69.39,8.19-2.62,15.22-9.98,19.89-6.83,4.33-14.43,5.94-22.33,6.06-12.98.19-25.97.16-38.95,0-4.11-.05-5.52,1.53-5.58,5.57-.06,4.4,1.72,5.7,5.94,5.73,14.96.12,29.93.12,44.86.98,13.89.8,19.7,7.99,20.35,21.94.45,9.72,1.81,19.4,3.1,29.06.25,1.87,1.86,4.87,3.15,5.05,4.58.62,9.29.24,14.65.24-5.77-11.1-5.2-22.18-5.68-33-.54-12.18-3.16-22.99-15.44-29.94,1.76-.99,2.74-1.58,3.75-2.11ZM481.74,40.23c0-5.77-.98-6.43-6.74-6.33-3.5.07-4.52,2.07-5.23,4.85-2.74,10.73-10,16.42-20.68,18.25-2.79.48-5.55,1.19-8.36,1.42-3.59.3-5.51,1.62-5.21,5.57.33,4.31,3.39,3.82,6.17,3.84,6.66.05,13.32,0,19.98.02,6.6.02,6.8.2,6.8,6.64.02,27.2,0,54.39.02,81.59,0,6.05.42,6.4,6.6,6.4,6.23,0,6.63-.33,6.64-6.35.03-19.24.01-38.47.01-57.71,0-19.4.02-38.81-.01-58.21Z" fill="var(--bs-secondary)" stroke-width="0"/></svg>',
+            "title": "First Rate",
+            "description": "<p>This wealth management company streamlined workflows and optimized operations by automating 99% of its jobs.</p>",
+            "link": {
+                "text": "Read the Case Study",
+                "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/first-rate"
+            }
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-welding.jpeg",
+            "logo": '<svg viewBox="0 0 556.44 109.91" height="109.91" width="556.44" style="height: 2rem; width: auto">
+                <polygon style="opacity: .75" fill="var(--bs-dark)" points="64.98 20.01 53.43 0 31.73 0 0 54.96 31.73 109.91 53.43 109.91 64.98 89.91 50.81 65.36 64.97 65.36 64.97 44.56 50.81 44.56 64.98 20.01"/>
+                <polygon style="opacity: .55" fill="var(--bs-dark)" points="129.97 54.96 98.24 0 76.54 0 64.98 20.01 79.16 44.56 65 44.56 65 65.36 79.16 65.36 64.98 89.91 76.54 109.91 98.24 109.91 129.97 54.96"/>
+                <path style="opacity: .95" fill="var(--bs-dark)" d="M64.98,89.91l-11.55,20.01h23.1l-11.55-20.01ZM64.98,20.01L76.54,0h-23.1l11.55,20.01Z"/>
+                <path fill="var(--bs-dark)" d="M445.31,0h-24.47v71.89h17.43V16.97l41.64,54.93h17.64l41.45-54.16v54.16h17.43V0h-23.99l-43.67,57.45L445.31,0ZM305.66,71.89h85.59c20.63,0,23.71-6.74,23.71-21.68s-3.09-21.68-23.71-21.68h-68.15v-13.51h90.89V0h-84.63c-20.63,0-23.71,6.84-23.71,21.78s3.09,21.78,23.71,21.78h68.15v13.31h-91.86v15.02ZM207.82,42.41l24.39-28.82,24.58,28.82h-48.96ZM222.77,0l-60.63,71.89h20.82l12.34-14.55h74.31l12.44,14.55h22.65L243.2,0h-20.43ZM533.95,105.85v-14.97h-4.59v18.92h26.41v-3.96h-21.82ZM500.56,102.04l6.42-7.59,6.47,7.59h-12.89ZM504.49,90.88l-15.96,18.92h5.48l3.25-3.83h19.56l3.28,3.83h5.96l-16.19-18.92h-5.38ZM454.13,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM424.33,94.83h20.61v11.02h-20.61v-11.02ZM419.75,105.85c0,2.44,1.68,3.96,4.59,3.96h20.61c2.92,0,4.59-1.52,4.59-3.96v-11.01c0-2.44-1.67-3.96-4.59-3.96h-20.61c-2.91,0-4.59,1.52-4.59,3.96v11.01ZM410.56,109.8h4.59v-18.92h-4.59v18.92ZM407.26,90.88h-32.37v3.96h13.88v14.97h4.61v-14.97h13.88v-3.96ZM356.89,102.04l6.42-7.59,6.47,7.59h-12.89ZM360.82,90.88l-15.96,18.92h5.48l3.25-3.83h19.56l3.27,3.83h5.96l-16.19-18.92h-5.38ZM310.46,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM281.45,94.83h19.85v3.56h-19.85v-3.56ZM301.27,109.8h4.62v-5.28c0-2.69-1.27-4.06-3.78-4.31v-.13c3.32-.51,3.78-2.16,3.78-4.42,0-3.4-1.35-4.79-5-4.79h-24.03v18.92h4.59v-7.46h19.82v7.46ZM248.49,102.34h14.77v-3.96h-14.77v-3.55h23.78v-3.96h-28.37v18.92h28.37v-3.96h-23.78v-3.5ZM240.6,90.88h-32.37v3.96h13.88v14.97h4.61v-14.97h13.88v-3.96ZM173.84,90.88v18.92h4.59v-15.04l19.06,15.04h7.46v-18.92h-4.61v15.53l-19.67-15.53h-6.82ZM164.66,109.8h4.59v-18.92h-4.59v18.92Z"/>
+            </svg>',
+            "title": "ASM International",
+            "description": "With ActiveBatch, this manufacturer gained deeper insights and replaced 120 hard-coded jobs with one parameterized job.",
+            "link": {
+                "text": "See the Full Story",
+                "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/asm-international"
+            }
+        },
+        
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-restaurant.jpeg",
+            "logo": '<svg viewBox="0 0 2499.21 2356.55" width="2499.21" height="2356.55" style="height: 3rem; width: auto">
+                <path fill="var(--bs-dark)" d="M1244.53,0l-341.17,926.76s-231.9-640.64-286.12-783.28S477.93,33.37,271.05,33.37H39.99v155.99h332.83c256.92,0,231.9,63.4,324.49,316.15,92.59,252.75,198.53,538.87,198.53,538.87L1241.19,109.28l349.52,935.1s155.99-392.06,240.24-636.47c84.25-244.41,176.84-219.39,370.37-219.39h236.07V29.2h-320.32c-236.07,0-219.39,29.2-295.3,240.24-75.91,211.04-244.41,657.32-244.41,657.32L1244.53,0ZM1240.36,236.07l-353.69,922.59s-206.04-530.53-273.61-699.03-80.08-190.19-256.92-190.19-303.64-3.34-316.15-4.17v164.33h320.32c211.04,0,206.04,45.88,311.98,324.49s206.87,522.19,206.87,522.19l362.03-918.42,365.37,918.42s252.75-589.76,281.95-715.72c29.2-126.79,117.62-130.96,290.29-130.96h265.27v-160.16h-371.2c-181.01,0-172.67,92.59-252.75,316.15s-223.56,568.9-223.56,568.9l-356.19-918.42ZM39.99,661.49v-160.16h236.07c147.65,0,223.56-33.37,328.66,219.39,105.11,252.75,261.09,661.49,261.09,661.49l379.55-901.74,366.2,905.91s185.19-437.94,261.09-623.96c75.91-185.19,67.57-269.44,273.61-269.44h299.47v172.67h-265.27c-147.65,0-215.22-20.85-303.64,223.56-88.42,244.41-252.75,618.95-252.75,618.95l-383.72-918.42-375.38,918.42s-168.5-412.91-244.41-598.1-100.93-248.58-269.44-248.58H39.99ZM844.13,1731.73s-160.16-370.37-244.41-564.73-105.11-269.44-261.09-269.44H39.16v-168.5h219.39c176.84,0,211.04,2.5,286.12,165.17,75.08,162.66,303.64,714.88,303.64,714.88l396.23-897.56,383.72,897.56s189.36-425.43,273.61-618.95,84.25-256.92,244.41-256.92h299.47v168.5h-223.56c-143.48,0-236.07-12.51-299.47,160.16s-286.12,674.01-286.12,674.01l-396.23-910.08-396.23,905.91ZM827.44,1971.97s-197.7-425.43-277.78-606.44-71.74-236.07-176.84-236.07H39.99v-160.16h206.04c142.64,0,181.01-29.2,273.61,181.01,92.59,210.21,316.15,694.86,316.15,694.86l404.57-897.56,400.4,893.39s231.9-476.31,307.81-640.64,55.06-231.9,265.27-231.9h236.07v164.33h-244.41c-135.14,0-164.33-16.68-215.22,113.45-50.88,130.96-337,724.89-337,724.89l-417.08-910.08-408.74,910.91h0ZM2062.58,1167.03c5.82,0,11.49,1.49,17.03,4.48s9.86,7.25,12.95,12.81c3.09,5.56,4.64,11.35,4.64,17.38s-1.52,11.71-4.57,17.22-7.32,9.79-12.81,12.83c-5.5,3.05-11.24,4.57-17.24,4.57s-11.75-1.52-17.24-4.57c-5.5-3.04-9.77-7.32-12.83-12.83-3.06-5.51-4.59-11.25-4.59-17.22s1.55-11.82,4.66-17.38c3.11-5.55,7.43-9.83,12.97-12.81s11.22-4.48,17.03-4.48ZM2062.58,1172.77c-4.87,0-9.6,1.25-14.21,3.74-4.61,2.5-8.21,6.06-10.81,10.7-2.6,4.64-3.9,9.47-3.9,14.49s1.28,9.77,3.83,14.35c2.56,4.58,6.13,8.14,10.72,10.7,4.59,2.56,9.38,3.83,14.37,3.83s9.78-1.28,14.37-3.83c4.59-2.55,8.16-6.12,10.7-10.7,2.54-4.58,3.81-9.36,3.81-14.35s-1.29-9.85-3.88-14.49c-2.59-4.64-6.19-8.2-10.81-10.7s-9.35-3.74-14.19-3.74ZM2047.38,1220.84v-37.28h12.81c4.38,0,7.55.34,9.5,1.03,1.96.69,3.52,1.89,4.68,3.6,1.16,1.71,1.75,3.54,1.75,5.46,0,2.72-.97,5.1-2.92,7.12-1.94,2.02-4.52,3.15-7.74,3.4,1.32.55,2.37,1.21,3.17,1.97,1.5,1.47,3.34,3.93,5.51,7.39l4.55,7.3h-7.35l-3.31-5.88c-2.6-4.62-4.7-7.51-6.29-8.68-1.1-.86-2.71-1.29-4.82-1.29h-3.54v15.84h-6.01ZM2053.4,1199.86h7.3c3.49,0,5.87-.52,7.14-1.56,1.27-1.04,1.91-2.42,1.91-4.13,0-1.1-.31-2.09-.92-2.96s-1.46-1.52-2.55-1.95c-1.09-.43-3.1-.64-6.04-.64h-6.84v11.25ZM77.53,2032.87s-3.34,59.23,5.01,88.42c8.34,29.2,27.53,64.23,27.53,64.23,0,0,23.36-66.73,23.36-92.59s5.01-61.73,5.01-61.73l53.39,2.5s3.34,57.56,6.67,77.58c3.34,20.02,20.02,57.56,20.02,57.56,0,0,4.17-36.7,23.36-87.59s25.03-59.23,43.38-56.72c17.52,2.5,47.55,23.36,47.55,23.36,0,0-37.54,61.73-50.88,141.81-12.51,80.08-16.68,87.59-16.68,115.12s2.5,47.55-26.69,47.55-48.38,3.34-60.06-55.06c-11.68-57.56-22.52-68.4-22.52-68.4,0,0-17.52,29.2-16.68,53.39s6.67,68.4-9.18,67.57-59.23,15.85-69.24-16.68c-10.84-32.53-36.7-159.33-44.21-193.53-7.51-35.04-30.86-84.25-4.17-100.93,25.86-17.52,64.23-5.84,65.07-5.84ZM429.55,2032.03l-7.51,126.79h67.57l7.51-123.46s33.37-3.34,53.39,15.85c20.02,19.19,19.19,50.88,15.85,75.08-3.34,24.19-37.54,228.56-37.54,228.56,0,0-17.52-.83-35.04-16.68s-22.52-42.54-20.85-75.08,0-46.71,0-46.71l-55.06-.83-.83,139.31s-26.69.83-43.38-16.68-32.53-45.04-28.36-93.43-9.18-177.68,25.03-200.2c35.04-22.52,60.06-10.84,59.23-12.51ZM673.96,2031.2c-15.85,1.67-23.36,19.19-30.03,36.7-9.18,25.03-51.72,151.82-60.89,180.18s-8.34,47.55,8.34,73.41c16.68,26.69,31.7,32.53,31.7,32.53l27.53-90.92,56.72-4.17s-8.34,38.37,27.53,71.74,65.07,24.19,65.07,24.19c0,0-40.87-180.18-49.22-231.06s-13.35-56.72-49.22-81.75c-11.68-8.34-20.85-11.68-27.53-10.84h0ZM683.13,2120.45l20.85,92.59h-48.38l27.53-92.59h0ZM896.68,2349.85l15.02-261.09s30.86.83,47.55-16.68,16.68-40.87,16.68-40.87c0,0-70.9-.83-107.61,0s-50.88,0-68.4,16.68-11.68,57.56-11.68,57.56l49.22-10.84s-8.34,149.32-9.18,181.01c-.83,31.7,2.5,36.7,25.03,56.72,23.36,20.85,42.54,18.35,43.38,17.52ZM1043.49,2032.87c-10.01-.83-18.35,4.17-24.19,17.52-12.51,31.7-47.55,147.65-58.39,186.02-10.84,39.21-25.03,56.72-3.34,80.08s47.55,51.72,53.39,12.51c6.67-39.21,8.34-70.9,8.34-69.24l65.07.83s0,15.01,6.67,36.7c6.67,22.52,14.18,21.69,43.38,40.04s45.04,20.02,35.87-24.19-44.21-186.02-53.39-217.72c-9.18-31.7-15.85-35.87-35.87-47.55-10.84-5.84-25.03-14.18-37.54-15.02h0ZM1056.84,2108.78l25.03,99.27-51.72.83,26.69-100.1h0ZM1285.4,2029.53c-40.04,0-68.4,6.67-79.25,38.37s-7.51,122.62-1.67,204.37c5.01,81.75,29.2,77.58,48.38,80.08,19.19,2.5,29.2-16.68,29.2-16.68,0,0,25.03,19.19,55.06,18.35,29.2-.83,65.07-37.54,68.4-75.91s-45.88-87.59-45.88-87.59c-.83,2.5,36.7-40.04,20.85-85.09-15.85-45.88-55.06-75.91-95.1-75.91h0ZM1265.38,2075.41s56.72,7.51,59.23,51.72c2.5,44.21-20.02,42.54-40.04,43.38s-16.68-15.01-16.68-15.01l-2.5-80.08h0ZM1274.56,2207.21c9.18-.83,61.73,17.52,61.73,52.55,0,26.69,4.17,36.7-40.04,36.7s-23.36-90.09-23.36-90.09c0,.83.83.83,1.67.83h0ZM1542.33,2298.13c-23.36,0-40.87-35.04-42.54-144.31-.83-109.28,10.84-117.62-31.7-119.29-42.54-.83-40.04,19.19-40.04,53.39s-6.67,140.14,20.02,188.52,51.72,76.74,84.25,75.91,67.57-31.7,85.09-81.75c17.52-50.88,26.69-88.42,24.19-146.81s0-87.59-36.7-87.59-47.55,2.5-48.38,20.02,7.51,12.51,11.68,30.86c4.17,17.52,5.01,151.82-3.34,169.34-7.51,18.35.83,41.71-22.52,41.71h0ZM1730.85,2030.36c-2.5,0-5.84,0-9.18.83-27.53,3.34-48.38,47.55-48.38,162.66s7.51,128.46,24.19,141.81,52.55,31.7,51.72,8.34-1.67-94.26-1.67-94.26c0,0,11.68,29.2,35.04,59.23,23.36,29.2,43.38,48.38,60.06,47.55,16.68-.83,36.7-3.34,14.18-39.21s-53.39-101.77-53.39-101.77c0,0,57.56-45.04,60.06-73.41s7.51-75.08-15.02-88.42-45.04-15.02-65.9-13.35-31.7,4.17-31.7,1.67c-1.67-1.67-1.67-11.68-20.02-11.68h0ZM1778.39,2085.42c23.36,0,36.7,30.86,28.36,49.22-8.34,19.19-59.23,62.56-59.23,59.23-.83-4.17-10.01-34.2-6.67-68.4,4.17-35.04,15.02-40.04,37.54-40.04h0ZM1986.1,2256.42s-15.85,10.84-15.02-20.85c.83-31.7,16.68-40.04,60.89-40.87s49.22,12.51,43.38,36.7-26.69,23.36-26.69,23.36c0,0-8.34,48.38-28.36,71.74s-52.55,37.54-80.08,19.19c-27.53-19.19-60.89-71.74-59.23-120.12s19.19-109.28,45.04-145.15,40.04-52.55,77.58-52.55,75.08,24.19,73.41,60.89-7.51,44.21-35.04,44.21-35.04-4.17-31.7-25.03-3.34-37.54-20.85-15.85-35.04,56.72-39.21,95.93-12.51,104.27,8.34,101.77,26.69-33.37,27.53-33.37ZM2181.3,2277.28h68.4s5.01,17.52-8.34,40.04-4.17,24.19-32.53,24.19-50.88-5.01-59.23,3.34-40.87,12.51-51.72-3.34-8.34-32.53,5.01-45.04,10.84-.83,10.84-28.36,7.51-123.46,7.51-157.66-7.51-76.74,51.72-79.25,101.77,3.34,101.77,3.34c0,0-4.17,8.34-16.68,29.2s-.83,26.69-24.19,28.36c-23.36,2.5-45.04,3.34-45.04,3.34l-7.51,65.06,64.23,3.34s3.34,25.03-5.01,32.53-61.73,13.35-61.73,13.35l2.5,67.57h0ZM2339.79,2029.53c-10.84,0-14.18,3.34-23.36,23.36s-22.52,95.93-22.52,151.82,7.51,99.27,27.53,122.62,36.7,15.85,36.7,15.85l4.17-101.77c1.67,6.67,26.69,39.21,52.55,71.74,27.53,35.04,57.56,38.37,75.91,42.54s3.34-16.68-12.51-38.37-4.17-9.18-24.19-48.38c-20.02-39.21-24.19-65.06-24.19-65.06,0,0,7.51-6.67,31.7-29.2s51.72-120.12-10.01-135.97c-61.73-15.85-90.92,8.34-90.92,8.34,0,0-10.01-17.52-20.85-17.52h0ZM2397.35,2082.08c9.18,0,32.53,19.19,32.53,37.54s-9.18,34.2-31.7,50.88-33.37,20.85-35.87,18.35c0,0-2.5-49.22,1.67-71.74,5.01-22.52,24.19-35.04,33.37-35.04h0Z"/>
+            </svg>',
+            "title": "Whataburger",
+            "description": "This fast-food chain achieved real-time data access by orchestrating data center processes across 700 locations.",
+            "link": {
+                "text": "Read More",
+                "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/read/whataburger"
+            }
+        }
+    ]) }}
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ pb-6 pb-lg-9 ]">
+    {{ components.zigzag([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/RunMyJobs-2.jpg",
+            "title": "Freedom to integrate",
+            "description": "<p>ActiveBatch integrates with virtually any cloud platform or operating system (Windows, OS, Linux, UNIX and more). </p>
+            <p>Pre-built integrations and extensions, plus the flexibility to build your own via REST API, support scores of use cases across business and IT functions.</p>",
+            "link": {
+                "text": "Explore All Integrations and Extensions",
+                "url": "https://www.advsyscon.com/activebatch/integrations/"
+            }
+        }
+    ]) }}
+</section>
+
+<section class="[ py-7 py-xl-8 ][ bg-light ]">
+    {{ components.faqs("Enterprise WLA software FAQs", faqs) }}
+</section>
+
+<section class="[ bg-light ][ pb-7 pb-xl-8 ]">
+    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xxl ]">
+        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+            <h2>More WLA resources</h2>
+            <p>Understand your options and the impact of going with workload automation instead of limited job scheduling software.</p>
+        </div>
+        {{ components.related([
+            {
+                "img": "https://www.advsyscon.com/wp-content/uploads/guide.jpg",
+                "title": "Workload automation tool comparison",
+                "description": "Use our comprehensive guide to evaluate ActiveBatch, Tidal by Redwood, RunMyJobs by Redwood and more workload automation platforms.",
+                "link": {
+                    "text": "Download the Guide",
+                    "url": "https://www.advsyscon.com/en-us/resource/workload-automation-complete-guide"
+                }
+            },
+            {
+                "img": "https://www.advsyscon.com/wp-content/uploads/0724_DataFlow_Orchestration.jpg",
+                "title": "Guide to data workflow orchestration",
+                "description": "Learn how to manage growing data volumes using a workload automation solution like ActiveBatch as your single point of control.",
+                "link": {
+                    "text": "Read the Blog",
+                    "url": "https://www.advsyscon.com/blog/data-workflow-orchestration/"
+                }
+            },
+            {
+                "img": "https://www.redwood.com/wp-content/uploads/RMJ-Module.jpg",
+                "title": "Gartner® Magic Quadrant™ for SOAPs",
+                "description": "See why Redwood was named a Leader in the 2024 Gartner Magic Quadrant for Service Orchestration and Automation Platforms (SOAPs) report.",
+                "link": {
+                    "text": "Download the Report",
+                    "url": "https://www.redwood.com/resource/gartner-soaps-mq/",
+                    "target": "_blank"
+                }
+            }
+        ]) }}
+        </div>
+</section>
 
 {% endblock %}
-
