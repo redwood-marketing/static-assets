@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="robots" content="noindex">
+<title>Task Scheduling Software</title>
+<meta name="description" content="Discover how to save time and simplify business processes with task scheduling software. A centralized scheduler application that streamlines job scheduling across Windows and non-Windows systems." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        
+                {
+                    "@type": "Question",
+                    "name": "What is workload automation?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Workload automation (WLA) is the practice of using software to streamline, schedule and manage complex processes, applications and tasks across an organization&#92;&#39;s IT ecosystem. It enables users to automate manual, repetitive processes and ensures that interdependent workflows are executed efficiently and consistently, reducing the need for manual human intervention.
+
+WLA platforms with intuitive user interfaces allow for no-code/low-code workflow development for DevOps, data management and much more.
+
+&lt;a href=&quot;https://www.advsyscon.com/blog/what-is-workload-automation/&quot;&gt;Discover the capabilities workload automation products offer for IT automation, ETL and more.&lt;/a&gt;"
+                    }
+                },
+            
+                {
+                    "@type": "Question",
+                    "name": "What is the difference between job scheduling and workload automation?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Job scheduling and workload automation solutions were designed for different goals, but they&#92;&#39;re closely related and share some functionality. Job scheduling tools focus on individual tasks or “jobs” at a specific time or in a defined sequence. These jobs are often standalone and have minimal dependencies. They are often triggered by time-based schedules.
+
+Workload automation (WLA) goes beyond individual jobs to orchestrate interconnected workflows that span multiple systems or applications. WLA handles complex, event-driven workflows that adapt based on real-time conditions, such as new emails or Google Calendar events. WLA software features dashboards that allow users to track progress for multiple jobs and workflows from a single point of control.
+
+&lt;a href=&quot;https://www.advsyscon.com/blog/workload-automation-job-scheduling/&quot;&gt;Learn more about how job scheduling and workload automation are revolutionizing the modern workplace.&lt;/a&gt;"
+                    }
+                }
+            
+        ]
+    }
+</script>
+
+<!-- Mutiny -->
+<script>
+(function(){var a=window.mutiny=window.mutiny||{};if(!window.mutiny.client){a.client={_queue:{}};var b=['identify','trackConversion'];var c=[].concat(b,['defaultOptOut','optOut','optIn']);var d=function factory(c){return function(){for(var d=arguments.length,e=new Array(d),f=0;f<d;f++){e[f]=arguments[f]}a.client._queue[c]=a.client._queue[c]||[];if(b.includes(c)){return new Promise(function(b,d){a.client._queue[c].push({args:e,resolve:b,reject:d});setTimeout(d,500)})}else{a.client._queue[c].push({args:e})}}};c.forEach(function(b){a.client[b]=d(b)})}})();
+</script>
+<link rel="apple-touch-icon" href="https://www.advsyscon.com/home/asci-browser-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="language" content="English" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8" />
+<meta name="google-site-verification" content="2188O6icR-yvkfICzvv6MYZwI8pFa-EIvvjKGsO-_pw" />
+<meta http-equiv="Cache-Control" content="Private, max-age=600" />
+<link href="https://www.advsyscon.com/en-us/ab-icon.ico" type="image/x-icon" rel="shortcut icon" />
+<link href="https://www.advsyscon.com/en-us/ab-icon.ico" type="image/x-icon" rel="icon" />
+<link rel="canonical" href="https://www.advsyscon.com" />
+<link href="\https://www.advsyscon.com/styles/home.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/ydj8avx.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script id="navigation-js" src="https://static.marketing.redwood.com/activebatch/dist/pages/js/nav.min.js"></script>
+<link id="navigation-css" rel="stylesheet" href="../nav.min.css">
+
+         
+    </head>
+    <body>
+        
+        
+<nav class="[ mega_navigation ]">
+	<div class="[ mega_navigation__extra-menu ]">
+		<ul class="[ extra_menu ]">
+			<li>
+				<a href="https://support.advsyscon.com" target="_blank" class="[ mega_menu__item ]">Support</a>
+			</li>
+			<li>
+				<a href="https://www.advsyscon.com/en-us/portal/login" target="_blank" class="[ mega_menu__item ]">Log in <svg class="ms-{3}" width="16" height="13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 10"><path fill="currentColor" d="M8.3 8.6h1.4c.5 0 .8-.3.8-.7V2c0-.4-.3-.7-.8-.7H8.3a.7.7 0 0 1-.8-.7c0-.4.3-.7.8-.7h1.4C11 0 12 1 12 2.1V8c0 1-1 2-2.3 2H8.3a.7.7 0 0 1-.8-.7c0-.4.3-.7.8-.7ZM8 4.5c.3.3.3.7 0 1L5 8.4a1 1 0 0 1-1 0 .7.7 0 0 1 0-1l1.7-1.7h-5A.7.7 0 0 1 0 5c0-.4.3-.7.8-.7h4.9L4 2.6a.7.7 0 0 1 0-1 1 1 0 0 1 1 0l3 2.9Z"/></svg></a>
+			</li>
+			<li class="[ d-lg-none ]">
+				<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]">Get a demo</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="[ mega_navigation__bar ]">
+		<div class="[ mega_navigation__holder ]">
+			<a href="https://www.advsyscon.com" class="[ mega_navigation__logo ]">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 32">
+<path fill="#E24650" d="M7.18 13.25 0 .86h14.36l-2.14 3.69H9.38l.69-1.19H4.29l2.89 5 .9-1.56h2.83l-3.73 6.45Z"/>
+<path fill="currentColor" d="M83.08.83h8.3c2.01 0 3.48.39 4.39 1.16.9.77 1.36 1.97 1.36 3.6v.28c0 .98-.2 1.81-.6 2.48a3.72 3.72 0 0 1-1.91 1.53 4.2 4.2 0 0 1 2.24 1.49c.56.73.84 1.7.84 2.95v.43c0 1.84-.56 3.18-1.68 4-1.11.83-2.68 1.24-4.7 1.24h-8.24V.83Zm3.6 2.94V8.6h4.07c1.03 0 1.75-.19 2.17-.56.41-.38.62-1 .62-1.83v-.35c0-.76-.2-1.3-.58-1.62-.4-.32-1.04-.48-1.96-.48h-4.32Zm0 13.29h4.48c1.06 0 1.81-.18 2.24-.55.43-.37.65-1.04.65-2v-.36c0-1-.23-1.7-.7-2.1-.47-.39-1.26-.59-2.38-.59h-4.3v5.6Zm24.88.4c0 .95-.21 1.61-.64 1.98-.44.37-1.19.55-2.25.55h-4.4c-1.93 0-3.29-.36-4.1-1.07-.8-.72-1.2-1.75-1.2-3.1v-.59c0-1.49.45-2.57 1.33-3.24.88-.68 2.26-1.01 4.13-1.01.94 0 1.72.07 2.34.23.62.15 1.08.32 1.39.52v-.48c0-.49-.05-.89-.15-1.21-.1-.33-.26-.58-.5-.77a2.1 2.1 0 0 0-.96-.39 9 9 0 0 0-1.52-.1h-2.39l-1.26.03-1.13.02.56-2.83a85.7 85.7 0 0 1 4.38-.05c2.2 0 3.8.38 4.83 1.15 1.03.78 1.54 1.99 1.54 3.64v6.72Zm-3.4 0v-2.18c0-.32-.03-.6-.1-.82a1 1 0 0 0-.39-.55 2 2 0 0 0-.83-.3 8.7 8.7 0 0 0-1.44-.1h-.4c-1.03 0-1.72.12-2.08.37-.36.26-.54.71-.54 1.38v.5c0 .58.17 1 .5 1.29.33.27.95.41 1.85.41h3.43ZM121.28 20h-2.18a13.3 13.3 0 0 1-2.8-.25 3.56 3.56 0 0 1-1.73-.85c-.42-.4-.71-.94-.88-1.62a11.3 11.3 0 0 1-.24-2.56V2.74l3.51-.56V6h5.05l-.56 2.88h-4.49v5.65c0 .54.03.98.1 1.32.06.34.18.6.35.8.17.18.41.3.73.37.31.06.71.1 1.2.1h2.51l-.57 2.87Zm8.35-11.23c-.67 0-1.2.04-1.62.12-.41.08-.74.25-.99.49-.24.24-.4.6-.5 1.06-.09.47-.13 1.08-.13 1.83v1.45c0 .76.05 1.37.15 1.83.1.47.27.82.51 1.07.24.24.58.4 1 .48.42.08.95.12 1.58.12a156.75 156.75 0 0 0 3.94-.05l-.56 2.82a112.66 112.66 0 0 1-3.46.06 12.7 12.7 0 0 1-3.17-.34 4.7 4.7 0 0 1-2.08-1.09 4.22 4.22 0 0 1-1.14-1.95c-.22-.8-.34-1.78-.34-2.95v-1.45c0-1.15.12-2.13.36-2.93.23-.81.61-1.46 1.14-1.97a4.7 4.7 0 0 1 2.08-1.09c.86-.22 1.9-.33 3.15-.33.99 0 2.31.02 3.97.08l-.57 2.82a65.4 65.4 0 0 0-3.32-.08ZM135.17 20V0h3.51v6.67c.3-.28.76-.54 1.35-.76.6-.23 1.43-.34 2.51-.34 1.68 0 3 .35 3.99 1.06.98.71 1.47 1.9 1.47 3.57V20h-3.51v-9.1c0-.41-.03-.77-.08-1.08a1.5 1.5 0 0 0-.37-.77 1.7 1.7 0 0 0-.82-.45c-.36-.1-.85-.15-1.46-.15-.63 0-1.14.05-1.54.16-.4.1-.7.28-.93.53-.23.24-.38.56-.47.96-.1.4-.14.9-.14 1.47v8.42h-3.51ZM19.32 15.36h-6.78L10.08 20H5.55L16.35.83h4.89L24.37 20h-4.43l-.62-4.63Zm-5.05-3.47h4.67l-.89-7.05-3.78 7.05Zm17.37 8.16c-1.2 0-2.21-.12-3.03-.35a4.97 4.97 0 0 1-1.95-1.01c-.5-.44-.85-.97-1.07-1.59a6.3 6.3 0 0 1-.32-2.09c0-.77.08-1.58.24-2.44.27-1.4.65-2.54 1.15-3.4a5.91 5.91 0 0 1 4.28-3.04c.92-.17 1.93-.26 3.05-.26h.72a30.6 30.6 0 0 1 1.82.04l.92.01-1.27 3.36a49.45 49.45 0 0 0-2.51-.05c-.6 0-1.1.04-1.53.13a2.42 2.42 0 0 0-1.82 1.55c-.2.44-.36 1.01-.49 1.71a11.66 11.66 0 0 0-.27 1.99c0 .84.22 1.4.65 1.67.43.27 1.12.4 2.08.4h1.58c.53 0 1.18-.01 1.96-.05l-1.3 3.36a74.7 74.7 0 0 1-2.89.06Zm11.2-10.77-1 5.17c-.07.3-.1.61-.1.91 0 .44.11.76.36.97.24.22.67.33 1.28.33h1.47a21.19 21.19 0 0 0 1.31-.03l-1.3 3.36h-.47a30.23 30.23 0 0 1-1.72.03h-.72c-1.6 0-2.77-.35-3.5-1.05a3.87 3.87 0 0 1-1.1-2.93c0-.25.03-.52.06-.81.04-.29.08-.58.14-.89l2.3-11.78 4.4-.52-.76 3.88h4.32l-1.3 3.36h-3.67Zm6.72-3.36h4.3L51.1 19.99h-4.3l2.76-14.07ZM52.58 0c.7 0 1.24.12 1.61.36.37.25.55.65.55 1.23 0 .95-.24 1.6-.73 1.96a3.4 3.4 0 0 1-2.05.54c-1.44 0-2.16-.53-2.16-1.59 0-.48.07-.89.2-1.2.14-.33.33-.59.58-.78.26-.18.55-.32.88-.4.33-.08.7-.12 1.12-.12Zm7.99 15.8 4.68-9.88h4.43l-7.43 14.07h-4.9l-2.1-14.07h4.43l.9 9.88Zm11.59-1.19v.43c.02.67.22 1.15.6 1.45.4.31 1.06.46 2 .46.98 0 1.85 0 2.59-.02.74-.02 1.51-.06 2.32-.11l-1.22 3.1c-.55.05-1.22.08-2 .1-.8.02-1.62.03-2.5.03a8.87 8.87 0 0 1-2.8-.38 4.42 4.42 0 0 1-1.78-1.05 3.85 3.85 0 0 1-.95-1.6 6.83 6.83 0 0 1-.28-2c0-.76.08-1.54.24-2.35.27-1.49.67-2.7 1.19-3.63a7.01 7.01 0 0 1 1.82-2.2c.7-.52 1.46-.88 2.28-1.07.83-.19 1.7-.28 2.6-.28 1.83 0 3.2.34 4.09 1.02a3.47 3.47 0 0 1 1.34 2.93l-.07.72a7.4 7.4 0 0 1-.12.74 4.07 4.07 0 0 1-2.02 2.88c-1.03.55-2.53.83-4.5.83h-2.83Zm3.78-6.08c-.92 0-1.6.23-2.08.69a5.16 5.16 0 0 0-1.13 2.43h2.35c.45 0 .82-.02 1.12-.05.3-.04.54-.1.74-.2.2-.1.35-.23.46-.38a2.24 2.24 0 0 0 .37-1.28c0-.38-.13-.67-.4-.89-.27-.21-.74-.32-1.43-.32Zm13 22.03h-.98v-5.7h1v2.41c.19-.4.64-.73 1.25-.73 1.03 0 1.74.84 1.74 2.05 0 1.23-.7 2.06-1.74 2.06a1.4 1.4 0 0 1-1.27-.72v.63Zm0-1.9c0 .77.36 1.27.99 1.27.65 0 1.02-.52 1.02-1.34 0-.8-.37-1.33-1.02-1.33-.63 0-1 .5-1 1.26v.14Zm3.37-2.03h1.01l1.1 2.96h.02l1.04-2.96h.98l-1.54 4c-.37.98-.83 1.36-1.66 1.37-.13 0-.32-.02-.46-.04v-.75c.12.02.18.02.27.02.4 0 .57-.14.78-.68l-1.54-3.92Zm8.07 3.93v-7.69h3.31c1.8 0 2.87.84 2.87 2.41 0 1.2-.77 1.91-1.65 2.19l1.94 3.09h-1.57l-1.76-2.87h-1.73v2.87h-1.4Zm3.15-4c1.07 0 1.6-.44 1.6-1.28 0-.84-.53-1.28-1.6-1.28h-1.74v2.57h1.74Zm6.88 4.13c-1.6 0-2.77-1.07-2.77-2.85 0-1.8 1.2-2.88 2.74-2.88 1.72 0 2.54 1.3 2.54 2.76v.44h-3.95c.1.97.59 1.52 1.44 1.52.63 0 1.02-.3 1.2-.82h1.28c-.24 1.17-1.22 1.83-2.48 1.83Zm-1.4-3.42h2.6c0-.68-.4-1.29-1.23-1.29-.72 0-1.21.45-1.36 1.29Zm9.05 2.42c-.27.55-.93 1-1.77 1-1.43 0-2.42-1.16-2.42-2.86s.99-2.87 2.42-2.87c.86 0 1.48.47 1.74 1.02v-3.35h1.39v7.93h-1.36v-.87Zm0-1.96c0-1.07-.5-1.76-1.38-1.76-.9 0-1.41.74-1.41 1.86 0 1.13.52 1.85 1.41 1.85.88 0 1.39-.7 1.39-1.76v-.2Zm8.31 1.42h.02l1.11-4.06h1.33l-1.67 5.47h-1.4l-1.09-3.95h-.03l-1.07 3.95h-1.42l-1.67-5.47h1.37l1.11 4.06h.02l1.05-4.06h1.29l1.05 4.06Zm5.8 1.54c-1.62 0-2.77-1.09-2.77-2.86 0-1.77 1.15-2.87 2.77-2.87s2.78 1.1 2.78 2.87-1.16 2.86-2.78 2.86Zm0-1.02c.89 0 1.4-.7 1.4-1.84 0-1.15-.51-1.85-1.4-1.85-.9 0-1.4.7-1.4 1.85 0 1.15.5 1.84 1.4 1.84Zm6.51 1.02c-1.62 0-2.78-1.09-2.78-2.86 0-1.77 1.16-2.87 2.78-2.87 1.62 0 2.78 1.1 2.78 2.87s-1.16 2.86-2.78 2.86Zm0-1.02c.88 0 1.4-.7 1.4-1.84 0-1.15-.52-1.85-1.4-1.85-.9 0-1.4.7-1.4 1.85 0 1.15.5 1.84 1.4 1.84Zm7.92.02c-.28.55-.94 1-1.77 1-1.44 0-2.42-1.16-2.42-2.86s.98-2.87 2.42-2.87c.85 0 1.48.47 1.74 1.02v-3.35h1.38v7.93h-1.36v-.87Zm0-1.96c0-1.07-.5-1.76-1.38-1.76-.9 0-1.42.74-1.42 1.86 0 1.13.52 1.85 1.42 1.85.87 0 1.38-.7 1.38-1.76v-.2Z"/>
+</svg>
+			</a>
+			<div class="[ mega_navigation__back ][ d-lg-none ]">
+				<button class="[ text-primary ]">
+					<svg class="[ fa-chevron-left ][ mr-1 ]" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>Back
+				</button>
+			</div>
+		</div>
+		<div class="[ mega_menu ]">
+			<ul class="[ mega_menu__items ]">
+				<li>
+					<span class="[ mega_menu__item ]" data-menu="products">Products <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<section data-menu-target="products" class="[ mega_menu__sub_container container-full ]">
+						<div class="[ constrain ][ rounded ]">
+							<div class="[ bg-white ][ grid-1-3 ]">
+								<div class="[ p-2 p-lg-3 ]">
+									<p class="[ mb-{2} ][ text-accent ]">Product</p>
+									
+									<ul class="[ mega_submenu ] [ d-flex flex-column gap-{3} gap-lg-1 py-0 py-lg-1 ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/marker-activebatch.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>ActiveBatch</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/job-scheduling" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cube-net.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Job Scheduling</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/extensions" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cube-4-stack.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Integrations</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/services/support-options" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-question-check-mark.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Proactive Support</span>
+        
+      </a>
+    </li></ul>
+
+								</div>
+								<div class="[ p-2 p-lg-3 ][ border-start border-gray ]">
+									<p class="[ mb-{2} ][ text-accent ]">Features</p>
+									
+									<ul class="[ mega_submenu ] [ grid-1-1-1 gap-{1} gap-lg-1 py-0 py-lg-1 ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/workflow-management/integrated-jobs-library" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-book-open.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Job Step Library</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Access hundreds of pre-built job step templates requiring no scripting. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/custom-alerts" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-eye.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Reporting and Monitoring</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Get fully customizable reporting and flexible monitoring and alerting capabilities. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cube-transfer.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Event-Driven Job Scheduling</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Trigger automation based on events and more advanced scheduling features. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/security-driven-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-eye-lock.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Security, Auditing and Governance</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Keep systems and data safe with controlled access across on-premises, hybrid and cloud. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture/interfaces" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-window-click.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Views and Interfaces</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Work within user-friendly interfaces and capture information in different views. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimization" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cloud-transfer.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Cloud Provisioning</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Leverage provisioning capabilities to maximize cloud infrastructure investments and resources. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/compliance/service-level-agreement" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-bar-chart.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>SLA Management</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Automatically manage, monitor and prevent failure of service level agreements (SLAs). </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/activebatch-architecture" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cube-hand.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Architecture and High Availability</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Experience high availability in the event of outages or failures with flexible, scalable architecture. </p>
+      </a>
+    </li></ul>
+
+								</div>
+							</div>
+							<div class="[ bg-white ][ grid-2-3 grid-ai-center ][ border-top border-gray ]">
+								<a href="/connectors/" class="[ explore-integration ][ h-100 ][ text-reset link-unstyled @hover:bg-light ][ d-flex flex-wrap align-items-center gap-{3} gap-lg-1 ][ px-3 py-{2} ]">
+									<div class="[ order-4 order-lg-0 ][ d-flex align-items-center gap-{3} ]">
+										<figure>
+                                            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logos/logo-microsoft.svg" alt="Icon Microsoft" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
+                                        </figure>
+										<figure>
+                                            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logos/logo-oracle.svg" alt="Icon Oracle" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
+                                        </figure>
+										<figure>
+                                            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logos/logo-informatica.svg" alt="Icon Informatica" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
+                                        </figure>
+										<figure>
+                                            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logos/logo-servicenow.svg" alt="Icon ServiceNow" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
+                                        </figure>
+										<figure>
+                                            <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logos/logo-aws.svg" alt="Icon AWS" width="25" height="25" loading="lazy" style="object-fit: contain; object-position: center; max-height: 1.3rem">
+                                        </figure>
+									</div>
+									<span>Explore our Integrations</span>
+									<svg width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+									<div class="[ d-lg-none break ]"></div>
+								</a>
+								<aside class="[ d-none d-lg-flex align-items-center justify-content-between ][ bg-light ][ border-start border-gray ][ px-3 py-{2} ]">
+									<span class="me-2">Ready to see how ActiveBatch can simplify your workload automation?</span>
+									<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ][ d-flex align-items-center gap-{3} ]">
+										Get a Demo
+                                        <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+											<path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+										</svg>
+									</a>
+								</aside>
+							</div>
+						</div>
+					</section>
+				</li>
+				<li>
+					<span class="[ mega_menu__item ]" data-menu="use-case">Use Cases <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<section data-menu-target="use-case" class="[ mega_menu__sub_container container-full ]">
+						<div class="[ constrain constrain--smaller ][ rounded ][ bg-white ][ grid-2-1 ]">
+							<div class="[ p-2 p-lg-3 ]">
+								<p class="[ mb-{2} ][ text-accent ]">Use Cases</p>
+								
+								<ul class="[ mega_submenu ] [ grid-1-1 gap-{1} gap-lg-1 py-0 py-lg-1 ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/workload-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cubes-line.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Workload Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Orchestrate business processes end-to-end across your tech stack. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/managed-file-transfer" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-right-to-left.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>File Transfer Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Securely and seamlessly automatically transfer data and files for jobs. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/it-automation/it-process-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-monitor.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>IT Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Integrate and automate critical processes in your IT landscape. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/data-warehouse-etl-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-binary.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Data Warehouse & ETL Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Simplify end-to-end ETL processes for real-time data warehousing. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/business-process-automation" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-city-cloud.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Business Process Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Automate multi-step business processes end-to-end, from simple to complex. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/resource-optimizationc" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-cloud-expand.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Cloud Infrastructure Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Maximize cloud infrastructure resources with agile automation. </p>
+      </a>
+    </li></ul>
+
+							</div>
+							<div class="[ border-start border-gray ][ p-2 p-lg-3 ]">
+								<p class="[ d-none d-lg-block ][ mb-1 ][ text-primary ]"><br></p>
+								
+								<ul class="[ mega_submenu ] [ d-flex flex-column gap-{1} gap-lg-1 py-0 py-lg-1 ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/extensions/sql-server-scheduling" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/integration/logo-sql-server.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>SQL Server Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Integrate and automate Microsoft SQL Server processes end-to-end. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/extensions/servicenow" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/integration/logo-servicenow.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>ServiceNow Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Manage and resolve incidents automatically by integrating ServiceNow. </p>
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch/extensions/microsoft-sharepoint" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ has-desc ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/integration/logo-sharepoint.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>SharePoint Automation</span>
+        <p class="[ desc ][ text-gray text-smaller ][ m-0 ]">Automatically execute Microsoft SharePoint tasks with seamless integration. </p>
+      </a>
+    </li></ul>
+
+							</div>
+
+						</div>
+					</section>
+				</li>
+				<li>
+					<a href="https://www.advsyscon.com/en-us/activebatch/extensions" class="[ mega_menu__item ]">Integrations</a>
+				</li>
+				<li>
+					<a href="https://www.advsyscon.com/en-us/activebatch/pricing" class="[ mega_menu__item ]">Pricing</a>
+				</li>
+				<li>
+					<span class="[ mega_menu__item ]" data-menu="resources">Resources <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<section data-menu-target="resources" class="[ mega_menu__sub_container container-follow ]">
+						<div class="[ constrain ][ rounded ][ bg-white ][ grid-1-1 ]">
+							<div class="[ d-flex flex-column ][ p-2 p-lg-3 ]">
+								<p class="[ mb-{2} ][ text-accent ]">Resources</p>
+								
+								<ul class="[ mega_submenu ] [ d-flex flex-column gap-{3} gap-lg-{0} ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch-resources" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-book-stacked.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Resource Library</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=casestudy" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-suitcase.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Case Studies</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=whitepaper" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-paper-tray.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Whitepapers</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=datasheet" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-paper-clipboard.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Datasheets</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/activebatch-resources?type=video" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-video-clapboard.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Videos</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/blog" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        <figure><img src="https://static.marketing.redwood.com/media/nav-icons/icon-quill-laptop.svg" alt="Icon" width="27" height="25" loading="lazy"></figure>
+        <span>Blog</span>
+        
+      </a>
+    </li></ul>
+
+								
+							</div>
+							<div class="[ menu-latest-blog ][ d-flex flex-column ][ border-start border-gray ]">
+                                <a class="[ d-none d-lg-block h-100 ][ text-reset link-unstyled @hover:bg-light ][ border-left border-gray ][ no-fa-animation ][ p-2 p-lg-3 ]" href="https://www.advsyscon.com/blog/redwood-university/">
+                                    <p class="[ mb-{2} ][ text-accent ]">Featured Resource</p>
+                                    <p class="[ h6 leading-2 text-ellipsis ][ my-3 ]">ActiveBatch Academy is now Redwood University!</p>
+                                    <figure class="[ my-3 ]"><img width="128" height="85" src="https://www.advsyscon.com/blog/wp-content/uploads/redwood-university.jpg" class="[ d-block w-100 ratio-16:9 ][ border border-dark rounded ]" alt="" style="object-fit:cover;" role="presentation" decoding="async" loading="lazy" /></figure>
+                                    <span class="[ d-block text-ellipsis ][ my-3 ]">Learn why the success of digital transformation depends on effective and efficient automation</span>
+                                    <div class="[ text-slide-in ][ d-none d-lg-flex align-items-center ]">
+										<span>Learn More</span><svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.18799L6 7.54172L1 13.8954" stroke="#00B16B" stroke-linecap="round" stroke-linejoin="round"/></svg>
+									</div>
+                                </a>
+							</div>
+						</div>
+					</section>
+				</li>
+				<li>
+					<span class="[ mega_menu__item ]" data-menu="company">Company <svg class="fa-chevron-down ms-{3}" width="13" height="13" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></span>
+					<section data-menu-target="company" class="[ mega_menu__sub_container  ]">
+						<div class="[ constrain ][ rounded ][ bg-white ]">
+							<div class="[ border-start border-gray ][ d-flex flex-column ][ p-2 p-lg-3 ]">
+								
+								<ul class="[ mega_submenu ] [ d-flex flex-column gap-0 ] [ hover-chevron ] "><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/about-us" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} px-lg-1 py-lg-{2} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        
+        <span>About Redwood</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.redwood.com/newsroom/" target="_blank" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} px-lg-1 py-lg-{2} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        
+        <span>Redwood Newsroom</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.redwood.com/events/" target="_blank" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} px-lg-1 py-lg-{2} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        
+        <span>Redwood Events</span>
+        
+      </a>
+    </li><li class="[ bg-white @hover:bg-light ][ rounded ]">
+      <a href="https://www.advsyscon.com/en-us/about-us/careers" target="_self" class="[ text-reset @hover:dark text-decoration-none ] [ p-{3} px-lg-1 py-lg-{2} ] [ d-flex w-100 align-items-center gap-{3} ]">
+        
+        <span>Careers at Redwood</span>
+        
+      </a>
+    </li></ul>
+
+							</div>
+						
+						</div>
+					</section>
+				</li>
+			</ul>
+			<div class="[ extra_menu--mobile-target d-lg-none ]">
+			</div>
+		</div>
+		<div class="[ mega_navigation__get_demo ]">
+			<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ][ d-flex align-items-center gap-{3} ][ px-{1} py-{3} ]">
+				Get a Demo
+                <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+					<path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+				</svg>
+			</a>
+		</div>
+		<div class="[ mega_navigation__toggle ]">
+			<span class="[ sr-only ]">Toggle Menu</span>
+		</div>
+	</div>
+</nav>
+
+        <section 
+    class="[ text-dark ][ bg-light ][ position-relative ]" 
+    style="box-shadow: 0 2px 0 -1px var(--bs-dark)"
+>
+    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 90rem">
+        <div 
+            class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 ][ p-4 p-lg-5 ps-xl-7 ]"
+            style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--bs-dark)"
+        >
+            
+            <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">Elevated task scheduling software</h1>
+            <div class="[ lead text-balance fw-normal ][ mt-2 mb-4 ]"><p>Save time and simplify business processes with a centralized tool to streamline job scheduling across Windows and non-Windows systems.</p>
+</div><a 
+            href="https://www.advsyscon.com/en-us/demo/quick" 
+            class="[ btn btn-primary ]"
+            target="_self"
+        >
+            Get a Demo
+            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+            </svg>
+        </a></div>
+        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 55ch); height: clamp(10rem, 50vw, 30rem)">
+            <img 
+                class="[ w-100 h-100 ]" 
+                src="https://www.advsyscon.com/wp-content/uploads/TRENDS.jpg"
+                style="object-fit: cover; box-shadow: 0 0 0 1px var(--bs-dark)"
+            >
+        </div>
+    </div>
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pt-6 pt-xl-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>Invest in a user-friendly workspace for efficient task and project management</h2>
+        <p>ActiveBatch by Redwood gives you access to advanced features for more power and flexibility than a legacy task scheduler or limited scheduling app.</p>
+    </div>
+    
+<div class="[ grid ]" style="grid-auto-rows: 1fr">
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Customizable integrations</h3>
+            <p>Use the Service Library to create reusable job steps or apply the Super REST API Adapter to build integrations to all your core systems and apps.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-5.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Flexible job scheduling</h3>
+            <p>Use a combination of granular time, date and event-based scheduling to maintain efficient workflows that require far less human intervention.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Real-time monitoring</h3>
+            <p>Gain visibility into job execution and status with convenient dashboards and notifications, and proactively respond through API connections.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Event-driven architecture</h3>
+            <p>Trigger jobs with the events that make the most sense for your business &mdash; emails, file transfers, message queues and more.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Windows-compatible security</h3>
+            <p>ActiveBatch supports the Windows Security Model, including Kerberos and Active Directory, and its comprehensive policy framework prevents unauthorized changes.</p>
+            
+        </div>
+    
+        <div class="[ bg-light  ][ position-relative ][ mt-3 ][ g-col-12 g-col-lg-4 d-flex flex-column align-items-start gap-3 ][ pb-5 px-4 ][ rounded-4 ]">
+            <img 
+                class="[ mt-n3 ]"
+                src="https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg" 
+                alt="" 
+                width="60" 
+                height="60"
+                loading="lazy"
+            >
+            <h3 class="[ h5 fw-medium ]">Intelligent automation</h3>
+            <p>Leverage artificial intelligence (AI) and machine learning (ML) to optimize resource allocation and reduce bottlenecks.</p>
+            
+        </div>
+    
+</div>
+
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    
+<ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-5.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Upgrade to true workload automation</h3>
+                    <rich-text><p>Microsoft Windows Task Scheduler is used to create basic tasks. Much like UNIX cron or Z-Cron, Task Scheduler is a point solution designed for simplistic use cases, such as nightly batch files or time tracking for a small business. To coordinate tasks between Windows and non-Windows applications, you'll need custom PowerShell scripts or integrations.</p>
+            <p>Similarly, freeware solutions are not designed for enterprise-level scheduling and lack modern capabilities like event-driven automation.</p>
+            <p>Unlike most task management software, ActiveBatch allows you to run workloads on any operating system, including Windows 10, Mac OS, Linux, UNIX, OpenVMS and more, so you can coordinate tasks across your organization from a single control panel.</p></rich-text>
+                    
+                        <a href="https://www.advsyscon.com/en-us/activebatch/orchestration/workflow-orchestration" class="[ btn btn-primary ]">
+                            Discover Workflow Orchestration
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1  ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-2.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Look beyond due dates</h3>
+                    <rich-text><p>Automatically trigger jobs with business or IT events to reduce delays, minimize slack time and improve SLAs.&nbsp;</p>
+            <p>ActiveBatch supports various event types, including:</p>
+            <ul>
+                <li>Emails</li>
+                <li>Execution machine reboots</li>
+                <li>FTP file event triggers</li>
+                <li>Microsoft Message Queue</li>
+                <li>Oracle Database triggers</li>
+                <li>Social media feeds</li>
+                <li>System startup</li>
+                <li>VMware events</li>
+                <li>Web Services</li>
+                <li>Windows startups</li>
+                <li>WMI Events</li>
+            </ul></rich-text>
+                    
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Witness the impact of workload automation</h3>
+                    <rich-text><p>Task Scheduler jobs can be triggered by jobs from other scheduling software or task managers in non-Windows environments without any custom scripts or manual keypresses.</p>
+            <p>With ActiveBatch, you can choose from a range of scheduling options, including custom calendars, fiscal calendars, multiple time zones, custom tags and more. Engage constraint-based scheduling (CBS) to ensure new tasks don&rsquo;t run until requisite conditions are met.</p></rich-text>
+                    
+                        <a href="https://www.advsyscon.com/en-us/activebatch/core-capabilities/event-driven-automation" class="[ btn btn-primary ]">
+                            Get to Know Event-Driven Automation
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </article>
+        </li>
+    
+</ul>
+
+</section>
+
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
+    
+<blockquote class="[ w-100 ][ position-relative ][ text-center ][ bg-dark @hover:bg-primary ][ rounded-4 ][ m-0 p-4 p-lg-5 p-xl-7 ][ d-flex justify-content-around align-items-center gap-6 ]">
+    <div class="[ text-white ][ d-grid gap-5 ]">
+        <p class="[ d-block ][ h3 fw-normal lh-base ]">"ActiveBatch allows for more diverse and more complex batch runs. With ActiveBatch, we&#39;ve been able to reduce manual work/problem-solving and significantly decrease the amount of custom scripting we do."</p>
+        <cite class="[ fst-normal fw-light h5 ][ d-grid gap-5 ]">
+            
+            <div>
+                <img class="" aria-hidden="true" style="max-height: 4rem; width: 15rem; mix-blend-mode: screen; filter: brightness(10) saturate(0)" src="https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-veroskatt.svg" alt="">
+                <a href="https://www.advsyscon.com/en-us/activebatch/case-studies/vero-skatt" class="[ stretched-link ]">
+                    <span class="[ sr-only ]">Read the case study</span> 
+                </a>
+            </div>
+        </cite>
+    </div>
+</blockquote>
+
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    
+<ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1  ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-4.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Expand to more use cases</h3>
+                    <rich-text><p>An automation tool like ActiveBatch can tackle business challenges, support milestones and solve problems no traditional job scheduler can touch, like:</p>
+            <ul>
+            <li>Driving effective IT change management by syncing objects across test, QA and production environments.</li>
+            <li>Maintaining high availability with dynamic or manual no-cluster failover to combat the threat of outages and enforce job prioritization.</li>
+            <li>Optimizing cloud provisioning with automation to help you achieve intelligent resource management.</li>
+            <li>Promoting efficiency and consistency by executing the same job or plan for different workflows using reusable job templates and variables.</li>
+            </ul></rich-text>
+                    
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1 order-md-1 ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-9.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Gain a tangible competitive advantage</h3>
+                    <rich-text><p>Switching to ActiveBatch delivers priceless benefits:</p>
+            <ul>
+            <li>Cross-platform integration gives you centralized automation across diverse systems for seamless workflow coordination.</li>
+            <li>Pre-built job steps and templates facilitate rapid development of complex automated workflows.</li>
+            <li>Real-time monitoring, comprehensive alert mechanisms and SLA management key features deliver operational efficiency far beyond what a simple job scheduler can provide.</li>
+            <li>Non-cluster failover supports high availability to ensure continuous operation and minimal downtime.</li>
+            </ul></rich-text>
+                    
+                        <a href="https://www.redwood.com/demo/quick/" class="[ btn btn-primary ]">
+                            Experience the ActiveBatch Difference
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </article>
+        </li>
+    
+</ul>
+
+</section><aside 
+    class="[ px-2 ][ text-center text-md-start ][ d-flex align-items-center flex-column gap-6 ][ position-relative ]" 
+    style="background: linear-gradient(to bottom, transparent 50%, transparent 50%, transparent)"
+>
+    <div class="[ container-fluid container-xl ][ d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 ][ bg-dark text-white ][ overflow-hidden ][ rounded-4 ][ p-4 p-lg-6 px-lg-8 ][ position-relative z-6 ]">
+        <div class="[ d-grid gap-2 ]" style="max-width: 65ch">
+            <h2>Get a glimpse of the future-ready way to schedule jobs</h2>
+            
+                <p class="[ m-0 ]">Enjoy enterprise capabilities without compromising ease of use.</p>
+            
+        </div>
+        <a 
+            href="https://www.redwood.com/demo/quick/" 
+            class="[ btn btn-primary ][ position-relative z-1 ]" 
+            target="_self"
+        >
+            Get a Demo
+            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <svg class="[ position-absolute top-0 end-0 ][ h-100 ][ pe-none ]" 
+			style="opacity:.05;transform:scale(1.8) translate(-15%, 11% );"
+			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="m22.4 19.2-2.3 4.4-8.2-13.9h16.2l-2 3.1h7.3L39 3.5H1l19 33 9.8-17.3h-7.4z"/>
+        </svg>
+    </div>
+    
+</aside> 
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+    
+<ul class="[ list-unstyled ][ grid row-gap-5 row-gap-lg-7 row-gap-xxl-8 ]">
+    
+        <li class="[ g-col-12 ][ text-start ]">
+            <article class="[ grid align-items-center column-gap-5 column-gap-xl-8 ]" style="--bs-columns: 2">
+                <figure class="[ m-0 ][ g-col-2 g-col-md-1  ]">
+                    <img 
+                        class="[ w-100 h-auto object-fit-cover ][ rounded-4 ][ overflow-hidden ]"
+                        src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg" 
+                        alt="" 
+                        width="400" 
+                        height="auto"
+                        loading="lazy"
+                        style="aspect-ratio: 5 / 4"
+                    >
+                </figure>
+                <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    <h3 class="[ h2 text-balance ]">Flexible options for seamless integration</h3>
+                    <rich-text><p>ActiveBatch's Integrated Jobs Library provides pre-built, universal connectors. With dozens of extensions for popular applications like SAP and Informatica, your team members can easily automate and execute task runs from a central coordination point.</p>
+            <p>Integrate automated tasks from virtually any application or system using the low-code REST API and create drag-and-drop objects to reuse.</p>
+            <p>This extensibility facilitates the rapid creation of scheduled tasks and subtasks and the development of reliable, end-to-end workflows.</p></rich-text>
+                    
+                        <a href="https://www.redwood.com/demo/quick/" class="[ btn btn-primary ]">
+                            Experience the ActiveBatch Difference
+                            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    
+                </div>
+            </article>
+        </li>
+    
+</ul>
+
+</section>
+
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center gap-6 ][ pb-6 pb-xl-8 pb-xxl-9 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>See how ActiveBatch excels</h2>
+        <p>Learn why successful organizations prefer advanced workload automation over basic task scheduling.</p>
+    </div>
+    
+<ul class="[ list-unstyled ][ w-100 ][ grid ]" style="grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))">
+    
+        <li>
+            <article class="[ h-100 ][ border border-light @hover:border-dark ][ bg-light ][ py-4 px-2 px-lg-3 p-xl-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+                <svg viewBox="0 0 600.1 102.3" height="102.3" width="600.1" style="height: 2rem; width: auto">
+                <path fill="var(--bs-dark)" d="M594.9,25.7c2.9,0,5.2,2.3,5.2,5.2s-2.3,5.2-5.2,5.2-5.2-2.3-5.2-5.2,2.3-5.2,5.2-5.2M594.9,26.3c2.6,0,4.6,2.1,4.6,4.6s-2.1,4.6-4.6,4.6-4.6-2.1-4.6-4.6,2-4.6,4.6-4.6M595,30.3c.5,0,.9-.1,1.1-.2.2-.2.3-.4.3-.8s-.1-.6-.3-.8c-.2-.2-.6-.2-1.2-.2h-1.3v2h1.4ZM592.7,34.2v-6.8h2.4c.8,0,1.3.2,1.7.5s.6.7.6,1.3c0,.4-.1.8-.3,1-.2.3-.5.5-.9.6.3.1.5.2.7.3.1.1.2.4.3.7,0,.1.1.4.1,1,.1.5.2,1,.3,1.4h-1c-.1-.4-.2-.8-.2-1.4-.1-.5-.1-.9-.2-1-.1-.3-.2-.4-.4-.5s-.5-.2-.9-.2h-1.1v3.1h-1.1ZM548.8,27.5h36.7c-1.4,3.8-2.8,7.6-4.2,11.4h-18.3c-2.2,6-4.4,12.1-6.6,18.1h17.1c-1.4,3.8-2.8,7.6-4.1,11.4h-17.1c-1.3,3.6-2.5,7.2-3.9,10.7-1.3,3.6-2.6,7.1-3.9,10.7h19.9c-1.3,3.8-2.7,7.5-4.1,11.3h-38.2c2.3-6.1,4.5-12.2,6.7-18.3,2.2-6.1,4.4-12.3,6.6-18.4,2.2-6.1,4.5-12.3,6.7-18.4,2.2-6.2,4.4-12.4,6.7-18.5M537,47.9c-.3,1-.7,1.9-1.1,2.8h-17.7c.2-.5.3-1.1.5-1.6,1.7-4.7,2.4-7.8,2-9.2-.4-1.4-1.7-2.2-3.9-2.2s-4.1.8-5.5,2.2c-1.4,1.4-3,4.5-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.2-5.4,15.2-1.7,4.6-2.4,7.7-2,9.2s1.8,2.2,4,2.2,4-.7,5.3-2.1c1.4-1.4,2.8-4.1,4.2-8,.5-1.4,1-2.8,1.5-4.1h17.7c-.5,1.4-1,2.7-1.4,4-2.9,8-6.7,13.6-11.3,16.8-4.6,3.1-11.1,4.7-19.7,4.7-9.3,0-15.2-1.8-17.5-5.5-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.7,3.2-12.7c1.4-3.9,2.8-7.9,4.3-11.8,1.4-3.9,2.8-7.9,4.3-11.9,1.8-5,3.8-9.2,5.9-12.6,2.1-3.4,4.5-6.1,7-7.9,4.9-3.7,12.2-5.6,21.5-5.6,8.5,0,14,1.6,16.3,4.8,2.4,3.2,2.1,8.8-.8,16.8M447.2,27.5h22.2c8.7,0,14.6,1.4,17.3,4,2.8,2.7,3.2,7.1,1,13.1-.4,1-.8,2.1-1.1,3.1-1.9,5.3-4.7,9.2-8.3,11.8-3.7,2.6-8.8,4.2-15.4,5,6.4.5,10.4,2.1,12,4.7,1.6,2.7,1.3,7.3-1.1,13.9-2.2,6-4.3,12-6.5,18h-18.3c1.3-3.7,2.7-7.5,4-11.3,1.3-3.7,2.7-7.5,4.1-11.3,1.3-3.7,1.6-6,.7-7s-3.1-1.5-6.8-1.5h-2c-1.9,5.2-3.7,10.4-5.6,15.5-1.9,5.2-3.7,10.3-5.6,15.5h-17.2c2.2-6.1,4.4-12.2,6.6-18.3,2.2-6.1,4.4-12.2,6.6-18.4,2.2-6.1,4.4-12.3,6.6-18.4,2.3-6.1,4.5-12.3,6.8-18.4M460.4,38.5c-1.3,3.5-2.5,6.9-3.7,10.4-1.3,3.5-2.5,6.9-3.7,10.4h1.7c3.6,0,6.2-.6,8.1-1.8,1.8-1.2,3.3-3.4,4.4-6.6.5-1.3.9-2.6,1.4-3.9,1.1-3.2,1.3-5.4.3-6.6-.9-1.2-3.2-1.8-6.8-1.8h-1.7v-.1ZM394.7,27.5h18.3c-1.5,4.4-3.1,8.7-4.7,13.1-1.6,4.3-3.1,8.7-4.6,13-1.6,4.3-3.1,8.7-4.7,13-1.5,4.3-3.1,8.7-4.7,13-1.7,4.7-2.3,7.7-1.9,9.1s1.7,2.1,4,2.1,4.1-.7,5.5-2.1c1.3-1.4,2.9-4.5,4.6-9.2,1.6-4.3,3.1-8.7,4.6-13s3.1-8.7,4.7-13c1.5-4.3,3.1-8.7,4.7-13s3.1-8.7,4.7-13.1h18.4c-1.4,4.1-2.9,8.2-4.4,12.2-1.4,4.1-2.9,8.1-4.4,12.2s-2.9,8.1-4.4,12.2-2.9,8.1-4.4,12.2c-1.8,5-3.9,9.2-5.9,12.6-2.1,3.4-4.4,6.1-6.8,7.9-4.9,3.8-11.9,5.6-21.1,5.6s-14.8-1.8-17.1-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.4-7.6,3.2-12.7c1.4-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.2,1.5-4,2.9-8.1,4.4-12.1M382.6,52.5c-1.4,4-2.8,7.9-4.2,11.9-1.4,3.9-2.8,7.9-4.2,11.8-1.8,5-3.8,9.2-5.9,12.6s-4.3,6-6.9,7.9c-5,3.7-11.9,5.6-21.3,5.6s-15.2-1.8-17.5-5.5c-1.1-1.8-1.6-4.5-1.2-7.9s1.3-7.7,3.1-12.7c1.4-3.9,2.8-7.9,4.2-11.8,1.4-3.9,2.8-7.9,4.2-11.9,1.8-5,3.7-9.2,5.8-12.6,2.1-3.4,4.4-6.1,6.9-7.9,5-3.8,12.1-5.6,21.4-5.6s15.2,1.9,17.4,5.6c1.2,1.9,1.6,4.5,1.2,7.9-.2,3.4-1.2,7.6-3,12.6M365.5,49.1c1.7-4.8,2.3-7.9,1.9-9.3s-1.9-2.1-4.4-2.1-4.4.7-5.9,2.2c-1.5,1.4-3,4.6-4.7,9.2-1.8,5.1-3.7,10.2-5.5,15.2-1.8,5.1-3.6,10.1-5.4,15.2-1.7,4.7-2.3,7.8-1.9,9.2.5,1.4,1.9,2.1,4.3,2.1s4.5-.7,5.9-2.2c1.5-1.4,3.1-4.5,4.7-9.1,1.8-5.1,3.6-10.1,5.5-15.2,2-5,3.7-10.1,5.5-15.2M336.6,23.6c-.8,2.5-1.6,5-2.3,7.5h-21c.9-2.9,1.8-5.9,2.7-8.8.8-2.6,1-4.5.5-5.6s-1.7-1.6-3.7-1.6-3.4.5-4.5,1.6-2.1,3-2.9,5.6c-.7,2.2-1.3,4.3-2,6.5-.8,2.5-.8,4.7-.1,6.7.7,1.9,2.5,4.3,5.3,6.8,2.3,2.1,4.6,4.2,6.9,6.3.4.3.9.8,1.7,1.5,3.4,3,5.3,5.7,6.2,8.1.6,1.8.8,3.9.7,6.1-.2,2.3-.9,5-1.8,8.2-.6,2-1.3,4-1.9,6-2.4,7.6-6.5,13.5-12.8,17.6-6.2,4.1-14,6.1-23.2,6.1s-15.9-1.9-18.8-5.7c-2.9-3.8-3-10.2-.2-19.1.8-2.4,1.5-4.9,2.2-7.3h21.8c-.9,2.8-1.7,5.6-2.6,8.4-.9,3-1.2,5.2-.6,6.5s2,1.9,4.2,1.9,4.1-.6,5.3-1.8,2.4-3.4,3.4-6.6c.4-1.2.8-2.6,1.2-3.8.8-2.8.9-5.1.3-7.2-.6-2-2.8-4.7-6.5-8-2.3-2.1-4.5-4.3-6.9-6.4-3.4-3-5.6-6.2-6.4-9.7-.7-3.4-.4-7.6,1-12.3.9-2.9,1.9-5.8,2.8-8.7,2.1-6.7,6.2-12.1,12.6-16.2,6.5-4.1,14-6.2,22.4-6.2s13.4,2,16.3,6c2.8,4,3.1,9.9.7,17.6M242.8,25.4h36.4c-1.4,3.8-2.7,7.6-4,11.4h-18.1c-2.1,6-4.3,12.1-6.4,18.1h16.7c-1.3,3.8-2.7,7.6-4,11.4h-16.8c-1.3,3.6-2.5,7.2-3.8,10.7-1.3,3.6-2.5,7.1-3.8,10.7h19.7c-1.4,3.8-2.7,7.5-4,11.3h-37.9c2.2-6.1,4.3-12.2,6.5-18.4,2.2-6.1,4.3-12.3,6.5-18.4s4.3-12.3,6.5-18.4c2.1-6.1,4.4-12.3,6.5-18.4M165.2,27.5h25.1c-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.6,13.2-.9,4.4-1.8,8.8-2.7,13.2-.9,4.4-1.7,8.8-2.5,13.2h.9c2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,6.9-13.2,2.3-4.4,4.6-8.8,7-13.2h24.7c-2.2,6.2-4.3,12.3-6.5,18.4s-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4-4.3,12.3-6.5,18.4h-15.2c1.8-5,3.5-10,5.3-15.1,1.8-5,3.5-10.1,5.3-15.1s3.5-10.1,5.3-15.1,3.6-10.1,5.4-15.1h-1.2c-2.7,5-5.4,10.1-8,15.1s-5.3,10.1-7.9,15.1c-2.6,5-5.3,10.1-7.9,15.1-2.6,5-5.3,10.1-7.9,15.1h-16.4c1-5,2-10,3-15.1,1-5,2-10.1,3-15.1s2-10.1,3-15.1,2-10.1,3-15.1h-1c-1.8,5-3.5,10.1-5.3,15.1s-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1-3.5,10.1-5.3,15.1h-14.3c2.1-6.1,4.3-12.2,6.4-18.3,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.3-6.2,4.5-12.4,6.6-18.5M141.9,27.5h18.3c-2.1,6.2-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.3-6.4,18.4-2.1,6.1-4.3,12.2-6.4,18.3h-18.4c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4,2.2-6,4.4-12.2,6.5-18.3M90.6,27.5h22.2c8.7,0,14.5,1.3,17.4,4,2.8,2.6,3.3,7,1.2,13.1-.4,1-.7,2.1-1.1,3.1-1.8,5.3-4.7,9.2-8.2,11.8-3.6,2.6-8.8,4.2-15.3,5,6.4.5,10.4,2.1,12.1,4.7,1.7,2.7,1.4,7.3-.9,13.9-2.1,6-4.2,12-6.3,18h-18.3c1.3-3.8,2.6-7.5,3.9-11.3s2.6-7.5,4-11.3c1.3-3.7,1.5-6,.6-7s-3.2-1.5-6.9-1.5h-2c-1.8,5.2-3.6,10.4-5.4,15.5-1.8,5.2-3.6,10.3-5.4,15.5h-17.2c2.1-6.1,4.3-12.2,6.4-18.4,2.1-6.1,4.3-12.3,6.4-18.4s4.3-12.3,6.4-18.4c2.1-6,4.3-12.2,6.4-18.3M103.9,38.5c-1.2,3.5-2.4,6.9-3.6,10.4-1.2,3.4-2.4,6.9-3.6,10.3h1.6c3.6,0,6.3-.6,8-1.8,1.8-1.2,3.3-3.4,4.4-6.6.4-1.3.9-2.6,1.4-3.9,1.1-3.2,1.1-5.4.2-6.6-.9-1.2-3.2-1.8-6.7-1.8h-1.7ZM33.1,4.6h24.7c12.7,0,21,2,24.9,6.1,3.8,4,4.1,10.9.8,20.5-.7,2.1-1.5,4.2-2.2,6.3-3.1,9.1-7.9,15.8-14.3,20-6.4,4.3-14.9,6.4-25.4,6.4h-6.7c-2.2,6.3-4.3,12.6-6.5,19-2.1,6.3-4.2,12.6-6.4,18.9H0c2.8-8.1,5.5-16.2,8.3-24.3,2.8-8.1,5.5-16.2,8.2-24.3,2.7-8.1,5.5-16.2,8.2-24.3,2.8-8.1,5.6-16.2,8.4-24.3M50.2,19.1c-1.7,5.1-3.5,10.2-5.2,15.2-1.7,5.1-3.4,10.2-5.1,15.2h2c4.3,0,7.6-.9,9.9-2.7,2.3-1.8,4.4-5,5.9-9.7.6-1.9,1.3-3.9,2-5.8,1.6-4.6,1.8-7.8.7-9.6-1.1-1.8-3.8-2.7-8-2.7h-2.2v.1Z"/>
+            </svg>
+                <h3 class="[ h5 ][ sr-only ]">PrimeSource</h3>
+                <rich-text><p>Building material distributor cuts ETL processing time by 89.5%</p></rich-text>
+                <a 
+                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
+                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/primesource"
+                    target="_self"
+                >
+                    See the Case Study
+                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+                    </svg>
+
+                </a>
+                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
+                    <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-warehouse.jpeg" class="[ w-100 ][ object-fit-cover ]" loading="lazy" width="400" height="auto" style="aspect-ratio: 4 / 3">
+                </figure>
+            </article>
+        </li>
+    
+        <li>
+            <article class="[ h-100 ][ border border-light @hover:border-dark ][ bg-light ][ py-4 px-2 px-lg-3 p-xl-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+                <svg  style="height: 2.5rem; width: auto" viewBox="0 0 198.36 60.52"><path d="M152.21,26.71h-10.95v-8.35h8v-5.33h-8v-7.27h10.52V.43h-16.56v31.61h16.99v-5.33ZM161.86,32v-12.85h2.88l.79,2,4.47,10.85h6.48l-6-14.11c3.38-1.3,4.75-4.1,4.75-8.06,0-5.69-3.1-9.14-9.72-9.43h-9.72v31.6h6.07ZM161.86,5.36h3.67c2.3.22,3.67,1.51,3.67,4.39s-1.37,4.18-3.67,4.32c-.19.06-.38.08-.58.07h-3.1V5.36ZM188.28,38.45h-5.18v1.94h6.55v19.73h2.09v-19.73h6.62v-1.94h-10.08ZM124.63,32.04L132.7.43h-5.91l-5.47,22.54h-.14L115.63.43h-5.9l8.06,31.61h6.84ZM117.86,47.81c-4.1-1.51-4.61-2.52-4.61-4,0-2.52,1.87-4,4.46-4,2.49-.06,4.7,1.59,5.33,4l1.73-.43c-.79-3.23-3.74-5.45-7.06-5.33-4.18,0-6.41,2.52-6.41,5.69,0,7.2,12.1,4.9,12.1,10.73,0,2.59-1.73,4.32-4.54,4.32-3.46,0-5.47-1.44-6.34-4.75l-1.8.58c1.22,4,3.6,5.9,7.85,5.9,3.6,0,6.84-2.16,6.84-5.83,0-3.14-1.28-4.58-7.55-6.88ZM155.88,38.45h-1.66l-7.34,21.67h2.23l2.38-7.06h8.71l2.38,7.06h2.23l-7.27-21.67h-1.66ZM155.88,51.12h-3.74l3.46-10.3h.58l3.46,10.3h-3.76ZM165.1,38.45v1.94h6.62v19.73h2.02v-19.73h6.62v-1.94h-15.26ZM198.29,21.89v-11.31c0-7.78-4.18-10.58-10-10.58s-10,2.81-10,10.58v11.3c0,7.78,4.1,10.58,10,10.58s10-2.8,10-10.57ZM184.29,22.68v-12.89c0-3.53,1.51-4.46,4-4.46s4,.94,4,4.46v12.89c0,3.46-1.58,4.46-4,4.46s-3.97-1-3.97-4.46h-.03ZM142.42,38.45l-10.88,12.74v-12.74h-2.08v21.67h2.08v-6.05l4.54-5.25,6.7,11.3h2.3l-7.7-12.82,7.7-8.85h-2.66Z" fill="var(--bs-secondary)" stroke-width="0"/><polygon points="46.73 46.73 52.92 43.7 48.31 42.91 46.73 43.63 41.47 46.22 35.21 49.25 39.89 50.11 41.47 49.32 46.73 46.73" fill="var(--bs-secondary)" stroke-width="0"/><polygon points="46.73 55.44 52.92 52.42 54.29 49.82 55.01 48.46 55.08 48.24 55.01 48.31 54.29 48.67 46.73 52.34 42.12 54.58 41.47 56.02 40.54 58.46 41.47 57.96 46.73 55.44" fill="var(--bs-secondary)" stroke-width="0"/><path d="M35.57,56.3l5.9-2.88,5.26-2.52,7.56-3.74.72-.29,8.35-4.1c.14-.07.22-.14.36-.22-.43-.65-.86-1.3-1.3-2l-7.42,3.66-.72.29-7.56,3.74-5.26,2.52-6.91,3.38,1.02,2.16Z" fill="var(--bs-secondary)" stroke-width="0"/><polygon points="69.84 52.49 69.62 55.15 69.48 57.17 69.62 57.38 71.35 60.12 74.59 60.12 74.66 60.12 74.59 59.98 69.84 52.49" fill="var(--bs-secondary)" stroke-width="0"/><path d="M69.62,45.14l-13-20.88-1.58,1-.14.07c0,.07.07.14.14.22,3.46,6,7.06,12,10.73,17.86l3.89,6.26,5,7.85,1.58,2.59h2.76l-4.41-7.11-4.97-7.86Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M69.62,18.36l1.87.5,3.1.86,7.63,2.28c1.78-4.53,4.14-8.81,7-12.74-.99-.27-2.02.31-2.3,1.3-.11.45-.11.92,0,1.37-1.66,0-3.6.29-4.18,2.23-.36,1.22.29,2.16,1,3.1-1.74,1.39-3.46,2.11-5.74,1.46-1.56-.39-2.85-1.51-3.46-3-.22-.52-.4-1.06-.54-1.61h.58c1.3-.14,2.88-.43,3.31-1.87.5-1.8-1.51-3-2.74-3.82.86-.5,1.66-.79,1.94-1.8.35-1.01-.18-2.12-1.2-2.47-.43-.15-.9-.14-1.32.02-.67.17-1.2.7-1.37,1.37-.29.94.29,1.66.72,2.52-1.44,0-3.67,0-4.32,1.66v.14c-.14.42-.14.88,0,1.3.55.98,1.34,1.79,2.3,2.38-.68.6-1.45,1.09-2.28,1.46-1.13.51-2.41.59-3.6.22-2.02-.57-3.56-2.2-4-4.25,1.12-.27,2.04-1.08,2.45-2.16.58-1.87-1-3.17-2.38-4,.31-.37.58-.78.79-1.22.28-.98-.28-2.01-1.26-2.29-.01,0-.02,0-.04,0,.32,4.84.04,9.7-.86,14.47l8.9,2.6Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M54.21,24.27l.07-.07.72-.43.94-.58-.94-1.52-.72-1.15-1.22-1.94-.79-1.3c.66-.07,1.34-.07,2,0,.22,0,.43.07.72.07s.79.22,1.15.36c-.36-.5-.79-.94-1.15-1.44-.29-.29-.5-.58-.72-.79-2.18-2.52-4.72-4.7-7.54-6.48-.65-.36-1.3-.72-1.94-1,0,3.61.66,7.2,1.94,10.58.6,1.71,1.3,3.38,2.09,5,.35-1.3.78-2.58,1.3-3.82-.79-1.44-1.66-3-2.45-4.39.48-.02.95,0,1.43.04,1.73,3,3.38,5.9,5.11,8.86Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M24,25.2c2.83-9.83,9.01-18.37,17.47-24.12.36-.22.72-.43,1-.65H0v59.69h28.8c-6.41-10.46-8.15-23.12-4.8-34.92Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M60.48,57.46c-1.88-.53-3.9-.16-5.47,1-.26.2-.5.42-.72.65-.3.32-.59.65-.86,1h10.57c-.82-1.28-2.07-2.22-3.52-2.65Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M68.18,57.53l.5-6.91-4-6.48c-.12-.13-.22-.27-.29-.43-.14.09-.28.16-.43.22l-6.86,3.3-2.09,4-.72,1.37-.43.79-7.13,3.46-5.26,2.59-1.37.65h11.81c.57-1.09,1.38-2.02,2.38-2.74.21-.21.45-.38.72-.5,3.69-2.04,8.34-.7,10.38,3,.04.08.09.16.13.24h4.32l-.22-.22-1.44-2.34Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M74.59,37.15c2.52-1.3,5-2.59,7.56-4l-.86-1.87-6.7,3.31-5,2.38-2.59,1.33,1.22,2.09c.5-.29,1-.5,1.44-.72,1.62-.86,3.28-1.67,4.93-2.52Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M93.22,40.98l.02.02c-.66-.14-1.33-.21-2-.22-3.44.16-6.1,3.09-5.93,6.53.13,2.66,1.92,4.94,4.47,5.69.47.14.95.24,1.44.29,3.47.1,6.37-2.63,6.47-6.1.08-2.84-1.75-5.39-4.47-6.21Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M41.4,26.14c-3.25-1.19-6.84.48-8.03,3.72-1.19,3.25.48,6.84,3.72,8.03.28.1.56.18.85.24,1.16.34,2.39.32,3.53-.07,2.03-.61,3.61-2.21,4.18-4.25.92-3.27-.93-6.69-4.18-7.7l-.07.02Z" fill="var(--bs-secondary)" stroke-width="0"/><polygon points="74.59 49.97 74.09 49.82 74.59 50.54 80.57 60.12 83.81 60.12 78.48 51.55 74.59 49.97" fill="var(--bs-secondary)" stroke-width="0"/><path d="M82.44,30.74l.94,1.87c2.59-1.37,5.18-2.81,7.85-4.18.36-.22.72-.43,1.15-.65.4.24.78.5,1.15.79-.79.43-1.58.86-2.3,1.3-.72.44-1.37.72-2.09,1.08-.21,1.36-.52,2.69-.94,4,1-.58,2-1.3,3-2,3.5-2.39,6.46-5.48,8.71-9.07-2.91-.32-5.85-.18-8.71.43-2.08.45-4.13,1.05-6.12,1.8,1.32.25,2.55.82,3.6,1.66l-1.37.72-4.87,2.25Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M90,.43c.36.22.79.5,1.22.79,4.95,3.45,9.13,7.87,12.31,13V.43h-13.53Z" fill="var(--bs-secondary)" stroke-width="0"/><path d="M91.22,4.75c-2.2-1.67-4.56-3.12-7.05-4.32h-21.31c1.2.75,1.74,2.22,1.29,3.57,0,.18-.05.35-.14.5,1.5,1.08,2.21,2.95,1.8,4.75-.36,1.07-1.1,1.97-2.09,2.52,1.09,2.16,3.73,3.03,5.9,1.94,0,0,0,0,0,0,.04-.04.09-.06.14-.07,0-.07-.07-.07-.14-.14-1.12-1-1.62-2.53-1.3-4,.24-.72.69-1.35,1.3-1.8.68-.47,1.47-.77,2.3-.86-.15-.57-.13-1.18.08-1.73.33-1.21,1.35-2.11,2.59-2.3.5-.12,1.02-.09,1.51.07,1.76.52,2.79,2.35,2.31,4.12-.15.55-.45,1.04-.86,1.44,1.31.96,1.93,2.6,1.58,4.18-.53,1.47-1.83,2.53-3.38,2.74.59,1.01,1.54,1.75,2.66,2.09,1.19.34,2.46.17,3.53-.45-.59-.97-.77-2.14-.5-3.24.63-1.76,2.24-2.97,4.1-3.1,0-.22.07-.36.07-.58.52-1.7,2.3-2.66,4-2.16.58.17,1.12.46,1.58.86-3.44,4.49-6.2,9.47-8.19,14.76l-8.41-2.44-3.46-.94-1.51-.43-10.37-3c1.13-5.36,1.45-10.85.94-16.3h-11.88c-.55.22-1.08.48-1.58.79-1.82.99-3.58,2.1-5.26,3.31-17.35,13.13-21.43,37.52-9.29,55.58h6.26l1.87-4.68-5.31,2.67-2.23-4.54,5.1-2.56c-4.82-.86,1.51.29-6.77-1.22l10.37-5.11,5.26-2.52,1.37-.65,6.19,1.08.58.14.13-.02,6.77-3.24c-2.3-3.75-4.6-7.46-6.77-11.24-.26-.39-.5-.8-.71-1.22-1.15-1.94-2.23-3.82-3.31-5.76-.7,2.04-1.26,4.14-1.66,6.26-.86-1.73-1.8-3.53-2.59-5.4-2.23-5-3.82-10.44-3.1-16,1.06.38,2.1.84,3.1,1.37,2.82,1.59,5.37,3.62,7.56,6,.22.28.46.54.72.79,1.77,2.05,3.44,4.19,5,6.41-1.61-.81-3.28-1.48-5-2-.12.01-.25-.01-.36-.07l.36.5,11.23,18.12,3.38-1.66,5-2.38,11.3-5.54c-1.83-.57-3.71-.93-5.62-1.08,3.51-1.55,7.17-2.74,10.92-3.56,3.54-.82,7.21-.89,10.78-.18-2.38,5-6.41,8.64-10.73,11.66-1.8,1.3-3.67,2.45-5.47,3.53.79-2.04,1.44-4.13,1.94-6.26-4.39,2.38-8.71,4.68-13.1,6.91-1.66.79-3.31,1.66-5,2.45-.22.14-.5.22-.72.36l.72,1.22,3.3,5.31,1.66.65,4.75,1.94,6,9.58h18.14V20.23c-2.79-6.07-7-11.38-12.27-15.48ZM46.73,29.45h-.01c.58,1.52.65,3.18.22,4.75l-.22.65c-.89,2.31-2.85,4.03-5.26,4.61-1.27.37-2.63.35-3.89-.07-4.04-1.07-6.44-5.22-5.36-9.26,1.07-4.04,5.22-6.44,9.26-5.36.09.05.19.07.29.07,2.28.69,4.12,2.39,4.98,4.61ZM98.78,49.1c-.98,3.33-4.09,5.58-7.56,5.47-.61-.02-1.21-.12-1.8-.29-4.01-1.17-6.32-5.37-5.15-9.39.91-3.12,3.7-5.3,6.95-5.44.8-.04,1.61.06,2.38.29,4,1.17,6.31,5.35,5.18,9.36Z" fill="var(--bs-secondary)" stroke-width="0"/></svg>
+                <h3 class="[ h5 ][ sr-only ]">Maintaining tax compliance</h3>
+                <rich-text><p>See how this Finnish government organization overcame the limitations of basic task scheduling and now manages six environments with ActiveBatch.</p></rich-text>
+                <a 
+                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
+                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/veroskatt"
+                    target="_self"
+                >
+                    Explore the Case Study
+                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+                    </svg>
+
+                </a>
+                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
+                    <img src="https://www.vero.fi/globalassets/etusivut/yritykset/vero-fi-talvi-extended-city.jpeg?preset=2400w" class="[ w-100 ][ object-fit-cover ]" loading="lazy" width="400" height="auto" style="aspect-ratio: 4 / 3">
+                </figure>
+            </article>
+        </li>
+    
+        <li>
+            <article class="[ h-100 ][ border border-light @hover:border-dark ][ bg-light ][ py-4 px-2 px-lg-3 p-xl-5 ][ overflow-hidden rounded-4 ][ d-flex align-items-start flex-column gap-3 ][ position-relative ]" style="grid-row: span 2">
+                <svg viewBox="0 0 500.01 179.43" style="height: 2rem; width: auto"><path d="M52.9,76.8c5.52,3.53,8.69,9.6,9.51,18.2h-18.4c-.14-2.02-.83-3.97-2-5.62-2-2.5-5.45-3.75-10.35-3.75-4,0-6.86.62-8.57,1.87-1.53.95-2.49,2.6-2.55,4.4-.1,1.94.96,3.75,2.71,4.59,1.81.99,8.21,2.7,19.21,5.11,7.33,1.72,12.83,4.33,16.49,7.82,3.59,3.46,5.56,8.27,5.43,13.26.17,6.6-2.7,12.9-7.79,17.1-5.2,4.42-13.23,6.63-24.09,6.63s-19.26-2.33-24.54-7C2.76,134.95-.16,128.4,0,121.55h18.69c.39,3.27,1.23,5.6,2.52,7,2.28,2.46,6.5,3.69,12.67,3.68,2.96.13,5.92-.42,8.63-1.61,1.96-.81,3.23-2.73,3.21-4.85.09-1.95-.91-3.79-2.59-4.77-1.73-1.08-8.14-2.93-19.21-5.56-8-2-13.62-4.48-16.87-7.44-3.25-2.96-4.89-7.17-4.92-12.64,0-6.51,2.56-12.1,7.67-16.78,5.11-4.68,12.3-7.01,21.56-7,8.79-.01,15.97,1.73,21.53,5.22ZM155.48,130.92v13.77l-8.73.33c-8.71.3-14.66-1.21-17.85-4.53-2.07-2.11-3.1-5.37-3.1-9.76v-43.39h-9.79v-13.13h9.83v-19.65h18.17v19.65h11.45v13.13h-11.45v37.24c0,2.89.37,4.69,1.1,5.4.73.71,3,1.07,6.73,1.07h1.77c.65-.05,1.26-.05,1.87-.13ZM231.01,102.66v41.39h-18.82v-42.87c.13-3.17-.53-6.33-1.94-9.18-1.69-3.27-4.88-4.9-9.57-4.91-4.88,0-8.58,1.63-11.09,4.88-2.51,3.25-3.78,7.9-3.79,13.94v38.15h-18.36V49.06h18.36v33.69c2.22-3.68,5.44-6.65,9.28-8.57,3.48-1.61,7.26-2.43,11.09-2.42,4.06-.06,8.08.7,11.84,2.24,3.5,1.46,6.53,3.86,8.76,6.92,1.83,2.37,3.05,5.16,3.56,8.11.54,4.52.76,9.08.68,13.63ZM281.01,90.57c-7.42,0-12.4,2.41-14.94,7.24-1.42,2.72-2.13,6.9-2.13,12.55v33.69h-18.58v-70.48h17.59v12.28c2.84-4.67,5.32-7.88,7.43-9.63,3.45-2.89,7.93-4.34,13.45-4.33h.88l1.58.09v18.92c-1.16-.13-2.2-.22-3.1-.26s-1.64-.07-2.18-.07ZM354.77,123.36c-.48,4.18-2.66,8.42-6.53,12.73-6.04,6.86-14.49,10.29-25.35,10.29-8.7.1-17.14-2.99-23.73-8.67-6.85-5.78-10.27-15.18-10.28-28.19,0-12.2,3.09-21.56,9.28-28.07,6.19-6.51,14.21-9.77,24.08-9.76,5.46-.08,10.88,1.05,15.85,3.31,4.79,2.28,8.83,5.89,11.64,10.4,2.84,4.41,4.67,9.4,5.36,14.6.55,4.65.74,9.33.58,14h-48.23c.26,7.07,2.48,12.02,6.66,14.87,2.71,1.82,5.92,2.75,9.18,2.65,3.38.14,6.69-1.01,9.25-3.23,1.44-1.38,2.6-3.03,3.42-4.85l18.82-.08ZM336.54,101.76c-.31-4.87-1.78-8.57-4.43-11.09-2.66-2.52-6.21-3.88-9.87-3.78-4.26,0-7.57,1.33-9.92,4-2.35,2.67-3.83,6.29-4.43,10.86h28.65ZM425.77,123.36c-.47,4.18-2.64,8.42-6.53,12.73-6.04,6.86-14.49,10.29-25.35,10.29-8.7.09-17.14-2.99-23.73-8.67-6.85-5.78-10.27-15.18-10.28-28.19,0-12.2,3.09-21.56,9.28-28.07,6.19-6.51,14.22-9.77,24.09-9.76,5.46-.08,10.87,1.05,15.84,3.31,4.79,2.28,8.83,5.89,11.64,10.4,2.85,4.41,4.68,9.4,5.36,14.6.55,4.65.74,9.33.59,14h-48.24c.26,7.07,2.48,12.02,6.66,14.87,2.71,1.82,5.92,2.75,9.18,2.65,3.38.14,6.69-1.01,9.25-3.23,1.44-1.38,2.6-3.03,3.42-4.85l18.82-.08ZM407.54,101.76c-.31-4.87-1.78-8.57-4.43-11.09-2.65-2.52-6.2-3.88-9.86-3.78-4.27,0-7.58,1.33-9.93,4-2.35,2.67-3.83,6.29-4.43,10.86h28.65ZM85.73,32.97h11.44v146.46h-11.44V32.97ZM412.84,0c14.91,0,27,12.09,27,27s-12.09,27-27,27-27-12.09-27-27c.04-14.9,12.1-26.96,27-27ZM473.01,0c14.91,0,27,12.09,27,27s-12.09,27-27,27-27-12.09-27-27c.04-14.9,12.1-26.96,27-27ZM473.01,59.92c14.91,0,27,12.09,27,27s-12.09,27-27,27-27-12.09-27-27h0c.03-14.9,12.1-26.97,27-27Z" fill="var(--bs-dark)" stroke-width="0"/></svg>
+                <h3 class="[ h5 ][ sr-only ]">SThree</h3>
+                <rich-text>Read about ActiveBatch's ability to run over 250,000 instances per day for a global recruiting company with increasingly complex IT needs.
+            </rich-text>
+                <a 
+                    class="[ text-decoration-none text-reset stretched-link ][ d-flex align-items-center gap-1 ][ mt-auto ]"
+                    href="https://www.advsyscon.com/en-us/activebatch/case-studies/sthree"
+                    target="_self"
+                >
+                    Learn More
+                    <svg width="10" height="8" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M0 5c0 .3.1.5.3.7.2.2.4.3.7.3h7.7L6 8.4a1 1 0 0 0 0 1.3 1 1 0 0 0 1.4 0l4.2-4a1 1 0 0 0 0-1.3L7.5.3a1 1 0 0 0-.7-.3 1 1 0 0 0-.7.3 1 1 0 0 0-.3.7 1 1 0 0 0 .3.6l2.6 2.5H1a1 1 0 0 0-1 1Z"/>
+                    </svg>
+
+                </a>
+                <figure class="[ mx-n7 mb-n7 ][ d-none d-lg-flex ]" style="mask-image: linear-gradient(to bottom, transparent 10%, black 50%);">
+                    <img src="https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-science.jpg" class="[ w-100 ][ object-fit-cover ]" loading="lazy" width="400" height="auto" style="aspect-ratio: 4 / 3">
+                </figure>
+            </article>
+        </li>
+    
+</ul>
+
+</section>
+
+
+
+<section class="[ py-7 py-xl-8 ][ bg-light ]">
+    
+<div class="[ container-fluid container-lg ][ bg-white ][ rounded-4 ][ p-4 p-md-5 p-xl-7 ]">
+    <h1 class="mb-3">Task scheduling software FAQs</h1>
+    
+        <details>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is workload automation?</summary>
+            <rich-text class="[ mt-4 ]">
+                <p>Workload automation (WLA) is the practice of using software to streamline, schedule and manage complex processes, applications and tasks across an organization\'s IT ecosystem. It enables users to automate manual, repetitive processes and ensures that interdependent workflows are executed efficiently and consistently, reducing the need for manual human intervention.</p>
+<p>WLA platforms with intuitive user interfaces allow for no-code/low-code workflow development for DevOps, data management and much more.<br />
+<br />
+<a href="https://www.advsyscon.com/blog/what-is-workload-automation/">Discover the capabilities workload automation products offer for IT automation, ETL and more.</a></p>
+
+            </rich-text>
+        </details>
+    
+        <details>
+            <summary class="[ user-select-none ][ py-4 ][ border-bottom border-dark ][ h4 fw-medium ]">What is the difference between job scheduling and workload automation?</summary>
+            <rich-text class="[ mt-4 ]">
+                <p>Job scheduling and workload automation solutions were designed for different goals, but they\'re closely related and share some functionality. Job scheduling tools focus on individual tasks or “jobs” at a specific time or in a defined sequence. These jobs are often standalone and have minimal dependencies. They are often triggered by time-based schedules.</p>
+<p>Workload automation (WLA) goes beyond individual jobs to orchestrate interconnected workflows that span multiple systems or applications. WLA handles complex, event-driven workflows that adapt based on real-time conditions, such as new emails or Google Calendar events. WLA software features dashboards that allow users to track progress for multiple jobs and workflows from a single point of control.<br />
+<br />
+<a href="https://www.advsyscon.com/blog/workload-automation-job-scheduling/">Learn more about how job scheduling and workload automation are revolutionizing the modern workplace.</a></p>
+
+            </rich-text>
+        </details>
+    
+</div>
+
+</section>
+
+<section class="[ bg-light ][ pb-7 pb-xl-8 ]">
+    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xxl ]">
+        <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+            <h2>More about ActiveBatch</h2>
+            <p>Find out about the perks of using a Redwood workload automation solution rather than just a more advanced task scheduler.</p>
+        </div>
+        
+<ul class="[ row row-gap-2 justify-content-center ][ list-unstyled ]">
+    
+        <li class="[ col-12 col-sm-6 col-md-4 col-lg-3 ]">
+            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
+                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
+                    <img 
+                        class="[ w-100 h-100 ][ object-fit-cover ]"
+                        src="https://www.advsyscon.com/wp-content/uploads/best-job-scheduler-scheduling.jpg" 
+                        alt="" 
+                        width="1600" 
+                        height="600"
+                        style="aspect-ratio: 21 / 9"
+                        loading="lazy"
+                    >
+                </figure>
+                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
+                    <h3 class="[ h6 fw-medium ]">
+                        <a href="https://www.advsyscon.com/en-us/about-us" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
+                            94% customer satisfaction
+                        </a>
+                    </h3>
+                    <p class="[ small ]">Redwood values your success and continually invests in listening to and better supporting customers.</p>
+                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
+                        Read About Redwood
+                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ col-12 col-sm-6 col-md-4 col-lg-3 ]">
+            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
+                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
+                    <img 
+                        class="[ w-100 h-100 ][ object-fit-cover ]"
+                        src="https://www.advsyscon.com/wp-content/uploads/enterprise-wla.jpg" 
+                        alt="" 
+                        width="1600" 
+                        height="600"
+                        style="aspect-ratio: 21 / 9"
+                        loading="lazy"
+                    >
+                </figure>
+                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
+                    <h3 class="[ h6 fw-medium ]">
+                        <a href="https://www.advsyscon.com/en-us/services/support-options" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
+                            Dedicated support
+                        </a>
+                    </h3>
+                    <p class="[ small ]">Get access to experienced professional services, dedicated customer success management and world-class 24/7 global support.</p>
+                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
+                        Learn More
+                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </li>
+    
+        <li class="[ col-12 col-sm-6 col-md-4 col-lg-3 ]">
+            <article class="[ h-100 ][ position-relative ][ bg-white @hover:bg-quaternary ][ border border-dark rounded-4 ][ overflow-hidden ][ d-grid ]" style="grid-template-rows: 9rem 1fr">
+                <figure class="[ bg-dark ][ border-dark border-bottom ][ m-0 ]" >
+                    <img 
+                        class="[ w-100 h-100 ][ object-fit-cover ]"
+                        src="https://www.advsyscon.com/wp-content/uploads/redwood-university.jpg" 
+                        alt="" 
+                        width="1600" 
+                        height="600"
+                        style="aspect-ratio: 21 / 9"
+                        loading="lazy"
+                    >
+                </figure>
+                <div class="[ p-3 ][ d-flex flex-column align-items-start gap-3 ]">
+                    <h3 class="[ h6 fw-medium ]">
+                        <a href="https://www.advsyscon.com/blog/redwood-university/" target="_self" class="[ stretched-link ][ text-decoration-none text-reset ]">
+                            Abundant training
+                        </a>
+                    </h3>
+                    <p class="[ small ]">Redwood offers on-demand product training and certifications to deepen your team&#39;s expertise and build confidence.</p>
+                    <span class="[ mt-auto ][ text-reset text-decoration-none small text-nowrap ]">
+                        Explore Redwood University
+                        <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </li>
+    
+</ul>
+
+        </div>
+</section>
+
+
+        <footer class="[ py-10 ][ bg-black ]"></footer>
+    </body>
+</html>
