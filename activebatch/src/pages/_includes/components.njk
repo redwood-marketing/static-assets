@@ -94,6 +94,9 @@
                     >
                 </figure>
                 <div class="[ g-col-2 g-col-md-1 ][ d-flex flex-column align-items-start gap-4 ]">
+                    {% if item.eyebrow %}
+                        <span class="[ py-{5} px-1 ][ bg-primary bg-opacity-10 ][ text-primary fw-normal ][ rounded-1 ]" style="font-size: .8em">{{ item.eyebrow }}</span>
+                    {% endif %}
                     <h3 class="[ h2 text-balance ]">{{ item.title | safe }}</h3>
                     <rich-text>{{ item.description | safe }}</rich-text>
                     {% if item.link %}
