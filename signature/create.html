@@ -252,16 +252,18 @@
                                                                         'width': currentCertification.size.at(0) + 'px', 
                                                                         'font-family': '\'Arial\', sans-serif'
                                                                     }">
-                                                                        <img 
-                                                                            :height="currentCertification.size.at(1)" 
-                                                                            :width="currentCertification.size.at(0)" 
-                                                                            :src="currentCertification.logo"
-                                                                            :style="{ 
-                                                                                'width': currentCertification.size.at(0) + 'px',
-                                                                                'height': currentCertification.size.at(1) + 'px' 
-                                                                            }"
-                                                                            style="border: 0; display: block; outline: none; text-decoration: underline; font-size: 12px; font-family: 'Arial', sans-serif;"
-                                                                        >
+                                                                        <a :href="currentCertification.link ?? 'https://www.redwood.com'" target="_blank">
+                                                                            <img 
+                                                                                :height="currentCertification.size.at(1)" 
+                                                                                :width="currentCertification.size.at(0)" 
+                                                                                :src="currentCertification.logo"
+                                                                                :style="{ 
+                                                                                    'width': currentCertification.size.at(0) + 'px',
+                                                                                    'height': currentCertification.size.at(1) + 'px' 
+                                                                                }"
+                                                                                style="border: 0; display: block; outline: none; text-decoration: underline; font-size: 12px; font-family: 'Arial', sans-serif;"
+                                                                            >
+                                                                        </a>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
