@@ -149,7 +149,7 @@
             <polygon class="uuid-cc54404a-cfd6-495d-bb9f-c38e41a2053e" points="23.74 33.55 0 33.55 23.74 44.63 23.74 33.55"></polygon>
         </svg>
         <h1>Signature Preview</h1>
-        <div id="rendered-signature">
+        <div id="rendered-signature" style="background-color: #ddd;">
             <!--[if mso]>
               <noscript>
               <xml>
@@ -224,18 +224,20 @@
                                                             <tbody style="font-family: 'Arial', sans-serif;">
                                                                 <tr style="font-family: 'Arial', sans-serif;">
                                                                     <td :style="{ 
-                                                                        'width': 25 / currentBrand.ratio + 'px', 
+                                                                        'width': 30 / currentBrand.ratio + 'px', 
                                                                         'font-family': '\'Arial\', sans-serif'
                                                                     }">
-                                                                        <img 
-                                                                            :height="25" 
-                                                                            :width="25 / currentBrand.ratio" 
-                                                                            :src="currentBrand.logo"
-                                                                            :style="{ 
-                                                                                'width': 25 / currentBrand.ratio + 'px' 
-                                                                            }"
-                                                                            style="border: 0; display: block; outline: none; text-decoration: underline; height: 25px; font-size: 12px; font-family: 'Arial', sans-serif;"
-                                                                        >
+                                                                        <a :href="currentBrand.url" target="_blank">
+                                                                            <img 
+                                                                                :height="30" 
+                                                                                :width="30 / currentBrand.ratio" 
+                                                                                :src="currentBrand.logo"
+                                                                                :style="{ 
+                                                                                    'width': 30 / currentBrand.ratio + 'px' 
+                                                                                }"
+                                                                                style="border: 0; display: block; outline: none; text-decoration: underline; height: 30px; font-size: 12px; font-family: 'Arial', sans-serif;"
+                                                                            >
+                                                                        </a>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
