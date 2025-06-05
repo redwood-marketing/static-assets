@@ -31,13 +31,32 @@ faqs:
 
 {% block content %}
 
-{%- set heroArgs = { 
-    'background': 'https://www.advsyscon.com/wp-content/uploads/Demystifying-the-Job-Orchestration-Framework.jpg',
-	'heading': 'Cost-friendly alternative to Broadcom AutoSys', 
-	'content': 'ActiveBatch by Redwood is a powerful workload automation solution offering innovative intelligence features that optimize and dynamically scale resources.<br><br><ul><li><strong>Dedicated support</strong>: 24/7 availability from a dedicated in-house team </li><li><strong>Easy migration</strong>: A proven, low-disruption approach and a vendor 100% invested in your success</li><li><strong>Flexibility</strong>: Unlimited automation scalability and extensibility</li><li><strong>Reliability</strong>: Fully managed with 99.95% uptime</li></ul>' 
-} -%}
 
-{% include "hero-inner.njk" %}
+<section class="[ text-dark ][ bg-light ][ position-relative ]" style="box-shadow: 0 2px 0 -1px var(--bs-dark)">
+    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 90rem">
+        <div class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 gap-3 ][ p-4 p-lg-5 ps-xl-7 ]" style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--bs-dark)">
+            
+            <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">Cost-friendly alternative to Broadcom AutoSys</h1>
+
+            <p class="[ lead fw-normal ]">ActiveBatch by Redwood is a powerful workload automation solution offering innovative intelligence features that optimize and dynamically scale resources.</p>
+            <ul class="[ d-flex flex-column gap-{3} ]">
+                <li><strong>Dedicated support</strong>: 24/7 availability from a dedicated in-house team </li>
+                <li><strong>Easy migration</strong>: A proven, low-disruption approach and a vendor 100% invested in your success</li>
+                <li><strong>Flexibility</strong>: Unlimited automation scalability and extensibility</li>
+                <li><strong>Reliability</strong>: Fully managed with 99.95% uptime</li>
+            </ul>
+<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]" target="_self">
+            Get a Demo
+            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"></path>
+            </svg>
+        </a></div>
+        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 55ch); height: clamp(10rem, 50vw, 35rem)">
+            <img class="[ w-100 h-100 ]" src="https://www.advsyscon.com/wp-content/uploads/0724_ETL_SQL.jpg" style="object-fit: cover; box-shadow: 0 0 0 1px var(--bs-dark)">
+        </div>
+    </div>
+</section>
+
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
     <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
@@ -91,22 +110,25 @@ faqs:
 } -%}
 {% include "cta.njk" %} 
 
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
+<div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
     {{ components.zigzag([
         {
             "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-7.jpg",
             "title": "Automate across hybrid cloud environments",
-            "description": "A comprehensive workload automation (WLA) and job scheduling platform, ActiveBatch enables IT teams to automate and coordinate cross-platform processes or job chains. Achieve efficient IT and business process automation via seamless integration across your entire environment — multi-cloud, hybrid cloud or on-premises."
+            "ratio": "4 / 3",
+            "description": "A comprehensive workload automation (WLA) and job scheduling platform, ActiveBatch enables IT teams to automate and coordinate cross-platform processes or job chains. <br><br> efficient IT and business process automation via seamless integration across your entire environment — multi-cloud, hybrid cloud or on-premises."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-4.jpg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
+            "ratio": "4 / 3",
             "title": "Orchestrate from a single pane of glass",
-            "description": "Bring together job scheduling and monitoring and reduce IT complexity with a central automation hub for business-critical systems and applications. Connect ERP, ETL, supply chain management, work order management, project management and more."
+            "description": "Bring together job scheduling and monitoring and reduce IT complexity with a central automation hub for business-critical systems and applications. <br><br>Connect ERP, ETL, supply chain management, work order management, project management and more."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-9.jpg",
             "title": "Break free from the limits of time",
-            "description": "<p>Build smooth end-to-end automated processes and increase job success rates with ActiveBatch’s robust event-driven architecture and advanced date/time scheduling.</p>
+            "ratio": "6 / 7",
+            "description": "<p>Build smooth end-to-end automated processes and increase job success rates with ActiveBatch's robust event-driven architecture and advanced date/time scheduling.</p>
             <ul>
                 <li>Trigger jobs based on various external conditions with flexible scheduling options</li>
                 <li>Use a universal job type for end-to-end orchestration on any server, service or application</li>
@@ -117,30 +139,42 @@ faqs:
             </ul>"
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-5.jpg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
             "title": "Let your IT team focus on innovation",
-            "description": "Automate in half the time with ActiveBatch’s Job Steps Library. Choose from hundreds of production-ready job steps: out-of-the-box building blocks for commonly scripted actions and functions. Drop them into your IT and business workflows in an intuitive GUI."
+            "ratio": "4 / 3",
+            "description": "Automate in half the time with ActiveBatch’s Job Steps Library. Choose from hundreds of production-ready job steps: out-of-the-box building blocks for commonly scripted actions and functions. <br><br>Drop them into your IT and business workflows in an intuitive GUI."
         }
     ]) }}
-</section>
+</div>
 
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
+<div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
     {{ components.quote({
         "quote": "ActiveBatch is reliable and accessible … we can give anyone in the business the ability to trigger and monitor their own jobs. Giving this power to the business allows the IT department to focus more time on other business needs.",
         "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg"
     }) }}
-</section>
+</div>
 
-<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-5 pb-lg-9 ]">
-    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
-        <h2>Looking for SaaS? Leading enterprises choose RunMyJobs by Redwood</h2>
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-5 py-lg-9 ]">
+    <div class="[ text-center ][ d-flex flex-column align-items-center gap-2 ]" style="max-width: 90ch">
+        <img
+            class="[ h-auto ][ mb-2 ]"
+            loading="lazy" 
+            src="https://www.redwood.com/wp-content/uploads/Redwood_Logo.svg" 
+            alt="" 
+            width="118" 
+            height="23" 
+            style="width: 10rem"
+        >
+        <h2 class="[ h1 ]">Looking for SaaS? Leading enterprises choose RunMyJobs by Redwood</h2>
         <p>Redwood also offers a workload automation solution for enterprises in need of the most robust capabilities. The #1 job scheduler for SAP customers, RunMyJobs helps you keep pace with evolving demands.</p>
     </div>
+    
     {{ components.zigzag([
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-2.jpg",
+            "img": "https://www.redwood.com/wp-content/uploads/tidal2-1.png",
             "title": "The automation fabric leader",
-            "description": "<p>Get rid of the costs and complexity of on-prem solutions and stay at the cutting edge of automation technology. Redwood Software is the leader in delivering automation fabric solutions to achieve mission-critical business outcomes.<br> RunMyJobs is:</p>
+            "ratio": "5 / 6",
+            "description": "<p>Get rid of the costs and complexity of on-prem solutions and stay at the cutting edge of automation technology. Redwood Software is the leader in delivering automation fabric solutions to achieve mission-critical business outcomes.<br> <br> RunMyJobs is:</p>
             <ul>
                 <li><strong>Endlessly extensible:</strong> Seamlessly connect all your systems and data, no matter your tech stack - from on-premises mainframes to cloud services and apps.</li>
                 <li><strong>The industry’s first native SaaS:</strong> Designed and delivered as a Software-as-a-Service solution, RunMyJobs is fully managed by Redwood with guaranteed 99.95% uptime and one-click updates.</li>
@@ -148,28 +182,60 @@ faqs:
             </ul>"
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-6.jpg",
+            "img": "https://staging.marketing.redwood.com/wp-content/uploads/ALL-SAP-Logos_.jpg",
             "title": "Award-winning solutions and lasting partnership",
+            "ratio": "initial",
             "description": "
             <ul>
                 <li><strong>Recognized by market analysts:</strong> Gartner® named Redwood a Leader in the 2024 Magic Quadrant™ for Service Orchestration and Automation Platforms (SOAPs), positioned furthest in Completeness of Vision.</li>
                 <li><strong>Deepest SAP integration:</strong> RunMyJobs delivers the most SAP-specific templates, connectors and certifications across both mature and modern SAP technologies. As the only WLA solution in the RISE reference architecture, it eliminates custom code and workarounds to uniquely support clean core strategies.</li>
                 <li><strong>SAP Endorsed, Premium certified:</strong> As a 20+ year co-innovation partner with aligned product roadmaps, RunMyJobs is the most trusted and only SAP Endorsed, Premium Certified WLA solution, meeting SAP’s highest standards for performance, security and integration. RunMyJobs customers maximize the ROI of their SAP investment, now and into the future, with reduced risk, faster time-to-value and long-term reliability. </li>
             </ul>"
-        },
-        {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
-            "title": "Striking performance in SOAP capabilities",
-            "description": "<p>RunMyJobs is a unified, cloud-native SOAP that enables seamless connection to all applications, processes and data.<br> Despite Automic’s presence in the 2024 Magic Quadrant™ for SOAPs report, Broadcom does little to innovate with Automic or AutoSys, providing product updates only every six months or so.<br> Redwood ranked first in three and tied for a fourth out of five Use Cases in the 2024 Gartner Critical Capabilities for SOAP report, which Redwood believes is a strong demonstration of its leadership in:</p>
-            <ul>
-                <li><strong>IT workload automation:</strong> Automate any IT workload from end to end. A workload automation solution for your mission-critical business outcomes. RunMyJobs is the first SaaS composable platform built for ERP.</li>
-                <li><strong>IT workflow orchestration:</strong> Easily orchestrate end-to- end workflows with an event-driven automation platform that gives your team visibility into every business process with real-time monitoring from a single pane of glass.</li>
-                <li><strong>Citizen automation:</strong> Use a self-service automation portal to empower your users to independently initiate predefined processes, customize parameters and execute task sequences with enhanced autonomy, flexibility and speed.</li>
-                <li><strong>DevOps automation:</strong> Seamlessly integrate with various continuous integration and delivery tools and real-time monitoring and notifications of DevOps workflows.</li>
-                <li><strong>Data orchestration:</strong> Automate data pipeline scheduling, execution and monitoring to deliver reliable and timely end-to-end data pipeline operations that meet your business objectives.</li>
-            </ul>"
         }
     ]) }}
+    
+</section>
+
+<section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ pb-6 pb-xl-8 ]">
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <h2>Striking performance in SOAP capabilities</h2>
+        <p>Redwood ranked first in three and tied for a fourth out of five Use Cases in the 2024 Gartner Critical Capabilities for SOAP report, which Redwood believes is a strong demonstration of its leadership in:</p>
+    </div>
+    {{ components.boxes([
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg",
+            "title": "Data orchestration",
+            "description": "Automate data pipeline scheduling, execution and monitoring to deliver reliable and timely end-to-end data pipeline operations that meet your business objectives."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-2.svg", 
+            "title": "IT workload automation",
+            "description": "Automate any IT workload from end to end. A workload automation solution for your mission-critical business outcomes. RunMyJobs is the first SaaS composable platform built for ERP."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg",
+            "title": "Citizen automation",
+            "description": "Use a self-service automation portal to empower your users to independently initiate predefined processes, customize parameters and execute task sequences with enhanced autonomy, flexibility and speed."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg",
+            "title": "IT workflow orchestration",
+            "description": "Easily orchestrate end-to- end workflows with an event-driven automation platform that gives your team visibility into every business process with real-time monitoring from a single pane of glass."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+            "title": "DevOps automation",
+            "description": "Seamlessly integrate with various continuous integration and delivery tools and real-time monitoring and notifications of DevOps workflows."
+        }
+    ]) }}
+
+    <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
+        <img decoding="async" class="[ mx-auto ]" src="https://www.redwood.com/wp-content/uploads/integrations-placeholder.png" alt="" width="194" height="45">
+        <h3 class="[ h2 ]">RunMyJobs is a unified, cloud-native SOAP that enables seamless connection to all applications, processes and data</h2>
+        <p class="[ fs-5 ]">Despite Automic’s presence in the 2024 Magic Quadrant™ for SOAPs report, Broadcom does little to innovate with Automic or AutoSys, providing product updates only every six months or so.</p>
+
+    </div>
+    
 </section>
 
 {%- set bannerArgs = {
@@ -190,7 +256,7 @@ faqs:
 </section>
 
 <section class="[ bg-light ][ pb-7 pb-xl-8 ]">
-    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xxl ]">
+    <div class="[ d-grid justify-items-center row-gap-6 ][ container-fluid container-xl ]">
         <div class="[ text-center ][ d-flex flex-column gap-2 ]" style="max-width: 80ch">
             <h2>The resources you need to break up with Broadcom</h2>
             <p>Redwood will support you as you vet solutions and make the transition.</p>
