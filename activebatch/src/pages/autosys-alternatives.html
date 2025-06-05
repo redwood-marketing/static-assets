@@ -31,31 +31,14 @@ faqs:
 
 {% block content %}
 
-
-<section class="[ text-dark ][ bg-light ][ position-relative ]" style="box-shadow: 0 2px 0 -1px var(--bs-dark)">
-    <div class="[ d-flex flex-wrap justify-content-between ][ mx-auto ]" style="max-width: 90rem">
-        <div class="[ d-flex flex-column justify-content-center align-items-start flex-grow-1 flex-shrink-0 gap-3 ][ p-4 p-lg-5 ps-xl-7 ]" style="width: min(100%, 60ch); box-shadow: 0 2px 0 -1px var(--bs-dark)">
-            
-            <h1 class="[ display-6 text-balance ]" style="line-height: 1.15">Cost-friendly alternative to Broadcom AutoSys</h1>
-
-            <p class="[ lead fw-normal ]">ActiveBatch by Redwood is a powerful workload automation solution offering innovative intelligence features that optimize and dynamically scale resources.</p>
-            <ul class="[ d-flex flex-column gap-{3} ]">
-                <li><strong>Dedicated support</strong>: 24/7 availability from a dedicated in-house team </li>
-                <li><strong>Easy migration</strong>: A proven, low-disruption approach and a vendor 100% invested in your success</li>
-                <li><strong>Flexibility</strong>: Unlimited automation scalability and extensibility</li>
-                <li><strong>Reliability</strong>: Fully managed with 99.95% uptime</li>
-            </ul>
-<a href="https://www.advsyscon.com/en-us/demo/quick" class="[ btn btn-primary ]" target="_self">
-            Get a Demo
-            <svg class="[ ms-{5} ]" width="8.75" height="7" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.78011e-07 4.01871C7.69316e-07 4.21762 0.0854309 4.40839 0.237499 4.54904C0.389566 4.68969 0.595814 4.76871 0.810869 4.76871L7.23295 4.76871L5.10307 6.73871C4.95983 6.88088 4.88186 7.06893 4.88556 7.26323C4.88927 7.45753 4.97437 7.64292 5.12294 7.78033C5.2715 7.91774 5.47193 7.99646 5.682 7.99988C5.89207 8.00331 6.09538 7.93119 6.24909 7.79871L9.76286 4.54871C9.91471 4.40808 10 4.21746 10 4.01871C10 3.81996 9.91471 3.62933 9.76286 3.48871L6.24909 0.238708C6.17486 0.165021 6.08534 0.105919 5.98587 0.0649272C5.88641 0.0239352 5.77903 0.00189332 5.67016 0.000116533C5.56128 -0.00166026 5.45314 0.0168643 5.35217 0.0545853C5.2512 0.0923063 5.15948 0.148451 5.08248 0.21967C5.00548 0.290888 4.94478 0.375722 4.904 0.469111C4.86322 0.562499 4.84319 0.662528 4.84511 0.763231C4.84703 0.863933 4.87086 0.963247 4.91518 1.05525C4.9595 1.14725 5.0234 1.23005 5.10307 1.29871L7.23295 3.26871L0.810869 3.26871C0.36327 3.26871 7.96108e-07 3.60471 7.78011e-07 4.01871Z" fill="currentColor"></path>
-            </svg>
-        </a></div>
-        <div class="[ flex-fill d-flex flex-column align-items-stretch justify-content-center ][ ratio-16:9 ]" style="width: min(100%, 55ch); height: clamp(10rem, 50vw, 35rem)">
-            <img class="[ w-100 h-100 ]" src="https://www.advsyscon.com/wp-content/uploads/0724_ETL_SQL.jpg" style="object-fit: cover; box-shadow: 0 0 0 1px var(--bs-dark)">
-        </div>
-    </div>
-</section>
+{%- set heroArgs = { 
+    'eyebrow': "ActiveBatch vs other solutions",
+	'heading': 'Cost-friendly alternative to Broadcom AutoSys',
+    'background':'https://www.redwood.com/wp-content/uploads/ab1-1.png',
+    'maxWidth': '100ch', 
+	'content': 'ActiveBatch by Redwood is a powerful workload automation solution offering innovative intelligence features that optimize and dynamically scale resources.' 
+} -%}
+{% include "hero-inner.njk" %}
 
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-6 row-gap-lg-7 ][ py-6 py-xl-8 ]">
@@ -65,12 +48,12 @@ faqs:
     </div>
     {{ components.boxes([
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-5.svg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-nodes.svg",
             "title": "Straightforward data warehousing and ETL",
             "description": "Streamline data warehouse operations and processes while improving your data quality and consistency. Cleanse, validate and improve data accuracy in workflows."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-6.svg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-lock.svg",
             "title": "Consistent auditing and compliance",
             "description": "Implement policy-driven governance with capabilities such as revision history, policy authorizations, auditing and advanced SLA management."
         },
@@ -80,19 +63,29 @@ faqs:
             "description": "Use a drag-and-drop GUI to easily develop and deploy new end-to-end workflows and get full command-line support for ad-hoc purposes — via REST API, PowerShell Module, COM or legacy web services methods."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-eye.svg",
             "title": "Comprehensive reporting and monitoring",
             "description": "Maintain control with SLA monitoring, customizable alerting and reporting, designed to prevent job failures and delays. Get multiple views, including forecasting and Gantt charts."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-7.svg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-1.svg",
             "title": "Automated DevOps facilitation",
             "description": "Enable quicker app release cycles by consolidating your scheduling and IT orchestration in one solution with object locking, complete audit trails, built-in change management and more. "
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-8.svg",
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-4.svg",
             "title": "Democratized workflow creation",
             "description": "Reduce IT’s workload and enable business users to trigger and monitor jobs and workflows via the Self-Service Portal, to which your organization’s security protocols apply."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-layers.svg",
+            "title": "Easy migration & dedicated support",
+            "description": "A proven, low-disruption approach and a vendor 100% invested in your success. 24/7 availability from a dedicated in-house team."
+        },
+        {
+            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/icon-hands.svg",
+            "title": "Flexibility & reliability",
+            "description": "Unlimited automation scalability and extensibility. Fully managed with 99.95% uptime."
         }
     ]) }}
 </section>
@@ -125,7 +118,7 @@ faqs:
             "description": "Bring together job scheduling and monitoring and reduce IT complexity with a central automation hub for business-critical systems and applications. <br><br>Connect ERP, ETL, supply chain management, work order management, project management and more."
         },
         {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-9.jpg",
+            "img": "https://www.advsyscon.com/wp-content/uploads/0724_ETL_SQL.jpg",
             "title": "Break free from the limits of time",
             "ratio": "6 / 7",
             "description": "<p>Build smooth end-to-end automated processes and increase job success rates with ActiveBatch's robust event-driven architecture and advanced date/time scheduling.</p>
@@ -150,7 +143,11 @@ faqs:
 <div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
     {{ components.quote({
         "quote": "ActiveBatch is reliable and accessible … we can give anyone in the business the ability to trigger and monitor their own jobs. Giving this power to the business allows the IT department to focus more time on other business needs.",
-        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg"
+        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg",
+        "link": {
+            "text": "Read the case study",
+            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/sub-zero-group"
+        }
     }) }}
 </div>
 
