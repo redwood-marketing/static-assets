@@ -95,7 +95,7 @@ faqs:
 	'content': 'Let Redwood Software’s experts show you why Broadcom AutoSys (formerly CA AutoSys) can’t measure up.',
     'backgroundTheme': 'dark',
     'buttonTheme': 'primary',
-    'backgroundStrips': ["transparent", "transparent"],
+    'backgroundStrips': ["transparent", "var(--bs-light)"],
     'link': {
         'text': 'Get a Demo',
         'url': 'https://www.advsyscon.com/en-us/demo/quick'
@@ -103,52 +103,54 @@ faqs:
 } -%}
 {% include "cta.njk" %} 
 
-<div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-6 py-lg-9 ]">
-    {{ components.zigzag([
-        {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-7.jpg",
-            "title": "Automate across hybrid cloud environments",
-            "ratio": "4 / 3",
-            "description": "A comprehensive workload automation (WLA) and job scheduling platform, ActiveBatch enables IT teams to automate and coordinate cross-platform processes or job chains. <br><br> efficient IT and business process automation via seamless integration across your entire environment — multi-cloud, hybrid cloud or on-premises."
-        },
-        {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
-            "ratio": "4 / 3",
-            "title": "Orchestrate from a single pane of glass",
-            "description": "Bring together job scheduling and monitoring and reduce IT complexity with a central automation hub for business-critical systems and applications. <br><br>Connect ERP, ETL, supply chain management, work order management, project management and more."
-        },
-        {
-            "img": "https://www.advsyscon.com/wp-content/uploads/0724_ETL_SQL.jpg",
-            "title": "Break free from the limits of time",
-            "ratio": "6 / 7",
-            "description": "<p>Build smooth end-to-end automated processes and increase job success rates with ActiveBatch's robust event-driven architecture and advanced date/time scheduling.</p>
-            <ul>
-                <li>Trigger jobs based on various external conditions with flexible scheduling options</li>
-                <li>Use a universal job type for end-to-end orchestration on any server, service or application</li>
-                <li>Apply intelligent load balancing to reduce slack time and bottlenecks</li>
-                <li>Perform and manage enterprise file transfers via FTP, SFTP (SSH) or FTPS (TLS)</li>
-                <li>Execute database procedures and integrate with ETL and data warehousing applications</li>
-                <li>Stay up and running with automatic failover to standby schedulers in the event of a production environment failure</li>
-            </ul>"
-        },
-        {
-            "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
-            "title": "Let your IT team focus on innovation",
-            "ratio": "4 / 3",
-            "description": "Automate in half the time with ActiveBatch’s Job Steps Library. Choose from hundreds of production-ready job steps: out-of-the-box building blocks for commonly scripted actions and functions. <br><br>Drop them into your IT and business workflows in an intuitive GUI."
-        }
-    ]) }}
-</div>
+<div class="[ border-bottom border-1 border-dark bg-light ][ py-6 py-lg-9 pb-lg-8 ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 row-gap-xl-9 ]">
+    <div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ]">
+        {{ components.zigzag([
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-7.jpg",
+                "title": "Automate across hybrid cloud environments",
+                "ratio": "4 / 3",
+                "description": "A comprehensive workload automation (WLA) and job scheduling platform, ActiveBatch enables IT teams to automate and coordinate cross-platform processes or job chains. <br><br> Achieve efficient IT and business process automation via seamless integration across your entire environment — multi-cloud, hybrid cloud or on-premises."
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-1.jpg",
+                "ratio": "4 / 3",
+                "title": "Orchestrate from a single pane of glass",
+                "description": "Bring together job scheduling and monitoring and reduce IT complexity with a central automation hub for business-critical systems and applications. <br><br>Connect ERP, ETL, supply chain management, work order management, project management and more."
+            },
+            {
+                "img": "https://www.advsyscon.com/wp-content/uploads/0724_ETL_SQL.jpg",
+                "title": "Break free from the limits of time",
+                "ratio": "6 / 7",
+                "description": "<p>Build smooth end-to-end automated processes and increase job success rates with ActiveBatch's robust event-driven architecture and advanced date/time scheduling.</p>
+                <ul>
+                    <li>Trigger jobs based on various external conditions with flexible scheduling options</li>
+                    <li>Use a universal job type for end-to-end orchestration on any server, service or application</li>
+                    <li>Apply intelligent load balancing to reduce slack time and bottlenecks</li>
+                    <li>Perform and manage enterprise file transfers via FTP, SFTP (SSH) or FTPS (TLS)</li>
+                    <li>Execute database procedures and integrate with ETL and data warehousing applications</li>
+                    <li>Stay up and running with automatic failover to standby schedulers in the event of a production environment failure</li>
+                </ul>"
+            },
+            {
+                "img": "https://static.marketing.redwood.com/activebatch/dist/pages/img/stock-3.jpg",
+                "title": "Let your IT team focus on innovation",
+                "ratio": "4 / 3",
+                "description": "Automate in half the time with ActiveBatch’s Job Steps Library. Choose from hundreds of production-ready job steps: out-of-the-box building blocks for commonly scripted actions and functions. <br><br>Drop them into your IT and business workflows in an intuitive GUI."
+            }
+        ]) }}
+    </div>
 
-<div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
-    {{ components.quote({
-        "quote": "ActiveBatch is reliable and accessible … we can give anyone in the business the ability to trigger and monitor their own jobs. Giving this power to the business allows the IT department to focus more time on other business needs.",
-        "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg",
-        "link": {
-            "text": "Read the case study",
-            "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/sub-zero-group"
-        }
-    }) }}
+    <div class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-3 row-gap-lg-6 ]">
+        {{ components.quote({
+            "quote": "ActiveBatch is reliable and accessible … we can give anyone in the business the ability to trigger and monitor their own jobs. Giving this power to the business allows the IT department to focus more time on other business needs.",
+            "logo": "https://static.marketing.redwood.com/activebatch/dist/pages/img/logo-subzero.svg",
+            "link": {
+                "text": "Read the case study",
+                "url": "https://www.advsyscon.com/en-us/activebatch/case-studies/sub-zero-group"
+            }
+        }) }}
+    </div>
 </div>
 
 <section class="[ container-fluid container-xl ][ d-grid justify-items-center row-gap-5 row-gap-lg-7 ][ py-5 py-lg-9 ]">
