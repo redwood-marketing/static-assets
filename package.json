@@ -9,13 +9,13 @@
         "tracking": "babel tracking/src -d tracking/dist --out-file-extension .min.js"
     },
     "devDependencies": {
-        "@11ty/eleventy": "^2.0.1",
+        "@11ty/eleventy": "^3.1.2",
         "@babel/cli": "^7.23.9",
         "@babel/core": "^7.24.0",
         "@babel/preset-env": "^7.18.9",
         "babel-preset-minify": "^0.5.1",
-        "concurrently": "^8.2.2",
-        "sass": "^1.55.0"
+        "concurrently": "^9.2.1",
+        "sass": "^1.93.2"
     },
     "dependencies": {
         "bootstrap": "^5.3.3"
