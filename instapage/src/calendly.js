@@ -17,12 +17,12 @@
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
-                min-height: 650px;
+                min-height: 700px;
                 height: 100%;
             }
 
             [data-calendly] iframe {
-                min-height: 650px;
+                min-height: 700px;
                 height: 100%;
             }
         `;
