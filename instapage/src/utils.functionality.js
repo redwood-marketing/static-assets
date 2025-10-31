@@ -97,6 +97,20 @@ DOMReady(() => {
         })
     })();
 
+    (function manageSwappableFields () {
+        /**
+         * Allows for fields to have a different label than value.
+         * Syntax: Field Value must be in the format "Label => Value"
+         */
+        const fields = [...document.querySelectorAll("[value*=' => ']")];
+
+        fields.forEach(field => {
+            const [label, value] = field.value.split(" => ").map( str => str.trim() ); 
+            field.value     = value;
+            field.innerHTML = label;
+        });
+    })();
+
     (function manageDynamicCheckboxes () {
         /**
          * Allows for checkbox groups to drive values from a different input.
