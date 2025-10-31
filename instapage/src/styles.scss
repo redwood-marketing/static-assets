@@ -11,6 +11,7 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
 
 .form-label-title {
     font-weight: 700;
+    margin-block-start: 0.7rem;
 }
 
 .form-label-checkbox {
