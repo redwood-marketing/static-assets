@@ -141,7 +141,7 @@ if (!window.__utils__) {
                  * @see https://help.instapage.com/hc/en-us/articles/115005969527-Passing-UTM-parameters-from-the-URL-to-a-hidden-field
                  */
                 dynamic           : [...document.querySelectorAll("[value^='['][value$=']']")],
-                swappable         : [...document.querySelectorAll("[value*=' : ']")],
+                swappable         : [...document.querySelectorAll("[value*=' => ']")],
                 region            : [...document.getElementsByName("region")],
                 timezone          : [...document.getElementsByName("timezone")],
                 salutation        : [...document.querySelectorAll("[value='Frau'], [value='Herr'], [value='Divers']")],
