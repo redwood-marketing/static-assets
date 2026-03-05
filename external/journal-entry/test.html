@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embed Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .info {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #555;
+    }
+    #log {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: monospace;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      min-height: 80px;
+      white-space: pre-wrap;
+    }
+    #assessment-container {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    button {
+      margin-right: 8px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    button:hover { background: #f0f0f0; }
+    .controls { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Journal Assessment — Embed Test</h1>
+
+  <div class="info">
+    Serve this file from the project root (e.g. <code>npx serve .</code>) so that
+    <code>dist/embed/embed.min.js</code> and <code>dist/embed/latest/index-embed.html</code>
+    are reachable at their expected relative paths.
+  </div>
+
+  <div id="log">Waiting for events…</div>
+
+  <div class="controls">
+    <button onclick="mountAssessment()">Mount</button>
+    <button onclick="destroyAssessment()">Destroy</button>
+  </div>
+
+  <div id="assessment-container"></div>
+
+  <!--
+    The embed loader auto-detects its base URL from the script src attribute.
+    Place embed.min.js at dist/embed/embed.min.js and the iframe content at
+    dist/embed/latest/index-embed.html — the loader resolves them automatically.
+  -->
+  <script src="./embed.min.js"></script>
+
+  <script>
+    const container = document.getElementById("assessment-container");
+    const logEl = document.getElementById("log");
+    const lines = [];
+
+    function log(msg) {
+      const ts = new Date().toLocaleTimeString();
+      lines.push(`[${ts}] ${msg}`);
+      logEl.textContent = lines.join("\n");
+    }
+
+    function mountAssessment() {
+      window.RedwoodJournalAssessment.init({
+        // The only supported type.
+        type: "journal-exposure",
+
+        // Container element that will hold the iframe.
+        element: container,
+
+        // "dev" points to / on the same origin for local development.
+
+        options: {
+          baseUrl: "http://localhost:3000/dist/embed/",
+          reportBaseUrl: window.location.origin + window.location.pathname,
+          payload: new URLSearchParams(window.location.search).get('payload'),
+        },
+      });
+
+      log("mountAssessment() called");
+    }
+
+    function destroyAssessment() {
+      window.RedwoodJournalAssessment.destroy(container);
+      log("destroyAssessment() called — iframe removed");
+    }
+
+    log(`RedwoodJournalAssessment v${window.RedwoodJournalAssessment?.version} loaded`);
+    mountAssessment();
+</script>
+</body>
+</html>
