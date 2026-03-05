@@ -74,7 +74,7 @@
     Place embed.min.js at dist/embed/embed.min.js and the iframe content at
     dist/embed/latest/index-embed.html — the loader resolves them automatically.
   -->
-  <script src="./dist/embed/embed.min.js"></script>
+  <script src="./embed.min.js"></script>
 
   <script>
     const container = document.getElementById("assessment-container");
@@ -98,33 +98,9 @@
         // "dev" points to / on the same origin for local development.
 
         options: {
-          // Override where the embed assets are hosted.
-          // Omit to use the folder the script was loaded from.
-          // baseUrl: "https://your-cdn.example.com/dist/embed",
-
-          // Where the report page lives. The iframe will redirect the parent
-          // window here (with the encoded payload) when the assessment completes.
-          // Omit to keep the user on the current page.
-          // reportBaseUrl: "https://your-site.example.com/report",
-
-          // Set to false to handle navigation yourself in onComplete.
-          autoRedirect: false,
-        },
-
-        onReady() {
-          log("onReady — iframe loaded and app is running");
-        },
-
-        onResize(height) {
-          log(`onResize — iframe height adjusted to ${height}px`);
-        },
-
-        onComplete(data) {
-          log(`onComplete — assessment finished`);
-          log(`  redirectUrl : ${data?.redirectUrl}`);
-          log(`  payload     : ${JSON.stringify(data?.payload ?? null, null, 2)}`);
-          // With autoRedirect:false you control navigation, e.g.:
-          // window.location.href = data.redirectUrl;
+          baseUrl: "http://localhost:3000/dist/embed/",
+          reportBaseUrl: "http://localhost:3000/dist/embed/test.html",
+          payload: new URLSearchParams(window.location.search).get('payload'),
         },
       });
 
@@ -137,6 +113,7 @@
     }
 
     log(`RedwoodJournalAssessment v${window.RedwoodJournalAssessment?.version} loaded`);
-  </script>
+    mountAssessment();
+</script>
 </body>
 </html>
