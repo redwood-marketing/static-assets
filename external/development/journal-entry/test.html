@@ -99,7 +99,7 @@
 
         options: {
           baseUrl: "http://localhost:3000/dist/embed/",
-          reportBaseUrl: "http://localhost:3000/dist/embed/test.html",
+          reportBaseUrl: window.location.origin + window.location.pathname,
           payload: new URLSearchParams(window.location.search).get('payload'),
         },
       });
