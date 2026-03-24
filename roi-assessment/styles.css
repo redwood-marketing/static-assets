@@ -1,0 +1,148 @@
+:root {
+  --bg: #f5f7f7;
+  --card: #ffffff;
+  --ink: #1b2727;
+  --muted: #5a6a6a;
+  --line: #d8e1e0;
+  --accent: #0f766e;
+  --accent-soft: #e8f5f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 100% 0%, #dcefeb 0, transparent 42%),
+    radial-gradient(circle at 0% 100%, #eaf4ea 0, transparent 34%),
+    var(--bg);
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.hero {
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+}
+
+.subtitle {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 22px rgba(22, 32, 32, 0.05);
+}
+
+h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+}
+
+.note {
+  margin: 0 0 0.95rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.93rem;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #b9c9c8;
+  border-radius: 8px;
+  padding: 0.6rem 0.65rem;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus {
+  outline: 2px solid #67a6a0;
+  outline-offset: 1px;
+  border-color: #67a6a0;
+}
+
+.calc-line {
+  margin-top: 0.75rem;
+  padding: 0.58rem 0.7rem;
+  border-radius: 8px;
+  background: #f7faf9;
+  border: 1px dashed var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.output {
+  margin-top: 1rem;
+  border-radius: 14px;
+  padding: 1rem;
+  background: linear-gradient(130deg, var(--accent), #0b5f57);
+  color: #fff;
+}
+
+.output-label {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.output-value {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.65rem, 4.8vw, 2.45rem);
+  font-weight: 700;
+}
+
+.output-footnote {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 1.3rem;
+  }
+
+  .card,
+  .output {
+    border-radius: 11px;
+  }
+}

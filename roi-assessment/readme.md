@@ -1,0 +1,1 @@
+The only purpose of this folder is to host a vibe-coded app to let other people review it.

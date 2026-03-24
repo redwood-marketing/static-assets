@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS vs. Self-Hosted Payback Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Tool Consolidation Campaign</p>
+      <h1>SaaS vs. Self-Hosted Payback Calculator</h1>
+      <p class="subtitle">
+        Minimum viable web calculator based on the ROI assessment workbook.
+      </p>
+    </header>
+
+    <section class="card" aria-labelledby="q1-title">
+      <h2 id="q1-title">1. Infrastructure costs for self-hosted WLA/job scheduler products</h2>
+      <p class="note">Benchmark annual fully burdened server and software cost: $5,000 to $8,000 per server.</p>
+
+      <div class="grid">
+        <label>Production servers
+          <input type="number" min="0" step="1" id="productionServers" value="2">
+        </label>
+        <label>Development/sandbox servers
+          <input type="number" min="0" step="1" id="devServers" value="2">
+        </label>
+        <label>Testing servers
+          <input type="number" min="0" step="1" id="testServers" value="2">
+        </label>
+        <label>Servers with DB software license
+          <input type="number" min="0" step="1" id="dbServers" value="2">
+        </label>
+        <label>Servers with OS license
+          <input type="number" min="0" step="1" id="osServers" value="2">
+        </label>
+        <label>Third-party annual hosting cost (if used)
+          <input type="number" min="0" step="100" id="thirdPartyHosting" value="0">
+        </label>
+        <label>Other annual infrastructure costs
+          <input type="number" min="0" step="100" id="otherInfraCosts" value="10000">
+        </label>
+        <label>Known annual average cost per server (optional)
+          <input type="number" min="0" step="100" id="customServerCost" value="0">
+        </label>
+      </div>
+
+      <div class="calc-line">
+        <span>Applied server cost:</span>
+        <strong id="appliedServerCost">$0</strong>
+      </div>
+      <div class="calc-line">
+        <span>Question 1 subtotal:</span>
+        <strong id="q1Total">$0</strong>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="q2-title">
+      <h2 id="q2-title">2. Weekly FTE hours to keep self-hosted systems running</h2>
+      <p class="note">Benchmark fully burdened role cost: about $55/hour.</p>
+
+      <div class="grid">
+        <label>Number of people
+          <input type="number" min="0" step="1" id="ftePeople" value="3">
+        </label>
+        <label>Average hours/week per person
+          <input type="number" min="0" step="1" id="fteHoursPerWeek" value="10">
+        </label>
+        <label>Weeks/year
+          <input type="number" min="0" step="1" id="fteWeeksPerYear" value="52">
+        </label>
+        <label>Known fully burdened hourly FTE rate (optional)
+          <input type="number" min="0" step="1" id="customHourlyRate" value="0">
+        </label>
+      </div>
+
+      <div class="calc-line">
+        <span>Applied hourly FTE rate:</span>
+        <strong id="appliedHourlyRate">$0</strong>
+      </div>
+      <div class="calc-line">
+        <span>Question 2 subtotal:</span>
+        <strong id="q2Total">$0</strong>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="q4-title">
+      <h2 id="q4-title">3. Team impact of last major upgrade</h2>
+      <p class="note">Workbook note applied: webpage order swaps original questions 3 and 4.</p>
+
+      <div class="grid">
+        <label>People on the project team
+          <input type="number" min="0" step="1" id="upgradePeople" value="4">
+        </label>
+        <label>Total months the project ran
+          <input type="number" min="0" step="1" id="upgradeMonths" value="4">
+        </label>
+        <label>Average hours/week per person
+          <input type="number" min="0" step="1" id="upgradeHoursPerWeek" value="20">
+        </label>
+      </div>
+
+      <div class="calc-line">
+        <span>Question 3 subtotal:</span>
+        <strong id="q4Total">$0</strong>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="q3-title">
+      <h2 id="q3-title">4. Annual maintenance license cost</h2>
+      <div class="grid">
+        <label>Annual WLA/job scheduler maintenance license cost
+          <input type="number" min="0" step="100" id="maintenanceCost" value="40000">
+        </label>
+      </div>
+      <div class="calc-line">
+        <span>Question 4 subtotal:</span>
+        <strong id="q3Total">$0</strong>
+      </div>
+    </section>
+
+    <section class="output" aria-live="polite">
+      <p class="output-label">Total Annual Maintenance and Support Costs of current self-hosted WLA/SOAP products</p>
+      <p class="output-value" id="grandTotal">$0</p>
+      <p class="output-footnote">Potential savings by consolidating WLA/SOAP processes on RunMyJobs SaaS.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
