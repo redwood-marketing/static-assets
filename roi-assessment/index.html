@@ -1,414 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SaaS vs. Self-Hosted — Payback Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS vs. Self-Hosted Payback Calculator</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --primary: #1a56db;
-      --primary-light: #e8effc;
-      --accent: #059669;
-      --accent-light: #d1fae5;
-      --text: #1f2937;
-      --text-muted: #6b7280;
-      --border: #d1d5db;
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-    }
+:root {
+  --bg: #f5f7f7;
+  --card: #ffffff;
+  --ink: #082029;
+  --muted: #5a6a6a;
+  --line: #d8e1e0;
+  --accent: #006170;
+  --accent-soft: #e8f5f3;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 100% 0%, #dcefeb 0, transparent 42%),
+    radial-gradient(circle at 0% 100%, #eaf4ea 0, transparent 34%),
+    var(--bg);
+}
 
-    .header {
-      background: linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%);
-      color: white;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    .header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .header p { font-size: 1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
 
-    .container { max-width: 820px; margin: 0 auto; padding: 1.5rem; }
+.hero {
+  margin-bottom: 1.25rem;
+}
 
-    .section {
-      background: var(--card);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
+.brand-logo {
+  height: 2.2rem;
+  width: auto;
+  margin-bottom: 1.5rem;
+  color: var(--ink); 
+}
 
-    .section-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px; height: 28px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-right: 0.5rem;
-      flex-shrink: 0;
-    }
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+}
 
-    .section-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: flex-start;
-      line-height: 1.4;
-    }
+.subheader {
+  background: var(--accent-soft);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
+}
 
-    .hint {
-      background: var(--primary-light);
-      border-left: 3px solid var(--primary);
-      padding: 0.65rem 0.85rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      border-radius: 0 6px 6px 0;
-      margin-bottom: 1rem;
-    }
+.subheader h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
 
-    .field-group { margin-bottom: 0.85rem; }
-    .field-group:last-child { margin-bottom: 0; }
+.subheader p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
-    label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 22px rgba(22, 32, 32, 0.05);
+}
 
-    .input-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+}
 
-    .input-prefix {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+.note {
+  margin: 0 0 0.95rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
 
-    input[type="number"] {
-      width: 160px;
-      padding: 0.5rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.95rem;
-      transition: border-color 0.15s;
-    }
-    input[type="number"]:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(26,86,219,0.12);
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
 
-    .override-row {
-      margin-top: 0.75rem;
-      padding-top: 0.75rem;
-      border-top: 1px dashed var(--border);
-    }
-    .override-row label { font-style: italic; color: var(--text-muted); }
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+  height: 100%;
+}
 
+label > span {
+  flex-grow: 1;
+}
 
-    .subtotal-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem;
-      padding: 0.65rem 0.85rem;
-      background: var(--bg);
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-    .subtotal-bar .label { color: var(--text-muted); font-weight: 500; }
-    .subtotal-bar .value { font-weight: 700; color: var(--primary); font-size: 1.05rem; }
+input {
+  width: 100%;
+  border: 1px solid #b9c9c8;
+  border-radius: 8px;
+  padding: 0.6rem 0.65rem;
+  font: inherit;
+  background: #fff;
+}
 
-    /* Result */
-    .result-section {
-      background: linear-gradient(135deg, #065f46 0%, #059669 100%);
-      color: white;
-      border-radius: 12px;
-      box-shadow: var(--shadow-lg);
-      padding: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .result-section h2 { font-size: 1rem; font-weight: 500; opacity: 0.9; margin-bottom: 0.5rem; }
-    .result-amount { font-size: 2.75rem; font-weight: 800; letter-spacing: -1px; }
-    .result-subtitle { font-size: 0.9rem; opacity: 0.8; margin-top: 0.75rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
 
-    .breakdown {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-    .breakdown-item {
-      background: rgba(255,255,255,0.15);
-      border-radius: 8px;
-      padding: 0.75rem;
-    }
-    .breakdown-item .bl { font-size: 0.75rem; opacity: 0.8; }
-    .breakdown-item .bv { font-size: 1.15rem; font-weight: 700; }
+.calc-line {
+  margin-top: 0.75rem;
+  padding: 0.58rem 0.7rem;
+  border-radius: 8px;
+  background: #f7faf9;
+  border: 1px dashed var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+}
 
-    .disabled-field input { opacity: 0.45; pointer-events: none; }
-    .disabled-field label { opacity: 0.45; }
+.output {
+  margin-top: 1.5rem;
+  border-radius: 14px;
+  padding: 1.5rem;
+  background: var(--accent);
+  color: #fff;
+}
 
-    @media (max-width: 600px) {
-      .header h1 { font-size: 1.35rem; }
-      .container { padding: 1rem; }
-      .section { padding: 1.25rem; }
-      input[type="number"] { width: 130px; }
-      .breakdown { grid-template-columns: 1fr; }
-      .result-amount { font-size: 2rem; }
-    }
+.output-label {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.output-value {
+  margin: 0.35rem 0 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #34E5E2;
+}
+
+.output-footnote {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 1.3rem;
+  }
+
+  .card,
+  .output {
+    border-radius: 11px;
+  }
+}
   </style>
 </head>
 <body>
+  <main class="page">
+    <header class="hero">
+      <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 103.1 21">
+					<path fill="#e24650" d="M0 0v20.297h7.594v-1.805h-5.79V1.805h17.394v16.687h-7.794v-6.996l2.092 1.91c.301.274.68.43 1.125.404a1.52 1.52 0 0 0 1.086-.51l.157-.17-4.46-4.08V7.232l1.687 1.543c.64.589 1.635.55 2.21-.091l.17-.183-4.93-4.499-.51.47-4.33 3.99.171.183c.288.327.72.523 1.164.523.392 0 .758-.144 1.046-.406L9.6 7.258V9.13l-4.29 3.95.158.182c.3.327.719.523 1.163.523.393 0 .759-.144 1.047-.392l1.922-1.83v8.735h11.404V0z"></path>
+					<path fill="CurrentColor" d="M29.605 16.436V4.354h5.48c2.569 0 4.492 1.362 4.492 3.914v.17c0 1.838-.97 3.046-2.485 3.59l2.842 4.408h-3.148l-2.518-4.084h-1.804v4.084zm2.859-6.432h2.297c1.09 0 1.855-.46 1.855-1.566v-.17c0-1.106-.766-1.565-1.855-1.565h-2.297zM40.17 12.114v-.17c0-2.706 1.787-4.527 4.595-4.527 3.046 0 4.56 2.11 4.39 5.19H42.74c.12 1.379.8 2.043 2.008 2.043.953 0 1.464-.409 1.685-.92h2.671c-.46 1.77-2.008 2.927-4.339 2.927-2.842 0-4.594-1.786-4.594-4.543m6.297-1.021c-.085-1.089-.681-1.719-1.736-1.719-1.123 0-1.753.545-1.957 1.719zM49.974 12.114v-.17c0-2.57 1.378-4.527 3.743-4.527 1.277 0 2.161.596 2.672 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.689 1.633-2.382 0-3.828-1.922-3.828-4.543m6.5 0v-.17c0-1.634-.613-2.485-1.872-2.485-1.276 0-1.872.851-1.872 2.485v.17c0 1.617.596 2.484 1.872 2.484 1.26 0 1.872-.867 1.872-2.484M62.571 16.436l-2.57-8.797h2.74l1.447 5.972 1.43-5.972h2.637l1.446 6.006 1.48-6.006h2.673l-2.587 8.797h-2.842l-1.514-5.887-1.498 5.887zM73.879 12.114v-.17c0-2.655 1.82-4.527 4.612-4.527 2.773 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.838 4.543-4.611 4.543-2.791 0-4.612-1.871-4.612-4.543m6.466 0v-.17c0-1.6-.578-2.45-1.854-2.45-1.294 0-1.855.85-1.855 2.45v.17c0 1.617.561 2.467 1.855 2.467 1.276 0 1.854-.85 1.854-2.467M83.907 12.114v-.17c0-2.655 1.821-4.527 4.612-4.527 2.774 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.837 4.543-4.611 4.543-2.79 0-4.612-1.871-4.612-4.543m6.467 0v-.17c0-1.6-.579-2.45-1.855-2.45-1.293 0-1.855.85-1.855 2.45v.17c0 1.617.562 2.467 1.855 2.467 1.276 0 1.855-.85 1.855-2.467M93.936 12.114v-.17c0-2.57 1.378-4.527 3.744-4.527 1.276 0 2.16.596 2.671 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.688 1.633-2.383 0-3.83-1.922-3.83-4.543m6.5 0v-.17c0-1.634-.612-2.485-1.872-2.485-1.276 0-1.871.851-1.871 2.485v.17c0 1.617.595 2.484 1.871 2.484 1.26 0 1.872-.867 1.872-2.484"></path>
+				</svg>
+      <h1>SaaS vs. self-hosted payback calculator</h1>
+    </header>
 
-<div class="header">
-  <h1>Tool Consolidation — Payback Calculator</h1>
-  <p>Estimate how much you could save by consolidating self-hosted WLA/job scheduler products onto a SaaS platform.</p>
-</div>
-
-<div class="container">
-
-  <!-- Q1: Infrastructure Costs -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-number">1</span>
-      <span>What are your infrastructure costs for all the self-hosted WLA/job scheduler products you are running?</span>
+    <div class="subheader">
+      <h3>Estimate your savings with RunMyJobs</h3>
+      <p>Use this payback assessment to calculate potential savings from consolidating your on-premises workload automation (WLA) and job scheduling processes into RunMyJobs SaaS. For unknown data points, use the industry benchmarks provided.</p>
     </div>
 
-    <div class="hint">Industry benchmarks for annual fully burdened server and associated software costs to run a WLA/job scheduler is between $5,000 and $8,000.</div>
+    <section class="card" aria-labelledby="q1-title">
+      <h2 id="q1-title">1. Infrastructure costs for self-hosted WLA/job scheduler products</h2>
+      <p class="note">Benchmark annual fully burdened server and software cost: $5,000 to $8,000 per server.</p>
 
-    <div id="server-fields">
-      <div class="field-group">
-        <label>a. # of production servers</label>
-        <div class="input-row"><input type="number" id="q1a" min="0" value="2"></div>
+      <div class="grid">
+        <label>
+          <span>Production servers</span>
+          <input type="number" min="0" step="1" id="productionServers" value="0">
+        </label>
+        <label>
+          <span>Development/sandbox servers</span>
+          <input type="number" min="0" step="1" id="devServers" value="0">
+        </label>
+        <label>
+          <span>Testing servers</span>
+          <input type="number" min="0" step="1" id="testServers" value="0">
+        </label>
+        <label>
+          <span>Servers with DB software license</span>
+          <input type="number" min="0" step="1" id="dbServers" value="0">
+        </label>
+        <label>
+          <span>Servers with OS license</span>
+          <input type="number" min="0" step="1" id="osServers" value="0">
+        </label>
+        <label>
+          <span>Other annual infrastructure costs</span>
+          <input type="number" min="0" step="100" id="otherInfraCosts" value="0">
+        </label>
+        <label>
+          <span>Known annual average cost per server (optional)</span>
+          <input type="number" min="0" step="100" id="customServerCost" value="0">
+        </label>
       </div>
-      <div class="field-group">
-        <label>b. # of development or sandbox servers</label>
-        <div class="input-row"><input type="number" id="q1b" min="0" value="2"></div>
+
+      <div class="calc-line">
+        <span>Applied server cost:</span>
+        <strong id="appliedServerCost">$0</strong>
       </div>
-      <div class="field-group">
-        <label>c. # of testing servers</label>
-        <div class="input-row"><input type="number" id="q1c" min="0" value="2"></div>
+      <div class="calc-line">
+        <span>Question 1 subtotal:</span>
+        <strong id="q1Total">$0</strong>
       </div>
-      <div class="field-group">
-        <label>d. # of servers with database software licenses for the WLA/job scheduler</label>
-        <div class="input-row"><input type="number" id="q1d" min="0" value="2"></div>
+    </section>
+
+    <section class="card" aria-labelledby="q2-title">
+      <h2 id="q2-title">2. Weekly dedicated FTE hours to keep self-hosted systems running</h2>
+      <p class="note">Benchmark fully burdened role cost is about $55/hour.</p>
+
+      <div class="grid">
+        <label>
+          <span>Number of people</span>
+          <input type="number" min="0" step="1" id="ftePeople" value="0">
+        </label>
+        <label>
+          <span>Average hours/week per person</span>
+          <input type="number" min="0" step="1" id="fteHoursPerWeek" value="0">
+        </label>
+        <label>
+          <span>Weeks/year</span>
+          <input type="number" min="0" step="1" id="fteWeeksPerYear" value="0">
+        </label>
+        <label>
+          <span>Known fully burdened hourly FTE rate (optional)</span>
+          <input type="number" min="0" step="1" id="customHourlyRate" value="0">
+        </label>
       </div>
-      <div class="field-group">
-        <label>e. # of servers with an OS license for the WLA/job scheduler</label>
-        <div class="input-row"><input type="number" id="q1e" min="0" value="2"></div>
+
+      <div class="calc-line">
+        <span>Applied hourly FTE rate:</span>
+        <strong id="appliedHourlyRate">$0</strong>
       </div>
-    </div>
-
-
-    <div class="field-group" style="margin-top:1rem;">
-      <label>Any other specific annual infrastructure costs not captured above?</label>
-      <div class="input-row">
-        <span class="input-prefix">$</span>
-        <input type="number" id="q1other" min="0" value="10000">
+      <div class="calc-line">
+        <span>Question 2 subtotal:</span>
+        <strong id="q2Total">$0</strong>
       </div>
-    </div>
+    </section>
 
-    <div class="override-row">
-      <label>If you know your annual average cost per server, enter it here (otherwise we use $6,500):</label>
-      <div class="input-row" style="margin-top:0.3rem;">
-        <span class="input-prefix">$</span>
-        <input type="number" id="q1costper" min="0" value="" placeholder="6500">
+    <section class="card" aria-labelledby="q4-title">
+      <h2 id="q4-title">3. What was the total impact on your team to plan, test, debug and release to production your last major WLA/job scheduler upgrade?</h2>
+
+      <div class="grid">
+        <label>
+          <span>People on the project team</span>
+          <input type="number" min="0" step="1" id="upgradePeople" value="0">
+        </label>
+        <label>
+          <span>Total months the project ran</span>
+          <input type="number" min="0" step="1" id="upgradeMonths" value="0">
+        </label>
+        <label>
+          <span>Average hours/week per person</span>
+          <input type="number" min="0" step="1" id="upgradeHoursPerWeek" value="0">
+        </label>
       </div>
-    </div>
 
-    <div class="subtotal-bar">
-      <span class="label">Infrastructure subtotal</span>
-      <span class="value" id="sub1">$0</span>
-    </div>
-  </div>
-
-  <!-- Q2: FTE Costs -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-number">2</span>
-      <span>How many FTE hours per week are dedicated to keeping the self-hosted WLA/job scheduler system running?</span>
-    </div>
-
-    <div class="hint">Industry benchmarks for these roles is roughly $55 per hour.</div>
-
-    <div class="field-group">
-      <label>a. Number of people (administrators, engineers)</label>
-      <div class="input-row"><input type="number" id="q2a" min="0" value="3"></div>
-    </div>
-    <div class="field-group">
-      <label>b. Average hours per week per person</label>
-      <div class="input-row"><input type="number" id="q2b" min="0" value="10"></div>
-    </div>
-
-    <div class="override-row">
-      <label>If you know your fully burdened hourly FTE rate, enter it here (otherwise we use $55/hr):</label>
-      <div class="input-row" style="margin-top:0.3rem;">
-        <span class="input-prefix">$</span>
-        <input type="number" id="q2rate" min="0" value="" placeholder="55">
+      <div class="calc-line">
+        <span>Question 3 subtotal:</span>
+        <strong id="q4Total">$0</strong>
       </div>
-    </div>
+    </section>
 
-    <div class="subtotal-bar">
-      <span class="label">Annual FTE subtotal</span>
-      <span class="value" id="sub2">$0</span>
-    </div>
-  </div>
+    <section class="card" aria-labelledby="q3-title">
+      <h2 id="q3-title">4. Annual maintenance license cost</h2>
+      <div class="grid">
+        <label>
+          <span>Annual WLA/job scheduler maintenance license cost</span>
+          <input type="number" min="0" step="100" id="maintenanceCost" value="0">
+        </label>
+      </div>
+      <div class="calc-line">
+        <span>Question 4 subtotal:</span>
+        <strong id="q3Total">$0</strong>
+      </div>
+    </section>
 
-  <!-- Q3: Upgrade Impact (was Q4 in spreadsheet, swapped per note) -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-number">3</span>
-      <span>What was the total impact on your team to plan, test, debug, and release to production your last major WLA/job scheduler upgrade?</span>
-    </div>
+    <section class="output" aria-live="polite">
+      <p class="output-label">Total Annual Maintenance and Support Costs of current self-hosted WLA/SOAP products</p>
+      <p class="output-value" id="grandTotal">$0</p>
+      <p class="output-footnote">Potential savings by consolidating WLA/SOAP processes on RunMyJobs SaaS.</p>
+    </section>
 
-    <div class="hint">The cycle for most self-hosted WLA/job scheduler products is a major upgrade every 1.2 to 1.5 years.</div>
-
-    <div class="field-group">
-      <label>a. How many people were on the team? (Admin, Engineer, Platform Team, Proj. Mgr, Test Engineers, etc.)</label>
-      <div class="input-row"><input type="number" id="q3a" min="0" value="4"></div>
-    </div>
-    <div class="field-group">
-      <label>b. How many total months did the project run?</label>
-      <div class="input-row"><input type="number" id="q3b" min="0" value="4"></div>
-    </div>
-    <div class="field-group">
-      <label>c. How many hours per week on average was the team engaged?</label>
-      <div class="input-row"><input type="number" id="q3c" min="0" value="20"></div>
-    </div>
-
-    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem;">
-      We use the FTE hourly rate from Question 2 to calculate this cost.
+    <p class="disclaimer">
+      Please note: This calculator provides estimated savings for illustration only and doesn't constitute an offer or savings guarantee. Actual results may vary.
     </p>
+  </main>
 
-    <div class="subtotal-bar">
-      <span class="label">Upgrade cost subtotal</span>
-      <span class="value" id="sub3">$0</span>
-    </div>
-  </div>
+  <script>
+const DEFAULT_SERVER_COST = 6500;
+const DEFAULT_HOURLY_RATE = 55;
 
-  <!-- Q4: Maintenance License Cost (was Q3 in spreadsheet, swapped per note) -->
-  <div class="section">
-    <div class="section-title">
-      <span class="section-number">4</span>
-      <span>What is your annual WLA/job scheduler maintenance license cost?</span>
-    </div>
+const moneyFmt = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0
+});
 
-    <div class="hint">This is typically charged as a percentage of the overall annual license fee. Industry benchmarks are around 15%–22% of annual license cost.</div>
+const fields = {
+  productionServers: document.getElementById("productionServers"),
+  devServers: document.getElementById("devServers"),
+  testServers: document.getElementById("testServers"),
+  dbServers: document.getElementById("dbServers"),
+  osServers: document.getElementById("osServers"),
+  otherInfraCosts: document.getElementById("otherInfraCosts"),
+  customServerCost: document.getElementById("customServerCost"),
+  ftePeople: document.getElementById("ftePeople"),
+  fteHoursPerWeek: document.getElementById("fteHoursPerWeek"),
+  fteWeeksPerYear: document.getElementById("fteWeeksPerYear"),
+  customHourlyRate: document.getElementById("customHourlyRate"),
+  upgradePeople: document.getElementById("upgradePeople"),
+  upgradeMonths: document.getElementById("upgradeMonths"),
+  upgradeHoursPerWeek: document.getElementById("upgradeHoursPerWeek"),
+  maintenanceCost: document.getElementById("maintenanceCost")
+};
 
-    <div class="field-group">
-      <label>Annual maintenance license cost</label>
-      <div class="input-row">
-        <span class="input-prefix">$</span>
-        <input type="number" id="q4" min="0" value="40000">
-      </div>
-    </div>
+const outputs = {
+  appliedServerCost: document.getElementById("appliedServerCost"),
+  q1Total: document.getElementById("q1Total"),
+  appliedHourlyRate: document.getElementById("appliedHourlyRate"),
+  q2Total: document.getElementById("q2Total"),
+  q4Total: document.getElementById("q4Total"),
+  q3Total: document.getElementById("q3Total"),
+  grandTotal: document.getElementById("grandTotal")
+};
 
-    <div class="subtotal-bar">
-      <span class="label">Maintenance subtotal</span>
-      <span class="value" id="sub4">$0</span>
-    </div>
-  </div>
-
-  <!-- Result -->
-  <div class="result-section">
-    <h2>Total Annual Maintenance &amp; Support Costs of Current Self-Hosted WLA/SOAP Products</h2>
-    <div class="result-amount" id="total">$0</div>
-    <div class="result-subtitle">
-      This is how much you could save by consolidating your WLA/SOAP processes onto RunMyJobs SaaS.
-    </div>
-
-    <div class="breakdown">
-      <div class="breakdown-item">
-        <div class="bl">Infrastructure</div>
-        <div class="bv" id="bd1">$0</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="bl">FTE / Staff</div>
-        <div class="bv" id="bd2">$0</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="bl">Upgrade Impact</div>
-        <div class="bv" id="bd3">$0</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="bl">Maintenance License</div>
-        <div class="bv" id="bd4">$0</div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  const $ = id => document.getElementById(id);
-  const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
-  const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
-
-  function calculate() {
-    // Cost per server: custom or default $6,500
-    const customCostPer = num('q1costper');
-    const costPerServer = customCostPer > 0 ? customCostPer : 6500;
-
-    // Infrastructure
-    const totalServers = num('q1a') + num('q1b') + num('q1c') + num('q1d') + num('q1e');
-    const serverCost = totalServers * costPerServer;
-    const infra = serverCost + num('q1other');
-
-    // FTE rate: custom or default $55
-    const customRate = num('q2rate');
-    const hourlyRate = customRate > 0 ? customRate : 55;
-
-    // FTE annual cost: people * hours/week * rate * 52 weeks
-    const fte = num('q2a') * num('q2b') * hourlyRate * 52;
-
-    // Upgrade impact: (people * hours/week) * (months * 4 weeks) * rate
-    const upgrade = (num('q3a') * num('q3c')) * (num('q3b') * 4) * hourlyRate;
-
-    // Maintenance license
-    const maintenance = num('q4');
-
-    const total = infra + fte + upgrade + maintenance;
-
-    // Update display
-    $('sub1').textContent = fmt(infra);
-    $('sub2').textContent = fmt(fte);
-    $('sub3').textContent = fmt(upgrade);
-    $('sub4').textContent = fmt(maintenance);
-    $('total').textContent = fmt(total);
-    $('bd1').textContent = fmt(infra);
-    $('bd2').textContent = fmt(fte);
-    $('bd3').textContent = fmt(upgrade);
-    $('bd4').textContent = fmt(maintenance);
+function readNumber(input) {
+  const val = Number.parseFloat(input.value);
+  if (Number.isFinite(val) && val > 0) {
+    return val;
   }
+  return 0;
+}
 
-  // Attach listeners to all inputs
-  document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener('input', calculate);
-  });
+function fmtMoney(value) {
+  return moneyFmt.format(value);
+}
 
-  // Initial calculation
-  calculate();
-</script>
+function calculate() {
+  const serverCostInput = readNumber(fields.customServerCost);
+  const appliedServerCost = serverCostInput || DEFAULT_SERVER_COST;
+  const serverCount =
+    readNumber(fields.productionServers) +
+    readNumber(fields.devServers) +
+    readNumber(fields.testServers) +
+    readNumber(fields.dbServers) +
+    readNumber(fields.osServers);
+  const otherInfraCosts = readNumber(fields.otherInfraCosts);
 
+  const q1Total = serverCount * appliedServerCost + otherInfraCosts;
+
+  const hourlyRateInput = readNumber(fields.customHourlyRate);
+  const appliedHourlyRate = hourlyRateInput || DEFAULT_HOURLY_RATE;
+  const q2Total =
+    readNumber(fields.ftePeople) *
+    readNumber(fields.fteHoursPerWeek) *
+    readNumber(fields.fteWeeksPerYear) *
+    appliedHourlyRate;
+
+  const q4Total =
+    (readNumber(fields.upgradePeople) * readNumber(fields.upgradeHoursPerWeek)) *
+    (readNumber(fields.upgradeMonths) * 4) *
+    appliedHourlyRate;
+
+  const q3Total = readNumber(fields.maintenanceCost);
+  
+  const grandTotal = q1Total + q2Total + q3Total + q4Total;
+
+  outputs.appliedServerCost.textContent = fmtMoney(appliedServerCost);
+  outputs.q1Total.textContent = fmtMoney(q1Total);
+  outputs.appliedHourlyRate.textContent = fmtMoney(appliedHourlyRate);
+  outputs.q2Total.textContent = fmtMoney(q2Total);
+  outputs.q4Total.textContent = fmtMoney(q4Total);
+  outputs.q3Total.textContent = fmtMoney(q3Total);
+  outputs.grandTotal.textContent = fmtMoney(grandTotal);
+}
+
+Object.values(fields).forEach(function(input) {
+  input.addEventListener("input", calculate);
+});
+
+calculate();
+  </script>
 </body>
 </html>
+
