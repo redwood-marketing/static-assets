@@ -429,12 +429,16 @@
     
     (function resize() {
       "use strict";
-      if ( window !== window.top ) {
-        const height        = document.body.scrollHeight;
-        const target        = window.frameElement;
-        target.style.height = `${height}px`;  
+      if (window.self !== window.top) {
+        const height = document.body.scrollHeight;
         
+        window.parent.postMessage({
+          type: 'iframeResize',
+          height: height
+        }, '*');
+
         window.addEventListener("resize", resize, { once: true });
+        window.addEventListener("load", resize, { once: true });
       }
     })();
     
