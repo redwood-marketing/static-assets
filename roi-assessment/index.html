@@ -8,206 +8,207 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  
   <style>
-:root {
-  --bg: #f5f7f7;
-  --card: #ffffff;
-  --ink: #082029;
-  --muted: #5a6a6a;
-  --line: #d8e1e0;
-  --accent: #006170;
-  --accent-soft: #e8f5f3;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Archivo", sans-serif;
-  color: var(--ink);
-  background:
-    radial-gradient(circle at 100% 0%, #dcefeb 0, transparent 42%),
-    radial-gradient(circle at 0% 100%, #eaf4ea 0, transparent 34%),
-    var(--bg);
-}
-
-.page {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 2rem 1rem 3rem;
-}
-
-.hero {
-  margin-bottom: 1.25rem;
-}
-
-.brand-logo {
-  height: 2.2rem;
-  width: auto;
-  margin-bottom: 1.5rem;
-  color: var(--ink); 
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
-}
-
-.subheader {
-  background: var(--accent-soft);
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
-  border-left: 4px solid var(--accent);
-  margin-bottom: 1.5rem;
-}
-
-.subheader h3 {
-  margin: 0 0 0.35rem 0;
-  font-size: 1.1rem;
-  color: var(--accent);
-}
-
-.subheader p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1rem;
-  margin-top: 1rem;
-  box-shadow: 0 10px 22px rgba(22, 32, 32, 0.05);
-}
-
-h2 {
-  font-size: 1.05rem;
-  margin: 0 0 0.45rem;
-}
-
-.note {
-  margin: 0 0 0.95rem;
-  color: var(--muted);
-  font-size: 0.93rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.75rem;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  font-size: 0.93rem;
-  font-weight: 600;
-  height: 100%;
-}
-
-label > span {
-  flex-grow: 1;
-}
-
-input {
-  width: 100%;
-  border: 1px solid #b9c9c8;
-  border-radius: 8px;
-  padding: 0.6rem 0.65rem;
-  font: inherit;
-  background: #fff;
-}
-
-input:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-  border-color: var(--accent);
-}
-
-.calc-line {
-  margin-top: 0.75rem;
-  padding: 0.58rem 0.7rem;
-  border-radius: 8px;
-  background: #f7faf9;
-  border: 1px dashed var(--line);
-  display: flex;
-  justify-content: space-between;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.output {
-  margin-top: 1.5rem;
-  border-radius: 14px;
-  padding: 1.5rem;
-  background: var(--accent);
-  color: #fff;
-}
-
-.output-label {
-  margin: 0;
-  font-size: 1rem;
-  opacity: 0.95;
-}
-
-.output-value {
-  margin: 0.35rem 0 0;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: #34E5E2;
-}
-
-.output-footnote {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  opacity: 0.95;
-}
-
-.disclaimer {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-style: italic;
-}
-
-@media (max-width: 640px) {
-  .page {
-    padding-top: 1.3rem;
-  }
-
-  .card,
-  .output {
-    border-radius: 11px;
-  }
-}
+    :root {
+      --bg: #f5f7f7;
+      --card: #ffffff;
+      --ink: #082029;
+      --muted: #5a6a6a;
+      --line: #d8e1e0;
+      --accent: #006170;
+      --accent-soft: #e8f5f3;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: "Archivo", sans-serif;
+      color: var(--ink);
+      background:
+      radial-gradient(circle at 100% 0%, #dcefeb 0, transparent 42%),
+      radial-gradient(circle at 0% 100%, #eaf4ea 0, transparent 34%),
+      var(--bg);
+      background-repeat: no-repeat;
+    }
+    
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    
+    .hero {
+      margin-bottom: 1.25rem;
+    }
+    
+    .brand-logo {
+      height: 2.2rem;
+      width: auto;
+      margin-bottom: 1.5rem;
+      color: var(--ink); 
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+    }
+    
+    .subheader {
+      background: var(--accent-soft);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    
+    .subheader h3 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    
+    .subheader p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+      margin-top: 1rem;
+      box-shadow: 0 10px 22px rgba(22, 32, 32, 0.05);
+    }
+    
+    h2 {
+      font-size: 1.05rem;
+      margin: 0 0 0.45rem;
+    }
+    
+    .note {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+    }
+    
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.93rem;
+      font-weight: 600;
+      height: 100%;
+    }
+    
+    label > span {
+      flex-grow: 1;
+    }
+    
+    input {
+      width: 100%;
+      border: 1px solid #b9c9c8;
+      border-radius: 8px;
+      padding: 0.6rem 0.65rem;
+      font: inherit;
+      background: #fff;
+    }
+    
+    input:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+      border-color: var(--accent);
+    }
+    
+    .calc-line {
+      margin-top: 0.75rem;
+      padding: 0.58rem 0.7rem;
+      border-radius: 8px;
+      background: #f7faf9;
+      border: 1px dashed var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    
+    .output {
+      margin-top: 1.5rem;
+      border-radius: 14px;
+      padding: 1.5rem;
+      background: var(--accent);
+      color: #fff;
+    }
+    
+    .output-label {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+    
+    .output-value {
+      margin: 0.35rem 0 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: #34E5E2;
+    }
+    
+    .output-footnote {
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+    
+    .disclaimer {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    
+    @media (max-width: 640px) {
+      .page {
+        padding-top: 1.3rem;
+      }
+      
+      .card,
+      .output {
+        border-radius: 11px;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 103.1 21">
-					<path fill="#e24650" d="M0 0v20.297h7.594v-1.805h-5.79V1.805h17.394v16.687h-7.794v-6.996l2.092 1.91c.301.274.68.43 1.125.404a1.52 1.52 0 0 0 1.086-.51l.157-.17-4.46-4.08V7.232l1.687 1.543c.64.589 1.635.55 2.21-.091l.17-.183-4.93-4.499-.51.47-4.33 3.99.171.183c.288.327.72.523 1.164.523.392 0 .758-.144 1.046-.406L9.6 7.258V9.13l-4.29 3.95.158.182c.3.327.719.523 1.163.523.393 0 .759-.144 1.047-.392l1.922-1.83v8.735h11.404V0z"></path>
-					<path fill="CurrentColor" d="M29.605 16.436V4.354h5.48c2.569 0 4.492 1.362 4.492 3.914v.17c0 1.838-.97 3.046-2.485 3.59l2.842 4.408h-3.148l-2.518-4.084h-1.804v4.084zm2.859-6.432h2.297c1.09 0 1.855-.46 1.855-1.566v-.17c0-1.106-.766-1.565-1.855-1.565h-2.297zM40.17 12.114v-.17c0-2.706 1.787-4.527 4.595-4.527 3.046 0 4.56 2.11 4.39 5.19H42.74c.12 1.379.8 2.043 2.008 2.043.953 0 1.464-.409 1.685-.92h2.671c-.46 1.77-2.008 2.927-4.339 2.927-2.842 0-4.594-1.786-4.594-4.543m6.297-1.021c-.085-1.089-.681-1.719-1.736-1.719-1.123 0-1.753.545-1.957 1.719zM49.974 12.114v-.17c0-2.57 1.378-4.527 3.743-4.527 1.277 0 2.161.596 2.672 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.689 1.633-2.382 0-3.828-1.922-3.828-4.543m6.5 0v-.17c0-1.634-.613-2.485-1.872-2.485-1.276 0-1.872.851-1.872 2.485v.17c0 1.617.596 2.484 1.872 2.484 1.26 0 1.872-.867 1.872-2.484M62.571 16.436l-2.57-8.797h2.74l1.447 5.972 1.43-5.972h2.637l1.446 6.006 1.48-6.006h2.673l-2.587 8.797h-2.842l-1.514-5.887-1.498 5.887zM73.879 12.114v-.17c0-2.655 1.82-4.527 4.612-4.527 2.773 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.838 4.543-4.611 4.543-2.791 0-4.612-1.871-4.612-4.543m6.466 0v-.17c0-1.6-.578-2.45-1.854-2.45-1.294 0-1.855.85-1.855 2.45v.17c0 1.617.561 2.467 1.855 2.467 1.276 0 1.854-.85 1.854-2.467M83.907 12.114v-.17c0-2.655 1.821-4.527 4.612-4.527 2.774 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.837 4.543-4.611 4.543-2.79 0-4.612-1.871-4.612-4.543m6.467 0v-.17c0-1.6-.579-2.45-1.855-2.45-1.293 0-1.855.85-1.855 2.45v.17c0 1.617.562 2.467 1.855 2.467 1.276 0 1.855-.85 1.855-2.467M93.936 12.114v-.17c0-2.57 1.378-4.527 3.744-4.527 1.276 0 2.16.596 2.671 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.688 1.633-2.383 0-3.83-1.922-3.83-4.543m6.5 0v-.17c0-1.634-.612-2.485-1.872-2.485-1.276 0-1.871.851-1.871 2.485v.17c0 1.617.595 2.484 1.871 2.484 1.26 0 1.872-.867 1.872-2.484"></path>
-				</svg>
+        <path fill="#e24650" d="M0 0v20.297h7.594v-1.805h-5.79V1.805h17.394v16.687h-7.794v-6.996l2.092 1.91c.301.274.68.43 1.125.404a1.52 1.52 0 0 0 1.086-.51l.157-.17-4.46-4.08V7.232l1.687 1.543c.64.589 1.635.55 2.21-.091l.17-.183-4.93-4.499-.51.47-4.33 3.99.171.183c.288.327.72.523 1.164.523.392 0 .758-.144 1.046-.406L9.6 7.258V9.13l-4.29 3.95.158.182c.3.327.719.523 1.163.523.393 0 .759-.144 1.047-.392l1.922-1.83v8.735h11.404V0z"></path>
+        <path fill="CurrentColor" d="M29.605 16.436V4.354h5.48c2.569 0 4.492 1.362 4.492 3.914v.17c0 1.838-.97 3.046-2.485 3.59l2.842 4.408h-3.148l-2.518-4.084h-1.804v4.084zm2.859-6.432h2.297c1.09 0 1.855-.46 1.855-1.566v-.17c0-1.106-.766-1.565-1.855-1.565h-2.297zM40.17 12.114v-.17c0-2.706 1.787-4.527 4.595-4.527 3.046 0 4.56 2.11 4.39 5.19H42.74c.12 1.379.8 2.043 2.008 2.043.953 0 1.464-.409 1.685-.92h2.671c-.46 1.77-2.008 2.927-4.339 2.927-2.842 0-4.594-1.786-4.594-4.543m6.297-1.021c-.085-1.089-.681-1.719-1.736-1.719-1.123 0-1.753.545-1.957 1.719zM49.974 12.114v-.17c0-2.57 1.378-4.527 3.743-4.527 1.277 0 2.161.596 2.672 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.689 1.633-2.382 0-3.828-1.922-3.828-4.543m6.5 0v-.17c0-1.634-.613-2.485-1.872-2.485-1.276 0-1.872.851-1.872 2.485v.17c0 1.617.596 2.484 1.872 2.484 1.26 0 1.872-.867 1.872-2.484M62.571 16.436l-2.57-8.797h2.74l1.447 5.972 1.43-5.972h2.637l1.446 6.006 1.48-6.006h2.673l-2.587 8.797h-2.842l-1.514-5.887-1.498 5.887zM73.879 12.114v-.17c0-2.655 1.82-4.527 4.612-4.527 2.773 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.838 4.543-4.611 4.543-2.791 0-4.612-1.871-4.612-4.543m6.466 0v-.17c0-1.6-.578-2.45-1.854-2.45-1.294 0-1.855.85-1.855 2.45v.17c0 1.617.561 2.467 1.855 2.467 1.276 0 1.854-.85 1.854-2.467M83.907 12.114v-.17c0-2.655 1.821-4.527 4.612-4.527 2.774 0 4.611 1.872 4.611 4.527v.17c0 2.672-1.837 4.543-4.611 4.543-2.79 0-4.612-1.871-4.612-4.543m6.467 0v-.17c0-1.6-.579-2.45-1.855-2.45-1.293 0-1.855.85-1.855 2.45v.17c0 1.617.562 2.467 1.855 2.467 1.276 0 1.855-.85 1.855-2.467M93.936 12.114v-.17c0-2.57 1.378-4.527 3.744-4.527 1.276 0 2.16.596 2.671 1.379V3.64h2.74v12.796h-2.553l-.085-1.412c-.357.817-1.276 1.633-2.688 1.633-2.383 0-3.83-1.922-3.83-4.543m6.5 0v-.17c0-1.634-.612-2.485-1.872-2.485-1.276 0-1.871.851-1.871 2.485v.17c0 1.617.595 2.484 1.871 2.484 1.26 0 1.872-.867 1.872-2.484"></path>
+      </svg>
       <h1>SaaS vs. self-hosted payback calculator</h1>
     </header>
-
+    
     <div class="subheader">
       <h3>Estimate your savings with RunMyJobs</h3>
       <p>Use this payback assessment to calculate potential savings from consolidating your on-premises workload automation (WLA) and job scheduling processes into RunMyJobs SaaS. For unknown data points, use the industry benchmarks provided.</p>
     </div>
-
+    
     <section class="card" aria-labelledby="q1-title">
       <h2 id="q1-title">1. Infrastructure costs for self-hosted WLA/job scheduler products</h2>
       <p class="note">Benchmark annual fully burdened server and software cost: $5,000 to $8,000 per server.</p>
-
+      
       <div class="grid">
         <label>
           <span>Production servers</span>
@@ -238,7 +239,7 @@ input:focus {
           <input type="number" min="0" step="100" id="customServerCost" value="0">
         </label>
       </div>
-
+      
       <div class="calc-line">
         <span>Applied server cost:</span>
         <strong id="appliedServerCost">$0</strong>
@@ -248,11 +249,11 @@ input:focus {
         <strong id="q1Total">$0</strong>
       </div>
     </section>
-
+    
     <section class="card" aria-labelledby="q2-title">
       <h2 id="q2-title">2. Weekly dedicated FTE hours to keep self-hosted systems running</h2>
       <p class="note">Benchmark fully burdened role cost is about $55/hour.</p>
-
+      
       <div class="grid">
         <label>
           <span>Number of people</span>
@@ -271,7 +272,7 @@ input:focus {
           <input type="number" min="0" step="1" id="customHourlyRate" value="0">
         </label>
       </div>
-
+      
       <div class="calc-line">
         <span>Applied hourly FTE rate:</span>
         <strong id="appliedHourlyRate">$0</strong>
@@ -281,10 +282,10 @@ input:focus {
         <strong id="q2Total">$0</strong>
       </div>
     </section>
-
+    
     <section class="card" aria-labelledby="q4-title">
       <h2 id="q4-title">3. What was the total impact on your team to plan, test, debug and release to production your last major WLA/job scheduler upgrade?</h2>
-
+      
       <div class="grid">
         <label>
           <span>People on the project team</span>
@@ -299,13 +300,13 @@ input:focus {
           <input type="number" min="0" step="1" id="upgradeHoursPerWeek" value="0">
         </label>
       </div>
-
+      
       <div class="calc-line">
         <span>Question 3 subtotal:</span>
         <strong id="q4Total">$0</strong>
       </div>
     </section>
-
+    
     <section class="card" aria-labelledby="q3-title">
       <h2 id="q3-title">4. Annual maintenance license cost</h2>
       <div class="grid">
@@ -319,112 +320,125 @@ input:focus {
         <strong id="q3Total">$0</strong>
       </div>
     </section>
-
+    
     <section class="output" aria-live="polite">
       <p class="output-label">Total Annual Maintenance and Support Costs of current self-hosted WLA/SOAP products</p>
       <p class="output-value" id="grandTotal">$0</p>
       <p class="output-footnote">Potential savings by consolidating WLA/SOAP processes on RunMyJobs SaaS.</p>
     </section>
-
+    
     <p class="disclaimer">
       Please note: This calculator provides estimated savings for illustration only and doesn't constitute an offer or savings guarantee. Actual results may vary.
     </p>
   </main>
-
-  <script>
-const DEFAULT_SERVER_COST = 6500;
-const DEFAULT_HOURLY_RATE = 55;
-
-const moneyFmt = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0
-});
-
-const fields = {
-  productionServers: document.getElementById("productionServers"),
-  devServers: document.getElementById("devServers"),
-  testServers: document.getElementById("testServers"),
-  dbServers: document.getElementById("dbServers"),
-  osServers: document.getElementById("osServers"),
-  otherInfraCosts: document.getElementById("otherInfraCosts"),
-  customServerCost: document.getElementById("customServerCost"),
-  ftePeople: document.getElementById("ftePeople"),
-  fteHoursPerWeek: document.getElementById("fteHoursPerWeek"),
-  fteWeeksPerYear: document.getElementById("fteWeeksPerYear"),
-  customHourlyRate: document.getElementById("customHourlyRate"),
-  upgradePeople: document.getElementById("upgradePeople"),
-  upgradeMonths: document.getElementById("upgradeMonths"),
-  upgradeHoursPerWeek: document.getElementById("upgradeHoursPerWeek"),
-  maintenanceCost: document.getElementById("maintenanceCost")
-};
-
-const outputs = {
-  appliedServerCost: document.getElementById("appliedServerCost"),
-  q1Total: document.getElementById("q1Total"),
-  appliedHourlyRate: document.getElementById("appliedHourlyRate"),
-  q2Total: document.getElementById("q2Total"),
-  q4Total: document.getElementById("q4Total"),
-  q3Total: document.getElementById("q3Total"),
-  grandTotal: document.getElementById("grandTotal")
-};
-
-function readNumber(input) {
-  const val = Number.parseFloat(input.value);
-  if (Number.isFinite(val) && val > 0) {
-    return val;
-  }
-  return 0;
-}
-
-function fmtMoney(value) {
-  return moneyFmt.format(value);
-}
-
-function calculate() {
-  const serverCostInput = readNumber(fields.customServerCost);
-  const appliedServerCost = serverCostInput || DEFAULT_SERVER_COST;
-  const serverCount =
-    readNumber(fields.productionServers) +
-    readNumber(fields.devServers) +
-    readNumber(fields.testServers) +
-    readNumber(fields.dbServers) +
-    readNumber(fields.osServers);
-  const otherInfraCosts = readNumber(fields.otherInfraCosts);
-
-  const q1Total = serverCount * appliedServerCost + otherInfraCosts;
-
-  const hourlyRateInput = readNumber(fields.customHourlyRate);
-  const appliedHourlyRate = hourlyRateInput || DEFAULT_HOURLY_RATE;
-  const q2Total =
-    readNumber(fields.ftePeople) *
-    readNumber(fields.fteHoursPerWeek) *
-    readNumber(fields.fteWeeksPerYear) *
-    appliedHourlyRate;
-
-  const q4Total =
-    (readNumber(fields.upgradePeople) * readNumber(fields.upgradeHoursPerWeek)) *
-    (readNumber(fields.upgradeMonths) * 4) *
-    appliedHourlyRate;
-
-  const q3Total = readNumber(fields.maintenanceCost);
   
-  const grandTotal = q1Total + q2Total + q3Total + q4Total;
-
-  outputs.appliedServerCost.textContent = fmtMoney(appliedServerCost);
-  outputs.q1Total.textContent = fmtMoney(q1Total);
-  outputs.appliedHourlyRate.textContent = fmtMoney(appliedHourlyRate);
-  outputs.q2Total.textContent = fmtMoney(q2Total);
-  outputs.q4Total.textContent = fmtMoney(q4Total);
-  outputs.q3Total.textContent = fmtMoney(q3Total);
-  outputs.grandTotal.textContent = fmtMoney(grandTotal);
-}
-
-Object.values(fields).forEach(function(input) {
-  input.addEventListener("input", calculate);
-});
-
-calculate();
+  <script>
+    const DEFAULT_SERVER_COST = 6500;
+    const DEFAULT_HOURLY_RATE = 55;
+    
+    const moneyFmt = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0
+    });
+    
+    const fields = {
+      productionServers: document.getElementById("productionServers"),
+      devServers: document.getElementById("devServers"),
+      testServers: document.getElementById("testServers"),
+      dbServers: document.getElementById("dbServers"),
+      osServers: document.getElementById("osServers"),
+      otherInfraCosts: document.getElementById("otherInfraCosts"),
+      customServerCost: document.getElementById("customServerCost"),
+      ftePeople: document.getElementById("ftePeople"),
+      fteHoursPerWeek: document.getElementById("fteHoursPerWeek"),
+      fteWeeksPerYear: document.getElementById("fteWeeksPerYear"),
+      customHourlyRate: document.getElementById("customHourlyRate"),
+      upgradePeople: document.getElementById("upgradePeople"),
+      upgradeMonths: document.getElementById("upgradeMonths"),
+      upgradeHoursPerWeek: document.getElementById("upgradeHoursPerWeek"),
+      maintenanceCost: document.getElementById("maintenanceCost")
+    };
+    
+    const outputs = {
+      appliedServerCost: document.getElementById("appliedServerCost"),
+      q1Total: document.getElementById("q1Total"),
+      appliedHourlyRate: document.getElementById("appliedHourlyRate"),
+      q2Total: document.getElementById("q2Total"),
+      q4Total: document.getElementById("q4Total"),
+      q3Total: document.getElementById("q3Total"),
+      grandTotal: document.getElementById("grandTotal")
+    };
+    
+    function readNumber(input) {
+      const val = Number.parseFloat(input.value);
+      if (Number.isFinite(val) && val > 0) {
+        return val;
+      }
+      return 0;
+    }
+    
+    function fmtMoney(value) {
+      return moneyFmt.format(value);
+    }
+    
+    function calculate() {
+      const serverCostInput = readNumber(fields.customServerCost);
+      const appliedServerCost = serverCostInput || DEFAULT_SERVER_COST;
+      const serverCount =
+      readNumber(fields.productionServers) +
+      readNumber(fields.devServers) +
+      readNumber(fields.testServers) +
+      readNumber(fields.dbServers) +
+      readNumber(fields.osServers);
+      const otherInfraCosts = readNumber(fields.otherInfraCosts);
+      
+      const q1Total = serverCount * appliedServerCost + otherInfraCosts;
+      
+      const hourlyRateInput = readNumber(fields.customHourlyRate);
+      const appliedHourlyRate = hourlyRateInput || DEFAULT_HOURLY_RATE;
+      const q2Total =
+      readNumber(fields.ftePeople) *
+      readNumber(fields.fteHoursPerWeek) *
+      readNumber(fields.fteWeeksPerYear) *
+      appliedHourlyRate;
+      
+      const q4Total =
+      (readNumber(fields.upgradePeople) * readNumber(fields.upgradeHoursPerWeek)) *
+      (readNumber(fields.upgradeMonths) * 4) *
+      appliedHourlyRate;
+      
+      const q3Total = readNumber(fields.maintenanceCost);
+      
+      const grandTotal = q1Total + q2Total + q3Total + q4Total;
+      
+      outputs.appliedServerCost.textContent = fmtMoney(appliedServerCost);
+      outputs.q1Total.textContent = fmtMoney(q1Total);
+      outputs.appliedHourlyRate.textContent = fmtMoney(appliedHourlyRate);
+      outputs.q2Total.textContent = fmtMoney(q2Total);
+      outputs.q4Total.textContent = fmtMoney(q4Total);
+      outputs.q3Total.textContent = fmtMoney(q3Total);
+      outputs.grandTotal.textContent = fmtMoney(grandTotal);
+    }
+    
+    Object.values(fields).forEach(function(input) {
+      input.addEventListener("input", calculate);
+    });
+    
+    calculate();
+    
+    (function resize() {
+      "use strict";
+      if ( window !== window.top ) {
+        const height        = document.body.scrollHeight;
+        const target        = window.frameElement;
+        target.style.height = `${height}px`;  
+        
+        window.addEventListener("resize", resize, { once: true });
+      }
+    })();
+    
+    
   </script>
 </body>
 </html>
