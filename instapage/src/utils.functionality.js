@@ -46,12 +46,19 @@ DOMReady(() => {
          */
 
         window.__custom_form_validations = (function() {
+            let validations = [];
+
             const emailFields = new Set(
                 Array
                 .from(document.querySelectorAll("input[type=email]"))
                 .map( input => input.name )
             );
-            let validations = [];
+
+            const phoneFields = new Set(
+                Array
+                .from(document.querySelectorAll("[name*='phone' i]"))
+                .map( input => input.name )
+            );
 
             emailFields.forEach( function( field ) {
                 validations.push(
@@ -73,6 +80,22 @@ DOMReady(() => {
                             };
                         },
                     },
+                );
+            });
+
+            phoneFields.forEach( function( field ) {
+                validations.push(
+                    {
+                        fieldName: field,
+                        validationFn: function (input) {
+                            let value = input.value.replace(/-/g, '');
+                            let isValid = /^\d{7,}$/.test(value);
+                            return {
+                              isValid: isValid,
+                              message: window._Translate.get('Please enter a valid phone number (numbers only, minimum 7 digits)')
+                            };
+                        }
+                    }
                 );
             });
 
@@ -184,4 +207,3 @@ DOMReady(() => {
     })();
     
 }); 
-
