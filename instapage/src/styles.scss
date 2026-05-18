@@ -37,6 +37,10 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
     @at-root :root:not([style*="--scroll-top"]) & { display: none }
 }
 
+.item-absolute:has(> form) {
+    z-index: 9999;
+}
+
 /* @see https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
 .grecaptcha-badge {
     visibility: hidden;
