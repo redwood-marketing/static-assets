@@ -38,7 +38,7 @@ input:not(:placeholder-shown):not([aria-invalid="true"]) {
 }
 
 .item-absolute:has(> form) {
-    z-index: 9999;
+    z-index: 9999 !important;
 }
 
 /* @see https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
