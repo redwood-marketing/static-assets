@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- eyJGaXJzdE5hbWUiOiJTZWJhc3Rp4W4iLCJMYXN0TmFtZSI6IkxhIFJvc2EiLCJDb21wYW55IjoiUmVkd29vZCIsIkVtYWlsIjoic2ViYXN0aWFuLmxhLnJvc2FAZXhhbXBsZS5jb20iLCJQaG9uZSI6IjExMTExMTEiLCJ1dG1fY2FtcGFpZ25fX2MiOiIiLCJ1dG1fY29udGVudF9fYyI6IiIsInV0bV9tZWRpdW1fX2MiOiIiLCJ1dG1fc291cmNlX19jIjoiIiwidXRtX3Rlcm1fX2MiOiIiLCJVdG1fQWRHcm91cF9fY19jb250YWN0IjoiIiwidXRtX25ldHdvcmtfX2MiOiIiLCJHQV9DbGllbnRfSURfX2MiOiJHQTEuMS41MjE2NDI2MDAuMTc3Njk1NDY2NiIsIkdDTElEX19jIjoiIn0= -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -8,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	
+	<script src="https://unpkg.com/petite-vue"></script>
 	<style>
 		:root {
 			--bg: #f5f7f7;
@@ -32,6 +33,7 @@
 			font-family: "Archivo", sans-serif;
 			color: var(--ink);
 			background: var(--bg);
+			line-height: 1.3;
 		}
 
 		button {
@@ -49,10 +51,17 @@
 			gap: .3ch;
 			font-weight: 600;
 
+			&:disabled {
+				filter: saturate(0);
+				pointer-events: none;
+			}
+
 			&:hover {
 				filter: brightness(1.1);
 			}
+
 		}
+		
 		
 		.page {
 			max-width: 1024px;
@@ -83,7 +92,6 @@
 			gap: 1em;
 		}
 
-		
 		h1 {
 			margin: 0;
 			font-size: clamp(1.5rem, 2.6vw, 2.2rem);
@@ -105,7 +113,6 @@
 		.subheader p {
 			margin: 0;
 			font-size: 0.95rem;
-			line-height: 1.4;
 		}
 		
 		.card {
@@ -208,7 +215,6 @@
 			font-style: italic;
 		}
 
-		
 		@media (max-width: 640px) {
 			.page {
 				padding-top: 1.3rem;
@@ -222,9 +228,10 @@
 	</style>
 </head>
 <body>
-	<main class="page">
+	<main class="page" v-scope="calculator()">
 		<header class="hero">
-			<h1>Discover your potential annual savings with RunMyJobs by Redwood: SaaS vs. self-hosted payback calculator</h1>
+			<h1 v-if="defaults.FirstName">{{ defaults.FirstName }} — discover your potential annual savings with RunMyJobs by Redwood</h1>
+			<h1 v-else>Discover your potential annual savings with RunMyJobs by Redwood: SaaS vs. self-hosted payback calculator</h1>
 			<div class="subheader">
 				<h3>Estimate your savings with RunMyJobs SaaS</h3>
 				<p>Use this payback assessment to calculate potential savings from consolidating your on-premises workload automation (WLA) and job scheduling processes into RunMyJobs SaaS. For unknown data points, use the industry benchmarks provided.</p>
@@ -232,6 +239,33 @@
 		</header>
 
 		<div class="survey">
+			<section class="card" aria-labelledby="about-title" v-if="!defaults.FirstName">
+				<h2 id="about-title">About you</h2>
+				<p class="note">Provide contact details so we can send your personalized results.</p>
+				<div class="grid">
+					<label>
+						<span>First name *</span>
+						<input type="text" id="firstName" v-model="firstName" required>
+					</label>
+					<label>
+						<span>Last name *</span>
+						<input type="text" id="lastName" v-model="lastName" required>
+					</label>
+					<label>
+						<span>Company *</span>
+						<input type="text" id="company" v-model="company" required>
+					</label>
+					<label>
+						<span>Email *</span>
+						<input type="email" id="email" v-model="email" required>
+					</label>
+					<label>
+						<span>Phone *</span>
+						<input type="tel" id="phone" v-model="phone" required>
+					</label>
+				</div>
+			</section>
+
 			<section class="card" aria-labelledby="q1-title">
 				<h2 id="q1-title">1. Infrastructure costs for self-hosted WLA/job scheduler products</h2>
 				<p class="note">Benchmark annual fully burdened server and software cost: $5,000 to $8,000 per server.</p>
@@ -239,41 +273,41 @@
 				<div class="grid">
 					<label>
 						<span>Production servers</span>
-						<input type="number" min="0" step="1" id="productionServers" value="0">
+						<input type="number" min="0" step="1" id="productionServers" v-model.number="productionServers">
 					</label>
 					<label>
 						<span>Development/sandbox servers</span>
-						<input type="number" min="0" step="1" id="devServers" value="0">
+						<input type="number" min="0" step="1" id="devServers" v-model.number="devServers">
 					</label>
 					<label>
 						<span>Testing servers</span>
-						<input type="number" min="0" step="1" id="testServers" value="0">
+						<input type="number" min="0" step="1" id="testServers" v-model.number="testServers">
 					</label>
 					<label>
 						<span>Servers with DB software license</span>
-						<input type="number" min="0" step="1" id="dbServers" value="0">
+						<input type="number" min="0" step="1" id="dbServers" v-model.number="dbServers">
 					</label>
 					<label>
 						<span>Servers with OS license</span>
-						<input type="number" min="0" step="1" id="osServers" value="0">
+						<input type="number" min="0" step="1" id="osServers" v-model.number="osServers">
 					</label>
 					<label>
 						<span>Other annual infrastructure costs</span>
-						<input type="number" min="0" step="100" id="otherInfraCosts" value="0">
+						<input type="number" min="0" step="100" id="otherInfraCosts" v-model.number="otherInfraCosts">
 					</label>
 					<label>
 						<span>Known annual average cost per server (optional)</span>
-						<input type="number" min="0" step="100" id="customServerCost" value="0">
+						<input type="number" min="0" step="100" id="customServerCost" v-model.number="customServerCost">
 					</label>
 				</div>
 				
 				<div class="calc-line">
 					<span>Applied server cost:</span>
-					<strong id="appliedServerCost">$0</strong>
+					<strong v-text="fmtMoney(appliedServerCost())">$0</strong>
 				</div>
 				<div class="calc-line">
 					<span>Question 1 subtotal:</span>
-					<strong id="q1Total">$0</strong>
+					<strong v-text="fmtMoney(q1Total())">$0</strong>
 				</div>
 			</section>
 			
@@ -284,29 +318,29 @@
 				<div class="grid">
 					<label>
 						<span>Number of people</span>
-						<input type="number" min="0" step="1" id="ftePeople" value="0">
+						<input type="number" min="0" step="1" id="ftePeople" v-model.number="ftePeople">
 					</label>
 					<label>
 						<span>Average hours/week per person</span>
-						<input type="number" min="0" step="1" id="fteHoursPerWeek" value="0">
+						<input type="number" min="0" step="1" id="fteHoursPerWeek" v-model.number="fteHoursPerWeek">
 					</label>
 					<label>
 						<span>Weeks/year</span>
-						<input type="number" min="0" step="1" id="fteWeeksPerYear" value="0">
+						<input type="number" min="0" step="1" id="fteWeeksPerYear" v-model.number="fteWeeksPerYear">
 					</label>
 					<label>
 						<span>Known fully burdened hourly FTE rate (optional)</span>
-						<input type="number" min="0" step="1" id="customHourlyRate" value="0">
+						<input type="number" min="0" step="1" id="customHourlyRate" v-model.number="customHourlyRate">
 					</label>
 				</div>
 				
 				<div class="calc-line">
 					<span>Applied hourly FTE rate:</span>
-					<strong id="appliedHourlyRate">$0</strong>
+					<strong v-text="fmtMoney(appliedHourlyRate())">$0</strong>
 				</div>
 				<div class="calc-line">
 					<span>Question 2 subtotal:</span>
-					<strong id="q2Total">$0</strong>
+					<strong v-text="fmtMoney(q2Total())">$0</strong>
 				</div>
 			</section>
 			
@@ -316,21 +350,21 @@
 				<div class="grid">
 					<label>
 						<span>People on the project team</span>
-						<input type="number" min="0" step="1" id="upgradePeople" value="0">
+						<input type="number" min="0" step="1" id="upgradePeople" v-model.number="upgradePeople">
 					</label>
 					<label>
 						<span>Total months the project ran</span>
-						<input type="number" min="0" step="1" id="upgradeMonths" value="0">
+						<input type="number" min="0" step="1" id="upgradeMonths" v-model.number="upgradeMonths">
 					</label>
 					<label>
 						<span>Average hours/week per person</span>
-						<input type="number" min="0" step="1" id="upgradeHoursPerWeek" value="0">
+						<input type="number" min="0" step="1" id="upgradeHoursPerWeek" v-model.number="upgradeHoursPerWeek">
 					</label>
 				</div>
 				
 				<div class="calc-line">
 					<span>Question 3 subtotal:</span>
-					<strong id="q4Total">$0</strong>
+					<strong v-text="fmtMoney(q4Total())">$0</strong>
 				</div>
 			</section>
 			
@@ -339,168 +373,185 @@
 				<div class="grid">
 					<label>
 						<span></span>
-						<input type="number" min="0" step="100" id="maintenanceCost" value="0">
+						<input type="number" min="0" step="100" id="maintenanceCost" v-model.number="maintenanceCost">
 					</label>
 				</div>
 				<div class="calc-line">
 					<span>Question 4 subtotal:</span>
-					<strong id="q3Total">$0</strong>
+					<strong v-text="fmtMoney(q3Total())">$0</strong>
 				</div>
 			</section>
-			
 			
 		</div>
 
 		<div class="results">
 			<section class="output" aria-live="polite">
 				<p class="output-label">Estimated annual savings</p>
-				<p class="output-value" id="grandTotal">$0</p>
-				<button id="calculate">Calculate</button>
+				<p class="output-value" v-text="isCalculated ? fmtMoney(submitted.grand) : '$ -'">$ -</p>
+				<button type="button" @click="isCalculated ? reset() : calculate()" :disabled="isCalculated || !canCalculate()" v-text="isCalculated ? 'Start over' : 'Show me my savings'"></button>
 			</section>
 			<p class="output-footnote">Based on your current self-hosted and legacy WLA infrastructure costs. Results may vary depending on environment size and configuration.</p>
 			
 		</div>
 		
 		<p class="disclaimer">
-			Please note: This calculator provides estimated savings for illustration only and doesn't constitute an offer or savings guarantee. Actual results may vary.
+			Please note: This calculator provides estimated savings for illustration only and doesn't constitute an offer or savings guarantee. Actual results may vary. By using this calculator, you agree that we may contact you occasionally with information about our products. You may withdraw your consent at any time.
 		</p>
 	</main>
 	<script src="//one.redwood.com/js/forms2/js/forms2.min.js"></script>
-
-	<script>
-		const DEFAULT_SERVER_COST = 6500;
-		const DEFAULT_HOURLY_RATE = 55;
-
-		const payload = sessionStorage.setItem("prefill", "eyJGaXJzdE5hbWUiOiJTZWJhc3Rp4W4iLCJMYXN0TmFtZSI6IkxhIFJvc2EiLCJDb21wYW55IjoiUmVkd29vZCIsIkVtYWlsIjoic2ViYXN0aWFuLmxhLnJvc2FAZXhhbXBsZS5jb20iLCJQaG9uZSI6IjExMTExMTEiLCJ1dG1fY2FtcGFpZ25fX2MiOiIiLCJ1dG1fY29udGVudF9fYyI6IiIsInV0bV9tZWRpdW1fX2MiOiIiLCJ1dG1fc291cmNlX19jIjoiIiwidXRtX3Rlcm1fX2MiOiIiLCJVdG1fQWRHcm91cF9fY19jb250YWN0IjoiIiwidXRtX25ldHdvcmtfX2MiOiIiLCJHQV9DbGllbnRfSURfX2MiOiJHQTEuMS41MjE2NDI2MDAuMTc3Njk1NDY2NiIsIkdDTElEX19jIjoiIn0=");
-		
-		const moneyFmt = new Intl.NumberFormat("en-US", {
-			style: "currency",
-			currency: "USD",
-			maximumFractionDigits: 0
-		});
-		
-		const fields = {
-			productionServers: document.getElementById("productionServers"),
-			devServers: document.getElementById("devServers"),
-			testServers: document.getElementById("testServers"),
-			dbServers: document.getElementById("dbServers"),
-			osServers: document.getElementById("osServers"),
-			otherInfraCosts: document.getElementById("otherInfraCosts"),
-			customServerCost: document.getElementById("customServerCost"),
-			ftePeople: document.getElementById("ftePeople"),
-			fteHoursPerWeek: document.getElementById("fteHoursPerWeek"),
-			fteWeeksPerYear: document.getElementById("fteWeeksPerYear"),
-			customHourlyRate: document.getElementById("customHourlyRate"),
-			upgradePeople: document.getElementById("upgradePeople"),
-			upgradeMonths: document.getElementById("upgradeMonths"),
-			upgradeHoursPerWeek: document.getElementById("upgradeHoursPerWeek"),
-			maintenanceCost: document.getElementById("maintenanceCost")
-		};
-		
-		const outputs = {
-			appliedServerCost: document.getElementById("appliedServerCost"),
-			q1Total: document.getElementById("q1Total"),
-			appliedHourlyRate: document.getElementById("appliedHourlyRate"),
-			q2Total: document.getElementById("q2Total"),
-			q4Total: document.getElementById("q4Total"),
-			q3Total: document.getElementById("q3Total"),
-			grandTotal: document.getElementById("grandTotal")
-		};
-		
-		function readNumber(input) {
-			const val = Number.parseFloat(input.value);
-			if (Number.isFinite(val) && val > 0) {
-				return val;
-			}
-			return 0;
-		}
-		
-		function fmtMoney(value) {
-			return moneyFmt.format(value);
-		}
-		
-		function calculate(submit = true) {
-			const serverCostInput = readNumber(fields.customServerCost);
-			const appliedServerCost = serverCostInput || DEFAULT_SERVER_COST;
-			const serverCount =
-			readNumber(fields.productionServers) +
-			readNumber(fields.devServers) +
-			readNumber(fields.testServers) +
-			readNumber(fields.dbServers) +
-			readNumber(fields.osServers);
-			const otherInfraCosts = readNumber(fields.otherInfraCosts);
-			
-			const q1Total = serverCount * appliedServerCost + otherInfraCosts;
-			
-			const hourlyRateInput = readNumber(fields.customHourlyRate);
-			const appliedHourlyRate = hourlyRateInput || DEFAULT_HOURLY_RATE;
-			const q2Total =
-			readNumber(fields.ftePeople) *
-			readNumber(fields.fteHoursPerWeek) *
-			readNumber(fields.fteWeeksPerYear) *
-			appliedHourlyRate;
-			
-			const q4Total =
-			(readNumber(fields.upgradePeople) * readNumber(fields.upgradeHoursPerWeek)) *
-			(readNumber(fields.upgradeMonths) * 4) *
-			appliedHourlyRate;
-			
-			const q3Total = readNumber(fields.maintenanceCost);
-			
-			const grandTotal = q1Total + q2Total + q3Total + q4Total;
-			
-			outputs.appliedServerCost.textContent = fmtMoney(appliedServerCost);
-			outputs.q1Total.textContent = fmtMoney(q1Total);
-			outputs.appliedHourlyRate.textContent = fmtMoney(appliedHourlyRate);
-			outputs.q2Total.textContent = fmtMoney(q2Total);
-			outputs.q4Total.textContent = fmtMoney(q4Total);
-			outputs.q3Total.textContent = fmtMoney(q3Total);
-			outputs.grandTotal.textContent = fmtMoney(grandTotal);
-
-			if (submit) { 
-				const form = MktoForms2.getForm(1006);
-				form.submittable(true);
-				form.submit();
-			}
-
-			return {q1Total, q2Total, q3Total, q4Total, grandTotal};
-		}
-
-		document.getElementById("calculate").addEventListener("click", calculate);
-		
-		(function resize() {
-			"use strict";
-			if (window.self !== window.top) {
-				const height = document.body.scrollHeight;
-				
-				window.parent.postMessage({
-					type: 'iframeResize',
-					height: height
-				}, '*');
-				
-				window.addEventListener("resize", resize, { once: true });
-				window.addEventListener("load", resize, { once: true });
-			}
-		})();
-
-		MktoForms2.loadForm("//one.redwood.com", "207-QIS-684", 1006, (form) => {
-			form.submittable(false);
-
-			/* Do whatever you want when the form is submitted */
-			form.onSubmit((form) => {
-				form.setValues({
-					...JSON.parse(atob(sessionStorage.getItem("prefill"))),
-					Comments__c: JSON.stringify(calculate(false))
-				});
+	<script type="module">
+		function calculator() {
+			const DEFAULT_SERVER_COST = 6500;
+			const DEFAULT_HOURLY_RATE = 55;
+			const moneyFmt = new Intl.NumberFormat("en-US", {
+				style: "currency",
+				currency: "USD",
+				maximumFractionDigits: 0
 			});
 
-			form.onSuccess(() => {
-				return false
-			})
-			
-		});
-	</script>
+			const storedPrefill = window.prefillPayload || sessionStorage.getItem("prefill");
+			const prefillPayload = storedPrefill || "{}";
+			const decodePrefill = (payload) => {
+				if (!payload) return {};
+				try {
+					return JSON.parse(atob(payload));
+				} catch (error) {
+					try {
+						return JSON.parse(payload);
+					} catch (innerError) {
+						console.warn("Unable to parse prefill payload", error, innerError);
+						return {};
+					}
+				}
+			};
 
+			const defaults = decodePrefill(prefillPayload);
+			sessionStorage.setItem("prefill", prefillPayload);
+
+			const fmtMoney = (value) => moneyFmt.format(Number(value) || 0);
+
+			// remove common leading indentation from template strings
+			const stripIndent = (s) => {
+				const lines = s.split('\n');
+				while (lines.length && lines[0].trim() === '') lines.shift();
+				while (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
+				const indents = lines.filter(l => l.trim()).map(l => l.match(/^\s*/)[0].length);
+				const min = indents.length ? Math.min(...indents) : 0;
+				return lines.map(l => l.slice(min)).join('\n');
+			};
+
+			// submitted holds the last-calculated totals (updated only when Calculate is clicked)
+			const submitted = { q1: 0, q2: 0, q3: 0, q4: 0, grand: 0 };
+
+			const submitForm = () => {
+				const form = MktoForms2.getForm(1006);
+				if (!form) {
+					return;
+				}
+				form.submittable(true);
+				form.submit();
+			};
+
+
+
+			const initForm = () => {
+				MktoForms2.loadForm("//one.redwood.com", "207-QIS-684", 1006, (form) => {
+					form.submittable(false);
+					form.onSubmit((form) => {
+						form.setValues({
+							...defaults,
+							Comments__c: stripIndent(`
+								Infrastructure costs: ${submitted.q1}
+								Weekly FTE hours: ${submitted.q2}
+								Last upgrade cost: ${submitted.q3}
+								Annual maintenance license cost: ${submitted.q4}
+								Payback assessment: ${submitted.grand}
+							`)
+						});
+					});
+					form.onSuccess(() => false);
+				});
+			};
+
+			const resizeIframe = () => {
+				if (window.self !== window.top) {
+					const height = document.body.scrollHeight;
+					window.parent.postMessage({ type: 'iframeResize', height }, '*');
+				}
+			};
+
+			if (window.self !== window.top) {
+				window.addEventListener("resize", resizeIframe, { once: true });
+				window.addEventListener("load", resizeIframe, { once: true });
+				resizeIframe();
+			}
+
+			initForm();
+
+			return {
+				productionServers: 0,
+				devServers: 0,
+				testServers: 0,
+				dbServers: 0,
+				osServers: 0,
+				otherInfraCosts: 0,
+				customServerCost: 0,
+				ftePeople: 0,
+				fteHoursPerWeek: 0,
+				fteWeeksPerYear: 0,
+				customHourlyRate: 0,
+				upgradePeople: 0,
+				upgradeMonths: 0,
+				upgradeHoursPerWeek: 0,
+				maintenanceCost: 0,
+				firstName: defaults.FirstName || '',
+				lastName: defaults.LastName || '',
+				company: defaults.Company || '',
+				email: defaults.Email || '',
+				phone: defaults.Phone || '',
+				fmtMoney,
+				appliedServerCost() { return Number(this.customServerCost) || DEFAULT_SERVER_COST; },
+				appliedHourlyRate() { return Number(this.customHourlyRate) || DEFAULT_HOURLY_RATE; },
+				serverCount() { return (Number(this.productionServers)||0) + (Number(this.devServers)||0) + (Number(this.testServers)||0) + (Number(this.dbServers)||0) + (Number(this.osServers)||0); },
+				q1Total() { return this.serverCount() * this.appliedServerCost() + (Number(this.otherInfraCosts)||0); },
+				q2Total() { return (Number(this.ftePeople)||0) * (Number(this.fteHoursPerWeek)||0) * (Number(this.fteWeeksPerYear)||0) * this.appliedHourlyRate(); },
+				q3Total() { return Number(this.maintenanceCost) || 0; },
+				q4Total() { return (Number(this.upgradePeople)||0) * (Number(this.upgradeHoursPerWeek)||0) * ((Number(this.upgradeMonths)||0) * 4) * this.appliedHourlyRate(); },
+				grandTotal() { return this.q1Total() + this.q2Total() + this.q3Total() + this.q4Total(); },
+				// submitted totals only change when Calculate is clicked
+				defaults,
+				submitted,
+				isCalculated: false,
+				calculate() {
+					this.submitted.q1 = this.q1Total();
+					this.submitted.q2 = this.q2Total();
+					this.submitted.q3 = this.q3Total();
+					this.submitted.q4 = this.q4Total();
+					this.submitted.grand = this.grandTotal();
+					this.isCalculated = true;
+					submitForm();
+				},
+				canCalculate() {
+					// allow calculate if defaults already contain a first name (prefill),
+					// or if all required contact fields are filled in the UI
+					if (this.defaults && this.defaults.FirstName) return true;
+					return Boolean(this.firstName && this.lastName && this.company && this.email && this.phone);
+				},
+				reset() {
+					this.submitted.q1 = 0;
+					this.submitted.q2 = 0;
+					this.submitted.q3 = 0;
+					this.submitted.q4 = 0;
+					this.submitted.grand = 0;
+					this.isCalculated = false;
+				},
+				submitForm
+			};
+		}
+		// expose for v-scope (module scripts aren't global by default)
+		window.calculator = calculator;
+		console.debug && console.debug('petite-vue: calculator exposed on window');
+		window.PetiteVue?.createApp?.().mount();
+	</script>
 </body>
 </html>
-
