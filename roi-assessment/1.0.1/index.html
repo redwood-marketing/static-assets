@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- eyJGaXJzdE5hbWUiOiJTZWJhc3Rp4W4iLCJMYXN0TmFtZSI6IkxhIFJvc2EiLCJDb21wYW55IjoiUmVkd29vZCIsIkVtYWlsIjoic2ViYXN0aWFuLmxhLnJvc2FAZXhhbXBsZS5jb20iLCJQaG9uZSI6IjExMTExMTEiLCJ1dG1fY2FtcGFpZ25fX2MiOiIiLCJ1dG1fY29udGVudF9fYyI6IiIsInV0bV9tZWRpdW1fX2MiOiIiLCJ1dG1fc291cmNlX19jIjoiIiwidXRtX3Rlcm1fX2MiOiIiLCJVdG1fQWRHcm91cF9fY19jb250YWN0IjoiIiwidXRtX25ldHdvcmtfX2MiOiIiLCJHQV9DbGllbnRfSURfX2MiOiJHQTEuMS41MjE2NDI2MDAuMTc3Njk1NDY2NiIsIkdDTElEX19jIjoiIn0= -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -533,8 +532,16 @@
 				maximumFractionDigits: 0
 			});
 
-			const storedPrefill = window.prefillPayload || sessionStorage.getItem("prefill");
+			// Allow passing a prefill payload via the URL `?prefill=` parameter (base64 or JSON),
+			// or via a global `window.prefillPayload`, or from sessionStorage.
+			const urlParams = new URLSearchParams(window.location.search || '');
+			const urlPrefill = urlParams.get('prefill');
+			const storedPrefill = urlPrefill || window.prefillPayload || sessionStorage.getItem("prefill");
 			const prefillPayload = storedPrefill || "{}";
+			// if prefill was provided via URL, persist it to sessionStorage for the session
+			if (urlPrefill) {
+				try { sessionStorage.setItem('prefill', urlPrefill); } catch (e) { /* ignore */ }
+			}
 			const decodePrefill = (payload) => {
 				if (!payload) return {};
 				try {
