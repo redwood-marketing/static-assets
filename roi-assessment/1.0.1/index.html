@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en">
-<head>
+	<script>
+		
+		RedwoodJournalAssessment.init({
+		element: document.getElementById('redwood-assessment'),
+		type: 'journal-exposure',
+		marketo: {
+		  munchkinId: "207-QIS-684",
+		  formId: 1074,
+		  fieldName: "Comments__c",
+		  baseUrl: "//one.redwood.com",
+		  prefillFields: prefill ? JSON.parse(atob(prefill) || "{}") : null
+		},
+		options: {
+		  // optional: override the base URL where embed assets are hosted
+		  baseUrl: 'https://static.marketing.redwood.com/external/journal-entry',
+		  reportBaseUrl: window.location.origin + window.location.pathname,
+		}
+	  });
+	  </script><head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SaaS vs. Self-Hosted Payback Calculator</title>
@@ -273,12 +291,15 @@
 		
 		.output-value {
 			margin:0;
-			font-size: clamp(2rem, 5vw, 3rem);
+			font-size: clamp(1.6rem, 5vw, 2.5rem);
 			font-weight: 700;
 			color: var(--accent-sharp);
 			filter: blur(16px);
 			user-select: none;
 			pointer-events: none;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 
 		.output-footnote {
@@ -352,49 +373,49 @@
 						<span>Production servers</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="productionServers" aria-label="Production servers slider">
-							<input type="text" min="0" step="1" id="productionServers" v-model.number="productionServers" class="format-num">
+							<input type="number" min="0" step="1" id="productionServers" v-model.number="productionServers" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Development/sandbox servers</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="devServers" aria-label="Development servers slider">
-							<input type="text" min="0" step="1" id="devServers" v-model.number="devServers" class="format-num">
+							<input type="number" min="0" step="1" id="devServers" v-model.number="devServers" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Testing servers</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="testServers" aria-label="Testing servers slider">
-							<input type="text" min="0" step="1" id="testServers" v-model.number="testServers" class="format-num">
+							<input type="number" min="0" step="1" id="testServers" v-model.number="testServers" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Servers with DB software license</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="dbServers" aria-label="DB license servers slider">
-							<input type="text" min="0" step="1" id="dbServers" v-model.number="dbServers" class="format-num">
+							<input type="number" min="0" step="1" id="dbServers" v-model.number="dbServers" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Servers with OS license</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="osServers" aria-label="OS license servers slider">
-							<input type="text" min="0" step="1" id="osServers" v-model.number="osServers" class="format-num">
+							<input type="number" min="0" step="1" id="osServers" v-model.number="osServers" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Other annual infrastructure costs</span>
 						<div class="range-row">
 							<input type="range" min="0" max="500000" step="100" v-model.number="otherInfraCosts" aria-label="Other infrastructure costs slider">
-							<input type="text" min="0" step="100" id="otherInfraCosts" v-model.number="otherInfraCosts" class="format-num">
+							<input type="number" min="0" step="100" id="otherInfraCosts" v-model.number="otherInfraCosts" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Known annual average cost per server (optional)</span>
 						<div class="range-row">
 							<input type="range" min="0" max="20000" step="100" v-model.number="customServerCost" aria-label="Average cost per server slider">
-							<input type="text" min="0" step="100" id="customServerCost" v-model.number="customServerCost" class="format-num">
+							<input type="number" min="0" step="100" id="customServerCost" v-model.number="customServerCost" class="format-num">
 						</div>
 					</label>
 				</div>
@@ -418,28 +439,28 @@
 						<span>Number of people</span>
 						<div class="range-row">
 							<input type="range" min="0" max="50" step="1" v-model.number="ftePeople" aria-label="FTE people slider">
-							<input type="text" min="0" step="1" id="ftePeople" v-model.number="ftePeople" class="format-num">
+							<input type="number" min="0" step="1" id="ftePeople" v-model.number="ftePeople" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Average hours/week per person</span>
 						<div class="range-row">
 							<input type="range" min="0" max="80" step="1" v-model.number="fteHoursPerWeek" aria-label="FTE hours per week slider">
-							<input type="text" min="0" step="1" id="fteHoursPerWeek" v-model.number="fteHoursPerWeek" class="format-num">
+							<input type="number" min="0" step="1" id="fteHoursPerWeek" v-model.number="fteHoursPerWeek" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Weeks/year</span>
 						<div class="range-row">
 							<input type="range" min="0" max="52" step="1" v-model.number="fteWeeksPerYear" aria-label="FTE weeks per year slider">
-							<input type="text" min="0" step="1" id="fteWeeksPerYear" v-model.number="fteWeeksPerYear" class="format-num">
+							<input type="number" min="0" step="1" id="fteWeeksPerYear" v-model.number="fteWeeksPerYear" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Known fully burdened hourly FTE rate (optional)</span>
 						<div class="range-row">
 							<input type="range" min="0" max="500" step="1" v-model.number="customHourlyRate" aria-label="Custom hourly rate slider">
-							<input type="text" min="0" step="1" id="customHourlyRate" v-model.number="customHourlyRate" class="format-num">
+							<input type="number" min="0" step="1" id="customHourlyRate" v-model.number="customHourlyRate" class="format-num">
 						</div>
 					</label>
 				</div>
@@ -462,21 +483,21 @@
 						<span>People on the project team</span>
 						<div class="range-row">
 							<input type="range" min="0" max="100" step="1" v-model.number="upgradePeople" aria-label="Upgrade people slider">
-							<input type="text" min="0" step="1" id="upgradePeople" v-model.number="upgradePeople" class="format-num">
+							<input type="number" min="0" step="1" id="upgradePeople" v-model.number="upgradePeople" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Total months the project ran</span>
 						<div class="range-row">
 							<input type="range" min="0" max="24" step="1" v-model.number="upgradeMonths" aria-label="Upgrade months slider">
-							<input type="text" min="0" step="1" id="upgradeMonths" v-model.number="upgradeMonths" class="format-num">
+							<input type="number" min="0" step="1" id="upgradeMonths" v-model.number="upgradeMonths" class="format-num">
 						</div>
 					</label>
 					<label>
 						<span>Average hours/week per person</span>
 						<div class="range-row">
 							<input type="range" min="0" max="80" step="1" v-model.number="upgradeHoursPerWeek" aria-label="Upgrade hours per week slider">
-							<input type="text" min="0" step="1" id="upgradeHoursPerWeek" v-model.number="upgradeHoursPerWeek" class="format-num">
+							<input type="number" min="0" step="1" id="upgradeHoursPerWeek" v-model.number="upgradeHoursPerWeek" class="format-num">
 						</div>
 					</label>
 				</div>
@@ -494,7 +515,7 @@
 						<span>Annual maintenance license cost</span>
 						<div class="range-row">
 							<input type="range" min="0" max="500000" step="100" v-model.number="maintenanceCost" aria-label="Maintenance cost slider">
-							<input type="text" min="0" step="100" id="maintenanceCost" v-model.number="maintenanceCost" class="format-num">
+							<input type="number" min="0" step="100" id="maintenanceCost" v-model.number="maintenanceCost" class="format-num">
 						</div>
 					</label>
 				</div>
