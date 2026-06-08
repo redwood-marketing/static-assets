@@ -608,21 +608,27 @@
 						submitForm();
 				},
 						navigateToTopParent() {
-							// Attempt to navigate the top-most browsing context to the parent's URL
-							// Prefer document.referrer when available, otherwise use the current page URL (sans hash).
-							const stripHash = (u) => (u || '').split('#')[0];
-							let target = stripHash(document.referrer) || stripHash(window.location.href);
-							target = target + '#calendar';
-							try {
-								if (window.top && window.top !== window) {
-									// Setting location on top should work even cross-origin; wrap in try/catch.
+							// Prefer navigating the embedding/top page using the referrer when available.
+							const ref = document.referrer && String(document.referrer).trim();
+							if (ref) {
+								const target = ref.split('#')[0] + '#calendar';
+								try {
 									window.top.location.href = target;
-								} else {
-									window.location.href = target;
+									return;
+								} catch (err) {
+									try { window.open(target, '_top'); return; } catch (e) { /* ignore */ }
 								}
+							}
+							// If no referrer or previous attempts failed, try asking parent via postMessage
+							try {
+								window.parent.postMessage({ type: 'navigateTo', hash: '#calendar' }, '*');
+							} catch (err) { /* ignore */ }
+							// Final fallback: navigate top to this origin/path with the fragment
+							try {
+								const fallback = (window.location.origin || '') + window.location.pathname + '#calendar';
+								window.top.location.href = fallback;
 							} catch (err) {
-								// Fallback: open in top window
-								window.open(target, '_top');
+								try { window.open((window.location.origin || '') + window.location.pathname + '#calendar', '_top'); } catch (e) { /* ignore */ }
 							}
 						},
 				toggleCalculated() {
