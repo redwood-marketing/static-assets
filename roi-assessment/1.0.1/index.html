@@ -670,7 +670,6 @@
 				submitForm,
 				initForm() {
 					MktoForms2.loadForm("//one.redwood.com", "207-QIS-684", 1006, (form) => {
-						console.log(form.getValues())
 						form.submittable(false);
 						form.onSubmit((form) => {
 							form.setValues({
@@ -700,7 +699,6 @@
 		}
 		// expose for v-scope (module scripts aren't global by default)
 		window.calculator = calculator;
-		console.debug && console.debug('petite-vue: calculator exposed on window');
 		window.PetiteVue?.createApp?.().mount();
 	</script>
 </body>
