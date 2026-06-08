@@ -1,24 +1,6 @@
 <!doctype html>
 <html lang="en">
-	<script>
-		
-		RedwoodJournalAssessment.init({
-		element: document.getElementById('redwood-assessment'),
-		type: 'journal-exposure',
-		marketo: {
-		  munchkinId: "207-QIS-684",
-		  formId: 1074,
-		  fieldName: "Comments__c",
-		  baseUrl: "//one.redwood.com",
-		  prefillFields: prefill ? JSON.parse(atob(prefill) || "{}") : null
-		},
-		options: {
-		  // optional: override the base URL where embed assets are hosted
-		  baseUrl: 'https://static.marketing.redwood.com/external/journal-entry',
-		  reportBaseUrl: window.location.origin + window.location.pathname,
-		}
-	  });
-	  </script><head>
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SaaS vs. Self-Hosted Payback Calculator</title>
@@ -56,7 +38,7 @@
 			line-height: 1.3;
 		}
 
-		button {
+		button, .button {
 			font-family: inherit;
 			border: none;
 			outline: none;
@@ -70,6 +52,9 @@
 			justify-content: center;
 			gap: .3ch;
 			font-weight: 600;
+			font-size: .9rem;
+			line-height: 1.1;
+			text-decoration: none;
 
 			&:disabled {
 				filter: saturate(0);
@@ -458,7 +443,7 @@
 				<p class="output-label">Estimated annual savings</p>
 				<p class="output-value" :style="{ filter: isCalculated ? 'none' : '' }" v-text="(!isCalculated && grandTotal() === 0) ? '$ -' : fmtMoney(grandTotal())">$ -</p>
 				<button v-if="!isCalculated" type="button" @click="toggleCalculated()" :disabled="isWorking || !canCalculate()" v-text="isWorking ? 'Calculating your results' : 'Show me my savings'"></button>
-				<button type="button" @click="clearAll()" v-text="isCalculated ? 'Clear and start over' : 'Clear'" style="text-decoration: underline; background: none;color: var(--accent-soft);padding-block: 0"></button>
+				<a v-if="isCalculated" class="button" href="#calendar">Talk to us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="1lh" style="scale: 1.1"><path d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM480 496C488.8 496 496 488.8 496 480L496 416L408 416L408 496L480 496zM496 368L496 288L408 288L408 368L496 368zM360 368L360 288L280 288L280 368L360 368zM232 368L232 288L144 288L144 368L232 368zM144 416L144 480C144 488.8 151.2 496 160 496L232 496L232 416L144 416zM280 416L280 496L360 496L360 416L280 416zM216 176L160 176C151.2 176 144 183.2 144 192L144 240L496 240L496 192C496 183.2 488.8 176 480 176L216 176z"/></svg> </a>
 			</section>
 			<p class="output-footnote">Based on your current self-hosted and legacy WLA infrastructure costs. Results may vary depending on environment size and configuration.</p>
 			
