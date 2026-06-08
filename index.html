@@ -13,19 +13,37 @@
     <!-- End Google Tag Manager -->
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDZSVJ94"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-  hbspt.forms.create({
-    region: "eu1",
-    portalId: "26659091",
-    formId: "bb6d5ef8-387b-42af-bbb8-dc5f6b3f5c66",
-    sfdcCampaignId: "7013t000001aDpKAAU"
-  });
-</script>
-<script async defer src="./tracking/src/app.js"></script>
-</body>
+    <script>
+        (function () {
+          window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://static.marketing.redwood.com') return;
+
+            if (event.data == "scroll") {
+                window.location.hash = '#calendar';
+            }
+
+            if (event.data == "iframeResize") {
+                document.getElementById('roi-assessment').style.height = event.data.height * 1.02 + 'px';
+            }
+
+          });
+        
+          const base = 'https://ccec-201-252-28-236.ngrok-free.app/roi-assessment/1.0.1/';
+          const prefill = sessionStorage.getItem('prefill');
+          const src = prefill ? `${base}?prefill=${encodeURIComponent(prefill)}` : base;
+        
+          const iframe = document.createElement('iframe');
+          iframe.id = 'roi-assessment';
+          iframe.src = src;
+          iframe.frameBorder = '0';
+          iframe.style.cssText = 'width: 100%; min-width: 320px; height: 100vh; display: block; margin: 0; padding: 0; overflow: hidden';
+        
+          document.currentScript.replaceWith(iframe);
+        })();
+        </script>
+        
+    <div id="calendar" style="height:100vw">HEH</div>
+    
+    
+    </body>
 </html>
