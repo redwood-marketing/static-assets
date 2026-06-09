@@ -443,7 +443,7 @@
 				<p class="output-label">Estimated annual savings</p>
 				<p class="output-value" :style="{ filter: isCalculated ? 'none' : '' }" v-text="(!isCalculated && grandTotal() === 0) ? '$ -' : fmtMoney(grandTotal())">$ -</p>
 				<button v-if="!isCalculated" type="button" @click="toggleCalculated()" :disabled="isWorking || !canCalculate()" v-text="isWorking ? 'Calculating your results' : 'Show me my savings'"></button>
-						<button v-if="isCalculated" class="button" type="button" @click="sendScrollToParent()">Talk to an expert</button>
+				<button v-if="isCalculated" class="button" type="button" @click="sendScrollToParent()">Talk to an expert</button>
 			</section>
 			<p class="output-footnote">Based on your current self-hosted and legacy WLA infrastructure costs. Results may vary depending on environment size and configuration.</p>
 			
