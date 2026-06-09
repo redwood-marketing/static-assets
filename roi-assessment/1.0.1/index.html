@@ -617,7 +617,7 @@
 				},
 				sendScrollToParent() {
 					try {
-						window.parent.postMessage("scroll", '*');
+						window.parent.postMessage({type: "scroll"}, '*');
 					} catch (err) { /* ignore */ }
 				},
 				toggleCalculated() {
