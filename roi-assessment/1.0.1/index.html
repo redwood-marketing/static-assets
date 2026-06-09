@@ -68,7 +68,32 @@
 		}
 
 		
-		
+		body {
+			position: relative;
+
+			&:not(.loading)::before {
+				opacity: 0;
+			}
+			&::before {
+				content: "";
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				z-index: 20;
+				background: white linear-gradient(-45deg, color(from var(--accent-sharp) srgb r g b / 0.1) 33%, color(from var(--accent-sharp) srgb r g b / 0.05) 50%, color(from var(--accent-sharp) srgb r g b / 0.1) 66%);
+				background-size: 300% 100%;
+				animation: loading 2s infinite;
+				cursor: wait;
+				transition: opacity .3s ease;
+			}
+		}
+
+		@keyframes loading{
+			0% { background-position: right }
+		}
+
 		.page {
 			max-width: 1024px;
 			margin: 0 auto;
@@ -251,7 +276,7 @@
 		}
 	</style>
 </head>
-<body>
+<body class="loading">
 	<main class="page" v-scope="calculator()" @vue:mounted="mounted">
 		<header class="hero">
 			<h1 v-if="defaults.FirstName">{{ defaults.FirstName }} — discover your potential annual savings with RunMyJobs by Redwood</h1>
@@ -693,6 +718,7 @@
 					});
 				},
 				mounted() {
+					try { setTimeout(() => {document.body.classList.remove('loading')}, 2000); } catch (e) { /* ignore */ }
 					this.initForm()
 				}
 			};
