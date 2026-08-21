@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.iife.js" defer></script>
+   <script src="./app.js" defer></script>
+   <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: grid;
+            gap: 1em;
+            padding: 1em;
+        }
+
+        section {
+            border: 1px solid currentColor;
+            padding: 1em;
+            display: grid;
+            gap: 1em;
+        }
+
+        #state {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background: white;
+            padding: 1em;
+            color: red;
+            font-size: 4rem;
+        }
+   </style>
+</head>
+<body>
+    <div id="state">{{state.selected}}</div>
+    <section v-for="section in sections">
+        <h2>{{ section.title }}</h2>
+        <div v-html="section.content"></div>
+        {{section.sections.length}} questions
+
+
+        <section v-for="section in section.sections">
+            <h3>{{ section.title }}</h2>
+            <div v-html="section.content"></div>
+
+            <div v-for="field in section.fields">
+                <div v-if="field.type === 'select'">
+                    <label for="">{{ field.label }}
+                        <select name="" id="">
+                            <option value="">Please select</option>
+                            <option v-for="option in field.options">{{option}}</option>
+                        </select>
+                        {{ field.help }}
+                    </label>
+                </div>
+                <div v-if="field.type === 'text'">
+                    <label for="">{{ field.label }}
+                        <input type="text" v-model="field.value">
+                        {{ field.help }}
+
+                    </label>
+                </div>
+
+                <div v-if="field.type === 'checkbox'">
+                    <label for="">{{ field.label }}</label>
+                    <div v-for="option in field.options">
+                        <input type="checkbox" > {{option}}
+                    </div>
+                </div>
+
+                <div v-if="field.type === 'textarea'">
+                    <label for="">{{ field.label }}</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+
+                <div v-if="field.type === 'email'">
+                    <label for="">{{ field.label }}
+                        <input type="email" v-model="field.value">
+                        {{ field.help }}
+                    </label>
+                </div>
+            </div>
+        </section>
+    </section>
+    <button @click="prev">Previous</button>
+    <button @click="next">Next</button>
+</body>
+</html>
