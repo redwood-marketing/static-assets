@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.iife.js" defer></script>
    <script src="./app.js" defer></script>
    <style>
@@ -13,82 +15,301 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            display: grid;
-            gap: 1em;
-            padding: 1em;
+
+        :root {
+            --jotform--color--accent: var(--wp--preset--color--accent-1, #34E5E2);
+            --jotform--color--error: var(--wp--preset--color--error, #e24650);
+            --jotform--color--base: var(--wp--preset--color--base, #ffffff);
+            --jotform--color--contrast: var(--wp--preset--color--contrast, #000000);
+            --jotform--font-family--fields: var(--wp--preset--font-family--archivo, inherit);
+            --jotform--border--radius: .2rem;
+            accent-color: var(--jotform--color--accent);
+            font-size: var(--wp--preset--font-size--ts-n1, 0.9rem);
+            font-family: var(--jotform--font-family--fields);
         }
 
-        section {
-            border: 1px solid currentColor;
-            padding: 1em;
-            display: grid;
+		body {
+			width: 100vw;
+			height: 100vh;
+		}
+
+        fieldset {
+			display: flex;
+			flex-flow: column nowrap;
+			gap: 1em;
+			border: none;
+		}
+
+		legend {
+			font-size: 1em;
+			font-weight: 500;
+			width: fit-content;
+			padding: 0 1ch;
+		}
+
+		.buttons {
+			display: flex;
+			width: 100%;
+		}
+
+		label {
+			user-select: none;
+			width: 100%;
+		}
+		
+		input[type=text],
+		input[type=url],
+		input[type=email],
+		input[type=tel],
+		input[type=number],
+		input[type=date],
+		select,
+		textarea {
+			background-color: var(--jotform--color--base);
+			color: var(--jotform--color--contrast);
+			font-family: inherit;
+			font-size: 0.9em;
+			font-weight: 500;
+			display: block;
+			width: 100% !important;
+			border-radius: var(--jotform--border--radius);
+			border: 1.5px solid currentColor;
+			padding: .8em .6em !important;
+			outline: none;
+
+			&:is(:invalid, .mktoInvalid):not(:focus) {
+				border-color: var(--jotform--color--error) !important;
+			}
+
+			&:focus {
+				border-color: var(--jotform--color--accent);
+			}
+
+			&::placeholder {
+				opacity: .5;
+				color: currentColor;
+			}
+		}
+
+		select {
+			appearance: none;
+			background-color: var(--jotform--color--base);
+
+			&:not([multiple]) {
+				background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='6.16' width='8.05' viewBox='0 0 115 89'><path d='M114.5 0H0L59.5 88.5L114.5 0Z' fill='currentColor'/></svg>") right 2ch center no-repeat;
+			}
+
+			&[multiple] {
+				scrollbar-width: thin;
+				scrollbar-color: var(--jotform--color--accent) color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
+				max-height: 7lh;
+			}
+
+		}
+
+		option {
+			color: inherit;
+			display: grid;
+			gap: .7lh;
+			grid-template-areas: "checkbox label";
+			place-content: start;
+			align-items: center;
+			background-color: var(--marketo-color-base);
+			cursor: pointer;
+			
+
+			&:first-child {
+				pointer-events: none;
+				margin-bottom: .45lh;
+				opacity: 0.6;
+			}
+
+			&:not(:first-child) {
+				padding: .3em;
+
+				&:checked {
+					--jotform--checkbox--color--bg: var(--jotform--color--accent);
+				}
+
+				&:hover {
+					background-color: color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
+				}
+
+				&::before, &::after {
+					content: "";
+					width: 1.2lh;
+					height: 1.2lh;
+					display: grid;
+					place-content: center;
+					grid-area: checkbox;
+				}
+
+				&::after {
+					clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+					background-color: var(--jotform--color--base);
+					scale: .5;
+				}
+		
+				&::before {
+					background-color: var(--jotform--checkbox--color--bg, var(--jotform--color--base));
+					border-radius: 0.25em;
+					box-shadow: 0 0 0 1.5px var(--jotform--checkbox--color--bg, currentColor) inset;
+				}
+			}
+
+			
+		}
+
+		textarea {
+			resize: vertical;
+			min-height: 6lh;
+		}
+
+		[type=checkbox],
+		[type=radio] {
+			background-color: #ffffff;
+			appearance: none;
+			border-radius: 0.2em;
+			margin: 0;
+			font: inherit;
+			color: currentColor;
+			width: 1.3em;
+			height: 1.3em;
+			border: 2px solid currentColor;
+			display: grid;
+			place-content: center;
+
+			&:focus {
+				outline-color: var(--jotform--color--contrast);
+				outline-offset: .1em;
+			}
+
+			&::before {
+				content: "";
+				width: 0.65em;
+				height: 0.65em;
+				box-shadow: inset 1em 1em var(--jotform--color--base);
+				clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+			}
+
+			&:checked {
+				background-color: var(--jotform--color--accent);
+				border-color: var(--jotform--color--accent);
+			}
+			
+		} 
+
+		[type=radio] {
+			border-radius: 50%;
+		}
+
+		button {
+			color: var(--jotform--color--button-text, var(--wp--preset--color--base));
+			appearance: none;
+			background-color: var(--jotform--color--accent);
+			border-radius: var(--jotform--border--radius);
+			border: none;
+			padding: 1em 1.4em;
+			cursor: pointer;
+			transition: background-color .3s ease;
+			width: 100%;
+
+			&:is(:hover, :active, :focus) {
+				background-color: color-mix(in srgb, var(--jotform--color--accent) 80%, var(--jotform--color--contrast));
+			}
+		}
+
+
+		:disabled {
+			opacity: 0.6;
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+
+		#app {
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column nowrap;
             gap: 1em;
+            font-family: Archivo, sans-serif;
+            line-height: 1.2;
+			width: 100%;
+			height: 100%;
         }
 
-        #state {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            background: white;
-            padding: 1em;
-            color: red;
-            font-size: 4rem;
+		.sections {
+			width: 50em;
+			&:has(input, select) {
+            	box-shadow: 0 0 1em #00000033;
+				
+			}
+		}
+
+        .section {
+            display: flex;
+			justify-content: center;
+			flex-direction: column;
+			flex-grow: 1;
+			align-items: center;
+            gap: 1.5em;
+            padding: 4em;
+			margin-bottom: auto;
         }
+
+		.content {
+			display: grid;
+			gap: 1em;
+		}
+
+		.field {
+			width: 100%;
+			display: grid;
+			gap: 1em;
+		}
    </style>
 </head>
-<body>
-    <div id="state">{{state.selected}}</div>
-    <section v-for="section in sections">
-        <h2>{{ section.title }}</h2>
-        <div v-html="section.content"></div>
-        {{section.sections.length}} questions
+<body >
+    <div id="app" v-scope @vue:mounted="mounted">
+		<div class="sections">
+			<section class="section" v-for="section in index" v-show="(section == selected)">
+				<h2>{{ section.title }}</h2>
+				<div class="content" v-if="section.content" v-html="section.content"></div>
+				<span v-if="section.children?.length > 0">{{section.children?.length}} questions</span>
+				
 
+				<div class="field" v-for="field in section.fields">
+					<label v-if="field.label" :for="field.name">{{ field.label }}</label>
 
-        <section v-for="section in section.sections">
-            <h3>{{ section.title }}</h2>
-            <div v-html="section.content"></div>
+					<select v-if="field.type === 'select'" :name="field.name" :id="field.name" v-model="field.value">
+						<option value="">Please select</option>
+						<option v-for="option in field.options" :key="option" :value="option">
+							{{ option }}
+						</option>
+					</select>
+					
+					<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
+					
+					<fieldset v-if="field.type === 'checkboxes'">
+						<label v-for="option in field.options" :key="option">
+							<input type="checkbox" :id="option" :value="option" v-model="field.value">
+							{{ option }}
+						</label>
+					</fieldset>
+						
+					<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
+						
+					<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
+					{{ field.help }}
 
-            <div v-for="field in section.fields">
-                <div v-if="field.type === 'select'">
-                    <label for="">{{ field.label }}
-                        <select name="" id="">
-                            <option value="">Please select</option>
-                            <option v-for="option in field.options">{{option}}</option>
-                        </select>
-                        {{ field.help }}
-                    </label>
-                </div>
-                <div v-if="field.type === 'text'">
-                    <label for="">{{ field.label }}
-                        <input type="text" v-model="field.value">
-                        {{ field.help }}
-
-                    </label>
-                </div>
-
-                <div v-if="field.type === 'checkbox'">
-                    <label for="">{{ field.label }}</label>
-                    <div v-for="option in field.options">
-                        <input type="checkbox" > {{option}}
-                    </div>
-                </div>
-
-                <div v-if="field.type === 'textarea'">
-                    <label for="">{{ field.label }}</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-
-                <div v-if="field.type === 'email'">
-                    <label for="">{{ field.label }}
-                        <input type="email" v-model="field.value">
-                        {{ field.help }}
-                    </label>
-                </div>
-            </div>
-        </section>
-    </section>
-    <button @click="prev">Previous</button>
-    <button @click="next">Next</button>
+				</div>
+				
+			</section>
+			<div class="buttons">
+				<button @click="navigate('prev')">Previous</button>
+				<button @click="navigate('next')">Next</button>
+			</div>
+		</div>
+</div>
 </body>
 </html>
