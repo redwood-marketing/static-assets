@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css22?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.iife.js" defer></script>
    <script src="./app.js" defer></script>
@@ -28,8 +28,13 @@
             accent-color: var(--jotform--color--accent);
             font-size: var(--wp--preset--font-size--ts-n1, 0.9rem);
             font-family: var(--jotform--ff--body);
-			font-size: 120%;
+			font-size: 100%;
+			line-height: 1.6;
         }
+		
+		::selection {
+			background-color: var(--jotform--color--accent);
+		}
 
 		body {
 			width: 100vw;
@@ -239,6 +244,7 @@
 			font-weight: 500;
 			text-wrap: balance;
 			max-width: 40ch;
+            line-height: 1.2;
 		}
 
 		h1 {
@@ -246,7 +252,7 @@
 		}
 
 		h2 {
-			font-size: 1.7rem;
+			font-size: 1.8rem;
 		}
 
 		p {
@@ -258,19 +264,46 @@
 			align-items: center;
 			flex-flow: column nowrap;
             gap: 1em;
-            line-height: 1.2;
 			width: 100%;
 			height: 100%;
+			overflow: hidden;
         }
 
 		.sections {
-			width: 50em;
+			max-width: 100%;
+			display: grid;
+			grid-template-areas: "content";
+			place-items: center;
+		}
+
+		.section {
+			grid-area: content;
 			border-radius: calc(var(--jotform--border--radius) * 1.3);
+			transition: all .3s ease;
+			border: 1px solid color(from currentColor srgb r g b / 0.3);
+			width: 50rem;
 			overflow: hidden;
-			&:has(input, select) {
-            	box-shadow: 0 0 1em #00000033;
-				
+			box-shadow:
+				0 1px 1px hsl(0deg 0% 0% / 0.075),
+				0 2px 2px hsl(0deg 0% 0% / 0.075),
+				0 4px 4px hsl(0deg 0% 0% / 0.075),
+				0 8px 8px hsl(0deg 0% 0% / 0.075),
+				0 16px 16px hsl(0deg 0% 0% / 0.075)
+			;
+
+			&.inactive {
+				translate: -100%;
+				opacity: 0;
 			}
+
+			&.active {
+				opacity: 1;
+
+				& + .inactive {
+					translate: 100%;
+				}
+			}
+
 		}
 
 		.section__navigation {
@@ -291,9 +324,16 @@
 			align-items: center;
 			text-align: center;
             gap: 1.5em;
-            padding: 4rem;
+            padding: 4rem 3rem;
 			margin-bottom: auto;
         }
+
+		.section__fields {
+			width: 100%;
+			display: grid;
+			gap: 1em;
+			grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+		}
 
 		.content {
 			display: grid;
@@ -302,22 +342,34 @@
 
 		.field {
 			width: 100%;
-			display: grid;
+			display: flex;
+			flex-flow: column nowrap;
 			gap: 0.4em;
 			text-align: left;
+		}
+
+		.question {
+			font-size: 1.3rem;
+			font-weight: 300;
 		}
 
 		.checkboxes {
 			display: grid;
 			gap: 1em;
-
+			grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
 			label {
 				display: flex;
 				gap: 1em;
 				border: 2px solid currentColor;
-				padding: 1em;
+				padding: .7rem;
 				border-radius: var(--jotform--border--radius);
 				cursor: pointer;
+				align-items: baseline;
+
+
+				input {
+					flex: 0 0 auto;
+				}
 
 				&:has(:checked) {
 					border-color: var(--jotform--color--accent);
@@ -331,40 +383,38 @@
 <body >
     <div id="app" v-scope @vue:mounted="mounted">
 		<div class="sections">
-			<section class="section" v-for="section in index" v-show="(section == selected)">
+			<section class="section" v-for="section in index" :class="(section == selected) ? 'active' : 'inactive'">
 				<div class="section__content">
-					<h2>
-						{{ section.title }}
-						<span v-if="section.fields">*</span>
-					</h2>
+					<h2>{{ section.title }}</h2>
 					<div class="content" v-if="section.content" v-html="section.content"></div>
-					<span class="question" v-if="section.children?.length > 0">{{section.children?.length}} questions</span>
+					<span class="question" v-if="section.children?.length > 0">{{section.children?.length}} questions in this section</span>
 					
+					<div class="section__fields" v-if="section.fields">
+						<div class="field" v-for="field in section.fields">
+							<label v-if="field.label" :for="field.name">{{ field.label }}</label>
 
-					<div class="field" v-for="field in section.fields">
-						<label v-if="field.label" :for="field.name">{{ field.label }}</label>
-
-						<select v-if="field.type === 'select'" :name="field.name" :id="field.name" >
-							<option value="">Please select</option>
-							<option v-for="option in field.options" :key="option" :value="option">
-								{{ option }}
-							</option>
-						</select>
-						
-						<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
-						
-						<fieldset class="checkboxes" v-if="field.type === 'checkboxes'">
-							<label v-for="option in field.options" :key="option" :for="toId(option)">
-								<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option">
-								{{ option }}
-							</label>
-						</fieldset>
+							<select v-if="field.type === 'select'" :name="field.name" :id="field.name" >
+								<option value="">Please select</option>
+								<option v-for="option in field.options" :key="option" :value="option">
+									{{ option }}
+								</option>
+							</select>
 							
-						<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
+							<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
 							
-						<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
-						{{ field.help }}
+							<fieldset class="checkboxes" v-if="field.type === 'checkboxes'">
+								<label v-for="option in field.options" :key="option" :for="toId(option)">
+									<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option">
+									{{ option }}
+								</label>
+							</fieldset>
+								
+							<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
+								
+							<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
+							{{ field.help }}
 
+						</div>
 					</div>
 				</div>
 
@@ -375,12 +425,12 @@
 					</div>
 					<template v-else>
 						<button @click="navigate('prev')">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M41.4 297.4C28.9 309.9 28.9 330.2 41.4 342.7L169.4 470.7C181.9 483.2 202.2 483.2 214.7 470.7C227.2 458.2 227.2 437.9 214.7 425.4L141.3 352L576 352C593.7 352 608 337.7 608 320C608 302.3 593.7 288 576 288L141.3 288L214.7 214.6C227.2 202.1 227.2 181.8 214.7 169.3C202.2 156.8 181.9 156.8 169.4 169.3L41.4 297.3z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg>
 							Previous
 						</button>
 						<button @click="navigate('next')">
 							Next 
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z"/></svg>
 						</button>
 					</template>
 				</div>

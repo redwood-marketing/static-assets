@@ -2,10 +2,10 @@ PetiteVue.createApp({
     sections: [
         {
             title: "Get a custom report with actionable recommendations",
-            content: "based on your unique tech stack, strategic initiatives and operational setup <br><br> 16 questions",
+            content: "<p style='font-size: 1.3rem'>based on your unique tech stack, strategic initiatives and operational setup</p> 16 questions in this section",
             navigation: [
                 {
-                    label: "Do a quick assessment <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z'/></svg>",
+                    label: "Do a quick assessment <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z'/></svg>",
                     action: "next"
                 }
             ]
@@ -25,8 +25,8 @@ PetiteVue.createApp({
                         {
                             type: "select",
                             options: ["Agriculture", "Automotive", "Business Services", "Chemicals", "Construction", "Consumer Services", "Education", "Energy, Utilities & Waste", "Finance", "Government", "Healthcare Services", "Holding Companies & Conglomerates", "Hospitality", "Hospitals & Physicians Clinics", "Insurance", "Law Firms & Legal Services", "Manufacturing", "Media & Internet", "Minerals & Mining", "Organizations", "Real Estate", "Retail", "Software", "Telecommunications", "Transportation", "Other"],
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -38,8 +38,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "text",
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -51,8 +51,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "text",
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -64,8 +64,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "text",
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -78,8 +78,8 @@ PetiteVue.createApp({
                         {
                             type: "checkboxes",
                             options: ["No", "Yes - RunMyJobs", "Yes - ActiveBatch", "Yes - Tidal", "Yes - Finance Automation", "Yes - JSCAPE", "Yes - Cerberus"],
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -98,55 +98,55 @@ PetiteVue.createApp({
                         {
                             type: "select",
                             options: ["SAP ECC", "SAP S/4HANA on-prem", "SAP S/4HANA private cloud", "SAP S/4HANA public cloud", "Oracle EBS", "Oracle PeopleSoft", "Oracle JD Edwards", "Oracle Netsuite", "Oracle Fusion", "Workday", "Microsoft Dynamics 365", "Other" ],
-                            label: "",
-                            help: "ERP",
+                            help: "",
+                            label:  "ERP",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["SAP BW or SAP BW4/HANA", "SAP Business Objects", "SAP Datasphere", "SAP Analytics Cloud", "Oracle Business Intelligence", "Oracle Autonomous Data Warehouse", "Oracle Analytics", "Azure Synapse", "Databricks", "Snowflake", "Synapse", "Power BI", "Qlik", "Tableau", "Other"],
-                            label: "",
-                            help: "Data warehousing and analytics",
+                            help: "",
+                            label:  "Data warehousing and analytics",
                             value: ""
                         },
                         {
                             type: "select",
                             options: ["Salesforce", "SAP CRM/CX Solutions", "Oracle CRM/CX", "Other"],
-                            label: "",
-                            help: "CRM",
+                            help: "",
+                            label:  "CRM",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Oracle Cloud SCM", "SAP SCM", "SAP Integrated Business Planning", "Other", "None"],
-                            label: "",
-                            help: "Supply chain planning",
+                            help: "",
+                            label:  "Supply chain planning",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["SAP Transportation Management", "Oracle Transportation Management Cloud", "GoRamp", "Other", "None"],
-                            label: "",
-                            help: "Logistics and transportation management",
+                            help: "",
+                            label:  "Logistics and transportation management",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["SAP Extended Warehouse Management", "Oracle Fusion Cloud Warehouse Management", "Kӧrber WMS", "Other", "None"],
-                            label: "",
-                            help: "Warehouse management",
+                            help: "",
+                            label:  "Warehouse management",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["SAP SuccessFactors", "SAP HCM", "Oracle HCM", "Oracle Fusion HCM", "Workday HCM", "Other", "None"],
-                            label: "",
-                            help: "HCM",
+                            help: "",
+                            label:  "HCM",
                             value: "",
                             required: true
                         },
@@ -158,8 +158,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "text",
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -178,40 +178,40 @@ PetiteVue.createApp({
                         {
                             type: "select",
                             options: ["Strategically moving our infrastructure to the cloud","Tactically evaluating cloud initiatives on a case-by-case basis","Prefer to remain on-premises"],
-                            label: "",
-                            help: "Cloud",
+                            help: "",
+                            label:  "Cloud",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Use SAP S/4HANA Cloud and/or in RISE with SAP","Planning on moving to S/4HANA Cloud","Use SAP ERP on-prem and not changing","Use Oracle Fusion","Planning on moving to Oracle Fusion","Use Oracle EBS/PeopleSoft/JDE and not changing","Use a cloud-based ERP that's not SAP or Oracle","Use an ERP that's not SAP or Oracle and planning to move to a cloud environment","Use an on-prem ERP that's not SAP or Oracle and not changing"],
-                            label: "",
-                            help: "ERP",
+                            help: "",
+                            label:  "ERP",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Successfully implemented data fabrics that integrate and govern all data across our business applications","Currently use select data integration technologies like iPaaS, ETL and EDI but have not yet fully implemented an integrated data fabric across all business applications","Our business applications are mostly integrated and we do not use dedicated data integration technologies"],
-                            label: "",
-                            help: "Data fabrics",
+                            help: "",
+                            label:  "Data fabrics",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Our usage of and investment in AI will be limited, as we do not believe that it will significantly impact our overall business success","We believe that AI will be beneficial to our business success and have started to deliver the first POCs and use cases","We’ve seen firsthand how AI enhances business outcomes through multiple operational use cases, and we’re committed to accelerating our strategic approach to AI"],
-                            label: "",
-                            help: "AI",
+                            help: "",
+                            label:  "AI",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Already automated many repetitive business and IT processes in a tactical way on a case-by-case basis and believe there is very little left to automate ","Although we've already automated many repetitive business and IT processes across our organization, we see great opportunity to automate more and have a dedicated automation team streamlining that effort","While we have automated many business and IT processes with our central automation team, we aspire to fully automate processes to deliver the best possible business results and reduce manual efforts"],
-                            label: "",
-                            help: "Process automation",
+                            help: "",
+                            label:  "Process automation",
                             value: "",
                             required: true
                         },
@@ -224,64 +224,64 @@ PetiteVue.createApp({
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Demand-to-fulfillment",
+                            help: "",
+                            label:  "Demand-to-fulfillment",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Hire-to-retire",
+                            help: "",
+                            label:  "Hire-to-retire",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Incident-to-resolution",
+                            help: "",
+                            label:  "Incident-to-resolution",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Record-to-report",
+                            help: "",
+                            label:  "Record-to-report",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Order-to-cash",
+                            help: "",
+                            label:  "Order-to-cash",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Plan-to-produce",
+                            help: "",
+                            label:  "Plan-to-produce",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Procure-to-pay",
+                            help: "",
+                            label:  "Procure-to-pay",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                            label: "",
-                            help: "Quote-to-cash",
+                            help: "",
+                            label:  "Quote-to-cash",
                             value: "",
                             required: true
                         },
@@ -295,8 +295,8 @@ PetiteVue.createApp({
                         {
                             type: "checkboxes",
                             options: ["Completely automated end to end", "Partially automated", "Interested in automating", "Not applicable"],
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -308,8 +308,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "textarea",
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -328,8 +328,8 @@ PetiteVue.createApp({
                         {
                             type: "checkboxes",
                             options: ["ServiceNow", "SAP Solution Manager", "SAP Cloud ALM", "IBM ITOMaaS", "BMC Helix Operations Management", "Atlassian", "Dynatrace", "Other"],
-                            label: "",
                             help: "",
+                            label:  "",
                             value: "",
                             required: true
                         }
@@ -342,40 +342,40 @@ PetiteVue.createApp({
                         {
                             type: "select",
                             options: ["Automation Anywhere","Blue Prism","IBM RPA","Microsoft Power Automate","Nintex","Oracle Integration Cloud RPA","UIPath","Salesforce\/MuleSoft RPA","SAP Build Process Automation","Other","None"],
-                            label: "",
-                            help: "Robotic process automation (RPA)",
+                            help: "",
+                            label:  "Robotic process automation (RPA)",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Biztalk","Boomi","IBM iPaaS","Informatica","Jitterbit","MuleSoft","Oracle Cloud Integration","Oracle Fusion Middleware","SAP Integration Suite","TIBCO","Workato","Other","None"],
-                            label: "",
-                            help: "iPaaS/API platform/Service bus",
+                            help: "",
+                            label:  "iPaaS/API platform/Service bus",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["ActiveBatch by Redwood","RunMyJobs by Redwood","SAP BPA by Redwood","Tidal by Redwood","BMC Control-M","BMC Helix Control-M","Broadcom Automic/UC4","Broadcom AutoSys","Broadcom CA 7","Fortra’s JAMS","IBM/HCL Workload Automation","Stonebranch","Other","None"],
-                            label: "",
-                            help: "Workload automation",
+                            help: "",
+                            label:  "Workload automation",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Cerberus by Redwood","JSCAPE by Redwood","Axway","Globalscape","GoAnywhere","IBM Aspera","Progress MFT","Seeburger","Other","None"],
-                            label: "",
-                            help: "Managed file transfer (MFT) and EDI",
+                            help: "",
+                            label:  "Managed file transfer (MFT) and EDI",
                             value: "",
                             required: true
                         },
                         {
                             type: "select",
                             options: ["Appian","Bizagi","IBM Business Automation Workflow","Nintex","Oracle BPM","Pega","SAP Build","SAP Signavio","ServiceNow","Other","None"],
-                            label: "",
-                            help: "BPM + low code/no code (LCNC)",
+                            help: "",
+                            label:  "BPM + low code/no code (LCNC)",
                             value: "",
                             required: true
                         }
@@ -387,8 +387,8 @@ PetiteVue.createApp({
                     fields: [
                         {
                             type: "email",
-                            label: "",
-                            help: "Business email address required",
+                            help: "",
+                            label:  "Business email address required",
                             value: "",
                             required: true
                         }
@@ -399,22 +399,22 @@ PetiteVue.createApp({
                     content: "",
                     navigation: [
                         {
-                            label: "Submit <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z'/></svg>",
+                            label: "Submit <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z'/></svg>",
                             action: "submit"
                         },
                     ],
                     fields: [
                         {
                             type: "text",
-                            label: "",
-                            help: "Name",
+                            help: "",
+                            label:  "Name",
                             value: "",
                             required: true
                         },
                         {
                             type: "text",
-                            label: "",
-                            help: "Company",
+                            help: "",
+                            label:  "Company",
                             value: ""
                         }
                     ]
@@ -466,7 +466,7 @@ PetiteVue.createApp({
         }
 
         
-        this.index    = flatten(this.sections);
+        this.index = flatten(this.sections);
         this.navigate(0);    
         
     }
