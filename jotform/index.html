@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css22?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"" rel="stylesheet">
 
     <script src="https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.iife.js" defer></script>
    <script src="./app.js" defer></script>
@@ -21,11 +21,14 @@
             --jotform--color--error: var(--wp--preset--color--error, #e24650);
             --jotform--color--base: var(--wp--preset--color--base, #ffffff);
             --jotform--color--contrast: var(--wp--preset--color--contrast, #000000);
-            --jotform--font-family--fields: var(--wp--preset--font-family--archivo, inherit);
+			--jotform--ff--headings: "Archivo", sans-serif;
+			--jotform--ff--body: "Roboto", sans-serif;
+            --jotform--ff--fields: var(--jotform--ff--headings);
             --jotform--border--radius: .2rem;
             accent-color: var(--jotform--color--accent);
             font-size: var(--wp--preset--font-size--ts-n1, 0.9rem);
-            font-family: var(--jotform--font-family--fields);
+            font-family: var(--jotform--ff--body);
+			font-size: 120%;
         }
 
 		body {
@@ -47,14 +50,12 @@
 			padding: 0 1ch;
 		}
 
-		.buttons {
-			display: flex;
-			width: 100%;
-		}
+		
 
 		label {
 			user-select: none;
 			width: 100%;
+			font-family: var(--jotform--ff--fields);
 		}
 		
 		input[type=text],
@@ -65,9 +66,9 @@
 		input[type=date],
 		select,
 		textarea {
+			font-family: var(--jotform--ff--fields);
 			background-color: var(--jotform--color--base);
 			color: var(--jotform--color--contrast);
-			font-family: inherit;
 			font-size: 0.9em;
 			font-weight: 500;
 			display: block;
@@ -114,7 +115,7 @@
 			grid-template-areas: "checkbox label";
 			place-content: start;
 			align-items: center;
-			background-color: var(--marketo-color-base);
+			background-color: var(--jotform-color-base);
 			cursor: pointer;
 			
 
@@ -204,15 +205,21 @@
 		}
 
 		button {
-			color: var(--jotform--color--button-text, var(--wp--preset--color--base));
 			appearance: none;
+			color: currentColor;
+			font-family: var(--jotform--ff--fields);
 			background-color: var(--jotform--color--accent);
-			border-radius: var(--jotform--border--radius);
 			border: none;
-			padding: 1em 1.4em;
+			padding: 1em 1.7em;
 			cursor: pointer;
 			transition: background-color .3s ease;
 			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 500;
+			gap: .5lh;
+			font-size: 1rem;
 
 			&:is(:hover, :active, :focus) {
 				background-color: color-mix(in srgb, var(--jotform--color--accent) 80%, var(--jotform--color--contrast));
@@ -226,13 +233,31 @@
 			cursor: not-allowed;
 		}
 
+		h1, h2, h3, h4, h5, h6 {
+			font-family: var(--jotform--ff--headings);
+			text-align: center;
+			font-weight: 500;
+			text-wrap: balance;
+			max-width: 40ch;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		h2 {
+			font-size: 1.7rem;
+		}
+
+		p {
+		}
+
 		#app {
             display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-flow: column nowrap;
             gap: 1em;
-            font-family: Archivo, sans-serif;
             line-height: 1.2;
 			width: 100%;
 			height: 100%;
@@ -240,20 +265,33 @@
 
 		.sections {
 			width: 50em;
+			border-radius: calc(var(--jotform--border--radius) * 1.3);
+			overflow: hidden;
 			&:has(input, select) {
             	box-shadow: 0 0 1em #00000033;
 				
 			}
 		}
 
-        .section {
+		.section__navigation {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+
+			> div {
+				width: 100%;
+			}
+		}
+
+        .section__content {
             display: flex;
 			justify-content: center;
 			flex-direction: column;
 			flex-grow: 1;
 			align-items: center;
+			text-align: center;
             gap: 1.5em;
-            padding: 4em;
+            padding: 4rem;
 			margin-bottom: auto;
         }
 
@@ -265,50 +303,90 @@
 		.field {
 			width: 100%;
 			display: grid;
-			gap: 1em;
+			gap: 0.4em;
+			text-align: left;
 		}
+
+		.checkboxes {
+			display: grid;
+			gap: 1em;
+
+			label {
+				display: flex;
+				gap: 1em;
+				border: 2px solid currentColor;
+				padding: 1em;
+				border-radius: var(--jotform--border--radius);
+				cursor: pointer;
+
+				&:has(:checked) {
+					border-color: var(--jotform--color--accent);
+					background-color: color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
+				}
+			}
+		}
+
    </style>
 </head>
 <body >
     <div id="app" v-scope @vue:mounted="mounted">
 		<div class="sections">
 			<section class="section" v-for="section in index" v-show="(section == selected)">
-				<h2>{{ section.title }}</h2>
-				<div class="content" v-if="section.content" v-html="section.content"></div>
-				<span v-if="section.children?.length > 0">{{section.children?.length}} questions</span>
-				
-
-				<div class="field" v-for="field in section.fields">
-					<label v-if="field.label" :for="field.name">{{ field.label }}</label>
-
-					<select v-if="field.type === 'select'" :name="field.name" :id="field.name" v-model="field.value">
-						<option value="">Please select</option>
-						<option v-for="option in field.options" :key="option" :value="option">
-							{{ option }}
-						</option>
-					</select>
+				<div class="section__content">
+					<h2>
+						{{ section.title }}
+						<span v-if="section.fields">*</span>
+					</h2>
+					<div class="content" v-if="section.content" v-html="section.content"></div>
+					<span class="question" v-if="section.children?.length > 0">{{section.children?.length}} questions</span>
 					
-					<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
-					
-					<fieldset v-if="field.type === 'checkboxes'">
-						<label v-for="option in field.options" :key="option">
-							<input type="checkbox" :id="option" :value="option" v-model="field.value">
-							{{ option }}
-						</label>
-					</fieldset>
-						
-					<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
-						
-					<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
-					{{ field.help }}
 
+					<div class="field" v-for="field in section.fields">
+						<label v-if="field.label" :for="field.name">{{ field.label }}</label>
+
+						<select v-if="field.type === 'select'" :name="field.name" :id="field.name" >
+							<option value="">Please select</option>
+							<option v-for="option in field.options" :key="option" :value="option">
+								{{ option }}
+							</option>
+						</select>
+						
+						<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
+						
+						<fieldset class="checkboxes" v-if="field.type === 'checkboxes'">
+							<label v-for="option in field.options" :key="option" :for="toId(option)">
+								<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option">
+								{{ option }}
+							</label>
+						</fieldset>
+							
+						<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
+							
+						<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
+						{{ field.help }}
+
+					</div>
+				</div>
+
+				<div class="section__navigation" :disabled="!canNavigate"> 
+					<div v-if="section.navigation" >
+						<button v-for="nav in section.navigation" @click="navigate(`${nav.action}`)"  v-html="nav.label">
+						</button>
+					</div>
+					<template v-else>
+						<button @click="navigate('prev')">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M41.4 297.4C28.9 309.9 28.9 330.2 41.4 342.7L169.4 470.7C181.9 483.2 202.2 483.2 214.7 470.7C227.2 458.2 227.2 437.9 214.7 425.4L141.3 352L576 352C593.7 352 608 337.7 608 320C608 302.3 593.7 288 576 288L141.3 288L214.7 214.6C227.2 202.1 227.2 181.8 214.7 169.3C202.2 156.8 181.9 156.8 169.4 169.3L41.4 297.3z"/></svg>
+							Previous
+						</button>
+						<button @click="navigate('next')">
+							Next 
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z"/></svg>
+						</button>
+					</template>
 				</div>
 				
 			</section>
-			<div class="buttons">
-				<button @click="navigate('prev')">Previous</button>
-				<button @click="navigate('next')">Next</button>
-			</div>
+			
 		</div>
 </div>
 </body>

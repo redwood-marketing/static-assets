@@ -2,12 +2,17 @@ PetiteVue.createApp({
     sections: [
         {
             title: "Get a custom report with actionable recommendations",
-            content: "based on your unique tech stack, strategic initiatives and operational setup",
-            active: true
+            content: "based on your unique tech stack, strategic initiatives and operational setup <br><br> 16 questions",
+            navigation: [
+                {
+                    label: "Do a quick assessment <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z'/></svg>",
+                    action: "next"
+                }
+            ]
         },
         {
             title: "Automation in your industry",
-            content: "<p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 10pt;\">Automation strategy and maturity can be impacted by industry and area of focus. For example, 73% of <strong>IT</strong> leaders credit automation with reducing manual workloads by 10-50%, allowing these team to support broader business goals. </span></p>\r\n<p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 10pt;\"><strong>Manufacturing and retail</strong> sectors are expanding automation in workflow and warehouse operations, reducing production costs and minimizing errors. Warehouse automation is projected to become a $44 billion industry by 2028.</span></p>\r\n<p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 10pt;\">On average, 26% of an organization’s automations fall under<strong> finance</strong>, and it's been found that 80% of finance operations can potentially be automated, freeing up a significant percentage of employee time to focus on strategic initiatives, customer satisfaction, etc. The order-to-cash process, for example, accounts for 57% of finance automations. </span></p>\r\n<p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 10pt;\">Let's explore automation specific to your industry so you can start developing benchmarks for your organization's automation maturity.</span></p>\r\n<p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 8pt;\">Source: <a href=\"https://www.salesforce.com/content/dam/web/en_us/www/documents/platform/it-leaders-fueling-time-and-cost-savings-with-process-automation.pdf\" target=\"_blank\" rel=\"nofollow\">Salesforce</a>; <a href=\"https://www.thelogisticsiq.com/research/warehouse-automation-market/\" target=\"_blank\" rel=\"nofollow\">LogisticsIQ</a>; <a href=\"https://www.forbes.com/councils/forbesfinancecouncil/2023/10/25/why-financial-automation-should-be-the-next-step-for-companies/\" target=\"_blank\" rel=\"nofollow\">Accenture</a>; <a href=\"https://www.workato.com/the-connector/finance-automation-statistics/\" target=\"_blank\" rel=\"nofollow\">Work automation index</a></span></p>" 
+            content: "<p style='text-align: left'>Automation strategy and maturity can be impacted by industry and area of focus. For example, 73% of <strong>IT</strong> leaders credit automation with reducing manual workloads by 10-50%, allowing these team to support broader business goals. </p><p style='text-align: left'><strong>Manufacturing and retail</strong> sectors are expanding automation in workflow and warehouse operations, reducing production costs and minimizing errors. Warehouse automation is projected to become a $44 billion industry by 2028.</p><p style='text-align: left'>On average, 26% of an organization’s automations fall under<strong> finance</strong>, and it's been found that 80% of finance operations can potentially be automated, freeing up a significant percentage of employee time to focus on strategic initiatives, customer satisfaction, etc. The order-to-cash process, for example, accounts for 57% of finance automations. </p><p style='text-align: left'>Let's explore automation specific to your industry so you can start developing benchmarks for your organization's automation maturity.</p><p style='text-align: left'><span style=\"font-family: helvetica, arial, sans-serif; font-size: 8pt;\">Source: <a href=\"https://www.salesforce.com/content/dam/web/en_us/www/documents/platform/it-leaders-fueling-time-and-cost-savings-with-process-automation.pdf\" target=\"_blank\" rel=\"nofollow\">Salesforce</a>; <a href=\"https://www.thelogisticsiq.com/research/warehouse-automation-market/\" target=\"_blank\" rel=\"nofollow\">LogisticsIQ</a>; <a href=\"https://www.forbes.com/councils/forbesfinancecouncil/2023/10/25/why-financial-automation-should-be-the-next-step-for-companies/\" target=\"_blank\" rel=\"nofollow\">Accenture</a>; <a href=\"https://www.workato.com/the-connector/finance-automation-statistics/\" target=\"_blank\" rel=\"nofollow\">Work automation index</a></p>" 
         },
         {
             title: "Let's explore automation specific to your industry so you can start developing benchmarks for your organization's automation maturity.",
@@ -392,6 +397,12 @@ PetiteVue.createApp({
                 {
                     title: "What's your name?",
                     content: "",
+                    navigation: [
+                        {
+                            label: "Submit <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M598.6 342.6C611.1 330.1 611.1 309.8 598.6 297.3L470.6 169.3C458.1 156.8 437.8 156.8 425.3 169.3C412.8 181.8 412.8 202.1 425.3 214.6L498.7 288L64 288C46.3 288 32 302.3 32 320C32 337.7 46.3 352 64 352L498.7 352L425.3 425.4C412.8 437.9 412.8 458.2 425.3 470.7C437.8 483.2 458.1 483.2 470.6 470.7L598.6 342.7z'/></svg>",
+                            action: "submit"
+                        },
+                    ],
                     fields: [
                         {
                             type: "text",
@@ -413,8 +424,8 @@ PetiteVue.createApp({
     ],
     selected: null,
     index: null,
-    validate(section = this.selected) {
-        
+    get canNavigate() {
+        return true
     },
     navigate(nextIndex) {
         const currentIndex = this.index.indexOf(this.selected);
@@ -427,9 +438,22 @@ PetiteVue.createApp({
                 break;
         }
         const isOutOfRange = nextIndex > this.index.length-1 || nextIndex < 0;
+        
         this.selected = this.index.at(isOutOfRange ? currentIndex : nextIndex);
     },
-
+    toId(str) {
+        return str
+            .toLowerCase()
+            .trim()
+            .normalize('NFD')                 
+            .replace(/[\u0300-\u036f]/g, '')   
+            .replace(/\s+/g, '-')              
+            .replace(/[^\w-]/g, '')            
+            .replace(/^-+|-+$/g, '')           
+            .replace(/-+/g, '-');              
+        
+        return /^[a-z]/.test(id) ? id : 'id-' + id; 
+    },
     mounted() {
         function flatten(arr) {
             return arr.flatMap(item => {
@@ -443,7 +467,7 @@ PetiteVue.createApp({
 
         
         this.index    = flatten(this.sections);
-        this.selected = this.index.at(12);    
+        this.navigate(0);    
         
     }
     
