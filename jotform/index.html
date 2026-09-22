@@ -6,7 +6,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <script src="https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.iife.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
    <script src="./app.js" defer></script>
    <style>
 
@@ -41,6 +41,7 @@
 			height: 100vh;
 		}
 
+
         fieldset {
 			display: flex;
 			flex-flow: column nowrap;
@@ -61,6 +62,11 @@
 			user-select: none;
 			width: 100%;
 			font-family: var(--jotform--ff--fields);
+
+			&:has(+ [required])::after {
+				content: "*";
+				color: var(--jotform--color--error);
+			}
 		}
 		
 		input[type=text],
@@ -83,11 +89,11 @@
 			padding: .8em .6em !important;
 			outline: none;
 
-			&:is(:invalid, .mktoInvalid):not(:focus) {
+			&:is(:user-invalid, .mktoInvalid):not(:focus) {
 				border-color: var(--jotform--color--error) !important;
 			}
 
-			&:focus {
+			&:is(:focus, :user-valid) {
 				border-color: var(--jotform--color--accent);
 			}
 
@@ -391,36 +397,65 @@
 					
 					<div class="section__fields" v-if="section.fields">
 						<div class="field" v-for="field in section.fields">
-							<label v-if="field.label" :for="field.name">{{ field.label }}</label>
+							<label 
+								v-if="field.label" 
+								:for="toId(field.label)"
+							>{{ field.label }}</label>
 
-							<select v-if="field.type === 'select'" :name="field.name" :id="field.name" >
+							<select 
+								v-if="field.type === 'select'" 
+								:name="field.label" 
+								:id="field.label" 
+								v-model="field.value" 
+								:required="field.required"
+							>
 								<option value="">Please select</option>
 								<option v-for="option in field.options" :key="option" :value="option">
 									{{ option }}
 								</option>
 							</select>
 							
-							<input v-if="field.type === 'text'" type="text" :name="field.name" :id="field.name" v-model="field.value">
+							<input 
+								v-if="field.type === 'text'" 
+								:required="field.required" 
+								type="text" 
+								:name="field.label" 
+								:id="field.label" 
+								v-model="field.value"
+							>
 							
 							<fieldset class="checkboxes" v-if="field.type === 'checkboxes'">
 								<label v-for="option in field.options" :key="option" :for="toId(option)">
-									<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option">
+									<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option" v-model="field.value">
 									{{ option }}
 								</label>
 							</fieldset>
 								
-							<textarea v-if="field.type === 'textarea'" :name="field.name" :id="field.name" v-model="field.value"></textarea>
+							<textarea 
+								v-if="field.type === 'textarea'" 
+								:name="field.label" 
+								:id="field.label" 
+								v-model="field.value" 
+								:required="field.required"
+							></textarea>
 								
-							<input v-if="field.type === 'email'" type="email" :name="field.name" :id="field.name" v-model="field.value">
+							<input 
+								v-if="field.type === 'email'" 
+								type="email" 
+								:name="field.label" 
+								:id="field.label" 
+								v-model="field.value" 
+								:required="field.required" 
+								@input="validate" 
+								pattern="^[a-zA-Z0-9]+([._+\-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.\-][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$">
 							{{ field.help }}
-
 						</div>
 					</div>
 				</div>
 
-				<div class="section__navigation" :disabled="!canNavigate"> 
-					<div v-if="section.navigation" >
-						<button v-for="nav in section.navigation" @click="navigate(`${nav.action}`)"  v-html="nav.label">
+				<div class="section__navigation"> 
+					<div v-if="section.navigation">
+						<button v-for="nav in section.navigation" @click="navigate(`${nav.action}`)"  v-html="nav.label" :disabled="!canNavigate">
 						</button>
 					</div>
 					<template v-else>
@@ -428,7 +463,7 @@
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg>
 							Previous
 						</button>
-						<button @click="navigate('next')">
+						<button @click="navigate('next')" :disabled="!canNavigate">
 							Next 
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z"/></svg>
 						</button>
