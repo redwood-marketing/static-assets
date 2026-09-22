@@ -84,7 +84,7 @@ createApp({
                                     type: "checkboxes",
                                     options: ["No", "Yes - RunMyJobs", "Yes - ActiveBatch", "Yes - Tidal", "Yes - Finance Automation", "Yes - JSCAPE", "Yes - Cerberus"],
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: [],
                                     required: true
                                 }
@@ -165,7 +165,7 @@ createApp({
                                 {
                                     type: "text",
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: "",
                                     required: true
                                 }
@@ -302,7 +302,7 @@ createApp({
                                     type: "checkboxes",
                                     options: ["Completely automated end to end", "Partially automated", "Interested in automating", "Not applicable"],
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: [],
                                     required: true
                                 }
@@ -315,7 +315,7 @@ createApp({
                                 {
                                     type: "textarea",
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: "",
                                     required: true
                                 }
@@ -335,7 +335,7 @@ createApp({
                                     type: "checkboxes",
                                     options: ["ServiceNow", "SAP Solution Manager", "SAP Cloud ALM", "IBM ITOMaaS", "BMC Helix Operations Management", "Atlassian", "Dynatrace", "Other"],
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: [],
                                     required: true
                                 }
@@ -389,41 +389,8 @@ createApp({
                         },
                         {
                             title: "Get your results and recommendations!",
-                            content: "See where your organization most likely stands in automation maturity and get recommendations on how to advance. Along with clear acttion items, receive additional resources",
-                            fields: [
-                                {
-                                    type: "email",
-                                    help: "",
-                                    label:  "Business email address required",
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "What's your name?",
-                            content: "",
-                            navigation: [
-                                {
-                                    label: "Submit <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z'/></svg>",
-                                    action: "submit"
-                                },
-                            ],
-                            fields: [
-                                {
-                                    type: "text",
-                                    help: "",
-                                    label:  "Name",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    type: "text",
-                                    help: "",
-                                    label:  "Company",
-                                    value: ""
-                                }
-                            ]
+                            content: "See where your organization most likely stands in automation maturity and get recommendations on how to advance. Along with clear acttion items, receive additional resources <form id=\"mktoForm_1534\"></form>",
+                            navigation: false
                         }
                     ]
                 },
@@ -439,6 +406,24 @@ createApp({
             }
             return true
         },
+        results() {
+            results = [];
+            this.index?.forEach(item => {
+                if ( item.fields ) {
+                    results.push(item.title);
+                    item.fields.forEach(field => {
+                        if ( field.value != "" ) {
+                            results.push(`
+                                ${field.label ?? 'Answer'}: ${typeof field.value === "string" ? field.value : field.value.join(", ")}
+                            `)
+
+                        }
+                    })
+                }
+                
+            })
+            return results.join(`<br>`);
+        }
     },
     methods: {
         navigate(nextIndex) {
@@ -484,29 +469,25 @@ createApp({
             });
         }
         this.index = flatten(this.sections);
-        this.navigate(13);
-        
+        this.navigate(0);
+
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");
             mkto.src = "https://one.redwood.com/js/forms2/js/forms2.min.js";
             mkto.addEventListener("load", () => {
-                MktoForms2.loadForm("//one.redwood.com", "207-QIS-684", 1006, (form) => {
-                    form.submittable(false);
-                    form.onSubmit((form) => {
-                        form.setValues({
-                            Comments__c: ("")
-                        });
-                    });
+                MktoForms2.loadForm("//one.redwood.com", "207-QIS-684", 1534, function(form) {
+                    (function removeDefaultMarketoStyles() {
+                        const formElem 		  = form.getFormElem()?.get(0);
+                        const styledElems 	  = formElem.querySelectorAll("[style]");
+                        const formInnerStylesheets = formElem.querySelectorAll("style")
+                        const mktoStylesheets = [...document.styleSheets].filter((sheet) => sheet?.ownerNode?.id.includes("mkto") );
                         
-                    form.onSuccess(() => {
-                        return false;
-                    });
-
-                    console.log(form.getValues());
-
-                    
+                        [...styledElems, formElem].forEach( (el) => el.removeAttribute('style') );
+                        formInnerStylesheets.forEach( (sheet) => sheet.remove() );
+                        mktoStylesheets.forEach( (sheet) => sheet.disabled = true );
+                    })();
                 });
-            })
+            });
             
             document.body.appendChild(mkto);
         }
