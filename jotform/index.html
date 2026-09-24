@@ -297,6 +297,14 @@
 				0 16px 16px hsl(0deg 0% 0% / 0.075)
 			;
 
+			&:has(:user-invalid, .mktoInvalid) {
+				border-color: var(--jotform--color--error)
+			}
+
+			&:has(:user-valid) {
+				border-color: var(--jotform--color--accent)
+			}
+
 			&.inactive {
 				translate: -100%;
 				opacity: 0;
@@ -473,7 +481,7 @@
 <body >
     <div id="app" v-scope @vue:mounted="mounted">
 		<div class="sections">
-			<section class="section" v-for="section in index" :class="(section == selected) ? 'active' : 'inactive'">
+			<section class="section" v-for="(section, sectionIndex) in registry" :class="(section == selected) ? 'active' : 'inactive'">
 				<div class="section__content">
 					<h2>{{ section.title }}</h2>
 					<div class="content" v-if="section.content" v-html="section.content"></div>
@@ -483,13 +491,13 @@
 						<div class="field" v-for="field in section.fields">
 							<label 
 								v-if="field.label" 
-								:for="toId(field.label)"
+								:for="field.id"
 							>{{ field.label }}</label>
 
 							<select 
 								v-if="field.type === 'select'" 
-								:name="field.label" 
-								:id="field.label" 
+								:name="field.id" 
+								:id="field.id" 
 								v-model="field.value" 
 								:required="field.required"
 							>
@@ -503,22 +511,28 @@
 								v-if="field.type === 'text'" 
 								:required="field.required" 
 								type="text" 
-								:name="field.label" 
-								:id="field.label" 
+								:name="field.id" 
+								:id="field.id" 
 								v-model="field.value"
 							>
 							
 							<fieldset class="checkboxes" v-if="field.type === 'checkboxes'">
 								<label v-for="option in field.options" :key="option" :for="toId(option)">
-									<input type="checkbox" :name="toId(option)" :id="toId(option)" :value="option" v-model="field.value">
+									<input 
+										type="checkbox" 
+										:name="toId(option)"
+										:id="toId(option)" 
+										:value="option" 
+										v-model="field.value"
+									>
 									{{ option }}
 								</label>
 							</fieldset>
 								
 							<textarea 
 								v-if="field.type === 'textarea'" 
-								:name="field.label" 
-								:id="field.label" 
+								:name="field.id" 
+								:id="field.id" 
 								v-model="field.value" 
 								:required="field.required"
 							></textarea>
@@ -526,8 +540,8 @@
 							<input 
 								v-if="field.type === 'email'" 
 								type="email" 
-								:name="field.label" 
-								:id="field.label" 
+								:name="field.id" 
+								:id="field.id" 
 								v-model="field.value" 
 								:required="field.required" 
 								@input="validate" 
@@ -555,7 +569,6 @@
 				</div>
 				
 			</section>
-<div v-html="results"></div>			
 		</div>
 </div>
 </body>
