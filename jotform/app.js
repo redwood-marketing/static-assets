@@ -6,7 +6,7 @@ createApp({
             sections: [
                 {
                     title: "Get a custom report with actionable recommendations",
-                    content: "<p style='font-size: 1.3rem'>based on your unique tech stack, strategic initiatives and operational setup</p>",
+                    content: "<p style='font-size: 1.3rem'>based on your unique tech stack, strategic initiatives and operational setup</p><span style='font-weight: 300; text-align: center; font-size: 1.1rem'>16 questions</span>",
                     navigation: [
                         {
                             label: "Do a quick assessment <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z'/></svg>",
@@ -431,7 +431,7 @@ createApp({
             ],
             selected: null,
             registry: null,
-            testMode: window.top.location.search.includes("test")
+            testMode: window.location.search.includes("test")
         }
     },
     computed: {
@@ -574,7 +574,6 @@ createApp({
             return `https://one.redwood.com/automation-maturity-assessment-${rules.find(rule => rule.condition === true)?.name ?? 'general-recommendations'}`;
         }
     },
-
     mounted() {
         const flatten = (arr) => {
             return arr.flatMap((item, index) => {
@@ -607,15 +606,19 @@ createApp({
                         mktoStylesheets.forEach( (sheet) => sheet.disabled = true );
                     })();
 
+                    form.offValidate(() => {
+                        console.log("off");
+                    })
+
                     /* Populate */
                     form.onSubmit(() => {
                         form.setValues({
-                            ...this.defaults,
                             Comments__c: this.formatResults()
                         });
                     });
 
-                    form.onSuccess(function(values, followUpUrl) {
+                    form.onSuccess((values, followUpUrl) =>  {
+                        console.log(this.getRedirectURL())
                         window.location.assign(this.getRedirectURL());
                         return false;
                     });

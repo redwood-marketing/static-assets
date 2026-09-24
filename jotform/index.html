@@ -498,7 +498,7 @@
 			}
 
 			li {
-				box-shadow: 0 0 0 .2rem white;
+				
 				&:not(.active) {
 					filter: saturate(0) brightness(1.3);
 				}
@@ -512,6 +512,7 @@
 				width: 4ch;
 				height: auto;
 				display: block;
+				box-shadow: 0 0 0 .2rem white;
 			}
 		}
 
@@ -554,11 +555,13 @@
 			backdrop-filter: blur(10px);
 			border-radius: var(--jotform--border--radius);
 			font-size: .8rem;
+			width: max(80em, 50vw);
+			height: max(20lh, 30vh);
+			overflow: scroll;
 
 			& > * {
 				text-align: left;
 				white-space: pre-line;
-
 			}
 		}
 
@@ -664,6 +667,14 @@
 		<span class="state">{{registry?.indexOf(selected)+1}}/{{ registry?.length }}</span>
 
 		<div v-if="testMode" class="debug">
+			<h3>Jump to section:</h3>
+			<nav class="nav">
+				<ul>
+					<li v-for="(item, index) in registry" :class="(item == selected) ? 'active' : 'inactive'">
+						<button @click="navigate(index)">{{index+1}}</button>
+					</li>
+				</ul>
+			</nav>
 			<h3>Thank you page:</h3>
 			<a :href="getRedirectURL()" target="_blank">{{getRedirectURL()}}</a>
 			
@@ -673,14 +684,7 @@
 				{{formatResults().trim()}}
 			</pre>
 
-			<h3>Jump to section:</h3>
-			<nav class="nav">
-				<ul>
-					<li v-for="(item, index) in registry" :class="(item == selected) ? 'active' : 'inactive'">
-						<button @click="navigate(index)">{{index+1}}</button>
-					</li>
-				</ul>
-			</nav>
+			
 		</div>
 </div>
 </body>
