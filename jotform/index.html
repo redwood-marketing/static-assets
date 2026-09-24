@@ -43,6 +43,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			transition: opacity .3s ease;
+
+			&:has([v-cloak]) {
+				opacity: 0;
+			}
 		}
 
 
@@ -569,7 +574,7 @@
    </style>
 </head>
 <body >
-    <div id="app" v-scope @vue:mounted="mounted">
+    <div id="app" v-cloak>
 		<div class="sections">
 			<section class="section" v-for="(section, sectionIndex) in registry" :class="(section == selected) ? 'active' : 'inactive'">
 				<div class="section__content">
