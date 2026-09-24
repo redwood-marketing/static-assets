@@ -74,7 +74,7 @@ createApp({
                                     id: "assessment-reason",
                                     type: "text",
                                     help: "",
-                                    label:  "",
+                                    label:  null,
                                     value: "",
                                     required: true
                                 }
@@ -431,11 +431,11 @@ createApp({
             ],
             selected: null,
             registry: null,
+            testMode: window.top.location.search.includes("test")
         }
     },
     computed: {
         canNavigate() {
-            return true;
             if ( this.selected?.fields ) {
                 return this.selected.fields.every(field => (field.required && field.value.length) || field.required == false);
             }
@@ -456,9 +456,6 @@ createApp({
             const isOutOfRange = nextIndex > this.registry.length-1 || nextIndex < 0;
             
             this.selected = this.registry.at(isOutOfRange ? currentIndex : nextIndex);
-
-            console.log(this.getRedirectURL())
-
         },
         toId(str) {
             
@@ -504,57 +501,77 @@ createApp({
             return results.join(`\n`).trim();
         },
         getRedirectURL() {
+            if (!this.registry) return `https://one.redwood.com/automation-maturity-assessment-general-recommendations`;
+
             const results = this.getResults();
-
-            /**
-             * Automation solutions: this.registry[18]
-             * Levels: this.registry[13]
-             * Systems of record this.registry[9]
-             */
-
-            const FA = [results["procure-to-pay-automation-level"], results["order-to-cash-automation-level"], results["record-to-report-automation-level"]];
+            const levels = this.registry?.at(13)?.fields;
+            const FA = [
+                results["procure-to-pay-automation-level"], 
+                results["order-to-cash-automation-level"], 
+                results["record-to-report-automation-level"]
+            ];
             const WLA = results["workload-automation-solution"];
             const MFT = results["mft-edi-solution"];
             const ERP = results["erp"];
 
-            const levels = this.registry[13].fields;
+            
 
-            const rules = {
-                autonomous: 
-                    MFT.includes("by Redwood") 
-                    && WLA.includes("by Redwood") 
-                    && levels.every(item => item.value.includes("Completely")),
-                "controlled-redwood": 
-                    WLA.includes("by Redwood"),
-                controlled:
-                    (WLA && !WLA.includes("by Redwood") && WLA != "None")
-                    && FA.some(item => item.includes("Completely")),
-                managed:
-                    (WLA && !WLA.includes("by Redwood") && WLA != "None")
-                    && !FA.some(item => item.includes("Completely"))
-                    && FA.some(item => item.includes("Partially")),
-                "siloed-sap": 
-                    ERP.includes("SAP")
-                    && WLA == "None"
-                    && FA.some(item => item.includes("Completely") || item.includes("Partially")),
-                "manual-sap": 
-                    ERP.includes("SAP")
-                    && WLA == "None"
-                    && FA.some(item => item.includes("Interested") || item.includes("Not applicable")),
-                siloed:
-                    !ERP.includes("SAP")
-                    && WLA == "None"
-                    && FA.some(item => item.includes("Completely") || item.includes("Partially")),
-                manual:
-                    !ERP.includes("SAP")
-                    && WLA == "None"
-                    && FA.some(item => item.includes("Interested") || item.includes("Not applicable")),
-            }
+            const rules = [
+                {
+                    name: "autonomous", 
+                    condition: 
+                        MFT.includes("by Redwood") 
+                        && WLA.includes("by Redwood") 
+                        && levels.every(item => item.value.includes("Completely")),
+                },
+                {
+                    name: "controlled-redwood",
+                    condition: WLA.includes("by Redwood"),
+                },
+                { 
+                    name: "controlled",
+                    condition: 
+                        (WLA != "" && (!WLA.includes("by Redwood") && WLA != "None"))
+                        && FA.some(item => item.includes("Completely"))
+                },
+                { 
+                    name: "managed",
+                    condition: 
+                        (WLA != "" && (!WLA.includes("by Redwood") && WLA != "None"))
+                        && !FA.some(item => item.includes("Completely"))
+                        && FA.some(item => item.includes("Partially")),
+                },
+                { 
+                    name: "siloed-sap",
+                    condition: 
+                        ERP.includes("SAP")
+                        && WLA == "None"
+                        && FA.some(item => item.includes("Completely") || item.includes("Partially")),
+                },
+                { 
+                    name: "manual-sap",
+                    condition: 
+                        ERP.includes("SAP")
+                        && WLA == "None"
+                        && FA.some(item => item.includes("Interested") || item.includes("Not applicable")),
+                },
+                { 
+                    name: "siloed",
+                    condition: 
+                        !ERP.includes("SAP")
+                        && WLA == "None"
+                        && FA.some(item => item.includes("Completely") || item.includes("Partially")),
+                },
+                { 
+                    name: "manual",
+                    condition: 
+                        !ERP.includes("SAP")
+                        && WLA == "None"
+                        && FA.some(item => item.includes("Interested") || item.includes("Not applicable")),
+                },
+            ]
 
-            console.log(this.getResults());
-            console.log(rules);
-            [WLA].some(item => { item !== "None" || item.includes("by Redwood")})
-            return this.getResults();
+            return `https://one.redwood.com/automation-maturity-assessment-${rules.find(rule => rule.condition === true)?.name ?? 'general-recommendations'}`;
         }
     },
 
@@ -599,7 +616,7 @@ createApp({
                     });
 
                     form.onSuccess(function(values, followUpUrl) {
-                        window.location.assign(this.getFollowUpURL());
+                        window.location.assign(this.getRedirectURL());
                         return false;
                     });
                 }.bind(this));

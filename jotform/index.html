@@ -39,6 +39,10 @@
 		body {
 			width: 100vw;
 			height: 100vh;
+			padding: 1em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 
@@ -268,13 +272,99 @@
 		p {
 		}
 
+		[id*=mktoForm] {
+			display: flex;
+			line-height: 1.2;
+			flex-flow: column nowrap;
+			gap: .8rem;
+			width: 100% !important;
+		}
+
+		.mktoFormRow {
+			font-weight: 500;
+
+			/* Prevents hidden fields from taking up space */
+			&:has([type=hidden]) {
+				display: none !important;
+			}
+
+			/* Moves HTML block to the end */
+			&:has(.mktoHtmlText) {
+				order: 1;
+				font-size: 0.8em;
+				line-height: 1.3;
+				text-align: center;
+				font-family: unset;
+			}
+		}
+
+		.mktoButtonRow {
+			margin-block: 0.7rem;
+			font-family: var(--mkto--font-family--fields);
+		}
+
+		.mktoClear,
+		.mktoOffset,
+		.mktoGutter {
+			display: none !important;
+		}
+
+		.mktoError {
+			color: var(--jotform--color--error);
+			font-size: .9em;
+			margin-top: .5rem;
+		}
+
+		.mktoLabel {
+			display: flex;
+			gap: .2ch;
+			padding-block-end: .7em;
+			font-size: 0.8em;
+			font-weight: 400;
+			text-wrap: balance;
+			cursor: pointer;
+
+			&:has( ~ .mktoRequired)::after {
+				content: "*";
+				color: var(--jotform--color--error);
+			}
+		}
+
+		.mktoFieldWrap {
+
+			& :is(.mktoRadioList, .mktoCheckboxList) {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				label {
+					padding: .2em 1.5ch .15em 1ch;
+					flex: 0 0 auto;
+					cursor: pointer;
+				}
+			}
+
+		}
+
+		.mktoAsterix {
+			display: none;
+		}
+
+		.mktoInstruction:not(:empty) {
+			margin-block-start: .6em;
+			display: block;
+			font-size: .9em;
+			font-weight: 400;
+		}
+
 		#app {
             display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-flow: column nowrap;
-            gap: 1em;
+            gap: 10em;
 			width: 100%;
+			max-width: 100rem;
 			height: 100%;
 			overflow: hidden;
         }
@@ -370,6 +460,61 @@
 			font-weight: 300;
 		}
 
+		.state {
+			background-color: #00000022;
+			padding: .5em 1em;
+			border-radius: var(--jotform--border--radius);
+			font-family: var(--jotform--ff--headings);
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 1em;
+			font-weight: 600;
+		}
+
+		.nav {
+			font-size: .7rem;
+			position: relative;
+			width: 100%;
+
+			&::before {
+				content: "";
+				height: 2px;
+				top: 50%;
+				translate: 0 -50%;
+				background-color: currentColor;
+				display: block;
+				left: 0;
+				position: absolute;
+				width: 100%;
+				z-index: -1;
+			}
+
+			ul {
+				display: flex;
+				gap: 1em;
+				list-style: none;
+				justify-content: space-between;
+			}
+
+			li {
+				box-shadow: 0 0 0 .2rem white;
+				&:not(.active) {
+					filter: saturate(0) brightness(1.3);
+				}
+			}
+
+			button {
+				border-radius: 50%;
+				font-size: inherit;
+				aspect-ratio: 1 / 1;
+				padding: .1em;
+				width: 4ch;
+				height: auto;
+				display: block;
+			}
+		}
+
 		.checkboxes {
 			display: grid;
 			gap: 1em;
@@ -395,89 +540,26 @@
 			}
 		}
 
-		[id*=mktoForm] {
-			display: flex;
-			line-height: 1.2;
-			flex-flow: column nowrap;
-			gap: .8rem;
-			width: 100% !important;
-		}
+		.debug {
+			display: grid;
+			gap: 1em;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			margin: 1em;
+			border: 1px solid black;
+			padding: 2em;
+			background: #ffffff00;
+			z-index: 5;
+			backdrop-filter: blur(10px);
+			border-radius: var(--jotform--border--radius);
+			font-size: .8rem;
 
-		.mktoFormRow {
-			font-weight: 500;
+			& > * {
+				text-align: left;
+				white-space: pre-line;
 
-			/* Prevents hidden fields from taking up space */
-			&:has([type=hidden]) {
-				display: none !important;
 			}
-
-			/* Moves HTML block to the end */
-			&:has(.mktoHtmlText) {
-				order: 1;
-				font-size: 0.8em;
-				line-height: 1.3;
-				text-align: center;
-				font-family: unset;
-			}
-		}
-
-		.mktoButtonRow {
-			margin-block: 0.7rem;
-			font-family: var(--mkto--font-family--fields);
-		}
-
-		.mktoClear,
-		.mktoOffset,
-		.mktoGutter {
-			display: none !important;
-		}
-
-		.mktoError {
-			color: var(--jotform--color--error);
-			font-size: .9em;
-			margin-top: .5rem;
-		}
-
-		.mktoLabel {
-			display: flex;
-			gap: .2ch;
-			padding-block-end: .7em;
-			font-size: 0.8em;
-			font-weight: 400;
-			text-wrap: balance;
-			cursor: pointer;
-
-			&:has( ~ .mktoRequired)::after {
-				content: "*";
-				color: var(--jotform--color--error);
-			}
-		}
-
-		.mktoFieldWrap {
-
-			& :is(.mktoRadioList, .mktoCheckboxList) {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-
-				label {
-					padding: .2em 1.5ch .15em 1ch;
-					flex: 0 0 auto;
-					cursor: pointer;
-				}
-			}
-
-		}
-
-		.mktoAsterix {
-			display: none;
-		}
-
-		.mktoInstruction:not(:empty) {
-			margin-block-start: .6em;
-			display: block;
-			font-size: .9em;
-			font-weight: 400;
 		}
 
    </style>
@@ -571,8 +653,34 @@
 						</button>
 					</template>
 				</div>
-				
 			</section>
+
+		</div>
+
+		
+		
+		
+
+		<span class="state">{{registry?.indexOf(selected)+1}}/{{ registry?.length }}</span>
+
+		<div v-if="testMode" class="debug">
+			<h3>Thank you page:</h3>
+			<a :href="getRedirectURL()" target="_blank">{{getRedirectURL()}}</a>
+			
+			<h3>Results:</h3>
+
+			<pre>
+				{{formatResults().trim()}}
+			</pre>
+
+			<h3>Jump to section:</h3>
+			<nav class="nav">
+				<ul>
+					<li v-for="(item, index) in registry" :class="(item == selected) ? 'active' : 'inactive'">
+						<button @click="navigate(index)">{{index+1}}</button>
+					</li>
+				</ul>
+			</nav>
 		</div>
 </div>
 </body>
