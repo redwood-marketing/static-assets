@@ -618,8 +618,7 @@ createApp({
                     });
 
                     form.onSuccess((values, followUpUrl) =>  {
-                        console.log(this.getRedirectURL())
-                        window.location.assign(this.getRedirectURL());
+                        window.top.location.assign(this.getRedirectURL());
                         return false;
                     });
                 }.bind(this));
