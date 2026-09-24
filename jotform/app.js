@@ -569,7 +569,7 @@ createApp({
             });
         }
         this.registry = flatten(this.sections);
-        this.navigate(20);
+        this.navigate(0);
 
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");
