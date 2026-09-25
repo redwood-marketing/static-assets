@@ -3,437 +3,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            sections: [
-                {
-                    title: "Get a custom report with actionable recommendations",
-                    content: "<p style='font-size: 1.3rem'>based on your unique tech stack, strategic initiatives and operational setup</p><span style='font-weight: 300; text-align: center; font-size: 1.1rem'>16 questions</span>",
-                    navigation: [
-                        {
-                            label: "Do a quick assessment <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640' width='2ch' fill='currentColor'><path d='M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z'/></svg>",
-                            action: "next"
-                        }
-                    ]
-                },
-                {
-                    title: "Automation in your industry",
-                    content: "<p style='text-align: left'>Automation strategy and maturity can be impacted by industry and area of focus. For example, 73% of <strong>IT</strong> leaders credit automation with reducing manual workloads by 10-50%, allowing these team to support broader business goals. </p><p style='text-align: left'><strong>Manufacturing and retail</strong> sectors are expanding automation in workflow and warehouse operations, reducing production costs and minimizing errors. Warehouse automation is projected to become a $44 billion industry by 2028.</p><p style='text-align: left'>On average, 26% of an organization’s automations fall under<strong> finance</strong>, and it's been found that 80% of finance operations can potentially be automated, freeing up a significant percentage of employee time to focus on strategic initiatives, customer satisfaction, etc. The order-to-cash process, for example, accounts for 57% of finance automations. </p><p style='text-align: left'>Let's explore automation specific to your industry so you can start developing benchmarks for your organization's automation maturity.</p><p style='text-align: left'><span style=\"font-family: helvetica, arial, sans-serif; font-size: 8pt;\">Source: <a href=\"https://www.salesforce.com/content/dam/web/en-us/www/documents/platform/it-leaders-fueling-time-and-cost-savings-with-process-automation.pdf\" target=\"-blank\" rel=\"nofollow\">Salesforce</a>; <a href=\"https://www.thelogisticsiq.com/research/warehouse-automation-market/\" target=\"-blank\" rel=\"nofollow\">LogisticsIQ</a>; <a href=\"https://www.forbes.com/councils/forbesfinancecouncil/2023/10/25/why-financial-automation-should-be-the-next-step-for-companies/\" target=\"-blank\" rel=\"nofollow\">Accenture</a>; <a href=\"https://www.workato.com/the-connector/finance-automation-statistics/\" target=\"-blank\" rel=\"nofollow\">Work automation index</a></p>"
-                },
-                {
-                    title: "Let's explore automation specific to your industry so you can start developing benchmarks for your organization's automation maturity.",
-                    content: "",
-                    children: [
-                        {
-                            title: "What industry are you in?",
-                            content: "",
-                            fields: [
-                                {
-                                    id: "industry",
-                                    type: "select",
-                                    options: ["Agriculture", "Automotive", "Business Services", "Chemicals", "Construction", "Consumer Services", "Education", "Energy, Utilities & Waste", "Finance", "Government", "Healthcare Services", "Holding Companies & Conglomerates", "Hospitality", "Hospitals & Physicians Clinics", "Insurance", "Law Firms & Legal Services", "Manufacturing", "Media & Internet", "Minerals & Mining", "Organizations", "Real Estate", "Retail", "Software", "Telecommunications", "Transportation", "Other"],
-                                    help: "",
-                                    label:  null,
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "What function do you work in?",
-                            content: "",
-                            fields: [
-                                {
-                                    id: "work-function",
-                                    type: "select",
-                                    help: "",
-                                    label:  null,
-                                    options: ["Finance", "Operations", "Procurement and Supply Chain", "Customer Service", "Sales and Marketing", "HR", "Other"],
-                                    value: "",
-                                    required: false
-                                }
-                            ]
-                        },
-                        {
-                            title: "What is your role?",
-                            content: "",
-                            fields: [
-                                {
-                                    id: "role",
-                                    type: "textarea",
-                                    help: "",
-                                    label:  null,
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "What has you assessing your automation maturity?",
-                            content: "Let us know what you're looking to discover so we can generate more tailored recommendations.",
-                            fields: [
-                                {
-                                    id: "assessment-reason",
-                                    type: "text",
-                                    help: "",
-                                    label:  null,
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "Do you currently use any Redwood products?",
-                            content: "Select all that apply.  This lets us know which Redwood product capabilities to share with you.",
-                            fields: [
-                                {
-                                    id: "redwood-products-used",
-                                    type: "checkboxes",
-                                    options: ["No", "Yes - RunMyJobs", "Yes - ActiveBatch", "Yes - Tidal", "Yes - Finance Automation", "Yes - JSCAPE", "Yes - Cerberus"],
-                                    help: "",
-                                    label:  null,
-                                    value: [],
-                                    required: true
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    title: "Part 1: Your tech stack ",
-                    content: "Three key areas help evaluate automation maturity, starting with your tech stack. Your systems and applications have unique considerations and automation functionality. Let's identify untapped opportunity with what you currently have.",
-                    children: [
-                        {
-                            title: "What applications or systems of record do you use?",
-                            content: "Your applications or systems of record (SoR) are important considerations for automation because they serve as the central repository for the data that automation processes rely on to execute tasks accurately and consistently. Select none if not applicable.",
-                            fields: [
-                                {
-                                    id: "erp",
-                                    type: "select",
-                                    options: ["SAP ECC", "SAP S/4HANA on-prem", "SAP S/4HANA private cloud", "SAP S/4HANA public cloud", "Oracle EBS", "Oracle PeopleSoft", "Oracle JD Edwards", "Oracle Netsuite", "Oracle Fusion", "Workday", "Microsoft Dynamics 365", "Other" ],
-                                    help: "",
-                                    label:  "ERP",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "data-warehousing-analytics",
-                                    type: "select",
-                                    options: ["SAP BW or SAP BW4/HANA", "SAP Business Objects", "SAP Datasphere", "SAP Analytics Cloud", "Oracle Business Intelligence", "Oracle Autonomous Data Warehouse", "Oracle Analytics", "Azure Synapse", "Databricks", "Snowflake", "Synapse", "Power BI", "Qlik", "Tableau", "Other"],
-                                    help: "",
-                                    label:  "Data warehousing and analytics",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "crm",
-                                    type: "select",
-                                    options: ["Salesforce", "SAP CRM/CX Solutions", "Oracle CRM/CX", "Other"],
-                                    help: "",
-                                    label:  "CRM",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "supply-chain-planning",
-                                    type: "select",
-                                    options: ["Oracle Cloud SCM", "SAP SCM", "SAP Integrated Business Planning", "Other", "None"],
-                                    help: "",
-                                    label:  "Supply chain planning",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "logistics-transportation-management",
-                                    type: "select",
-                                    options: ["SAP Transportation Management", "Oracle Transportation Management Cloud", "GoRamp", "Other", "None"],
-                                    help: "",
-                                    label:  "Logistics and transportation management",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "warehouse-management",
-                                    type: "select",
-                                    options: ["SAP Extended Warehouse Management", "Oracle Fusion Cloud Warehouse Management", "Kӧrber WMS", "Other", "None"],
-                                    help: "",
-                                    label:  "Warehouse management",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "hcm",
-                                    type: "select",
-                                    options: ["SAP SuccessFactors", "SAP HCM", "Oracle HCM", "Oracle Fusion HCM", "Workday HCM", "Other", "None"],
-                                    help: "",
-                                    label:  "HCM",
-                                    value: "",
-                                    required: true
-                                },
-                            ]
-                        },
-                        {
-                            title: "Are there any other core systems you currently have or are implementing?",
-                            content: "Include how you use the system and the level of implementation.",
-                            fields: [
-                                {
-                                    id: "other-core-systems",
-                                    type: "text",
-                                    help: "",
-                                    label:  null,
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Part 2: Your strategic transformations",
-                    content: "Aligning automation with transformative efforts ensures you don’t just automate for the sake of it but rather to drive value in line with overall strategic objectives.",
-                    children: [
-                        {
-                            title: "What best describes your organization’s strategic transformations in these core categories",
-                            content: "",
-                            fields: [
-                                {
-                                    id: "cloud-transformation-stance",
-                                    type: "select",
-                                    options: ["Strategically moving our infrastructure to the cloud","Tactically evaluating cloud initiatives on a case-by-case basis","Prefer to remain on-premises"],
-                                    help: "",
-                                    label:  "Cloud",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "erp-transformation-stance",
-                                    type: "select",
-                                    options: ["Use SAP S/4HANA Cloud and/or in RISE with SAP","Planning on moving to SAP S/4HANA Cloud","Use SAP ERP on-prem and not changing","Use Oracle Fusion","Planning on moving to Oracle Fusion","Use Oracle EBS/PeopleSoft/JDE and not changing","Use a cloud-based ERP that's not SAP or Oracle","Use an ERP that's not SAP or Oracle and planning to move to a cloud environment","Use an on-prem ERP that's not SAP or Oracle and not changing"],
-                                    help: "",
-                                    label:  "ERP",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "data-fabrics-maturity",
-                                    type: "select",
-                                    options: ["Successfully implemented data fabrics that integrate and govern all data across our business applications","Currently use select data integration technologies like iPaaS, ETL and EDI but have not yet fully implemented an integrated data fabric across all business applications","Our business applications are mostly integrated and we do not use dedicated data integration technologies"],
-                                    help: "",
-                                    label:  "Data fabrics",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "ai-maturity",
-                                    type: "select",
-                                    options: ["Our usage of and investment in AI will be limited, as we do not believe that it will significantly impact our overall business success","We believe that AI will be beneficial to our business success and have started to deliver the first POCs and use cases","We’ve seen firsthand how AI enhances business outcomes through multiple operational use cases, and we’re committed to accelerating our strategic approach to AI"],
-                                    help: "",
-                                    label:  "AI",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "process-automation-maturity",
-                                    type: "select",
-                                    options: ["Already automated many repetitive business and IT processes in a tactical way on a case-by-case basis and believe there is very little left to automate ","Although we've already automated many repetitive business and IT processes across our organization, we see great opportunity to automate more and have a dedicated automation team streamlining that effort","While we have automated many business and IT processes with our central automation team, we aspire to fully automate processes to deliver the best possible business results and reduce manual efforts"],
-                                    help: "",
-                                    label:  "Process automation",
-                                    value: "",
-                                    required: true
-                                },
-                            ]
-                        },
-                        {
-                            title: "What is your level of automation in critical business processes?",
-                            content: "These are common IT and business processes driving business outcomes — and all can be fully automated end to end across your tech stack. We'll provide more information and recommendations on the processes applicable to your business.",
-                            fields: [
-                                {
-                                    id: "demand-to-fulfillment-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Demand-to-fulfillment",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "hire-to-retire-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Hire-to-retire",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "incident-to-resolution-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Incident-to-resolution",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "record-to-report-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Record-to-report",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "order-to-cash-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Order-to-cash",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "plan-to-produce-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Plan-to-produce",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "procure-to-pay-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Procure-to-pay",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "quote-to-cash-automation-level",
-                                    type: "select",
-                                    options: ["Completely automated end to end","Partially automated","Interested in automating","Not applicable"],
-                                    help: "",
-                                    label:  "Quote-to-cash",
-                                    value: "",
-                                    required: true
-                                },
-                            ]
-                        },
-                        {
-                            title: "Given you're in the utilities industry, how automated is your meter-to-cash process?",
-                            content: "",
-                            conditions: [
-                                {
-                                    field: "industry",
-                                    rule: ""
-                                }
-                            ],
-                            fields: [
-                                {
-                                    id: "meter-to-cash-automation-level",
-                                    type: "checkboxes",
-                                    options: ["Completely automated end to end", "Partially automated", "Interested in automating", "Not applicable"],
-                                    help: "",
-                                    label:  null,
-                                    value: [],
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "What other key business processes are you automating or would you like to automate?",
-                            content: "Include your level of automation: whether the process is automated end to end, partially automated or you would like to automate",
-                            fields: [
-                                {
-                                    id: "other-business-processes",
-                                    type: "textarea",
-                                    help: "",
-                                    label:  null,
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Part 3: Your operations",
-                    content: "This is the final section. When it comes to automation, it's important to consider how you operate to determine the most strategic approach. ",
-                    children: [
-                        {
-                            title: "Which software solutions do you use for ITSM and ITOM?",
-                            content: "IT automation can cut repetitive tasks by as much as 80%, allowing IT teams to shift their focus from routine maintenance to higher-value, strategic initiatives. This shift enables IT teams to contribute meaningfully to innovation and growth discussions, ultimately supporting better business alignment and agility. Knowing your current solutions can help us identify automation opportunities.",
-                            fields: [
-                                {
-                                    id: "itsm-itom-solutions",
-                                    type: "checkboxes",
-                                    options: ["ServiceNow", "SAP Solution Manager", "SAP Cloud ALM", "IBM ITOMaaS", "BMC Helix Operations Management", "Atlassian", "Dynatrace", "Other"],
-                                    help: "",
-                                    label:  null,
-                                    value: [],
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "Which automation solutions do you current use?",
-                            content: "",
-                            fields: [
-                                {
-                                    id: "rpa-solution",
-                                    type: "select",
-                                    options: ["Automation Anywhere","Blue Prism","IBM RPA","Microsoft Power Automate","Nintex","Oracle Integration Cloud RPA","UIPath","Salesforce\/MuleSoft RPA","SAP Build Process Automation","Other","None"],
-                                    help: "",
-                                    label:  "Robotic process automation (RPA)",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "ipaas-solution",
-                                    type: "select",
-                                    options: ["Biztalk","Boomi","IBM iPaaS","Informatica","Jitterbit","MuleSoft","Oracle Cloud Integration","Oracle Fusion Middleware","SAP Integration Suite","TIBCO","Workato","Other","None"],
-                                    help: "",
-                                    label:  "iPaaS/API platform/Service bus",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "workload-automation-solution",
-                                    type: "select",
-                                    options: ["ActiveBatch by Redwood","RunMyJobs by Redwood","SAP BPA by Redwood","Tidal by Redwood","BMC Control-M","BMC Helix Control-M","Broadcom Automic/UC4","Broadcom AutoSys","Broadcom CA 7","Fortra’s JAMS","IBM/HCL Workload Automation","Stonebranch","Other","None"],
-                                    help: "",
-                                    label:  "Workload automation",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "mft-edi-solution",
-                                    type: "select",
-                                    options: ["Cerberus by Redwood","JSCAPE by Redwood","Axway","Globalscape","GoAnywhere","IBM Aspera","Progress MFT","Seeburger","Other","None"],
-                                    help: "",
-                                    label:  "Managed file transfer (MFT) and EDI",
-                                    value: "",
-                                    required: true
-                                },
-                                {
-                                    id: "bpm-lcnc-solution",
-                                    type: "select",
-                                    options: ["Appian","Bizagi","IBM Business Automation Workflow","Nintex","Oracle BPM","Pega","SAP Build","SAP Signavio","ServiceNow","Other","None"],
-                                    help: "",
-                                    label:  "BPM + low code/no code (LCNC)",
-                                    value: "",
-                                    required: true
-                                }
-                            ]
-                        },
-                        {
-                            title: "Get your results and recommendations!",
-                            content: "See where your organization most likely stands in automation maturity and get recommendations on how to advance. Along with clear acttion items, receive additional resources <form id=\"mktoForm_1534\"></form>",
-                            navigation: false
-                        }
-                    ]
-                },
-            ],
             selected: null,
             registry: null,
             testMode: window.location.search.includes("test")
@@ -455,24 +24,24 @@ createApp({
 
         },
         navigate(nextIndex) {
-            const currentIndex = this.registry.indexOf(this.selected);
-            const findNextIndex = (index = currentIndex, currentIndex) => {
+            const currentIndex = this.registry?.indexOf(this.selected);
+            // const findNextIndex = (index = currentIndex, currentIndex) => {
 
-                history = history ?? [];
-                const nextIndex = index == "next" ? index+1 : index-1;
-                const adjacentItemIsAllowed = this.checkVisibility(this.registry.at(nextIndex));
+            //     history = history ?? [];
+            //     const nextIndex = index == "next" ? index+1 : index-1;
+            //     const adjacentItemIsAllowed = this.checkVisibility(this.registry.at(nextIndex));
 
-                if ( !adjacentItemIsAllowed ) {
-                    history.push(index);
-                    return findNextIndex(nextIndex);
+            //     if ( !adjacentItemIsAllowed ) {
+            //         history.push(index);
+            //         return findNextIndex(nextIndex);
 
-                }
+            //     }
 
-                return nextIndex;
+            //     return nextIndex;
 
 
 
-            };
+            // };
             switch (nextIndex) {
                 case "prev":
                     nextIndex = currentIndex-1;
@@ -481,9 +50,9 @@ createApp({
                     nextIndex = currentIndex+1;
                     break;
             }
-            const isOutOfRange = nextIndex > this.registry.length-1 || nextIndex < 0;
+            const isOutOfRange = nextIndex > this.registry?.length-1 || nextIndex < 0;
             
-            this.selected = this.registry.at(isOutOfRange ? currentIndex : nextIndex);
+            this.selected = this.registry?.at(isOutOfRange ? currentIndex : nextIndex);
         },
         toId(str) {
             
@@ -600,6 +169,18 @@ createApp({
             ]
 
             return `https://one.redwood.com/automation-maturity-assessment-${rules.find(rule => rule.condition === true)?.name ?? 'general-recommendations'}`;
+        },
+        async getPayload() {
+            try {
+                const response = await fetch(window.location.origin+"/jotform/payload.json");
+                if (!response.ok) {
+                    throw new Error(`Failed to load payload: ${response.status}`);
+                }
+                const payload = await response.json();
+                return payload;
+            } catch (error) {
+                console.error(error);
+            }
         }
     },
     mounted() {
@@ -612,8 +193,11 @@ createApp({
                 return result;
             });
         }
-        this.registry = flatten(this.sections);
-        this.navigate(13);
+
+        this.getPayload().then(sections =>  {
+            this.registry = flatten(sections);
+            this.navigate(0);
+        });
 
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");
