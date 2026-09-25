@@ -28,7 +28,7 @@
             accent-color: var(--jotform--color--accent);
             font-size: var(--wp--preset--font-size--ts-n1, 0.9rem);
             font-family: var(--jotform--ff--body);
-			font-size: 100%;
+			font-size: clamp(55%, 2vmax, 100%);
 			line-height: 1.6;
         }
 		
@@ -37,7 +37,7 @@
 		}
 
 		body {
-			width: 100vw;
+			width: 100%;
 			min-height: 100vh;
 			padding: 1em;
 			display: flex;
@@ -407,6 +407,8 @@
 			&.inactive {
 				translate: -100%;
 				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
 			}
 
 			&.active {
@@ -474,10 +476,11 @@
 			border-radius: var(--jotform--border--radius);
 			font-family: var(--jotform--ff--headings);
 			position: absolute;
-			top: 0;
-			right: 0;
+			left: 50%;
+			bottom: 0;
 			margin: 1em;
 			font-weight: 600;
+			translate: -50%
 		}
 
 		.nav {
@@ -671,11 +674,7 @@
 
 		</div>
 
-		
-		
-		
-
-		<span class="state">{{registry?.indexOf(selected)+1}}/{{ registry?.length }}</span>
+		<span class="state" v-show="!!registry">{{registry?.indexOf(selected)+1}}/{{ registry?.length }}</span>
 
 		<div v-if="testMode" class="debug">
 			<h3>Jump to section:</h3>
