@@ -94,15 +94,21 @@
 			display: block;
 			width: 100% !important;
 			border-radius: var(--jotform--border--radius);
-			border: 1.5px solid currentColor;
 			padding: .8em .6em !important;
-			outline: none;
+			border: 1.5px solid currentColor;
+			outline: 1.5px dashed transparent;
+			outline-offset: 1.5px;
+			line-height: 1.3;
+
+			&:is(:focus, :open) {
+				outline-color: currentColor;
+			}
 
 			&:is(:user-invalid, .mktoInvalid):not(:focus) {
 				border-color: var(--jotform--color--error) !important;
 			}
 
-			&:is(:focus, :user-valid) {
+			&:user-valid {
 				border-color: var(--jotform--color--accent);
 			}
 
@@ -112,74 +118,111 @@
 			}
 		}
 
+
+		::picker(select) {
+			appearance: base-select;
+		}
+
 		select {
-			appearance: none;
+			appearance: base-select;
 			background-color: var(--jotform--color--base);
 
 			&:not([multiple]) {
-				background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='6.16' width='8.05' viewBox='0 0 115 89'><path d='M114.5 0H0L59.5 88.5L114.5 0Z' fill='currentColor'/></svg>") right 2ch center no-repeat;
+				display: flex;
+				align-items: center;
+
+				&::picker(select) {
+					margin-block: .4em;
+					border-radius: var(--jotform--border--radius);
+					max-width: 30ch;
+				}
+
+				&::picker-icon {
+					content: "";
+					width: 2ch;
+					height: 2ch;
+					display: block;
+					background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='6.16' width='8.05' viewBox='0 0 115 89'><path d='M114.5 0H0L59.5 88.5L114.5 0Z' fill='currentColor'/></svg>") center no-repeat;
+				}
+
+				& selectedcontent {
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				option {
+					padding: 1em;
+					white-space: normal;
+
+					&::checkmark {
+						content: "";
+					}
+				}
 			}
 
 			&[multiple] {
 				scrollbar-width: thin;
 				scrollbar-color: var(--jotform--color--accent) color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
 				max-height: 7lh;
-			}
 
-		}
-
-		option {
-			color: inherit;
-			display: grid;
-			gap: .7lh;
-			grid-template-areas: "checkbox label";
-			place-content: start;
-			align-items: center;
-			background-color: var(--jotform-color-base);
-			cursor: pointer;
-			
-
-			&:first-child {
-				pointer-events: none;
-				margin-bottom: .45lh;
-				opacity: 0.6;
-			}
-
-			&:not(:first-child) {
-				padding: .3em;
-
-				&:checked {
-					--jotform--checkbox--color--bg: var(--jotform--color--accent);
-				}
-
-				&:hover {
-					background-color: color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
-				}
-
-				&::before, &::after {
-					content: "";
-					width: 1.2lh;
-					height: 1.2lh;
+				option {
+					color: inherit;
 					display: grid;
-					place-content: center;
-					grid-area: checkbox;
-				}
+					gap: .7lh;
+					grid-template-areas: "checkbox label";
+					place-content: start;
+					align-items: center;
+					background-color: var(--jotform-color-base);
+					cursor: pointer;
+					
 
-				&::after {
-					clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-					background-color: var(--jotform--color--base);
-					scale: .5;
-				}
-		
-				&::before {
-					background-color: var(--jotform--checkbox--color--bg, var(--jotform--color--base));
-					border-radius: 0.25em;
-					box-shadow: 0 0 0 1.5px var(--jotform--checkbox--color--bg, currentColor) inset;
+					&:first-child {
+						pointer-events: none;
+						margin-bottom: .45lh;
+						opacity: 0.6;
+					}
+
+					&:not(:first-child) {
+						padding: .3em;
+
+						&:checked {
+							--jotform--checkbox--color--bg: var(--jotform--color--accent);
+						}
+
+						&:hover {
+							background-color: color-mix(in srgb, var(--jotform--color--accent) 10%, var(--jotform--color--base));
+						}
+
+						&::before, &::after {
+							content: "";
+							width: 1.2lh;
+							height: 1.2lh;
+							display: grid;
+							place-content: center;
+							grid-area: checkbox;
+						}
+
+						&::after {
+							clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+							background-color: var(--jotform--color--base);
+							scale: .5;
+						}
+				
+						&::before {
+							background-color: var(--jotform--checkbox--color--bg, var(--jotform--color--base));
+							border-radius: 0.25em;
+							box-shadow: 0 0 0 1.5px var(--jotform--checkbox--color--bg, currentColor) inset;
+						}
+					}
+
+					
 				}
 			}
 
-			
 		}
+
+		
 
 		textarea {
 			resize: vertical;
@@ -229,25 +272,29 @@
 		}
 
 		button {
-			appearance: none;
-			color: currentColor;
-			font-family: var(--jotform--ff--fields);
-			background-color: var(--jotform--color--accent);
-			border: none;
-			padding: 1em 1.7em;
-			cursor: pointer;
-			transition: background-color .3s ease;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-weight: 500;
-			gap: .5lh;
-			font-size: 1rem;
 
-			&:is(:hover, :active, :focus) {
-				background-color: color-mix(in srgb, var(--jotform--color--accent) 80%, var(--jotform--color--contrast));
+			&:is([type="submit"], [type="button"], :not(:has(selectedcontent))) {
+				appearance: none;
+				color: currentColor;
+				font-family: var(--jotform--ff--fields);
+				background-color: var(--jotform--color--accent);
+				border: none;
+				padding: 1em 1.7em;
+				cursor: pointer;
+				transition: background-color .3s ease;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 500;
+				gap: .5lh;
+				font-size: 1rem;
+
+				&:is(:hover, :active, :focus) {
+					background-color: color-mix(in srgb, var(--jotform--color--accent) 80%, var(--jotform--color--contrast));
+				}
 			}
+			
 		}
 
 
@@ -400,7 +447,7 @@
 				border-color: var(--jotform--color--error)
 			}
 
-			&:has(:user-valid) {
+			&:has(:required):not(:has(:invalid)) {
 				border-color: var(--jotform--color--accent)
 			}
 
@@ -604,7 +651,10 @@
 								v-model="field.value" 
 								:required="field.required"
 							>
-								<option value="">Please select</option>
+								<button>
+									<selectedcontent></selectedcontent>
+								</button>
+								<option value="" disabled>Please select</option>
 								<option v-for="option in field.options" :key="option" :value="option">
 									{{ option }}
 								</option>
@@ -660,7 +710,7 @@
 						</button>
 					</div>
 					<template v-else>
-						<button @click="navigate('prev')">
+						<button @click="navigate('prev')"> 
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="2ch" fill="currentColor"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg>
 							Previous
 						</button>
