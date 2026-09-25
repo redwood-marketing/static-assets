@@ -322,7 +322,12 @@ createApp({
                         {
                             title: "Given you're in the utilities industry, how automated is your meter-to-cash process?",
                             content: "",
-                            conditions: "",
+                            conditions: [
+                                {
+                                    field: "industry",
+                                    rule: ""
+                                }
+                            ],
                             fields: [
                                 {
                                     id: "meter-to-cash-automation-level",
@@ -443,8 +448,31 @@ createApp({
         }
     },
     methods: {
+        checkVisibility(section = this.selected, fields = this.getResults()) {
+            if (!section?.conditions) return true;
+
+            return section.conditions.every((condition) => fields[condition.field] == condition.rule);
+
+        },
         navigate(nextIndex) {
             const currentIndex = this.registry.indexOf(this.selected);
+            const findNextIndex = (index = currentIndex, currentIndex) => {
+
+                history = history ?? [];
+                const nextIndex = index == "next" ? index+1 : index-1;
+                const adjacentItemIsAllowed = this.checkVisibility(this.registry.at(nextIndex));
+
+                if ( !adjacentItemIsAllowed ) {
+                    history.push(index);
+                    return findNextIndex(nextIndex);
+
+                }
+
+                return nextIndex;
+
+
+
+            };
             switch (nextIndex) {
                 case "prev":
                     nextIndex = currentIndex-1;
@@ -585,7 +613,7 @@ createApp({
             });
         }
         this.registry = flatten(this.sections);
-        this.navigate(0);
+        this.navigate(13);
 
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");
@@ -605,10 +633,6 @@ createApp({
                         formInnerStylesheets.forEach( (sheet) => sheet.remove() );
                         mktoStylesheets.forEach( (sheet) => sheet.disabled = true );
                     })();
-
-                    form.offValidate(() => {
-                        console.log("off");
-                    })
 
                     /* Populate */
                     form.onSubmit(() => {
