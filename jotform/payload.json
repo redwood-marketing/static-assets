@@ -484,27 +484,6 @@
         ]
       },
       {
-        "title": "Given you're in the utilities industry, how automated is your meter-to-cash process?",
-        "content": "",
-        "conditions": [{ "field": "industry", "rule": "" }],
-        "fields": [
-          {
-            "id": "meter-to-cash-automation-level",
-            "type": "checkboxes",
-            "options": [
-              "Completely automated end to end",
-              "Partially automated",
-              "Interested in automating",
-              "Not applicable"
-            ],
-            "help": "",
-            "label": null,
-            "value": [],
-            "required": true
-          }
-        ]
-      },
-      {
         "title": "What other key business processes are you automating or would you like to automate?",
         "content": "Include your level of automation: whether the process is automated end to end, partially automated or you would like to automate",
         "fields": [
