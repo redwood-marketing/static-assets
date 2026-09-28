@@ -9,10 +9,15 @@
     <script>
         const iframe = document.createElement("iframe");
         iframe.src = "./?" + window.location.search;
-        iframe.style = "height: clamp(50rem, 80vh - var(--navbar-compound-height, 5rem), 40vw); width: 100%; border: 1px solid #ddd; border-radius: 0.2rem; outline: 0; margin: 2rem 0;";
+        iframe.style = "height: clamp(50rem, 80vh - var(--navbar-compound-height, 5rem), 40vw); width: 100%; border: none; outline: 0; margin: 2rem 0; overflow: hidden;";
         iframe.width = 1600;
         iframe.height = 900; 
-        console.log(document.currentScript);
+
+        window.addEventListener('message', (event) => {
+            if (event.data.type == "iframeResize") {
+                iframe.style.height = (event.data.height*1.02) + 'px';
+            }
+        });
 
         document.currentScript.parentNode.appendChild(iframe)
     </script>

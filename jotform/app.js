@@ -111,8 +111,6 @@ createApp({
             const MFT = results["mft-edi-solution"];
             const ERP = results["erp"];
 
-            
-
             const rules = [
                 {
                     name: "autonomous", 
@@ -198,6 +196,20 @@ createApp({
             this.registry = flatten(sections);
             this.navigate(0);
         });
+
+        (function resize() {
+            if (window.self !== window.top) {
+                const height = document.body.scrollHeight+100;
+
+                window.parent.postMessage({
+                    type: 'iframeResize',
+                    height: height
+                }, '*');
+                
+                window.addEventListener("resize", resize, { once: true });
+                window.addEventListener("load", resize, { once: true });
+            }
+        })();
 
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");

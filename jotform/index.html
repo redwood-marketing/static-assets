@@ -28,8 +28,8 @@
             accent-color: var(--jotform--color--accent);
             font-size: var(--wp--preset--font-size--ts-n1, 0.9rem);
             font-family: var(--jotform--ff--body);
-			font-size: clamp(55%, 2vmax, 100%);
-			line-height: 1.6;
+			font-size: clamp(80%, 1.4vw, 100%);
+			line-height: 1.5;
         }
 		
 		::selection {
@@ -38,11 +38,8 @@
 
 		body {
 			width: 100%;
-			min-height: 100vh;
 			padding: 1em;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			min-height: 10rem;
 			transition: opacity .3s ease;
 
 			&:has([v-cloak]) {
@@ -411,21 +408,18 @@
 
 		#app {
             display: flex;
-			justify-content: center;
-			align-items: center;
 			flex-flow: column nowrap;
-            gap: 10em;
+			align-items: center;
+            gap: 2rem;
 			width: 100%;
-			max-width: 100rem;
-			height: 100%;
 			overflow-x: hidden;
         }
 
 		.sections {
-			max-width: 100%;
+			max-width: 50rem;
 			display: grid;
 			grid-template-areas: "content";
-			place-items: center;
+			place-items: start;
 		}
 
 		.section {
@@ -435,6 +429,8 @@
 			border: 1px solid color(from currentColor srgb r g b / 0.3);
 			width: min(50rem, 100%);
 			overflow: hidden;
+			display: flex;
+			flex-flow: column nowrap;
 			box-shadow:
 				0 1px 1px hsl(0deg 0% 0% / 0.075),
 				0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -485,7 +481,7 @@
 			flex-grow: 1;
 			align-items: center;
             gap: 1.5em;
-            padding: 4rem 3rem;
+            padding: 3.5rem 2.5rem 4rem;
 			margin-bottom: auto;
         }
 
@@ -493,7 +489,6 @@
 			width: 100%;
 			display: flex;
 			gap: 1em;
-			//grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
 			flex-flow: row wrap;
     		align-items: self-end;
 		}
@@ -518,16 +513,13 @@
 		}
 
 		.state {
-			background-color: #00000022;
-			padding: .5em 1em;
+			background-color: #00000011;
+			padding: .3em .7em;
 			border-radius: var(--jotform--border--radius);
 			font-family: var(--jotform--ff--headings);
-			position: absolute;
-			left: 50%;
-			bottom: 0;
-			margin: 1em;
 			font-weight: 600;
-			translate: -50%
+			display: flex;
+			font-size: .8rem;
 		}
 
 		.nav {
@@ -632,6 +624,8 @@
 		<div class="sections">
 			<section class="section" v-if="checkVisibility(section)" v-for="(section, sectionIndex) in registry" :class="(section == selected) ? 'active' : 'inactive'">
 				<div class="section__content">
+				<span class="state" v-show="!!registry">{{registry?.indexOf(selected)+1}} of {{ registry?.length }}</span>
+
 					<h2>{{ section.title }}</h2>
 					<div class="content" v-if="section.content" v-html="section.content"></div>
 					<span class="question" v-if="section.children?.length > 0">{{section.children?.length}} questions in this section</span>
@@ -724,7 +718,7 @@
 
 		</div>
 
-		<span class="state" v-show="!!registry">{{registry?.indexOf(selected)+1}}/{{ registry?.length }}</span>
+		
 
 		<div v-if="testMode" class="debug">
 			<h3>Jump to section:</h3>
