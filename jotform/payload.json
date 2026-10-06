@@ -525,6 +525,44 @@
     "content": "This is the final section. When it comes to automation, it's important to consider how you operate to determine the most strategic approach. ",
     "children": [
       {
+        "title": "How do you manage your infrastructure?",
+        "content": "",
+        "fields": [
+          {
+            "id": "infrastructure-management",
+            "type": "select",
+            "options": [
+              "In house",
+              "Partially outsourced",
+              "Fully outsourced"
+            ],
+            "help": "",
+            "label": null,
+            "value": "",
+            "required": true
+          }
+        ]
+      },
+      {
+        "title": "How do you manage your applications?",
+        "content": "",
+        "fields": [
+          {
+            "id": "application-management",
+            "type": "select",
+            "options": [
+              "In house",
+              "Partially outsourced",
+              "Fully outsourced"
+            ],
+            "help": "",
+            "label": null,
+            "value": "",
+            "required": true
+          }
+        ]
+      },
+      {
         "title": "Which software solutions do you use for ITSM and ITOM?",
         "content": "IT automation can cut repetitive tasks by as much as 80%, allowing IT teams to shift their focus from routine maintenance to higher-value, strategic initiatives. This shift enables IT teams to contribute meaningfully to innovation and growth discussions, ultimately supporting better business alignment and agility. Knowing your current solutions can help us identify automation opportunities.",
         "fields": [
