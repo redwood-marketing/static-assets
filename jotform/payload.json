@@ -140,6 +140,27 @@
     "content": "Three key areas help evaluate automation maturity, starting with your tech stack. Your systems and applications have unique considerations and automation functionality. Let's identify untapped opportunity with what you currently have.",
     "children": [
       {
+        "title": "Which of the following describes your infrastructure?",
+        "content": "",
+          "fields": [
+            {
+              "id": "infrastructure",
+              "type": "select",
+              "options": [
+                "Own data center",
+                "Single or multiple hyperscalers only",
+                "Single hyperscaler (AWS, GCP, Azure) + on-prem",
+                "Multiple hyperscalers (AWS, GCP, Azure) + on-prem",
+                "Use SaaS only"
+              ],
+              "help": "",
+              "label": null,
+              "value": "",
+              "required": true
+            }
+          ]
+      },
+      {
         "title": "What applications or systems of record do you use?",
         "content": "Your applications or systems of record (SoR) are important considerations for automation because they serve as the central repository for the data that automation processes rely on to execute tasks accurately and consistently. Select none if not applicable.",
         "fields": [
