@@ -70,6 +70,17 @@ createApp({
         validate(event) {
             event.target.checkValidity()
         },
+        resize() {
+            if (window.self !== window.top) {
+                const height = document.body.scrollHeight+100;
+
+                window.parent.postMessage({
+                    type: 'iframeResize',
+                    height: height
+                }, '*');
+                
+            }
+        },
         getResults() {
             results = [];
             this.registry?.forEach(item => {
@@ -192,24 +203,7 @@ createApp({
             });
         }
 
-        this.getPayload().then(sections =>  {
-            this.registry = flatten(sections);
-            this.navigate(0);
-        });
-
-        (function resize() {
-            if (window.self !== window.top) {
-                const height = document.body.scrollHeight+100;
-
-                window.parent.postMessage({
-                    type: 'iframeResize',
-                    height: height
-                }, '*');
-                
-                window.addEventListener("resize", resize, { once: true });
-                window.addEventListener("load", resize, { once: true });
-            }
-        })();
+        window.addEventListener("resize", this.resize, { once: true });
 
         if ( "MktoForms2" in window === false ) {
             const mkto = document.createElement("script");
@@ -246,7 +240,12 @@ createApp({
             
             document.body.appendChild(mkto);
         }
-        
+
+        this.getPayload().then(sections =>  {
+            this.registry = flatten(sections);
+            this.navigate(0);
+            this.resize();
+        });
         
     }
     
